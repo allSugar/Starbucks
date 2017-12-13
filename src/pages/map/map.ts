@@ -18,11 +18,11 @@ export class MapPage {
   constructor(public map: any,public navCtrl: NavController, public navParams: NavParams) {
   }
   loadMap() {
-      this.map = new AMap.Map('container', {
-          resizeEnable: true,
-          zoom: 8,
-          center: [116.39,39.9]
-      });
+      // this.map = new AMap.Map('container', {
+      //     resizeEnable: true,
+      //     zoom: 8,
+      //     center: [116.39,39.9]
+      // });
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
