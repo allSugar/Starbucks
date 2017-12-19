@@ -10,13 +10,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class MapPage {
 
-  constructor() {}
+  constructor() { }
 
   loadMap() {
-      // this.map = new AMap.Map('container', {
-      //     resizeEnable: true,
-      //     zoom: 8,
-      //     center: [116.39,39.9]
-      // });
+    // this.map = new AMap.Map('container', {
+    //     resizeEnable: true,
+    //     zoom: 8,
+    //     center: [116.39,39.9]
+    // });
+  }
+  
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MapPage');
   }
 }
