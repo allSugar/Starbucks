@@ -10,4 +10,5 @@ import { MapPage } from './map';
     IonicPageModule.forChild(MapPage),
   ],
 })
+
 export class MapPageModule {}

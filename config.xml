@@ -89,4 +89,5 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
+    <plugin name="cordova-plugin-x-toast" spec="^2.6.0" />
 </widget>
