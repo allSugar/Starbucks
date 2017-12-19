@@ -25,8 +25,8 @@ export class LoginPage {
 
     this.navCtrl.setRoot(TabsPage);
   }
-  
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
+    console.log('ionViewDidLoad LoginPage');
   }
 }
