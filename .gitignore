@@ -35,3 +35,6 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 node_modules/
 platforms/
+www/
+tsconfig.json*
+tslint.json*
