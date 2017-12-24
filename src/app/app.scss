@@ -1,5 +1,19 @@
 // http://ionicframework.com/docs/theming/
+ion-app.md,
+ion-app.ios {
+  background-color: #f6f6f6;
+  font-family: PingFangSC-Regular, "Roboto", Helvetica, Arial, "Microsoft Yahei", "微软雅黑";
+}
 
+ion-app.ios {
+  background-color: #f6f6f6;
+  font-family: PingFangSC-Regular, "Roboto", Helvetica, Arial, "Microsoft Yahei", "微软雅黑";
+}
+
+.content-md,
+.content-ios {
+  background-color: #f6f6f6;
+}
 
 // App Global Sass
 // --------------------------------------------------
