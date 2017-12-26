@@ -38,7 +38,6 @@ $tabImageName: 'tab1' 'tab2' 'tab3' 'tab4';
   } // for android  
   .tabs-md {
     .tab-button[aria-selected=true] {
-      color: #05d1af;
       .ion-md-tab-#{nth($tabImageName, $i)} {
         @extend .ion-tab-icon-md-base;
         content: url("../assets/imgs/tabs/#{nth($tabImageName, $i)}_choosed.png");
@@ -66,9 +65,26 @@ $tabImageName: 'tab1' 'tab2' 'tab3' 'tab4';
 
 .tabs-ios .tab-button-icon {
   min-width: 23px;
+<<<<<<< HEAD
+=======
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform-origin: 50% 150%;
+  transform-origin: 50% 150%;
+}
+
+.tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0);
+>>>>>>> 7133b1c79116f29b565899c7ca36f15900bd8899
 }
 
 .tabs-md .tab-button {
+  &[aria-selected=true] {
+    color: #05d1af;
+  }
   min-height: 4.6rem;
 }
 
