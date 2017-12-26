@@ -1,25 +1,19 @@
-<ion-header>
+
+<ion-content class="login-page">
   <ion-navbar>
-    <ion-title>登录</ion-title>
+    <ion-title>苏南方圆</ion-title>
   </ion-navbar>
-</ion-header>
-
-<ion-content>
   <ion-item>
-    <ion-label fixed>账号</ion-label>
-    <ion-input type="text" placeholder="请输入账号" #username></ion-input>
+    <ion-input type="text" placeholder="用户名" #username></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label fixed>密码</ion-label>
-    <ion-input type="password" placeholder="请输入密码" #password></ion-input>
+    <ion-input type="password" placeholder="密码" #password></ion-input>
   </ion-item>
-  <ion-item no-lines>
-    <label item-right >记住密码</label>
-    <ion-toggle></ion-toggle>
+  <ion-item>
+    <ion-input type="password" placeholder="验证码" #password></ion-input>
   </ion-item>
-
-  <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
-    <button ion-button block color="danger" (click)="logIn(username, password)">
+  <div class="login">
+    <button class="btn-login" ion-button block  (click)="logIn(username, password)">
       登录
     </button>
   </div>

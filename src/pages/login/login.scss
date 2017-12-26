@@ -1,3 +1,50 @@
 page-login {
 
+  .login-page {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/imgs/login-bg.png");
+    background-size: cover;
+    .scroll-content {
+      padding-bottom: 0 !important;
+    }
+    .item-md, .item-ios {
+      background-color: transparent !important;
+    }
+    .toolbar-background-ios, .toolbar-background-md {
+      background-color: transparent !important;
+    }
+    .toolbar {
+      margin-top: 11.5rem;
+      margin-bottom: 9.5rem;
+      text-align: center;
+      .toolbar-title {
+        font-weight: normal ;
+        font-size: 3rem !important;
+        color: #fff !important;
+      }
+    }
+    .text-input-md, .text-input-ios {
+      margin: 0;
+      color: #fff;
+    }
+    .item-md {
+      padding-left: 0;
+    }
+    ion-item {
+      min-height: 2.84rem;
+      width: 25rem;
+      margin: 0 auto 2.5rem;
+    }
+    .login {
+      margin: 0 auto;
+      width: 25.84rem;
+      height: 3.67rem;
+      text-align: center;
+      .btn-login {
+        background-color: #05D1AF;
+      }
+    }
+  }
 }
+
