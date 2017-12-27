@@ -28,13 +28,16 @@ page-login {
       margin: 0;
       color: #fff;
     }
-    .item-md {
+    .item-md, .item-ios {
       padding-left: 0;
     }
     ion-item {
       min-height: 2.84rem;
       width: 25rem;
       margin: 0 auto 2.5rem;
+      .item-inner {
+        border-bottom: 1px solid #fff !important;
+      }
     }
     .login {
       margin: 0 auto;
@@ -44,6 +47,18 @@ page-login {
       .btn-login {
         background-color: #05D1AF;
       }
+    }
+    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: #fff;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: #fff;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: #fff;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #fff;
     }
   }
 }
