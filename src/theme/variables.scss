@@ -47,10 +47,26 @@ $colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
-.transform-none {
-  -webkit-transform: none !important;
-  -moz-transform: none !important;
-  -ms-transform: none !important;
-  -o-transform: none !important;
-  transform: none !important;
+@mixin transform($content) {
+  -webkit-transform: $content;
+  -moz-transform: $content;
+  -ms-transform: $content;
+  -o-transform: $content;
+  transform: $content;
+}
+
+@mixin transition($content) {
+  -webkit-transition: $content;
+  -moz-transition: $content;
+  -ms-transition: $content;
+  -o-transition: $content;
+  transition: $content;
+}
+
+@mixin transform_origin($content) {
+  -webkit-transform-origin: $content;
+  -moz-transform-origin: $content;
+  -ms-transform-origin: $content;
+  -o-transform-origin: $content;
+  transform-origin: $content;
 }
