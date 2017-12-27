@@ -38,3 +38,4 @@ platforms/
 www/
 tsconfig.json*
 tslint.json*
+resources/
