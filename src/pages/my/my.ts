@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 // baidu map
-declare var BMap;
+declare var AMap;
 
 @IonicPage()
 @Component({
@@ -22,14 +22,13 @@ export class MyPage {
   }
 
   ionViewDidLoad() {
-    let map = new BMap.Map('container');
-
-    // 创建地图实例
-    let point = new BMap.Point(116.404, 39.915);
-    map.centerAndZoom(point, 11);
-    // 初始化地图， 设置中心点坐标和地图级别
+    let map = new AMap.Map('container', {
+      resizeEnable: true,
+      zoom: 11,
+      center: [116.397428, 39.90923]
+    });
   }
   testMap() {
-    alert(JSON.stringify(BMap));
+    alert(JSON.stringify(AMap));
   }
 }
