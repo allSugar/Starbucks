@@ -1,0 +1,54 @@
+{
+  "_from": "git+https://github.com/yanxiaojun617/com.kit.cordova.amaplocation.git",
+  "_id": "com.kit.cordova.amaplocation@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-IFYNw0iaH7hGiLzkkOFVy30DpPw=",
+  "_location": "/com.kit.cordova.amaplocation",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation",
+    "rawSpec": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation",
+    "saveSpec": "git+https://github.com/yanxiaojun617/com.kit.cordova.amaplocation.git",
+    "fetchSpec": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/yanxiaojun617/com.kit.cordova.amaplocation.git#fe27a18273424f8b08ff930f62331925bc0793f1",
+  "_spec": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation",
+  "_where": "F:\\GITHUB\\Starbucks",
+  "author": {
+    "name": "yanxiaojun617@163.com"
+  },
+  "bugs": {
+    "url": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "com.kit.cordova.amaplocation",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova Location Plugin Powerd by KIT",
+  "homepage": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation#readme",
+  "keywords": [
+    "cordova",
+    "location",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "com.kit.cordova.amaplocation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanxiaojun617/com.kit.cordova.amaplocation.git"
+  },
+  "version": "1.0.0"
+}
