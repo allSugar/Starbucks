@@ -66,31 +66,79 @@ page-about {
     height: 50px;
   }
 
-  .tab-shop {
-    width: 100%;
-    height: 39px;
+  .select {
     background-color: white;
-    overflow: hidden;
-    .shop {
-      position: relative;
-      float: left;
-      width: 50%;
-      text-align: center;
-      line-height: 39px;
-      color: $main-text;
-      &:after {
-        position: absolute;
-        top: 44%;
-        left: 70%;
-        content: '';
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-top: 6px solid $main-text;
-      }
-      &.active {
-        color: $secondary-text;
+    .tab-shop {
+      width: 100%;
+      height: 39px;
+      overflow: hidden;
+      .shop {
+        position: relative;
+        float: left;
+        width: 50%;
+        text-align: center;
+        line-height: 39px;
+        color: $main-text;
         &:after {
-          border-top: 6px solid $secondary-text;
+          position: absolute;
+          top: 44%;
+          left: 70%;
+          content: '';
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 6px solid $main-text;
+        }
+        &.active {
+          color: $secondary-text;
+          &:after {
+            border-top: 6px solid $secondary-text;
+          }
+        }
+      }
+    }
+
+    .select-list {
+      padding: 43px 0 25px 12.5%;
+      border-top: 1px solid $border;
+      overflow: hidden;
+      .item {
+        float: left;
+        margin: 0 11.9% 25px 0;
+        width: 60px;
+        &:first-child {
+          .item-img {
+            &:after {
+              background-color: rgba(0,0,0,0);
+            }
+          }
+          .name {
+            color: $green;
+          }
+        }
+        .item-img {
+          position: relative;
+          width: 100%;
+          height: 60px;
+          border-radius: 50%;
+          overflow: hidden;
+          &:after {
+            position: absolute;
+            lefT: 0;
+            top: 0;
+            background-color: rgba(0,0,0,.5);
+            width: 100%;
+            height: 100%;
+            content: '';
+          }
+          img{
+            widht: 100%;
+            height: 100%;
+          }
+        }
+        .name {
+          margin-top: 12px;
+          color: $secondary-text;
+          text-align: center;
         }
       }
     }
@@ -146,13 +194,4 @@ page-about {
       }
     }
   }
-
-  .stage-page {
-    .stage {
-      width: 96%;
-      margin-left: 5%;
-      padding: 15px 0;
-    }
-  }
-
 }
