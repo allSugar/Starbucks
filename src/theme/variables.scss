@@ -49,12 +49,13 @@ $colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4
   padding: 0;
   margin: 0;
 }
+
 li {
   list-style: none;
 }
+
 @import "roboto";
 @import "noto-sans";
-
 $main-text: #1b1b1b;
 $secondary-text: #7f8393;
 $border: #e2e7eb;
@@ -114,6 +115,7 @@ $green: #05d1af;
     }
   }
 }
+
 .shop-list {
   .stage {
     width: 100%;
@@ -121,7 +123,7 @@ $green: #05d1af;
     padding-left: 5%;
     border-top: none !important;
     border-top: 1px solid $border;
-    img{
+    img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
@@ -129,5 +131,16 @@ $green: #05d1af;
     .title {
       line-height: 40px;
     }
+  }
+}
+
+ion-header.header {
+  .toolbar-background-ios,
+  .toolbar-background-md {
+    background: rgba(52, 61, 79, 1);
+  }
+  .toolbar-title {
+    color: white;
+    font-weight: 400;
   }
 }

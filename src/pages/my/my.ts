@@ -8,9 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 // baidu map
-declare var AMap;
 
-@IonicPage()
 @Component({
   selector: 'page-my',
   templateUrl: 'my.html',
@@ -21,14 +19,28 @@ export class MyPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    let map = new AMap.Map('container', {
-      resizeEnable: true,
-      zoom: 11,
-      center: [116.397428, 39.90923]
+  goMap() {
+    this.navCtrl.push('MapPage', {
+      id: "1",
+      name: "map"
     });
   }
-  testMap() {
-    alert(JSON.stringify(AMap));
+
+  goChart() {
+    this.navCtrl.push('ChartPage', {
+      id: "2",
+      name: "chart"
+    });
+  }
+
+  goSlide() {
+    this.navCtrl.push('SlidePage', {
+      id: "3",
+      name: "slide"
+    });
+  }
+
+  ionViewDidLoad() {
+
   }
 }

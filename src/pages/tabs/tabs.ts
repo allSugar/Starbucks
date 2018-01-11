@@ -4,7 +4,6 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { MyPage } from '../my/my';
-// import { ChartPage } from '../chart/chart';
 
 @Component({
   templateUrl: 'tabs.html'

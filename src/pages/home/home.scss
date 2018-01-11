@@ -12,7 +12,7 @@ page-home {
         color: white;
         border-top: 1px solid;
         background-image: url("../assets/imgs/user/banner.png");
-        background-size: cover;
+        background-size: 100% 100%;
         .name {
           margin-top: 69px;
           margin-bottom: 14px;
@@ -25,7 +25,7 @@ page-home {
         .avatar {
           position: absolute;
           left: 50%;
-          bottom: -25px;
+          bottom: -10px;
           margin-left: -50px;
           width: 100px;
           height: 100px;
