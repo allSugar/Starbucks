@@ -38,13 +38,5 @@
     },
     "is_top_level": true,
     "variables": {}
-  },
-  "com.kit.cordova.amaplocation": {
-    "source": {
-      "type": "registry",
-      "id": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }
