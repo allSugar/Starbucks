@@ -9,7 +9,6 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { MyPage } from '../pages/my/my';
-import { ChartPage } from '../pages/chart/chart';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,12 +22,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     LoginPage,
-    MyPage,
-    ChartPage
+    MyPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',//按钮内容
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,8 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     LoginPage,
-    MyPage,
-    ChartPage
+    MyPage
   ],
   providers: [
     StatusBar,
