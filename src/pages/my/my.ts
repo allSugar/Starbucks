@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
 
 /**
  * Generated class for the MyPage page.
@@ -16,25 +16,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class MyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private app: App
+  ) {
   }
 
   goMap() {
-    this.navCtrl.push('MapPage', {
+    this.app.getRootNav().push('MapPage', {
       id: "1",
       name: "map"
     });
   }
 
   goChart() {
-    this.navCtrl.push('ChartPage', {
+    this.app.getRootNav().push('ChartPage', {
       id: "2",
       name: "chart"
     });
   }
 
   goSlide() {
-    this.navCtrl.push('SlidePage', {
+    this.app.getRootNav().push('SlidePage', {
       id: "3",
       name: "slide"
     });
