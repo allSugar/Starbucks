@@ -1,8 +1,9 @@
 [ion-button].button-md,
-[ion-button].button-ios{
+[ion-button].button-ios {
   @include box_shadow(none);
   @include border_radius();
 }
+
 ion-header.header {
   .toolbar {
     min-height: 48px
@@ -55,4 +56,16 @@ ion-header.header {
 
 .back-button-md {
   min-width: 0 !important;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+li {
+  list-style: none;
 }
