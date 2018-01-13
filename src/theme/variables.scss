@@ -3,6 +3,7 @@
 // Font path is used to include ionicons,
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
+$icon-path: "../assets/imgs/icon.png";
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
@@ -84,63 +85,12 @@ $green: #05d1af;
   transform-origin: $content;
 }
 
-.stage-page {
-  background-color: white;
-  .stage {
-    width: 96%;
-    margin-left: 5%;
-    padding: 15px 0;
-    border-bottom: 1px solid $border;
-    overflow: hidden;
-    &:last-child {
-      border: none;
-    }
-    img {
-      float: left;
-      width: 50px;
-      height: 50px;
-      margin-right: 4.4%;
-    }
-    .title {
-      float: left;
-      line-height: 50px;
-    }
-    .user-img {
-      width: 20px;
-      height: 20px;
-    }
-    .user-title {
-      float: left;
-      line-height: 20px;
-    }
-  }
+@mixin back-size($num) {
+  background-size: 640*$num + px 640*$num + px;
+  -webkit-background-size: 640*$num + px 640*$num + px;
+  -moz-background-size: 640*$num + px 640*$num + px;
+  -o-background-size: 640*$num + px 640*$num + px;
 }
 
-.shop-list {
-  .stage {
-    width: 100%;
-    margin-left: 0;
-    padding-left: 5%;
-    border-top: none !important;
-    border-top: 1px solid $border;
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-    .title {
-      line-height: 40px;
-    }
-  }
-}
-
-ion-header.header {
-  .toolbar-background-ios,
-  .toolbar-background-md {
-    background: rgba(52, 61, 79, 1);
-  }
-  .toolbar-title {
-    color: white;
-    font-weight: 400;
-  }
-}
+@import 'base';
+@import 'comm';
