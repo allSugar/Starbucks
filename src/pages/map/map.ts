@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -7,7 +7,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-declare var AMap;
+// declare var AMap;
+declare var BMap;
 
 @IonicPage()
 @Component({
@@ -16,15 +17,25 @@ declare var AMap;
 })
 export class MapPage {
 
+  @ViewChild('container') mapElement: ElementRef;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
 
   ionViewDidLoad() {
-    let map = new AMap.Map('container', {
-      resizeEnable: true,
-      zoom: 11,
-      center: [116.397428, 39.90923]
-    });
+    // BMap 
+    let map = new BMap.Map(this.mapElement.nativeElement);
+    // 创建地图实例
+    let point = new BMap.Point(116.404, 39.915);
+    // 创建点坐标
+    map.centerAndZoom(point, 11);
+
+    // AMap
+    // let map = new AMap.Map('container', {
+    //   resizeEnable: true,
+    //   zoom: 11,
+    //   center: [116.397428, 39.90923]
+    // });
   }
 }

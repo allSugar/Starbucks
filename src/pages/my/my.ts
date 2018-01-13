@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App } from 'ionic-angular';
+import { NavController, NavParams, App } from 'ionic-angular';
 
 /**
  * Generated class for the MyPage page.

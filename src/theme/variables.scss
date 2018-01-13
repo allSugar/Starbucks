@@ -85,11 +85,26 @@ $green: #05d1af;
   transform-origin: $content;
 }
 
-@mixin back-size($num) {
-  background-size: 640*$num + px 640*$num + px;
+@mixin back_size($num) {
   -webkit-background-size: 640*$num + px 640*$num + px;
   -moz-background-size: 640*$num + px 640*$num + px;
+  -ms-background-size: 640*$num + px 640*$num + px;
   -o-background-size: 640*$num + px 640*$num + px;
+  background-size: 640*$num + px 640*$num + px;
+}
+
+@mixin box_shadow($content) {
+  -webkit-box-shadow: $content;
+  -moz-box-shadow: $content;
+  -ms-box-shadow: $content;
+  -o-box-shadow: $content;
+  box-shadow: $content;
+}
+
+@mixin border_radius($radius:4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius:$radius;
 }
 
 @import 'base';
