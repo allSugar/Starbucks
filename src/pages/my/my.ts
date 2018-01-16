@@ -21,11 +21,6 @@ export class MyPage {
     public navParams: NavParams,
     private app: App
   ) {
-    this.num = 0;
-  }
-
-  add(){
-    this.num +=1;
   }
 
   goMap() {

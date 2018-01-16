@@ -15,6 +15,7 @@ import { HttpService } from "../../model/HttpService";
 })
 
 export class AlphaListPage {
+
   @ViewChild(Content) content: Content;
   /*搜索的关键字*/
   searchInput: string = '';

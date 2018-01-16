@@ -13,33 +13,32 @@
 </ion-header>
 
 <ion-content class="bank-from">
-	<div class="letter" *ngIf="!isSearching">
-		<div class="letter-right">
-			<span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{letter}}</span>
-		</div>
-	</div>
-	<!--搜索的结果 -->
-	<ion-list *ngIf="!isSearching">
-		<ion-item-group *ngFor="let contacts of searchingItems;let i = index">
-			<ion-item-divider color="light" id="{{searchLetters[i]}}">{{searchLetters[i]}}</ion-item-divider>
-			<ion-item *ngFor="let contact of contacts" (click)="goBack(contact)">
-				<!--<ion-avatar item-start>-->
-				<!--</ion-avatar>-->
-				<h2 [innerHTML]="contact.name"></h2>
-			</ion-item>
-		</ion-item-group>
-	</ion-list>
-	<!--未搜索的结果 -->
-	<ion-list *ngIf="!isSearching">
-		<ion-item-group *ngFor="let contacts of formatContacts;let i = index">
-			<ion-item-divider color="light" id="{{letters[i]}}">{{letters[i]}}</ion-item-divider>
-			<ion-item *ngFor="let contact of contacts" (click)="goBack(contact)">
-				<!--<ion-avatar item-start>-->
+  <div class="letter" *ngIf="!isSearching">
+    <div class="letter-right">
+      <span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{ letter }}</span>
+    </div>
+  </div>
+  <!--搜索的结果 -->
+  <ion-list *ngIf="!isSearching">
+    <ion-item-group *ngFor="let contacts of searchingItems;let i = index">
+      <ion-item-divider color="light" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</ion-item-divider>
+      <ion-item *ngFor="let contact of contacts" (click)="goBack(contact)">
+        <!--<ion-avatar item-start>-->
+        <!--</ion-avatar>-->
+        <h2 [innerHTML]="contact.name"></h2>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+  <!--未搜索的结果 -->
+  <ion-list *ngIf="!isSearching">
+    <ion-item-group *ngFor="let contacts of formatContacts;let i = index">
+      <ion-item-divider color="light" id="{{ letters[i] }}">{{ letters[i] }}</ion-item-divider>
+      <ion-item *ngFor="let contact of contacts" (click)="goBack(contact)">
+        <!--<ion-avatar item-start>-->
 
-				<!--</ion-avatar>-->
-				<h2 [innerHTML]="contact.userName"></h2>
-			</ion-item>
-		</ion-item-group>
-	</ion-list>
+        <!--</ion-avatar>-->
+        <h2 [innerHTML]="contact.userName"></h2>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
-
