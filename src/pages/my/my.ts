@@ -49,6 +49,13 @@ export class MyPage {
     });
   }
 
+  goAlphaScroll() {
+    this.app.getRootNav().push('AlphaListPage', {
+      id: "4",
+      name: "AlphaScroll"
+    });
+  }
+
   ionViewDidLoad() {
 
   }

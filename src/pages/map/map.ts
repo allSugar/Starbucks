@@ -20,10 +20,12 @@ export class MapPage {
   @ViewChild('container') mapElement: ElementRef;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
   }
 
 
   ionViewDidLoad() {
+    
     // BMap 
     let map = new BMap.Map(this.mapElement.nativeElement);
     // 创建地图实例

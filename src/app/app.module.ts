@@ -14,6 +14,9 @@ import { MyPage } from '../pages/my/my';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { HttpModule } from "@angular/http";
+import { HttpService } from "../model/HttpService";
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +29,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '',//按钮内容
     })
@@ -43,6 +47,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    HttpService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
