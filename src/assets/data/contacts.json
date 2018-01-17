@@ -1,0 +1,744 @@
+{
+    "9": [
+        {
+            "userCode": "nine",
+            "userId": 1184,
+            "userName": "9订单审批"
+        },
+        {
+            "userCode": "9000",
+            "userId": 1176,
+            "userName": "9000"
+        }
+    ],
+    "D": [
+        {
+            "userCode": "dengz",
+            "userId": 1046,
+            "userName": "邓孜"
+        },
+        {
+            "userCode": "zhuyanxian",
+            "userId": 1297,
+            "userName": "大猪"
+        },
+        {
+            "userCode": "dengzi",
+            "userId": 1094,
+            "userName": "邓孜"
+        },
+        {
+            "userCode": "demo1",
+            "userId": 1185,
+            "userName": "东软小伙伴"
+        },
+        {
+            "userCode": "duanhx",
+            "userId": 1527,
+            "userName": "段海霞"
+        }
+    ],
+    "F": [
+        {
+            "userCode": "fangying",
+            "userId": 1320,
+            "userName": "方莹"
+        },
+        {
+            "userCode": "fangy",
+            "userId": 1467,
+            "userName": "方莹"
+        },
+        {
+            "userCode": "fangxh",
+            "userId": 923,
+            "userName": "方晓晗"
+        },
+        {
+            "userCode": "fan",
+            "userId": 1599,
+            "userName": "fan"
+        },
+        {
+            "userCode": "fncg1",
+            "userId": 1415,
+            "userName": "方楠"
+        }
+    ],
+    "G": [
+        {
+            "userCode": "gongzhiyun",
+            "userId": 1193,
+            "userName": "龚智赟"
+        },
+        {
+            "userCode": "zhjf1",
+            "userId": 1061,
+            "userName": "供应商变更"
+        },
+        {
+            "userCode": "guoql",
+            "userId": 1423,
+            "userName": "郭其炼"
+        }
+    ],
+    "A": [
+        {
+            "userCode": "pap",
+            "userId": 1604,
+            "userName": "app-潘凡"
+        },
+        {
+            "userCode": "CGY",
+            "userId": 1068,
+            "userName": "阿西巴"
+        },
+        {
+            "userCode": "aaa",
+            "userId": 1600,
+            "userName": "aaa"
+        },
+        {
+            "userCode": "ala",
+            "userId": 1465,
+            "userName": "阿拉丁"
+        },
+        {
+            "userCode": "fxc123",
+            "userId": 1446,
+            "userName": "asd"
+        }
+    ],
+    "B": [
+        {
+            "userCode": "biaozhi",
+            "userId": 1298,
+            "userName": "标志陈老板"
+        },
+        {
+            "userCode": "test",
+            "userId": 6,
+            "userName": "白斌"
+        },
+        {
+            "userCode": "baobiao",
+            "userId": 1445,
+            "userName": "报表"
+        }
+    ],
+    "C": [
+        {
+            "userCode": "caiwqcgy",
+            "userId": 979,
+            "userName": "蔡文强"
+        },
+        {
+            "userCode": "cxt",
+            "userId": 1174,
+            "userName": "cxt"
+        },
+        {
+            "userCode": "0591",
+            "userId": 1402,
+            "userName": "采购1"
+        },
+        {
+            "userCode": "chensw",
+            "userId": 958,
+            "userName": "陈思伟"
+        },
+        {
+            "userCode": "WTF",
+            "userId": 1357,
+            "userName": "ChenPJ"
+        },
+        {
+            "userCode": "purHBY",
+            "userId": 1522,
+            "userName": "采购订单审批HBY"
+        },
+        {
+            "userCode": "caigq",
+            "userId": 1042,
+            "userName": "蔡光巧"
+        },
+        {
+            "userCode": "0592",
+            "userId": 1365,
+            "userName": "测试0"
+        },
+        {
+            "userCode": "cmk_user",
+            "userId": 1283,
+            "userName": "cmk考试用户"
+        },
+        {
+            "userCode": "cyt",
+            "userId": 1171,
+            "userName": "陈烨婷2号"
+        },
+        {
+            "userCode": "cheny",
+            "userId": 1634,
+            "userName": "陈扬"
+        },
+        {
+            "userCode": "chenlf",
+            "userId": 1062,
+            "userName": "陈丽芬"
+        },
+        {
+            "userCode": "0593",
+            "userId": 1403,
+            "userName": "采购2"
+        },
+        {
+            "userCode": "chenjl",
+            "userId": 986,
+            "userName": "陈剑龙"
+        },
+        {
+            "userCode": "app",
+            "userId": 1369,
+            "userName": "测试员小陈"
+        },
+        {
+            "userCode": "chenjg",
+            "userId": 1526,
+            "userName": "陈靖国"
+        },
+        {
+            "userCode": "chenmk",
+            "userId": 1072,
+            "userName": "陈明坤"
+        },
+        {
+            "userCode": "chenyt",
+            "userId": 1063,
+            "userName": "陈烨婷"
+        },
+        {
+            "userCode": "cgy",
+            "userId": 1262,
+            "userName": "采购员P"
+        },
+        {
+            "userCode": "cyting",
+            "userId": 1164,
+            "userName": "cyting"
+        },
+        {
+            "userCode": "chaiyh",
+            "userId": 1694,
+            "userName": "chaiyh"
+        },
+        {
+            "userCode": "ces01",
+            "userId": 1512,
+            "userName": "测试一号"
+        },
+        {
+            "userCode": "ccc",
+            "userId": 1735,
+            "userName": "chenwx"
+        },
+        {
+            "userCode": "chenzq",
+            "userId": 1022,
+            "userName": "陈志强"
+        },
+        {
+            "userCode": "cyet",
+            "userId": 1168,
+            "userName": "cyet"
+        },
+        {
+            "userCode": "U01",
+            "userId": 1473,
+            "userName": "采购员"
+        }
+    ],
+    "L": [
+        {
+            "userCode": "liangzhuo",
+            "userId": 1133,
+            "userName": "梁卓"
+        },
+        {
+            "userCode": "liujl",
+            "userId": 1393,
+            "userName": "刘嘉莉"
+        },
+        {
+            "userCode": "lvye",
+            "userId": 1144,
+            "userName": "吕烨"
+        },
+        {
+            "userCode": "lvhua",
+            "userId": 1167,
+            "userName": "吕骅"
+        },
+        {
+            "userCode": "lyya",
+            "userId": 1607,
+            "userName": "lyy"
+        },
+        {
+            "userCode": "linhm",
+            "userId": 959,
+            "userName": "林鸿敏"
+        },
+        {
+            "userCode": "liyujie",
+            "userId": 1134,
+            "userName": "李玉杰"
+        },
+        {
+            "userCode": "lwy",
+            "userId": 971,
+            "userName": "刘稳勇"
+        },
+        {
+            "userCode": "linyy",
+            "userId": 1743,
+            "userName": "林扬扬"
+        },
+        {
+            "userCode": "liyiming",
+            "userId": 1139,
+            "userName": "李一鸣"
+        },
+        {
+            "userCode": "liulinan",
+            "userId": 1141,
+            "userName": "liulinan"
+        },
+        {
+            "userCode": "linhm1",
+            "userId": 989,
+            "userName": "林鸿鸿"
+        },
+        {
+            "userCode": "linhm5",
+            "userId": 1125,
+            "userName": "林鸿"
+        },
+        {
+            "userCode": "linf",
+            "userId": 1647,
+            "userName": "林峰"
+        }
+    ],
+    "M": [
+        {
+            "userCode": "miaque_l",
+            "userId": 985,
+            "userName": "米亚秋"
+        },
+        {
+            "userCode": "majie",
+            "userId": 1338,
+            "userName": "马杰"
+        },
+        {
+            "userCode": "miwz",
+            "userId": 1071,
+            "userName": "米伟中"
+        },
+        {
+            "userCode": "mwzh",
+            "userId": 1286,
+            "userName": "米"
+        },
+        {
+            "userCode": "miaque",
+            "userId": 984,
+            "userName": "马泉"
+        },
+        {
+            "userCode": "kevin",
+            "userId": 1339,
+            "userName": "马杰"
+        }
+    ],
+    "H": [
+        {
+            "userCode": "hujingang",
+            "userId": 1138,
+            "userName": "胡金钢"
+        },
+        {
+            "userCode": "hongwl",
+            "userId": 1382,
+            "userName": "洪文龙"
+        },
+        {
+            "userCode": "huangby",
+            "userId": 1519,
+            "userName": "黄宝轶"
+        },
+        {
+            "userCode": "linhm3",
+            "userId": 1083,
+            "userName": "鸿敏"
+        },
+        {
+            "userCode": "hongzh",
+            "userId": 1715,
+            "userName": "洪圳鑫"
+        },
+        {
+            "userCode": "huz",
+            "userId": 1433,
+            "userName": "胡振"
+        },
+        {
+            "userCode": "huangxd",
+            "userId": 928,
+            "userName": "黄秀缎"
+        },
+        {
+            "userCode": "hxm01",
+            "userId": 1261,
+            "userName": "hxm01"
+        },
+        {
+            "userCode": "huxiaoming",
+            "userId": 1191,
+            "userName": "胡晓明"
+        },
+        {
+            "userCode": "henry001",
+            "userId": 1198,
+            "userName": "henry001"
+        }
+    ],
+    "J": [
+        {
+            "userCode": "id001",
+            "userId": 1544,
+            "userName": "角色测试"
+        }
+    ],
+    "K": [
+        {
+            "userCode": "kehongbin",
+            "userId": 1143,
+            "userName": "柯红兵"
+        },
+        {
+            "userCode": "zhengxk",
+            "userId": 1079,
+            "userName": "kay zheng"
+        },
+        {
+            "userCode": "10001",
+            "userId": 1296,
+            "userName": "考核用户"
+        },
+        {
+            "userCode": "kehb",
+            "userId": 1186,
+            "userName": "keran"
+        }
+    ],
+    "T": [
+        {
+            "userCode": "test035",
+            "userId": 1341,
+            "userName": "test035"
+        },
+        {
+            "userCode": "test111",
+            "userId": 1420,
+            "userName": "test111"
+        },
+        {
+            "userCode": "tangzhb",
+            "userId": 1428,
+            "userName": "唐照波"
+        },
+        {
+            "userCode": "test100",
+            "userId": 1177,
+            "userName": "test"
+        },
+        {
+            "userCode": "test0001",
+            "userId": 1479,
+            "userName": "test0001"
+        }
+    ],
+    "W": [
+        {
+            "userCode": "wuxii",
+            "userId": 920,
+            "userName": "吴欣"
+        },
+        {
+            "userCode": "wanglq",
+            "userId": 918,
+            "userName": "王利强"
+        },
+        {
+            "userCode": "CGJL",
+            "userId": 1069,
+            "userName": "王强"
+        },
+        {
+            "userCode": "wanglq2",
+            "userId": 919,
+            "userName": "王励勤"
+        },
+        {
+            "userCode": "hal",
+            "userId": 929,
+            "userName": "王海玲"
+        },
+        {
+            "userCode": "wangjianjun",
+            "userId": 1136,
+            "userName": "王建军"
+        },
+        {
+            "userCode": "wuwq",
+            "userId": 1315,
+            "userName": "吴文祈"
+        },
+        {
+            "userCode": "wenmb",
+            "userId": 1159,
+            "userName": "wenmb"
+        },
+        {
+            "userCode": "weijb",
+            "userId": 1431,
+            "userName": "魏金波2"
+        }
+    ],
+    "Q": [
+        {
+            "userCode": "20170504",
+            "userId": 1736,
+            "userName": "青年"
+        },
+        {
+            "userCode": "quyanbin",
+            "userId": 1617,
+            "userName": "曲延斌"
+        }
+    ],
+    "P": [
+        {
+            "userCode": "pff",
+            "userId": 1532,
+            "userName": "panfan01"
+        },
+        {
+            "userCode": "pan",
+            "userId": 1029,
+            "userName": "潘盼盼"
+        },
+        {
+            "userCode": "panfan",
+            "userId": 993,
+            "userName": "潘凡"
+        }
+    ],
+    "S": [
+        {
+            "userCode": "ceshi001",
+            "userId": 1478,
+            "userName": "十一月"
+        },
+        {
+            "userCode": "shizb",
+            "userId": 1432,
+            "userName": "石头皮"
+        },
+        {
+            "userCode": "srmpx",
+            "userId": 1181,
+            "userName": "SRM培训用户"
+        },
+        {
+            "userCode": "shilei",
+            "userId": 1147,
+            "userName": "石磊"
+        }
+    ],
+    "R": [
+        {
+            "userCode": "renrn",
+            "userId": 1011,
+            "userName": "任若男"
+        }
+    ],
+    "Y": [
+        {
+            "userCode": "yansj",
+            "userId": 1434,
+            "userName": "yansj"
+        },
+        {
+            "userCode": "USER0",
+            "userId": 1095,
+            "userName": "演示用户"
+        },
+        {
+            "userCode": "user_liyiming",
+            "userId": 1183,
+            "userName": "用户测试liyiming"
+        },
+        {
+            "userCode": "YS_User",
+            "userId": 1034,
+            "userName": "演示用户"
+        },
+        {
+            "userCode": "yanglb",
+            "userId": 1350,
+            "userName": "杨凌斌"
+        },
+        {
+            "userCode": "lyy123",
+            "userId": 1080,
+            "userName": "岩岩"
+        }
+    ],
+    "X": [
+        {
+            "userCode": "xufqslz",
+            "userId": 1030,
+            "userName": "徐峰"
+        },
+        {
+            "userCode": "xufq",
+            "userId": 990,
+            "userName": "许风琴"
+        },
+        {
+            "userCode": "xiaodongyan",
+            "userId": 1140,
+            "userName": "肖冬艳"
+        },
+        {
+            "userCode": "xufqb",
+            "userId": 953,
+            "userName": "许风琴"
+        },
+        {
+            "userCode": "xufqss",
+            "userId": 987,
+            "userName": "许风琴(价格)"
+        },
+        {
+            "userCode": "xdyuser",
+            "userId": 1179,
+            "userName": "xdy用户"
+        },
+        {
+            "userCode": "linhm2",
+            "userId": 1082,
+            "userName": "小林"
+        },
+        {
+            "userCode": "HCKSZYJS",
+            "userId": 1285,
+            "userName": "许辉程"
+        },
+        {
+            "userCode": "xieyj",
+            "userId": 1359,
+            "userName": "谢悦健"
+        },
+        {
+            "userCode": "xuhc",
+            "userId": 1058,
+            "userName": "许辉程"
+        },
+        {
+            "userCode": "xqy",
+            "userId": 1165,
+            "userName": "xqy"
+        },
+        {
+            "userCode": "xiongqiaoyi",
+            "userId": 1142,
+            "userName": "熊乔毅"
+        },
+        {
+            "userCode": "xufqsl",
+            "userId": 1015,
+            "userName": "徐峰勤"
+        },
+        {
+            "userCode": "xufqbase",
+            "userId": 1087,
+            "userName": "许风琴"
+        },
+        {
+            "userCode": "xuqc",
+            "userId": 1363,
+            "userName": "徐权春"
+        }
+    ],
+    "Z": [
+        {
+            "userCode": "zhangll",
+            "userId": 992,
+            "userName": "张丽玲"
+        },
+        {
+            "userCode": "zhaohui",
+            "userId": 1135,
+            "userName": "赵辉"
+        },
+        {
+            "userCode": "zhangyan",
+            "userId": 1137,
+            "userName": "张岩"
+        },
+        {
+            "userCode": "zyuser",
+            "userId": 1175,
+            "userName": "zyuser"
+        },
+        {
+            "userCode": "xm123",
+            "userId": 1615,
+            "userName": "张三"
+        },
+        {
+            "userCode": "zhuyx",
+            "userId": 1192,
+            "userName": "朱燕贤"
+        },
+        {
+            "userCode": "zhangxy",
+            "userId": 1704,
+            "userName": "张学友"
+        },
+        {
+            "userCode": "zhjfztb",
+            "userId": 1012,
+            "userName": "郑剑锋（招投标）"
+        },
+        {
+            "userCode": "t001",
+            "userId": 1448,
+            "userName": "张三三三"
+        },
+        {
+            "userCode": "zhjh",
+            "userId": 1717,
+            "userName": "zhjh"
+        },
+        {
+            "userCode": "zhtest",
+            "userId": 1180,
+            "userName": "zhtest"
+        }
+    ]
+}

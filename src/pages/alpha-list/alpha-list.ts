@@ -40,7 +40,7 @@ export class AlphaListPage {
     private http: HttpService
   ) {
 
-    this.http.get("http://192.168.2.17:8081/contacts.json").subscribe(res => {
+    this.http.get("assets/data/contacts.json").subscribe(res => {
 
       this.remitBanks = res;
       console.log(this);
