@@ -1,0 +1,56 @@
+
+.sort-btn {
+  position: absolute;
+  width: 107%;
+  left: 0;
+  bottom: 25px;
+  padding-left: 7%;
+  overflow: hidden;
+  .btn-cancle {
+    float: left;
+    width: 20%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    text-align: center;
+    color: $main-text;
+    border: 1px solid $main-text;
+    background-color: white;
+  }
+  .btn-sure {
+    float: left;
+    width: 52%;
+    margin-left: 6.3%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    background-color: $green;
+  }
+}
+
+
+.btn-cancle {
+  float: left;
+  width: 20%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  text-align: center;
+  color: $main-text;
+  border: 1px solid $main-text;
+}
+
+.btn-sure {
+  float: left;
+  width: 52%;
+  margin-left: 6.3%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  background-color: $green;
+}
+

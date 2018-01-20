@@ -22,7 +22,6 @@ export class MyPage {
     private app: App
   ) {
   }
-
   goMap() {
     this.app.getRootNav().push('MapPage', {
       id: "1",

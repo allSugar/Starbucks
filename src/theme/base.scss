@@ -1,3 +1,17 @@
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+em {
+  font-style: normal;
+}
+
 [ion-button].button-md,
 [ion-button].button-ios {
   @include box_shadow(none);
