@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 * {
   padding: 0;
@@ -10,6 +11,16 @@ li {
 
 em {
   font-style: normal;
+=======
+em.text {
+  font-style: normal;
+  font-size: 14px;
+}
+
+.content.content-md,
+.content.content-ios {
+  color: $main-text;
+>>>>>>> Stashed changes
 }
 
 [ion-button].button-md,
@@ -24,7 +35,8 @@ ion-header.header {
   }
   .toolbar-background-ios,
   .toolbar-background-md {
-    background: rgba(52, 61, 79, 1);
+    background: $blue;
+    border-bottom: 1px solid $black-blue;
   }
   .toolbar-title {
     color: white;

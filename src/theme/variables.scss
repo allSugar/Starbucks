@@ -4,6 +4,7 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 $icon-path: "../assets/imgs/icon.png";
+$bg-image: "../assets/imgs/bg/";
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
@@ -46,20 +47,15 @@ $colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4
 @import "ionic.ionicons";
 // Fonts
 // --------------------------------------------------
-
 @import "roboto";
 @import "noto-sans";
-
 $main-text: #1b1b1b;
-
 $secondary-text: #7f8393;
-
+$blue:#343d4f;
+$black-blue: #273043;
 $border: #e2e7eb;
-
 $box-border: #d6d6d6;
-
 $green: #05d1af;
-
 @mixin transform($content) {
   -webkit-transform: $content;
   -moz-transform: $content;
@@ -103,7 +99,7 @@ $green: #05d1af;
 @mixin border_radius($radius:4px) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
-  border-radius:$radius;
+  border-radius: $radius;
 }
 
 @import 'base';

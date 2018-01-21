@@ -1,14 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, App } from 'ionic-angular';
 
-/**
- * Generated class for the MyPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-// baidu map
-
 @Component({
   selector: 'page-my',
   templateUrl: 'my.html',
@@ -47,6 +39,13 @@ export class MyPage {
     this.app.getRootNav().push('AlphaListPage', {
       id: "4",
       name: "AlphaScroll"
+    });
+  }
+
+  goCard() {
+    this.app.getRootNav().push('CardPage', {
+      id: "5",
+      name: "CardPage"
     });
   }
 
