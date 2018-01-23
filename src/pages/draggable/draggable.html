@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>draggable</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="reset()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="draggable" drag (dragsuccess)="success($event)"></div>
+</ion-content>

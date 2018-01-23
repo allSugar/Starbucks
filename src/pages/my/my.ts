@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, App } from 'ionic-angular';
 
+import { DraggablePage } from '../draggable/draggable';
+
 @Component({
   selector: 'page-my',
   templateUrl: 'my.html',
@@ -46,6 +48,13 @@ export class MyPage {
     this.app.getRootNav().push('CardPage', {
       id: "5",
       name: "CardPage"
+    });
+  }
+
+  goDrag() {
+    this.app.getRootNav().push(DraggablePage, {
+      id: "6",
+      name: "DragPage"
     });
   }
 
