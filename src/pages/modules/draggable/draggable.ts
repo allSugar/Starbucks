@@ -26,6 +26,10 @@ export class DraggablePage {
   ionViewDidLoad() {
   }
 
+  getModule(e){
+    console.log(e);
+  }
+
   reset() {
     this.processed = false;
     if (this.status) {

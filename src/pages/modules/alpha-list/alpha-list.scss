@@ -22,7 +22,6 @@
     margin: 6px 6px !important;
   }
   .letter {
-    width: 30px;
     position: fixed;
     right: 0;
     top: 110px;
@@ -30,13 +29,14 @@
     justify-content: center;
     align-items: center;
     .letter-right {
-      font-size: 14px;
+      font-size: 12px;
       display: flex;
       flex-direction: column;
       flex-flow: 1;
       background: #ebebeb;
       color: #328fc3;
-      border-top-left-radius: 6px;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
       align-items: center;
       span {
         display: block;

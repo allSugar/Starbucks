@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, Content, ToastController } from 'ionic-angular';
-import { HttpService } from "../../model/HttpService";
+import { HttpService } from "../../../model/HttpService";
 
 @IonicPage()
 @Component({

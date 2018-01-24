@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, App } from 'ionic-angular';
 
-import { DraggablePage } from '../draggable/draggable';
+import { DraggablePage } from '../modules/draggable/draggable';
 
 @Component({
   selector: 'page-my',

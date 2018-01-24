@@ -11,8 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { MyPage } from '../pages/my/my';
-import { DraggablePage } from '../pages/draggable/draggable';
-
+import { DraggablePage } from '../pages/modules/draggable/draggable';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
