@@ -192,121 +192,6 @@ page-about {
     }
   }
 
-  .category {
-    display: none;
-    position: relative;
-    background-color: white;
-    .category-list {
-      overflow: hidden;
-      border-bottom: 1px solid $border;
-      .category-item {
-        position: relative;
-        float: left;
-        line-height: 15px;
-        padding: 12px 6.7% 12px 6.9%;
-        font-size: 15px;
-        color: $secondary-text;
-        &.rank {
-          &:before {
-            position: absolute;
-            right: 14%;
-            top: 13px;
-            content: '';
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-bottom: 6px solid $secondary-text;
-          }
-          &:after {
-            position: absolute;
-            right: 14%;
-            top: 20px;
-            content: '';
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 6px solid $main-text;
-          }
-        }
-        &.time {
-          &:after {
-            position: absolute;
-            right: 10%;
-            top: 16px;
-            content: '';
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-top: 6px solid $secondary-text;
-          }
-        }
-        &.active {
-          color: $main-text;
-        }
-      }
-      .sort {
-        position: relative;
-        float: right;
-        line-height: 15px;
-        padding: 12px 5.6% 12px 4%;
-        color: $secondary-text;
-        &:before {
-          position: absolute;
-          left: 0;
-          top: 10px;
-          content: '';
-          width: 1px;
-          height: 19px;
-          background-color: $secondary-text;
-        }
-      }
-    }
-    .time-form {
-      position: absolute;
-      left: 0;
-      top: 40px;
-      padding: 0 6.9% 80px 6.9%;
-      width: 100%;
-      background-color: white;
-      .time-input {
-        padding: 26px 0 26px 6.5%;
-        overflow: hidden;
-        input {
-          float: left;
-          width: 38%;
-          height: 35px;
-          padding-left: 8%;
-          border: 1px solid $border;
-        }
-        .br {
-          width: 4%;
-          height: 1px;
-          float: left;
-          margin: 16px 4%;
-          background-color: #ccc;
-        }
-      }
-      .time-list {
-        margin-bottom: 20px;
-        overflow: hidden;
-        .item {
-          float: left;
-          width: 22.5%;
-          height: 26px;
-          line-height: 26px;
-          margin-right: 3%;
-          text-align: center;
-          border: 1px solid $box-border;
-          &:last-child {
-            margin-right: 0;
-          }
-          &.active {
-            color: $green;
-            background-color: rgba(5,209,175,.1);
-            border: 1px solid $green;
-          }
-        }
-      }
-    }
-  }
-
   .sort-page {
     position: absolute;
     left: 0;
@@ -374,7 +259,7 @@ page-about {
             content: url("../assets/imgs/problem/problem_#{$i}.png");
           }
           .num {
-            line-height: 24px;
+            line-height: 20px;
             text-align: center;
             color: $main-text;
             em {
@@ -388,5 +273,50 @@ page-about {
       }
     }
   }
+
+  .status-page {
+    padding-top: 35px;
+    @for $i from 1 to 3 {
+      .status-item-#{$i} {
+        width: 83%;
+        height: 100px;
+        padding: 22px 5% 24px 12%;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url("../assets/imgs/status/bg_warm_#{$i}.png");
+        background-size: cover;
+      }
+    }
+    .icon-warn {
+      float: left;
+      width: 55px;
+      height: 58px;
+      background-image: url("../assets/imgs/status/icon_warn.png");
+      background-size: cover;
+    }
+    .icon-normal {
+      float: left;
+      width:62px;
+      height:58px;
+      background-image: url("../assets/imgs/status/icon_normal.png");
+      background-size: cover;
+    }
+    .word {
+      float: left;
+      margin-left: 10%;
+      line-height: 58px;
+    }
+    @for $i from 1 to 3 {
+      .icon-selected-#{$i} {
+        float: right;
+        width: 20px;
+        height: 20px;
+        margin-top: 18px;
+        background-image: url("../assets/imgs/status/icon_selected_#{$i}.png");
+        background-size: cover;
+      }
+    }
+  }
+
 
 }
