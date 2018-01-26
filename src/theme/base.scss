@@ -79,6 +79,17 @@ ion-header.header {
   min-width: 0 !important;
 }
 
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: ' ';
+  width: 0;
+  display: block;
+  clear: both;
+}
+
 .f-left {
   float: left;
 }
