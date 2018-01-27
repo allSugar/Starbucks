@@ -10,5 +10,5 @@
 </ion-header>
 
 <ion-content>
-  <div class="draggable" (tap)="getModule($event)" drag ></div>
+  <div class="draggable" drag (dragend)="dragend($event)"></div>
 </ion-content>

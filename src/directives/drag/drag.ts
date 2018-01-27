@@ -1,4 +1,4 @@
-import { Directive, OnChanges, ElementRef, Renderer, Renderer2 } from '@angular/core';
+import { Directive, OnChanges, Output, EventEmitter, ElementRef, Renderer, Renderer2 } from '@angular/core';
 import { DomController } from 'ionic-angular';
 
 @Directive({
@@ -6,7 +6,7 @@ import { DomController } from 'ionic-angular';
 })
 export class DragDirective implements OnChanges {
 
-  // @Output('dragStart') success = new EventEmitter<any>();
+  @Output() dragend = new EventEmitter<any>();
 
   pressOffsetLeft: number = 0;
   pressOffsetTop: number = 0;
@@ -14,10 +14,7 @@ export class DragDirective implements OnChanges {
   startingOffsetTop: number = 0;
   startingOffsetLeft: number = 0;
 
-  newOffsetLeft: number = 0;
-  newOffsetTop: number = 0;
-
-  dragStatus:Boolean = false;
+  dragStatus: Boolean = false;
 
 
   constructor(
@@ -29,58 +26,58 @@ export class DragDirective implements OnChanges {
 
   }
 
-  ngOnChanges(changes) {
-    console.log(changes);
-  }
-
   ngAfterViewInit() {
-    let hammer = new window['Hammer'](this.elementRef.nativeElement);
+    let hammer: any = new window['Hammer'](this.elementRef.nativeElement);
 
     hammer.get('press').set({ time: 0 });
 
+    // "press"
     hammer.on('press', (ev) => {
-      // "press"
       this.press(ev);
     });
 
     hammer.get('pan').set({ direction: window['Hammer'].DIRECTION_ALL });
 
+    // "handle"
     hammer.on('pan', (ev) => {
-      // "handle"
-      if(this.dragStatus) this.handlePan(ev);
+      if (this.dragStatus) this.handlePan(ev);
     });
 
+    // "end"
     hammer.on('panend', (ev) => {
-      // "end"
-      if(this.dragStatus) this.handleclosepan(ev);
+      if (this.dragStatus) this.handleclosepan(ev);
     })
 
   }
   press(ev) {
     this.pressOffsetLeft = ev.center.x;
     this.pressOffsetTop = ev.center.y;
-    if(this.pressOffsetLeft && this.pressOffsetTop) this.dragStatus = true;
+    if (this.pressOffsetLeft && this.pressOffsetTop) this.dragStatus = true;
   }
 
   handlePan(ev) {
-    console.log('x:', ev.center.x - this.pressOffsetLeft, '--', 'y:', ev.center.y - this.pressOffsetTop);
-    this.newOffsetLeft = this.startingOffsetLeft + (ev.center.x - this.pressOffsetLeft);
-    this.newOffsetTop = this.startingOffsetTop + (ev.center.y - this.pressOffsetTop);
+    let dragOffsetLeft: number = ev.center.x,
+      dragOffsetTop: number = ev.center.y,
+      newOffsetLeft: number = 0,
+      newOffsetTop: number = 0;
+
+    newOffsetLeft = this.startingOffsetLeft + (dragOffsetLeft - this.pressOffsetLeft);
+    newOffsetTop = this.startingOffsetTop + (dragOffsetTop - this.pressOffsetTop);
+
+    this.pressOffsetLeft = dragOffsetLeft;
+    this.pressOffsetTop = dragOffsetTop;
+
+    this.startingOffsetLeft = newOffsetLeft;
+    this.startingOffsetTop = newOffsetTop;
 
     this.domCtrl.write(() => {
-      this.renderer.setElementStyle(this.elementRef.nativeElement, 'left', this.newOffsetLeft + 'px');
-      this.renderer.setElementStyle(this.elementRef.nativeElement, 'top', this.newOffsetTop + 'px');
+      this.renderer.setElementStyle(this.elementRef.nativeElement, 'left', newOffsetLeft + 'px');
+      this.renderer.setElementStyle(this.elementRef.nativeElement, 'top', newOffsetTop + 'px');
     });
   }
 
 
   handleclosepan(ev) {
-    console.log('------------------------');
-    console.log('x:', this.newOffsetLeft, '--', 'y:', this.newOffsetTop);
-    this.startingOffsetLeft = this.newOffsetLeft;
-    this.startingOffsetTop = this.newOffsetTop;
-    console.log('------------------------');
-    // console.log(this.elementRef, ev.center.x, ev.center.y);
+    this.dragend.emit(ev);
   }
-
 }
