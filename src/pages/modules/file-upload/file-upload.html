@@ -22,10 +22,12 @@
   <ion-toolbar color="primary">
       <ion-buttons>
         <button ion-button icon-left (click)="presentActionSheet()">
-          <ion-icon name="camera"></ion-icon>选择...
+          <ion-icon name="camera"></ion-icon>
+          <em class="text">选择...</em>
         </button>
         <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
-          <ion-icon name="cloud-upload"></ion-icon>上传
+          <ion-icon name="cloud-upload"></ion-icon>
+          <em class="text">上传</em>
         </button>
       </ion-buttons>
     </ion-toolbar>
