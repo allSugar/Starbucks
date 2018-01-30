@@ -58,6 +58,13 @@ export class MyPage {
     });
   }
 
+  gofileUpload(){
+    this.app.getRootNav().push('FileUploadPage', {
+      id: "7",
+      name: "FileUploadPage"
+    });
+  }
+
   ionViewDidLoad() {
 
   }

@@ -16,15 +16,14 @@ export class DragDirective implements OnChanges {
 
   dragStatus: Boolean = false;
 
-
   constructor(
     public elementRef: ElementRef,
     public renderer: Renderer,
     public domCtrl: DomController,
     public renderer2: Renderer2
-  ) {
+  ) { }
 
-  }
+  ngOnChanges() { }
 
   ngAfterViewInit() {
     let hammer: any = new window['Hammer'](this.elementRef.nativeElement);
@@ -49,6 +48,7 @@ export class DragDirective implements OnChanges {
     })
 
   }
+
   press(ev) {
     this.pressOffsetLeft = ev.center.x;
     this.pressOffsetTop = ev.center.y;

@@ -36,3 +36,4 @@ www/
 tsconfig.json*
 tslint.json*
 resources/
+plugins/

@@ -19,6 +19,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from "@angular/http";
 import { HttpService } from "../model/HttpService";
 
+import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera } from '@ionic-native/camera';
+
 @NgModule({
   declarations: [
     DragDirective,
@@ -53,6 +58,10 @@ import { HttpService } from "../model/HttpService";
     StatusBar,
     SplashScreen,
     HttpService,
+    File,
+    FileTransfer,
+    FilePath,
+    Camera,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
