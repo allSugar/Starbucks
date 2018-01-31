@@ -120,7 +120,7 @@ export class FileUploadPage extends BaseUI {
   public pathForImage(img) {
     if (img === null) {
       return '';
-    } else {
+    } else { 
       return normalizeURL(cordova.file.dataDirectory + img);
     }
   }
@@ -141,7 +141,7 @@ export class FileUploadPage extends BaseUI {
 
     const fileTransfer: FileTransferObject = this.transfer.create();
 
-    var loading = super.showLoading(this.loadingCtrl, "上传中...");
+    var loading = super.showLoading(this.loadingCtrl, targetPath);
 
     //开始正式地上传
     fileTransfer.upload(targetPath, url, options).then(data => {
