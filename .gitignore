@@ -19,21 +19,20 @@ npm-debug.log*
 .versions/
 coverage/
 dist/
-node_modules/
 tmp/
 temp/
 hooks/
-platforms/
-www/
 $RECYCLE.BIN/
 
 .DS_Store
 Thumbs.db
-UserInterfaceState.xcuserstate
+UserInterfaceState.xcuserstatels
+
 node_modules/
 platforms/
+resources/
+plugins/
+typings/
 www/
 tsconfig.json*
 tslint.json*
-resources/
-plugins/
