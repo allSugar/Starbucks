@@ -442,4 +442,98 @@ page-about {
     }
   }
 
+  .media-focus {
+    margin-top: 10px;
+    .focus-head {
+      width: 100%;
+      padding: 12px 12px;
+      overflow: hidden;
+      background-color: white;
+      .icon-house {
+        float: left;
+        width: 18px;
+        height: 16px;
+        margin-right: 6px;
+        margin-top: 2px;
+        content: url("../assets/imgs/focus/house.png");
+      }
+      .icon-arrow-right {
+        float: left;
+        width: 6px;
+        height: 11px;
+        margin-left: 10px;
+        margin-top: 5px;
+        content: url("../assets/imgs/arrow-right.png");
+      }
+      .icon-light {
+        float: right;
+        width: 12px;
+        height: 12px;
+        margin-top: 3px;
+        content: url("../assets/imgs/focus/light.png");
+      }
+      .shop-name {
+        float: right;
+        margin-left: 4px;
+        color: $green;
+      }
+    }
+    .focus-detail {
+      width: 100%;
+      height: 100px;
+      padding: 15px;
+      .focus-title {
+        height: 18px;
+        overflow: hidden;
+        .type {
+          float: left;
+          width: 34px;
+          line-height: 18px;
+          text-align: center;
+          margin-right: 12px;
+          font-size: 11px;
+          font-family:PingFangSC-Thin;
+        }
+        .crash {
+          color: #F82A14;
+          background-color:rgba(248,42,20,.2);
+        }
+        .general {
+          color: #13B9FE;
+          background-color:rgba(19,185,254,.2);
+        }
+        .focus-time {
+          float: right;
+          line-height: 18px;
+          font-size: 12px;
+          color: $secondary-text;
+        }
+      }
+      .focus-img {
+        margin-top: 15px;
+        overflow: hidden;
+        img {
+          float: left;
+          width: 40px;
+          height: 40px;
+          margin-right: 5px;
+        }
+        .point-img {
+          float: left;
+          width: 32px;
+          height: 6px;
+          margin-top: 6px;
+          content: url("../assets/imgs/point.png")
+        }
+      }
+    }
+    .order {
+      padding: 19px 15px;
+      color: $secondary-text;
+      background-color: white;
+      p + p{
+        margin-top: 14px;
+      }
+    }
+  }
 }
