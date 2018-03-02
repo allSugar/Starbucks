@@ -336,16 +336,7 @@ page-about {
       margin-left: 10%;
       line-height: 58px;
     }
-    @for $i from 1 to 3 {
-      .icon-selected-#{$i} {
-        float: right;
-        width: 20px;
-        height: 20px;
-        margin-top: 18px;
-        background-image: url("../assets/imgs/status/icon_selected_#{$i}.png");
-        background-size: cover;
-      }
-    }
+
   }
 
   .wait-img {
@@ -518,12 +509,13 @@ page-about {
           height: 40px;
           margin-right: 5px;
         }
-        .point-img {
+        .point-s-img {
           float: left;
-          width: 32px;
-          height: 6px;
-          margin-top: 6px;
-          content: url("../assets/imgs/point.png")
+          width: 16px;
+          height: 4px;
+          margin-left: 15px;
+          margin-top: 18px;
+          content: url("../assets/imgs/point_s.png")
         }
       }
     }
@@ -534,6 +526,17 @@ page-about {
       p + p{
         margin-top: 14px;
       }
+    }
+    .price {
+      padding: 17px 15px;
+      color: $red;
+      font-size: 18px;
+      background-color: white;
+      text-align: right;
+    }
+    .empty {
+      height: 25px;
+      background-color: white;
     }
   }
 }

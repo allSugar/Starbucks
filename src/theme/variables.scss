@@ -49,6 +49,7 @@ $colors: ( primary: #488aff, secondary: #32db64, danger: #f53d3d, light: #f4f4f4
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
+
 $main-text: #1b1b1b;
 $secondary-text: #7f8393;
 $blue:#343d4f;
@@ -56,6 +57,8 @@ $black-blue: #273043;
 $border: #e2e7eb;
 $box-border: #d6d6d6;
 $green: #05d1af;
+$red: #fc3d31;
+
 @mixin transform($content) {
   -webkit-transform: $content;
   -moz-transform: $content;
@@ -105,3 +108,4 @@ $green: #05d1af;
 @import 'base';
 @import 'comm';
 @import 'feedBtn';
+@import 'icon';
