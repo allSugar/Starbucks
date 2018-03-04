@@ -25,30 +25,32 @@ em.text {
 }
 
 ion-header.header {
-  .toolbar {
-    min-height: 48px
-  }
-  .toolbar-background-ios,
-  .toolbar-background-md {
-    background: $blue;
-    border-bottom: 1px solid $black-blue;
-  }
-  .toolbar-title {
-    color: white;
-    font-size: 18px;
-    font-weight: 400;
-    text-align: center;
-  }
-  ion-title {
-    left: 0;
-    top: 0;
-    padding: 0 90px 1px;
-    position: absolute;
-    width: 100%;
-    height: 48PX;
-  }
-  &:after {
-    display: none;
+  ion-navbar {
+    &.toolbar {
+      min-height: 48px
+    }
+    .toolbar-background-ios,
+    .toolbar-background-md {
+      background: $blue;
+      border-bottom: 1px solid $black-blue;
+    }
+    .toolbar-title {
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+    }
+    ion-title {
+      left: 0;
+      top: 0;
+      padding: 0 90px 1px;
+      position: absolute;
+      width: 100%;
+      height: 48PX;
+    }
+    &:after {
+      display: none;
+    }
   }
 }
 

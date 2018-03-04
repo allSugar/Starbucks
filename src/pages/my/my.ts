@@ -58,13 +58,19 @@ export class MyPage {
     });
   }
 
-  gofileUpload(){
+  goFileUpload(){
     this.app.getRootNav().push('FileUploadPage', {
       id: "7",
       name: "FileUploadPage"
     });
   }
 
+  goCalendar(){
+    this.app.getRootNav().push('CalendarPage', {
+      id: "8",
+      name: "CalendarPage"
+    });
+  }
   ionViewDidLoad() {
 
   }

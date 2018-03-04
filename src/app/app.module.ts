@@ -1,6 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { CalendarModule } from 'ion2-calendar';
 import { MyApp } from './app.component';
 
 import { DragDirective } from '../directives/drag/drag';
@@ -24,6 +25,7 @@ import { FileTransfer } from '@ionic-native/file-transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 
+
 @NgModule({
   declarations: [
     DragDirective,
@@ -39,6 +41,7 @@ import { Camera } from '@ionic-native/camera';
   imports: [
     BrowserModule,
     HttpModule,
+    CalendarModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '',//按钮内容
     })
