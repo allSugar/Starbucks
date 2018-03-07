@@ -24,6 +24,10 @@ ion-calendar-modal {
       color: $main-text;
       height: 48px;
       background-color: transparent;
+      & li:first-child,
+      & li:last-child {
+        color: $green;
+      }
     }
   }
   .month-box {
