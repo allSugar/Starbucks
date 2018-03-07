@@ -1,3 +1,65 @@
-page-calendar {
-
+ion-calendar-modal {
+  .bar-buttons-md[start] {
+    order: 1;
+  }
+  h4.month-title {
+    padding: 0 2rem;
+    margin-top: 2rem;
+    text-align: left;
+    color: $main-text;
+  }
+  .bar-button {
+    font-size: 1.4rem;
+  }
+  .header {
+    &::after {
+      display: none;
+    }
+    .toolbar-background {
+      border-bottom: 1px solid $border;
+    }
+  }
+  .week-toolbar {
+    .week-title {
+      color: $main-text;
+      height: 48px;
+      background-color: transparent;
+    }
+  }
+  .month-box {
+    border-bottom-width: 0;
+    padding-bottom: 0;
+  }
+  ion-calendar-month {
+    .days-box {
+      padding-top: 2.4rem;
+      padding-bottom: 0;
+    }
+    .primary {
+      button.days-btn small,
+      .days .marked p,
+      .days .today p {
+        color: $green;
+        font-weight: 400;
+      }
+      .days .today.on-selected p {
+        font-weight: 400;
+      }
+      .days .on-selected,
+      .startSelection button.days-btn,
+      .endSelection button.days-btn {
+        background-color: $green;
+        font-weight: 500;
+      }
+      .startSelection:after,
+      .days.between,
+      .between button.days-btn,
+      .endSelection:after {
+        background-color: $green-light;
+      }
+      .between button.days-btn p {
+        color: #333;
+      }
+    }
+  }
 }

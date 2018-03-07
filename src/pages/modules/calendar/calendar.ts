@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, ModalController } from 'ionic-angular';
 import { CalendarModal, CalendarModalOptions } from 'ion2-calendar';
-import { WeekDay } from '@angular/common';
 
 @IonicPage()
 
