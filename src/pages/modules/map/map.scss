@@ -1,4 +1,7 @@
 page-map {
+  .scroll-content {
+    -webkit-overflow-scrolling: auto !important;
+  }
   #container {
     width: 100%;
     height: 100%;
