@@ -30,7 +30,7 @@ UserInterfaceState.xcuserstatels
 
 node_modules/
 platforms/
-
+resources/
 plugins/
 typings/
 www/
