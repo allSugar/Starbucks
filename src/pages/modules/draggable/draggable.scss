@@ -1,4 +1,7 @@
 page-draggable {
+  .scroll-content {
+    -webkit-overflow-scrolling: auto !important;
+  }
   .draggable {
     position: absolute;
     width: 50px;
