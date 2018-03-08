@@ -9,7 +9,7 @@ ion-calendar-modal {
     color: $main-text;
   }
   .bar-button {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
   .header {
     &::after {
@@ -21,8 +21,10 @@ ion-calendar-modal {
   }
   .week-toolbar {
     .week-title {
-      color: $main-text;
       height: 48px;
+      padding: 12px 0 14px 0;
+      font-size: 1.6rem;
+      color: $main-text;
       background-color: transparent;
       & li:first-child,
       & li:last-child {
@@ -36,10 +38,12 @@ ion-calendar-modal {
   }
   ion-calendar-month {
     .days-box {
-      padding-top: 2.4rem;
-      padding-bottom: 0;
+      padding: 2.4rem 0 0 0;
     }
     .primary {
+      .days .today {
+        border: 1px solid $green;
+      }
       button.days-btn small,
       .days .marked p,
       .days .today p {

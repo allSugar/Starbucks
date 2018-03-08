@@ -67,12 +67,6 @@ $tabImageName: 'tab1' 'tab2' 'tab3' 'tab4';
   @include transform_origin(50% 150%);
 }
 
-.tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
-  @include transform(translate3d(0,
-  -2px,
-  0));
-}
-
 .tabs-md .tab-button {
   &[aria-selected=true] {
     color: #05d1af;

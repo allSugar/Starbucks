@@ -24,10 +24,9 @@
   .letter {
     position: fixed;
     right: 0;
-    top: 110px;
+    top: 50%;
+    @include transform(translateY(-50%));
     z-index: 10001;
-    justify-content: center;
-    align-items: center;
     .letter-right {
       font-size: 12px;
       display: flex;

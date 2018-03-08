@@ -14,15 +14,15 @@ export class AlphaListPage {
   /*搜索的关键字*/
   searchInput: string = '';
   /*请求通讯录的值*/
-  contactsUrl = './contacts.json';
+  contactsUrl: string = './contacts.json';
   /*字母的初始化*/
-  aLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  letters = [];
+  aLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  letters: any[] = [];
   formatContacts: any = []; //按首字母顺序格式化后的数组
   searchingItems = []; //搜索显示的数组
   searchLetters = [];
-  isSearching = false;
-  callback: any;
+  isSearching: Boolean = false;
+  callback: Function;
   toast: any;
   remitBanks: any;
 
@@ -33,18 +33,14 @@ export class AlphaListPage {
     public elementRef: ElementRef,
     private http: HttpService
   ) {
-
     this.http.get("assets/data/contacts.json").subscribe(res => {
-
       this.remitBanks = res;
-      console.log(this);
       this.aLetters.forEach((res, index) => {
         if (this.remitBanks[res] && this.remitBanks[res].lenght != 0) {
           this.formatContacts.push(this.remitBanks[res]);
           this.letters.push(res);
         }
       })
-
     }, error => {
 
     });
@@ -60,7 +56,6 @@ export class AlphaListPage {
    *定位查找首字母对应的通讯录
    */
   scrollToTop(letter, event) {
-    console.log(letter, event);
     this.show(letter, 1000);
     if (this.elementRef.nativeElement.querySelector("ion-item-divider#" + letter)) {
       let scrollTop = this.elementRef.nativeElement.querySelector("ion-item-divider#" + letter).offsetTop;
