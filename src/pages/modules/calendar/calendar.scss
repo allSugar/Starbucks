@@ -40,6 +40,16 @@ ion-calendar-modal {
     .days-box {
       padding: 2.4rem 0 0 0;
     }
+    .days {
+      margin-bottom: 10px;
+      .on-selected p {
+        font-size: 1.6rem;
+      }
+    }
+    button.days-btn p {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
     .primary {
       .days .today {
         border: 1px solid $green;
