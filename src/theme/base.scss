@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
 li {
   list-style: none;
 }
@@ -93,11 +98,11 @@ ion-header.header {
 }
 
 .f-left {
-  float: left;
+  float: left !important;
 }
 
 .f-right {
-  float: right;
+  float: right !important;
 }
 
 li {
@@ -111,4 +116,9 @@ li {
 .p-t-b-xl {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
+}
+
+.p-t-b-xxl {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }

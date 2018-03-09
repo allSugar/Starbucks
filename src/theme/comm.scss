@@ -5,7 +5,9 @@
       margin-left: 5%;
       padding: 15px 0;
       line-height: 15px;
-      border-bottom: 1px solid $border;
+      & + .stage {
+        border-top: 1px solid $border;
+      }
       overflow: hidden;
       img {
         float: left;
@@ -66,84 +68,32 @@
         }
       }
 
-      [class*='radio-icon-'] {
-        position: relative;
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        margin-left: 8px;
-        margin-right: 5%;
-        border-radius: 50%;
-        &:before {
-          content: '';
-          position: absolute;
-          left: -4px;
-          top: -4px;
-          width: 7px;
-          height: 7px;
-          border: 4px solid;
-          border-radius: 50%;
-        }
-      }
-      .radio-icon-green {
-        background-color: rgba(5,209,175,.6);
-        &:before {
-          border-color: rgba(5,209,175,.3);
-        }
-      }
-      .radio-icon-yellow {
-        background-color: rgba(255,160,84,.6);
-        &:before {
-          border-color: rgba(255, 160, 84, .3);
-        }
-      }
-      .radio-icon-pink {
-        background-color: rgba(254,141,176,.6);
-        &:before {
-          border-color: rgba(254,141,176, .3);
-        }
-      }
-      .radio-icon-blue {
-        background-color: rgba(75,219,255,.6);
-        &:before {
-          border-color: rgba(75,219,255, .3);
-        }
-      }
-      .radio-icon-purple {
-        background-color: rgba(156,143,254,.6);
-        &:before {
-          border-color: rgba(156,143,254, .3);
-        }
-      }
-      .radio-icon-gray {
-        background-color: rgba(151,166,197,.6);
-        &:before {
-          border-color: rgba(151,166,197, .3);
-        }
+      .file-name {
+        float: left;
+        font-size: 16px;
+        line-height: 50px;
       }
     }
 
   }
   
-  .shop-list {
-    .stage {
-      width: 100%;
-      margin-left: 0;
-      padding-left: 5%;
-      border-top: none !important;
-      border-top: 1px solid $border;
-      img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
-      .title {
-        line-height: 40px;
-      }
+.shop-list {
+  .stage {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 5%;
+    border-top: none !important;
+    border-top: 1px solid $border;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
     }
-
-
+    .title {
+      line-height: 40px;
+    }
   }
+}
 
 .category {
   position: relative;
@@ -288,3 +238,10 @@
   }
 }
 
+.media-ibox {
+  background-color: white;
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: hidden;
+}

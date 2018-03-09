@@ -539,4 +539,164 @@ page-about {
       background-color: white;
     }
   }
+
+  .import-img {
+    padding-top: 3px;
+    .media-img {
+      position: relative;
+      float: left;
+      width: 32%;
+      margin-bottom: 3px;
+      margin-left: .8%;
+      img {
+        width: 100%;
+      }
+      [class*='icon-radio-'] {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .explain {
+    margin-top: 10px;
+    padding: 15px 15px 19px;
+    background-color: white;
+    .explain-head {
+      line-height: 25px;
+      overflow: hidden;
+      .title {
+        float: left;
+        font-size: 17px;
+        color: $gray;
+      }
+      .time {
+        float: right;
+        font-size: 10px;
+        color: $gray-light;
+      }
+    }
+    .explain-content {
+      margin-top: 20px;
+      font-size: 15px;
+      color: $gray;
+    }
+    .explain-footer {
+      margin-top: 52px;
+      overflow: hidden;
+      img {
+        float: left;
+        width: 50px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  //报价
+  .quote {
+    float: left;
+    width: 50%;
+    height: 40px;
+    font-size: 11px;
+    color: $gray-light;
+    .count {
+      font-family: Microsoft YaHei;
+      font-size: 18px;
+      margin-top: 10px;
+      color: black;
+    }
+  }
+
+  .sub-orders {
+    color: $gray;
+    .title {
+      position: relative;
+      margin-bottom: 28px;
+      margin-top: 0;
+      color: $gray;
+      font-size: 16px;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: 0;
+        width: 3px;
+        height: 18px;
+        background-color: $green;
+      }
+    }
+    .sub-title {
+      margin-bottom: 12px;
+      margin-top: 0;
+      font-size: 14px;
+      color: $gray-light;
+    }
+    .type-detail {
+      margin-bottom: 36px;
+      li + li {
+        margin-top: 11px;
+      }
+      span {
+        padding: 4px 8px;
+        font-size: 12px;
+        border-radius: 17px;
+        color: #7DE2B8;
+        background-color: #edfdf5;
+      }
+    }
+    .work-hours {
+      margin-bottom: 32px;
+      overflow: hidden;
+      span {
+        float: left;
+      }
+    }
+    .stuff {
+      overflow: hidden;
+      & + .stuff {
+        margin-top: 15px;
+      }
+      img {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      .intro {
+        float: left;
+        font-size: 17px;
+      }
+      .value {
+        float: right;
+        text-align: right;
+        font-size: 12px;
+        .price {
+          font-weight: bold;
+          font-family: PingFang SC;
+        }
+        .count {
+          color: $gray-light;
+        }
+      }
+    }
+  }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

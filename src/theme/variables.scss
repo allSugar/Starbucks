@@ -60,6 +60,9 @@ $box-border: #d6d6d6;
 $green: #05d1af;
 $green-light: #dffbf6;
 $red: #fc3d31;
+$gray: #333;
+$gray-light: #999;
+
 
 @mixin transform($content) {
   -webkit-transform: $content;

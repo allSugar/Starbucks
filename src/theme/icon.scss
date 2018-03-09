@@ -6,8 +6,108 @@
   background-size: cover;
 }
 .icon-radio-selected {
-  background-image: url("../assets/imgs/status/icon_selected.png");
+  content: url("../assets/imgs/status/icon_selected.png");
 }
 .icon-radio-unselected {
-  background-image: url("../assets/imgs/status/icon_unselected.png");
+  content: url("../assets/imgs/status/icon_unselected.png");
+}
+
+[class*='radio-icon-'] {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 8px;
+  margin-right: 5%;
+  border-radius: 50%;
+  &:before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    width: 7px;
+    height: 7px;
+    border: 4px solid;
+    border-radius: 50%;
+  }
+}
+.radio-icon-green {
+  background-color: rgba(5,209,175,.6);
+  &:before {
+    border-color: rgba(5,209,175,.3);
+  }
+}
+.radio-icon-yellow {
+  background-color: rgba(255,160,84,.6);
+  &:before {
+    border-color: rgba(255, 160, 84, .3);
+  }
+}
+.radio-icon-pink {
+  background-color: rgba(254,141,176,.6);
+  &:before {
+    border-color: rgba(254,141,176, .3);
+  }
+}
+.radio-icon-blue {
+  background-color: rgba(75,219,255,.6);
+  &:before {
+    border-color: rgba(75,219,255, .3);
+  }
+}
+.radio-icon-purple {
+  background-color: rgba(156,143,254,.6);
+  &:before {
+    border-color: rgba(156,143,254, .3);
+  }
+}
+.radio-icon-gray {
+  background-color: rgba(151,166,197,.6);
+  &:before {
+    border-color: rgba(151,166,197, .3);
+  }
+}
+
+.icon-file {
+  float: left;
+  width: 60px;
+  height: 50px;
+  margin: 0 15px;
+  content: url("../assets/imgs/import/file.png");
+}
+
+[class*='icon-explain-'] {
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+.icon-explain-blue {
+  content: url("../assets/imgs/icon/icon_explain_blue.png");
+}
+.icon-explain-yellow {
+  content: url("../assets/imgs/icon/icon_explain_yellow.png");
+}
+
+[class*='icon-total-'] {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 9px;
+
+}
+.icon-total-money {
+  content: url("../assets/imgs/icon/icon_total_money.png");
+}
+.icon-total-time {
+  content: url("../assets/imgs/icon/icon_total_time.png");
+}
+
+.icon-clock {
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-right: 6px;
+  content: url("../assets/imgs/icon/icon_clock.png");
 }
