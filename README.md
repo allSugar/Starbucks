@@ -1,6 +1,6 @@
 # BUG
 
-02-01
+### 02-01
 修改BUG
 ```
 events.js:160
@@ -15,3 +15,18 @@ Error: read ECONNRESET
 ```
 npm install @ionic/app-scripts@nightly --save-dev
 ```
+
+### 02-12
+防止ios惯性滑动
+```
+.scroll-content{
+    -webkit-overflow-scrolling: auto !important;
+}
+```
+
+### 02-15
+
+.vscode增加[Markdown Theme Kit]插件  查看MD文件预览
+
+### 02-17 
+增加[ion-calendar]插件
