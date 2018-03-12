@@ -542,6 +542,7 @@ page-about {
 
   .import-img {
     padding-top: 3px;
+    overflow: hidden;
     .media-img {
       position: relative;
       float: left;
@@ -550,6 +551,7 @@ page-about {
       margin-left: .8%;
       img {
         width: 100%;
+        vertical-align: top;
       }
       [class*='icon-radio-'] {
         position: absolute;
@@ -638,6 +640,10 @@ page-about {
       li + li {
         margin-top: 11px;
       }
+      em:after {
+        content: '>';
+        margin-left: 3px;
+      }
       span {
         padding: 4px 8px;
         font-size: 12px;
@@ -683,7 +689,56 @@ page-about {
     }
   }
 
-
+  //店面信息
+  .store-info {
+    position: relative;
+    width: 100%;
+    height: 242px;
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+    background-image: url("../assets/imgs/bg/bg_store.png");
+    background-size: cover;
+    overflow: hidden;
+    .shop-logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -38px;
+      margin-top: -38px;
+      width: 75px;
+      height: 75px;
+      border: 2.5px solid rgba(255,255,255,.5);
+      border-radius: 50%;
+    }
+    .shop-name {
+      margin-top: 175px;
+      font-size: 16px;
+      font-family:PingFang-SC-Medium;
+    }
+    .shop-phone {
+      margin-top: 6px;
+    }
+  }
+  .phone-number {
+    font-size:16px;
+    color: $gray;
+    margin-bottom: 2px;
+  }
+  .store-manager {
+    color: #9197A0;
+    font-size: 12px;
+    span + span:before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 12px;
+      margin-left: 8px;
+      margin-right: 8px;
+      background-color: #9197A0;
+      vertical-align: middle;
+    }
+  }
 }
 
 
