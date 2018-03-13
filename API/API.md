@@ -1,6 +1,7 @@
 # 本地测试（http://localhost:8080/YunZhuServer/）
 # 外网测试（http://121.42.197.153:8080/YunZhuServer/）
 # 外网正式（http://www.sunanyun.com/）
+# API介绍 （http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
 
 ### 登录
 2.37　 根据用户名获取用户简要信息及账号列表
