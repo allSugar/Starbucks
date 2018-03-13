@@ -73,6 +73,24 @@
         font-size: 16px;
         line-height: 50px;
       }
+
+      .stage-news {
+        float: left;
+        width: 82%;
+        .news-name {
+          font-size: 16px;
+          .time {
+            float: right;
+            color: #ccc;
+            font-size: 12px;
+          }
+        }
+        .news-detail {
+          margin-top: 9px;
+          font-size: 13px;
+          color: #A4A5A8;
+        }
+      }
     }
 
   }

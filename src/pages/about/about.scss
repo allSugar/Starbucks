@@ -716,29 +716,33 @@ page-about {
       font-size: 16px;
       font-family:PingFang-SC-Medium;
     }
-    .shop-phone {
-      margin-top: 6px;
+  }
+  .media-phone {
+    margin-top: 5px !important;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    .phone-number {
+      font-size:16px;
+      color: $gray;
+      margin-bottom: 2px;
+    }
+    .store-manager {
+      color: #9197A0;
+      font-size: 12px;
+      span + span:before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 13px;
+        margin-left: 8px;
+        margin-right: 8px;
+        background-color: #9197A0;
+        vertical-align: middle;
+      }
     }
   }
-  .phone-number {
-    font-size:16px;
-    color: $gray;
-    margin-bottom: 2px;
-  }
-  .store-manager {
-    color: #9197A0;
-    font-size: 12px;
-    span + span:before {
-      content: '';
-      display: inline-block;
-      width: 1px;
-      height: 12px;
-      margin-left: 8px;
-      margin-right: 8px;
-      background-color: #9197A0;
-      vertical-align: middle;
-    }
-  }
+
 }
 
 

@@ -120,3 +120,33 @@
   content: url("../assets/imgs/icon/icon_phone.png");
 }
 
+[class *= 'icon-news-'] {
+  position: relative;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 4%;
+  background-size: cover;
+  .count {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 18px;
+    height: 18px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    background-color: #FD4343;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+}
+.icon-news-warm {
+  background-image: url("../assets/imgs/icon/icon_news_warm.png");
+}
+.icon-news-3d {
+  background-image: url("../assets/imgs/icon/icon_news_3d.png");
+}
+.icon-news-icloud {
+  background-image: url("../assets/imgs/icon/icon_news_icloud.png");
+}
