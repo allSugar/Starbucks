@@ -440,29 +440,6 @@ page-about {
       padding: 12px 12px;
       overflow: hidden;
       background-color: white;
-      .icon-house {
-        float: left;
-        width: 18px;
-        height: 16px;
-        margin-right: 6px;
-        margin-top: 2px;
-        content: url("../assets/imgs/focus/house.png");
-      }
-      .icon-arrow-right {
-        float: left;
-        width: 6px;
-        height: 11px;
-        margin-left: 10px;
-        margin-top: 5px;
-        content: url("../assets/imgs/arrow-right.png");
-      }
-      .icon-light {
-        float: right;
-        width: 12px;
-        height: 12px;
-        margin-top: 3px;
-        content: url("../assets/imgs/focus/light.png");
-      }
       .shop-name {
         float: right;
         margin-left: 4px;
@@ -543,7 +520,7 @@ page-about {
   .import-img {
     padding-top: 3px;
     overflow: hidden;
-    .media-img {
+    .item-img {
       position: relative;
       float: left;
       width: 32%;
