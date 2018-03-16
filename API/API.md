@@ -6,48 +6,68 @@
 ### 登录
 2.37　 根据用户名获取用户简要信息及账号列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=userManager.findUserAccount&userName=admin&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=userManager.findUserAccount&userName=admin&appkey=123456&appsecret=123456
 ```
 2.2　 用户登录
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=userManager.login&userName=admin&passWord=admin&accountId=1&appkey=123456&appsecret=123456&clientId=request
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=userManager.login&userName=admin&passWord=admin<br>
+&accountId=1&appkey=123456&appsecret=123456&clientId=request
 ```
 ### 首页
 10.5　 根据条件获取门店附件（全景图，门店照，使用说明）
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=store.findStoreFile&storeInfoIds=1,2,3&fileType=2&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=store.findStoreFile&storeInfoIds=1,2,3&fileType=2<br>
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 ### 我的
 11.34　 根据条件获取订单统计
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=repair.getStoreRepairOrderStatistics&storeStaffId=1&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=repair.getStoreRepairOrderStatistics&storeStaffId=1<br>
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 ### 门店管理
 10.2　 获取门店信息列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=store.findStoreInfo&storeStaffIds=1&storeStaffType=5&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=store.findStoreInfo&storeStaffIds=1&storeStaffType=5<br>
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 10.8　 获取门店员工列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=store.findStaffByStoreInfo&higherStaffUserId=1&higherStaffType=4&staffSource=2&staffType=5&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&
-appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=store.findStaffByStoreInfo&higherStaffUserId=1<br>
+&higherStaffType=4&staffSource=2&staffType=5&clientId=14a01fdab38b4bf3b93781e20aa3777b<br>
+&appkey=123456&appsecret=123456
 ```
 11.1　 根据门店ID或门店代码获取门店信息
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=repair.getStoreInfoByIdOrCode&id=5&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=repair.getStoreInfoByIdOrCode&id=5&clientId=14a01fdab38b4bf3b93781e20aa3777b<br>
+&appkey=123456&appsecret=123456
 ```
 ### 维修点管理
 10.11　 根据条件获取门店竣工资料
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=store.findStoreCompletionData&storeInfoId=1&topClass=1&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=store.findStoreCompletionData&storeInfoId=1&topClass=1<br>
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 10.14　 获取门店竣工资料附件（图片，图纸）
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=store.findStoreCompletionDataFile&storeCompletionDataId=1&fileType=2&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=store.findStoreCompletionDataFile&storeCompletionDataId=1<br>
+&fileType=2&clientId=14a01fdab38b4bf3b93781e20aa3777b\<br>
+&appkey=123456&appsecret=123456
 ```
 10.40　 根据条件获取点列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?method=store.findPoint&type=2&drawingId=5&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+http://localhost:8080/YunZhuServer/yunzhuApi/getData?<br>
+method=store.findPoint&type=2&drawingId=5&clientId=14a01fdab38b4bf3b93781e20aa3777b<br>
+&appkey=123456&appsecret=123456
 ```
 
 维修单（我关注的维修单）
