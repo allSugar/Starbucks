@@ -21,7 +21,13 @@ export class MyApp {
     splashScreen: SplashScreen,
     login: LoginService
   ) {
-    if (login.isLogin) this.rootPage = TabsPage
+    var _self = this;
+    login.isLoginFun(function (val) {
+      if (login.isLogin = !!val) {
+        login.userInfo = val;
+        _self.rootPage = TabsPage;
+      }
+    });
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

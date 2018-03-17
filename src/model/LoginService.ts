@@ -7,15 +7,16 @@ import { Storage } from '@ionic/storage';
 
 export class LoginService {
 
-  isLogin: Boolean = false;
+  isLogin: any = false;
   userInfo:Object;
 
   constructor(
     private storage: Storage
   ) {
-    var userInfo = this.storage.get('userInfo');
-    this.isLogin = !!userInfo;
-    if(this.isLogin) this.userInfo = userInfo;
+  }
+
+  isLoginFun(callback:any) {
+    this.storage.get('userInfo').then((val) => callback(val));
   }
 
   loginOut() {

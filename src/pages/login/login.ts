@@ -30,8 +30,6 @@ export class LoginPage {
     private toast: ToastService,
     private storage: Storage,
   ) {
-    // this.storage = storage;
-    console.log(this);
     var params = { method: "userManager.findAccount" };
     this.http.get(params).subscribe(res => {
       if (res.responseCode == 103010) {

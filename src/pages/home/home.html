@@ -1,43 +1,19 @@
-<ion-content overflow-scroll="false">
-  <div class="user">
-    <div class="user-head">
-      <div class="user-info">
-        <p class="name">马强</p>
-        <p class="introduce">北京星巴克有限公司 设施经理</p>
-        <img class="avatar" src="assets/imgs/change-before.png" alt="">
-      </div>
-      <ul class="data-list">
-        <li class="data-item">
-          <p class="num">4</p>
-          <p class="status">待接单</p>
-          <p class="underline"></p>
-        </li>
-        <li class="data-item">
-          <p class="num">5</p>
-          <p class="status">进行中</p>
-          <p class="underline"></p>
-        </li>
-        <li class="data-item">
-          <p class="num">0</p>
-          <p class="status">已完成</p>
-          <p class="underline"></p>
-        </li>
-      </ul>
-    </div>
+<ion-header>
 
-    <div class="stage-page">
-      <div class="stage">
-        <img class="user-img" src="assets/imgs/user/time.png" alt="">
-        <p class="user-title">维修总计工时</p>
-      </div>
-      <div class="stage">
-        <img class="user-img" src="assets/imgs/user/cost.png" alt="">
-        <p class="user-title">维修总计成本</p>
-      </div>
-      <div class="stage">
-        <img class="user-img" src="assets/imgs/user/password.png" alt="">
-        <p class="user-title">修改密码</p>
-      </div>
-    </div>
-  </div>
+  <ion-navbar>
+    <ion-title>插件</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button (click)="goMap()">地图</button>
+  <button ion-button (click)="goChart()">chart</button>
+  <button ion-button (click)="goSlide()">slide</button>
+  <button ion-button (click)="goAlphaScroll()">alphaScroll</button>
+  <button ion-button (click)="goCard()">卡片</button>
+  <button ion-button (click)="goDrag()">拖拽</button>
+  <button ion-button (click)="goFileUpload()">上传图片和相机</button>
+  <button ion-button (click)="goCalendar()">calendar</button>
 </ion-content>

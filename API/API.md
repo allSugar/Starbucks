@@ -1,75 +1,65 @@
-# 本地测试（http://localhost:8080/YunZhuServer/）
-# 外网测试（http://121.42.197.153:8080/YunZhuServer/）
-# 外网正式（http://www.sunanyun.com/）
+# 本地测试（http://localhost:8080/YunZhuServer/yunzhuApi/getData）
+# 外网测试（http://121.42.197.153:8080/YunZhuServer/yunzhuApi/getData）
+# 外网正式（http://www.sunanyun.com/yunzhuApi/getData）
 # API介绍 （http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
 
 ### 登录
 2.37　 根据用户名获取用户简要信息及账号列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=userManager.findUserAccount&userName=admin&appkey=123456&appsecret=123456
-帐号：13511267777
-密码：123456
+?method=userManager.findUserAccount&userName=admin&appkey=123456&appsecret=123456
+帐号：13920905364
+密码：1234567
 权限：项目经理
 ```
 2.2　 用户登录
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=userManager.login&userName=admin&passWord=admin
+?method=userManager.login&userName=admin&passWord=admin
 &accountId=1&appkey=123456&appsecret=123456&clientId=request
 ```
 ### 首页
 10.5　 根据条件获取门店附件（全景图，门店照，使用说明）
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=store.findStoreFile&storeInfoIds=1,2,3&fileType=2
+?method=store.findStoreFile&storeInfoIds=1,2,3&fileType=2
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 ### 我的
 11.34　 根据条件获取订单统计
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=repair.getStoreRepairOrderStatistics&storeStaffId=1
+?method=repair.getStoreRepairOrderStatistics&storeStaffId=1
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 ### 门店管理
 10.2　 获取门店信息列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=store.findStoreInfo&storeStaffIds=1&storeStaffType=5
+?method=store.findStoreInfo&storeStaffIds=1&storeStaffType=5
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 10.8　 获取门店员工列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=store.findStaffByStoreInfo&higherStaffUserId=1
+?method=store.findStaffByStoreInfo&higherStaffUserId=1
 &higherStaffType=4&staffSource=2&staffType=5&clientId=14a01fdab38b4bf3b93781e20aa3777b<br>
 &appkey=123456&appsecret=123456
 ```
 11.1　 根据门店ID或门店代码获取门店信息
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=repair.getStoreInfoByIdOrCode&id=5&clientId=14a01fdab38b4bf3b93781e20aa3777b
+?method=repair.getStoreInfoByIdOrCode&id=5&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456
 ```
 ### 维修点管理
 10.11　 根据条件获取门店竣工资料
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=store.findStoreCompletionData&storeInfoId=1&topClass=1
+?method=store.findStoreCompletionData&storeInfoId=1&topClass=1
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 10.14　 获取门店竣工资料附件（图片，图纸）
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=store.findStoreCompletionDataFile&storeCompletionDataId=1
+?method=store.findStoreCompletionDataFile&storeCompletionDataId=1
 &fileType=2&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456
 ```
 10.40　 根据条件获取点列表
 ```
-http://localhost:8080/YunZhuServer/yunzhuApi/getData?
-method=store.findPoint&type=2&drawingId=5&clientId=14a01fdab38b4bf3b93781e20aa3777b
+?method=store.findPoint&type=2&drawingId=5&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456
 ```
 
