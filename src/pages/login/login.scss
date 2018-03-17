@@ -7,10 +7,12 @@ page-login {
     .scroll-content {
       padding-bottom: 0 !important;
     }
-    .item-md, .item-ios {
+    .item-md,
+    .item-ios {
       background-color: transparent !important;
     }
-    .toolbar-background-ios, .toolbar-background-md {
+    .toolbar-background-ios,
+    .toolbar-background-md {
       background-color: transparent !important;
     }
     .toolbar {
@@ -18,16 +20,25 @@ page-login {
       margin-bottom: 18%;
       text-align: center;
       .toolbar-title {
-        font-weight: normal ;
+        font-weight: normal;
         font-size: 3rem !important;
         color: #fff !important;
       }
     }
-    .text-input-md, .text-input-ios {
+    ion-select{
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+    .text-input-md,
+    .text-input-ios,
+    ion-label,
+    .select-text
+     {
       margin: 0;
       color: #fff;
     }
-    .item-md, .item-ios {
+    .item-md,
+    .item-ios {
       padding-left: 0;
     }
     ion-item {
@@ -47,18 +58,21 @@ page-login {
         background-color: #05D1AF;
       }
     }
-    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    ::-webkit-input-placeholder {
+      /* WebKit, Blink, Edge */
       color: #fff;
     }
-    ::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    ::-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
       color: #fff;
     }
-    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
       color: #fff;
     }
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
       color: #fff;
     }
   }
 }
-

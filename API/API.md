@@ -8,6 +8,9 @@
 ```
 http://localhost:8080/YunZhuServer/yunzhuApi/getData?
 method=userManager.findUserAccount&userName=admin&appkey=123456&appsecret=123456
+帐号：13511267777
+密码：123456
+权限：项目经理
 ```
 2.2　 用户登录
 ```

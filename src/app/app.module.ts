@@ -19,11 +19,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from "@angular/http";
 import { HttpService } from "../model/HttpService";
+import { ToastService } from '../model/toast';
+import { LoginService } from '../model/LoginService';
 
 import { File } from '@ionic-native/file';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -44,7 +48,8 @@ import { Camera } from '@ionic-native/camera';
     CalendarModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '',//按钮内容
-    })
+    }),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,6 +66,8 @@ import { Camera } from '@ionic-native/camera';
     StatusBar,
     SplashScreen,
     HttpService,
+    ToastService,
+    LoginService,
     File,
     FileTransfer,
     FilePath,
