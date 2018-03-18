@@ -33,10 +33,10 @@ npm install @ionic/app-scripts@nightly --save-dev
 
 ### 03-17
 修改真机http请求失败bug
-、、、
+```
 <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
 $ ionic cordova plugin rm cordova-plugin-ionic-webview --save
 $ rm -rf platforms/
 $ rm -rf plugins/
 $ ionic cordova build ios
-、、、 
+```
