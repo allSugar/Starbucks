@@ -4,6 +4,9 @@ import { ToastController } from 'ionic-angular';
 @Injectable()
 
 export class ToastService {
+
+    position:string = "middle";
+
     constructor(
         public toastCtrl: ToastController
     ) { }
@@ -12,7 +15,7 @@ export class ToastService {
         let toast = this.toastCtrl.create({
             message: content,
             duration: 2000,
-            position: "middle"
+            position: this.position
         });
         toast.present();
     }

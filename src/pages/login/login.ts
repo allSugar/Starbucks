@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 
 import { HttpService } from '../../model/HttpService';
-import { ToastService } from '../../model/toast';
+import { ToastService } from '../../model/ToastService';
 
 @Component({
   selector: 'page-login',

@@ -1,7 +1,8 @@
+import { App } from 'ionic-angular';
 import { Injectable } from "@angular/core";
 import { Storage } from '@ionic/storage';
 
-// import { LoginPage } from '../pages/login/login';
+import { LoginPage } from '../pages/login/login';
 
 @Injectable()
 
@@ -11,8 +12,10 @@ export class LoginService {
   userInfo:Object;
 
   constructor(
+    private app: App,
     private storage: Storage
   ) {
+    console.log(this.app);
   }
 
   isLoginFun(callback:any) {
@@ -21,6 +24,6 @@ export class LoginService {
 
   loginOut() {
     this.storage.remove('userInfo');
-    // this.navCtrl.setRoot(LoginPage);
+    this.app.getRootNav().setRoot(LoginPage);
   }
 }

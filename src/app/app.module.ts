@@ -19,7 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from "@angular/http";
 import { HttpService } from "../model/HttpService";
-import { ToastService } from '../model/toast';
+import { ToastService } from '../model/ToastService';
 import { LoginService } from '../model/LoginService';
 
 import { File } from '@ionic-native/file';

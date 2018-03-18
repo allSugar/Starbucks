@@ -1,75 +1,84 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, App } from 'ionic-angular';
+import { App, NavParams } from 'ionic-angular';
+
+import { LoginPage } from '../login/login';
 
 import { DraggablePage } from '../modules/draggable/draggable';
-
+import { LoginService } from '../../model/LoginService';
+ 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  
+  navCtrl:any;
   constructor(
-    public navCtrl: NavController,
+    private app: App,
     public navParams: NavParams,
-    private app: App
+    private login:LoginService
   ) {
+    this.navCtrl = this.app.getRootNav();
   }
   goMap() {
-    this.app.getRootNav().push('MapPage', {
+    this.navCtrl.push('MapPage', {
       id: "1",
       name: "map"
     });
   }
 
   goChart() {
-    this.app.getRootNav().push('ChartPage', {
+    this.navCtrl.push('ChartPage', {
       id: "2",
       name: "chart"
     });
   }
 
   goSlide() {
-    this.app.getRootNav().push('SlidePage', {
+    this.navCtrl.push('SlidePage', {
       id: "3",
       name: "slide"
     });
   }
 
   goAlphaScroll() {
-    this.app.getRootNav().push('AlphaListPage', {
+    this.navCtrl.push('AlphaListPage', {
       id: "4",
       name: "AlphaScroll"
     });
   }
 
   goCard() {
-    this.app.getRootNav().push('CardPage', {
+    this.navCtrl.push('CardPage', {
       id: "5",
       name: "CardPage"
     });
   }
 
   goDrag() {
-    this.app.getRootNav().push(DraggablePage, {
+    this.navCtrl.push(DraggablePage, {
       id: "6",
       name: "DragPage"
     });
   }
 
   goFileUpload(){
-    this.app.getRootNav().push('FileUploadPage', {
+    this.navCtrl.push('FileUploadPage', {
       id: "7",
       name: "FileUploadPage"
     });
   }
 
   goCalendar(){
-    this.app.getRootNav().push('CalendarPage', {
+    this.navCtrl.push('CalendarPage', {
       id: "8",
       name: "CalendarPage"
     });
+  }
+
+  loginOut(){
+    this.login.loginOut();
+    // this.navCtrl.setRoot(LoginPage);
   }
   ionViewDidLoad() {
 
