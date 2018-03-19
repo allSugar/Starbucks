@@ -120,6 +120,15 @@
   content: url("../assets/imgs/icon/icon_phone.png");
 }
 
+.icon-phone-s {
+  float: left;
+  width: 15px;
+  height: 15px;
+  margin-top: 1px;
+  margin-left: 10px;
+  content: url("../assets/imgs/icon/icon_phone_s.png");
+}
+
 [class *= 'icon-news-'] {
   position: relative;
   float: left;
@@ -146,18 +155,56 @@
   margin-top: 2px;
   content: url("../assets/imgs/focus/house.png");
 }
-.icon-arrow-right {
+.icon-house-l {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  width: 135px;
+  height: 135px;
+  content: url("../assets/imgs/icon/icon_house_l.png");
+}
+
+
+[class*='icon-arrow-right'] {
   float: left;
   width: 6px;
   height: 11px;
   margin-left: 10px;
   margin-top: 5px;
-  content: url("../assets/imgs/arrow-right.png");
 }
+.icon-arrow-right {
+  content: url("../assets/imgs/icon/icon_arrow_right.png");
+}
+.icon-arrow-right-white {
+  content: url("../assets/imgs/icon/icon_arrow_right_white.png");
+}
+
 .icon-light {
   float: right;
   width: 12px;
   height: 12px;
   margin-top: 3px;
   content: url("../assets/imgs/focus/light.png");
+}
+
+.icon-star {
+  width: 160px;
+  height: 22px;
+  margin: 0 auto 50px;
+  content: url("../assets/imgs/icon/icon_star.png");
+}
+
+.icon-smile {
+  float: left;
+  width: 20px;
+  height: 20px;
+  content: url("../assets/imgs/icon/icon_smile.png");
+}
+
+.icon-avatar {
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin-to: -5px;
+  content: url("../assets/imgs/icon/icon_avatar.png");
 }
