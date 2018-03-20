@@ -179,6 +179,22 @@
   content: url("../assets/imgs/icon/icon_arrow_right_white.png");
 }
 
+.icon-arrow-top {
+  display: block;
+  width: 11px;
+  height: 6px;
+  margin: 14px auto 0;
+  content: url("../assets/imgs/icon/icon_arrow_top.png");
+}
+
+.icon-arrow-bottom {
+  display: block;
+  width: 11px;
+  height: 6px;
+  margin: 14px auto 0;
+  content: url("../assets/imgs/icon/icon_arrow_bottom.png");
+}
+
 .icon-light {
   float: right;
   width: 12px;
@@ -205,6 +221,29 @@
   float: right;
   width: 30px;
   height: 30px;
-  margin-to: -5px;
+  margin-top: -5px;
   content: url("../assets/imgs/icon/icon_avatar.png");
+}
+
+.icon-car {
+  float: left;
+  width: 22px;
+  height: 25px;
+  content: url("../assets/imgs/icon/icon_car.png");
+}
+
+.icon-car {
+  float: left;
+  width: 22px;
+  height: 15px;
+  margin-top: 5px;
+  content: url("../assets/imgs/icon/icon_car.png");
+}
+
+.icon-hourglass {
+  float: left;
+  width: 14px;
+  height: 18px;
+  margin-top: 3px;
+  content: url("../assets/imgs/icon/icon_hourglass.png");
 }

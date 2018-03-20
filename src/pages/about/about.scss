@@ -458,23 +458,6 @@ page-about {
       .focus-title {
         height: 18px;
         overflow: hidden;
-        .type {
-          float: left;
-          width: 34px;
-          line-height: 18px;
-          text-align: center;
-          margin-right: 12px;
-          font-size: 11px;
-          font-family:PingFangSC-Thin;
-        }
-        .crash {
-          color: #F82A14;
-          background-color:rgba(248,42,20,.2);
-        }
-        .general {
-          color: #13B9FE;
-          background-color:rgba(19,185,254,.2);
-        }
         .focus-time {
           float: right;
           line-height: 18px;
@@ -865,9 +848,126 @@ page-about {
       font-size: 16px;
       color: white;
     }
-
   }
-
+  .order-info {
+    margin-top: 10px;
+    padding: 0 20px 15px;
+    background-color: white;
+    .info-title {
+      width: 71px;
+      line-height: 23px;
+      margin: 0 auto 16px;
+      text-align: center;
+      color: white;
+      background-color: $green;
+    }
+    .info-list {
+      .info-item {
+        margin-top: 9px;
+        font-size: 13px;
+        overflow: hidden;
+        .title {
+          float: left;
+          color: $secondary-text;
+        }
+        .text {
+          float: right;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .order-point {
+    margin-top: 10px;
+    .point-head {
+      overflow: hidden;
+      background-color: white;
+      font-size: 15px;
+      padding: 11px 13px 11px;
+    }
+    .point-detail {
+      overflow: hidden;
+      padding: 15px;
+      .point-img {
+        float: left;
+        width: 80px;
+        height: 80px;
+        img {
+          max-width: 100%;
+        }
+      }
+      .point-body {
+        position: relative;
+        height: 80px;
+        width: 70%;
+        margin-left: 30%;
+        .point-title {
+          overflow: hidden;
+          .address {
+            float: left;
+            color: $gray;
+          }
+          .pay {
+            float: right;
+            color: $red;
+          }
+          [class*='urgent-'] {
+            float: right;
+            margin-right: 0;
+          }
+        }
+        .point-content {
+          margin-top: 5px;
+          font-size: 13px;
+          color: $gray;
+          .tag {
+            padding: 2px 4px;
+            color: $yellow;
+            border: 1px solid $yellow;
+          }
+        }
+        .point-foot {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          overflow: hidden;
+          color: $gray-light;
+          font-size: 13px;
+          .question {
+            float: right;
+            color: $red;
+          }
+        }
+      }
+    }
+    .point-empty {
+      width: 100%;
+      height: 25px;
+      background-color: white;
+    }
+  }
+  .order-pay {
+    margin-top: 10px;
+    padding:  21px 12px;
+    background-color: white;
+    .sum {
+      float: right;
+      color: $red;
+    }
+  }
+  .order-retract {
+    margin-top: 10px;
+    padding: 30px;
+    background-color: white;
+    overflow: hidden;
+    .btn-retract {
+      float: right;
+      padding: 3px 11px;
+      border: 1px solid $main-text;
+      border-radius: 2px;
+    }
+  }
 }
 
 

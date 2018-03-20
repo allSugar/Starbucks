@@ -316,3 +316,21 @@
   border: 2px solid white;
   border-radius: 12px;
 }
+
+//紧急程度按状态
+[class*='urgent-'] {
+  float: left;
+  width: 34px;
+  line-height: 18px;
+  text-align: center;
+  margin-right: 12px;
+  font-size: 11px;
+}
+.urgent-crash {
+  color: #F82A14;
+  background-color:rgba(248,42,20,.2);
+}
+.urgent-general {
+  color: #13B9FE;
+  background-color:rgba(19,185,254,.2);
+}
