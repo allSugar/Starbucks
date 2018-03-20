@@ -6,11 +6,12 @@ import { MyApp } from './app.component';
 
 import { DragDirective } from '../directives/drag/drag';
 
+import { LoginPage } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
+import { ForumPage } from '../pages/forum/forum';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
 import { MyPage } from '../pages/my/my';
 import { DraggablePage } from '../pages/modules/draggable/draggable';
 
@@ -34,11 +35,12 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [
     DragDirective,
     MyApp,
+    LoginPage,
+    TabsPage,
+    HomePage,
+    ForumPage,
     AboutPage,
     ContactPage,
-    HomePage,
-    TabsPage,
-    LoginPage,
     MyPage,
     DraggablePage
   ],
@@ -54,11 +56,12 @@ import { IonicStorageModule } from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    TabsPage,
+    HomePage,
+    ForumPage,
     AboutPage,
     ContactPage,
-    HomePage,
-    TabsPage,
-    LoginPage,
     MyPage,
     DraggablePage
   ],

@@ -21,8 +21,8 @@
   border-top: 1px solid #ddd;
 }
 
-$tabImageName: 'tab1' 'tab2' 'tab3' 'tab4';
-@for $i from 1 to 5 {
+$tabImageName: 'tab1' 'tab2' 'tab3' 'tab4' 'tab5';
+@for $i from 1 to 6 {
   //for ios  
   .tabs-ios {
     .tab-button {

@@ -23,10 +23,9 @@ export class MyApp {
   ) {
     var _self = this;
     login.isLoginFun(function (val) {
-      if (login.isLogin = !!val) {
-        login.userInfo = val;
-        _self.rootPage = TabsPage;
-      }
+      val = JSON.parse(val);
+      console.log(val);
+      if (login.isLogin = !!val) login.userInfo = val, _self.rootPage = TabsPage;
     });
     platform.ready().then(() => {
       statusBar.styleDefault();
