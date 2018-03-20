@@ -17,28 +17,20 @@ export class HttpService {
     constructor(private http: Http) {
     }
 
-    headers = new Headers({ 'Content-Type': 'application/x-www' });
+    headers = new Headers({
+        "Accept": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    });
     options = new RequestOptions({ headers: this.headers });
 
     //get请求
     get(params: any): Observable<any> {
         if (params) var url = API_ROOT + "?" + querystring.stringify(params);
-        return this.http.get(url, {
-            headers: new Headers({
-                "Accept": "application/json",
-                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-            })
-        }).map(res => res.json());
+        return this.http.get(url, { headers: this.headers }).map(res => res.json());
     }
 
     //post请求
     post(params: any): Observable<any> {
-        console.log(params);
-        return this.http.post(API_ROOT, querystring.stringify(params), {
-            headers: new Headers({
-                "Accept": "application/json",
-                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-            })
-        }).map(res => res.json());
+        return this.http.post(API_ROOT, querystring.stringify(params), { headers: this.headers }).map(res => res.json());
     }
 }
