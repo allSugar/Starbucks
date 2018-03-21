@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavParams, Slides } from 'ionic-angular';
  
 @Component({
   selector: 'page-home',
@@ -7,13 +7,17 @@ import { NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
+  @ViewChild(Slides) slides: Slides;
   constructor(
     public navParams: NavParams,
   ) {
     
   }
   ionViewDidLoad() {
-    
+    this.slides.autoplayDisableOnInteraction = false;
+    console.log(this.slides);
+    this.slides.pager = true;
+    // this.slides.paginationType = "progress";
   }
 
 }

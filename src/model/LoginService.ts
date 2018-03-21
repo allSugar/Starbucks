@@ -15,7 +15,6 @@ export class LoginService {
     private app: App,
     private storage: Storage
   ) {
-    console.log(this.app);
   }
 
   isLoginFun(callback:any) {

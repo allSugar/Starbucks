@@ -1,3 +1,16 @@
 page-home {
-  
+  ion-header.header {
+    ion-navbar {
+      .toolbar-background-ios,
+      .toolbar-background-md {
+        @include opacity(.4);
+      }
+    }
+  }
+  .scroll-content {
+    margin-top: -48px !important;
+  }
+  ion-slides {
+    height: 220px;
+  }
 }

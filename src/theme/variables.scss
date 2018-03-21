@@ -111,6 +111,13 @@ $yellow: #fdbe26;
   border-radius: $radius;
 }
 
+@mixin opacity($number){
+  opacity: $number;
+  -webkit-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=ceil($number*100));
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=ceil($number*100));
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=ceil($number*100));
+}
+
 @import 'base';
 @import 'comm';
 @import 'feedBtn';

@@ -1,12 +1,18 @@
 <ion-header>
+    <ion-navbar>
+        <ion-title>苏南易维</ion-title>
+        <ion-buttons end>
+          <button ion-button icon-only>
+            <ion-icon name="chatbubbles"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
+  </ion-header>
 
-  <ion-navbar>
-    <ion-title>首页</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-slides autoplay="4200" loop="true" pager="true">
+      <ion-slide *ngFor="let c of [1,2,3,4]">
+        <h1>Slide {{c}}</h1>
+      </ion-slide>
+    </ion-slides>
 </ion-content>
