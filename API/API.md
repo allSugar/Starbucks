@@ -135,26 +135,83 @@
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
 ```
 11.11　 根据ID获取门店维修单信息（维修单详情）
+```
+?method=repair.getStoreRepairOrderById&id=2clientId=14a01fdab38b4bf3b93781e20aa3777b
+&appkey=123456&appsecret=123456
+```
 
 ### 操作维修单
-11.13　 操作门店维修单（针对维修单的操作为3：指派维修员；4：已接单；5：出发；6：（到达）维修中；）
+11.13　 操作门店维修单（针对维修单的操作为3：指派维修员；4：已接单；5：出发；6：（到达）维修中）
+```
+?method=repair.operationStoreRepairOrder&id=2&clientId=14a01fdab38b4bf3b93781e20aa3777b
+&appkey=123456&appsecret=123456
+```
 11.14　 评价门店维修单
+```
+?method=repair.operationStoreRepairOrder&id=2&arrivalSpeed=4&serviceAttitude=5
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
 
 ### 获取维修单下的问题列表
-11.16　 获取门店维修子订单列表（文字描述有问题，回头更新）
-11.17　 根据id获取门店维修子订单信息（文字描述有问题，回头更新，为维修单问题详情）
+11.16　 获取门店维修问题列表
+```
+?method=repair.findStoreRepairOrderItem&statuss=1,2,3,4,5,6
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
+11.17　 根据id获取门店维修单问题信息
+```
+?method=repair.getStoreRepairOrderItemById&id=5
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
 
 ### 操作维修单问题
-11.34　 操作门店维修单问题（采购、完成、退回）
-11.15　 保存门店维修子订单信息（文字描述有问题，回头更新，为编辑维修单问题（故障说明、故障图））
-11.19　 门店经理评价维修子订单（文字描述有问题，回头更新，为甲方评价维修单问题）
+11.35　 操作门店维修单问题（采购、完成、退回）
+```
+?method=repair.operationStoreRepairOrderItem&sroiIds=5&status=7
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
+11.15　 保存或编辑门店维修单问题信息（故障说明，故障图）
+```
+?method=repair.saveStoreRepairOrderItem&storeInfoId=5&storeRepairOrderId=1
+&faultDesPaths=&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
+11.19　 甲方评价维修单问题
+```
+?method=repair.evaluateStoreRepairOrderItem&storeInfoId=5&storeRepairOrderId=1
+&faultDesPaths=&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&
+appsecret=123456
+```
 
 ### 乙方维修单报告
-11.28　 维修员提交维修报告（文字描述有问题，回头更新，为维修员提交维修单问题报告）
-11.29　 维修员报告维修单总工时（文字描述有问题，回头更新，为维修员提交维修单总工时）
+11.28　 维修员提交维修单问题报告
+```
+?method=repair.reportStoreRepairOrderItem&id=5&repairWarehouseIds=2&finishFilePaths=
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
+11.29　 维修员报告维修单总工时
+```
+?method=repair.reportMaintenanceHours&id=5&maintenanceHours=3
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
 11.31　 获取维修单耗材列表
+```
+?method=repair.findStoreRepairOrderGoods&storeRepairOrderId=5
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
 11.30　 保存维修单耗材
+```
+?method=repair.saveStoreRepairOrderGoods&storeRepairOrderId=5&goodsId=70
+&goodsNum=500&totalPrice=1000&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
 11.33　 维修主管核准耗材金额
+```
+?method=repair.approverStoreRepairOrderGoods&id=5&totalPrice=600
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
 
 ### 维修单跟踪页面
 11.23　 获取指定的维修单记录跟踪列表
+```
+?method=repair.findStoreRepairOrderTrack&storeRepairOrderId=5
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+```
