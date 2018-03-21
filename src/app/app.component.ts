@@ -13,7 +13,7 @@ import { LoginService } from '../model/LoginService';
 })
 export class MyApp {
 
-  rootPage: any = LoginPage;
+  rootPage: any;
 
   constructor(
     platform: Platform,
@@ -24,8 +24,13 @@ export class MyApp {
     var _self = this;
     login.isLoginFun(function (val) {
       val = JSON.parse(val);
-      console.log(val);
-      if (login.isLogin = !!val) login.userInfo = val, _self.rootPage = TabsPage;
+      if (!!val) {
+        login.isLogin = !!val;
+        login.userInfo = val;
+        _self.rootPage = TabsPage;
+      } else {
+        _self.rootPage = LoginPage;
+      }
     });
     platform.ready().then(() => {
       statusBar.styleDefault();

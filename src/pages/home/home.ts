@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { App, NavParams } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
  
 @Component({
   selector: 'page-home',
@@ -8,12 +8,12 @@ import { App, NavParams } from 'ionic-angular';
 export class HomePage {
 
   constructor(
-    private app: App,
     public navParams: NavParams,
   ) {
+    
   }
   ionViewDidLoad() {
-
+    
   }
 
 }

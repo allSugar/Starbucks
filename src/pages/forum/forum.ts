@@ -10,13 +10,14 @@ import { LoginService } from '../../model/LoginService';
 })
 export class ForumPage {
 
-  navCtrl:any;
+  navCtrl: any;
   constructor(
     private app: App,
     public navParams: NavParams,
-    private login:LoginService
+    private login: LoginService
   ) {
     this.navCtrl = this.app.getRootNav();
+    console.log(this);
   }
   goMap() {
     this.navCtrl.push('MapPage', {
@@ -60,20 +61,24 @@ export class ForumPage {
     });
   }
 
-  goFileUpload(){
+  goFileUpload() {
     this.navCtrl.push('FileUploadPage', {
       id: "7",
       name: "FileUploadPage"
     });
   }
 
-  goCalendar(){
+  goCalendar() {
     this.navCtrl.push('CalendarPage', {
       id: "8",
       name: "CalendarPage"
     });
   }
-  
+
+  loginOut() {
+    this.login.loginOut();
+  };
+
   ionViewDidLoad() {
 
   }
