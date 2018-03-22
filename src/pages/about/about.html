@@ -11,57 +11,14 @@
   <div class="ibox">
     <div class="category">
       <div class="item-list">
-        <div class="item">
+        <div class="item" *ngFor="let cate of category">
           <div class="item-img">
-            <img src="assets/imgs/statistics/frequency.png" />
+            <img src="assets/imgs/category/{{ cate.url }}.png" />
           </div>
-          <p class="title">维修频率</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/number.png" />
-          </div>
-          <p class="title">报修次数</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/category.png" />
-          </div>
-          <p class="title">维修分类</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/easy-hart.png" />
-          </div>
-          <p class="title">易损部位</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/weekly.png" />
-          </div>
-          <p class="title">每周问题</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/efficiency.png" />
-          </div>
-          <p class="title">厂商效率</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/reason.png" />
-          </div>
-          <p class="title">物损原因</p>
-        </div>
-        <div class="item">
-          <div class="item-img">
-            <img src="assets/imgs/statistics/remains.png" />
-          </div>
-          <p class="title">遗存问题</p>
+          <p class="title">{{ cate.name }}</p>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="br"></div>
