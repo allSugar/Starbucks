@@ -5,12 +5,48 @@ page-home {
       .toolbar-background-md {
         @include opacity(.4);
       }
+      .ion-ios-chatbubbles,
+      .ion-md-chatbubbles {
+        min-width: 18px;
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        background-image: url('../assets/imgs/icon/chatbubbles.png');
+        background-size: 100%;
+        &::before {
+          display: none;
+        }
+      }
     }
   }
   .scroll-content {
     margin-top: -48px !important;
   }
   ion-slides {
-    height: 220px;
+    height: auto;
+    .swiper-container-horizontal {
+      .swiper-pagination-bullets {
+        height: 1px;
+        bottom: 12px;
+        .swiper-pagination-bullet {
+          margin: 0 4px;
+          width: 8px;
+          height: 2px;
+          background-color: $white;
+          @include opacity(.5);
+          @include border_radius(0);
+          vertical-align: top;
+        }
+        .swiper-pagination-bullet-active {
+          @include opacity(1);
+        }
+      }
+    }
+    .swiper-slide {
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
   }
 }

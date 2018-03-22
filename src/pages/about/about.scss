@@ -1,5 +1,3 @@
-
-
 page-about {
   ion-navbar {
     position: relative;
@@ -14,46 +12,7 @@ page-about {
       background-size: contain;
     }
   }
-  .ibox {
-    background-color: white;
-  }
-  .count {
-    width: 95%;
-    margin: 0 auto;
-    overflow: hidden;
-    .item-list {
-      width: 105%;
-      margin-left: -2.5%;
-      color:rgba(53,53,53,1);
-      overflow: hidden;
-      .item {
-        float: left;
-        width: 33%;
-        height: 105px;
-        padding: 22px 0;
-        font-size: 12px;
-        border-bottom: 1px solid #E7E8E8;
-        &:last-child {
-          margin-right: 0;
-        }
-        .item-img {
-          width: 100%;
-          line-height: 35px;
-          text-align: center;
-          img {
-            max-width: 24%;
-            display: inline-block;
-            vertical-align: middle;
-          }
-        }
-        .title {
-          margin-top: 12px;
-          margin-bottom: 0;
-          text-align: center;
-        }
-      }
-    }
-  }
+  
 
   .br {
     width: 100%;
