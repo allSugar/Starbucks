@@ -14,7 +14,7 @@
 ?method=userManager.login&userName=admin&passWord=admin
 &accountId=1&appkey=123456&appsecret=123456&clientId=request
 帐号：13920905364
-密码：1234567
+密码：a1234567
 权限：项目经理
 ```
 ### 首页
