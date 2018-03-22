@@ -40,3 +40,6 @@ $ rm -rf platforms/
 $ rm -rf plugins/
 $ ionic cordova build ios
 ```
+
+### 03-20
+修改StatusBar状态
