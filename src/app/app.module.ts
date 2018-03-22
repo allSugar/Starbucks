@@ -19,9 +19,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HttpModule } from "@angular/http";
-import { HttpService } from "../model/HttpService";
-import { ToastService } from '../model/ToastService';
-import { LoginService } from '../model/LoginService';
+import { HttpService } from "../service/HttpService";
+import { ToastService } from '../service/ToastService';
+import { LoginService } from '../service/LoginService';
 
 import { File } from '@ionic-native/file';
 import { FileTransfer } from '@ionic-native/file-transfer';

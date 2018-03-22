@@ -13,7 +13,7 @@ export class LoginService {
 
   constructor(
     private app: App,
-    private storage: Storage
+    private storage: Storage,
   ) {
   }
 

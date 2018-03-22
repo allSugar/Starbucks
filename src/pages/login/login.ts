@@ -4,8 +4,8 @@ import { Storage } from '@ionic/storage';
 
 import { TabsPage } from '../tabs/tabs';
 
-import { HttpService } from '../../model/HttpService';
-import { ToastService } from '../../model/ToastService';
+import { HttpService } from '../../service/HttpService';
+import { ToastService } from '../../service/ToastService';
 
 @Component({
   selector: 'page-login',
@@ -17,8 +17,8 @@ export class LoginPage {
   userInfo: any = {
     method: "userManager.login",
     clientId: "request",
-    userName: "",
-    passWord: "",
+    userName: "13920905364",
+    passWord: "a1234567",
     accountId: ""
   }
 

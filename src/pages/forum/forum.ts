@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { App, NavParams } from 'ionic-angular';
 
 import { DraggablePage } from '../modules/draggable/draggable';
-import { LoginService } from '../../model/LoginService';
+import { LoginService } from '../../service/LoginService';
 
 @Component({
   selector: 'page-forum',
