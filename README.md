@@ -43,3 +43,14 @@ $ ionic cordova build ios
 
 ### 03-20
 修改StatusBar状态
+
+### 03-23
+Android 增加秘钥
+根目录下增加[release-signing.properties]文件
+```
+keyAlias=io.ionic.starbucks
+keyPassword=123456
+storeFile=/Users/sticker/Desktop/GITHUB/Starbucks/starbucks
+storePassword=123456
+```
+
