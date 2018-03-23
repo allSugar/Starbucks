@@ -17,7 +17,6 @@ export class ForumPage {
     private login: LoginService
   ) {
     this.navCtrl = this.app.getRootNav();
-    console.log(this);
   }
   goMap() {
     this.navCtrl.push('MapPage', {

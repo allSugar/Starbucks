@@ -19,15 +19,14 @@ export class MyApp {
     splashScreen: SplashScreen,
     login: LoginService
   ) {
-    var _self = this;
-    login.isLoginFun(function (val) {
+    login.isLoginFun((val) => {
       val = JSON.parse(val);
       if (!!val) {
         login.isLogin = !!val;
         login.userInfo = val;
-        _self.rootPage = TabsPage;
+        this.rootPage = TabsPage;
       } else {
-        _self.rootPage = LoginPage;
+        this.rootPage = LoginPage;
       }
     });
     platform.ready().then(() => {
