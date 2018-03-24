@@ -8,7 +8,7 @@ import { DragDirective } from '../directives/drag/drag';
 
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
-import { HomePage } from '../pages/home/home';
+import { HomePage } from '../pages/home/index/index';
 import { ForumPage } from '../pages/forum/forum';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';

@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { NavParams, Slides } from 'ionic-angular';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-index',
+  templateUrl: 'index.html'
 })
 export class HomePage {
 
