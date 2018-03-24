@@ -8,7 +8,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RepairListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  status: number = 6;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams
+  ) {
+
   }
 
+  tabs(n: number) {
+    this.status = n;
+  }
 }

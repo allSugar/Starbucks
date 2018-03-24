@@ -3,24 +3,34 @@
   <ion-navbar class='border-none'>
     <ion-title>我关注的维修单</ion-title>
   </ion-navbar>
-
-</ion-header>
-
-
-<ion-content>
   <ul class="tab-rate">
-    <li class="item-rate active">待接单(8)</li>
-    <li class="item-rate">进行中(3)</li>
-    <li class="item-rate">已完成</li>
+    <li class="item-rate" [ngClass]="{ 'active': status == 1 }" (click)="tabs(1)">待接单(8)</li>
+    <li class="item-rate" [ngClass]="{ 'active': status == 6 }" (click)="tabs(6)">进行中(3)</li>
+    <li class="item-rate" [ngClass]="{ 'active': status == 8 }" (click)="tabs(8)">已完成</li>
   </ul>
   <div class="filter-collapse">
-    <div class="filter-list">
+    <div class="filter-list" *ngIf="status == 1">
       <div class="category-item rank active">综合</div>
       <div class="category-item time">紧急</div>
       <div class="category-item time">厂商</div>
       <div class="sort">店铺</div>
     </div>
+    <div class="filter-list" *ngIf="status == 6">
+      <div class="category-item rank active">厂商</div>
+      <div class="category-item time">排序</div>
+      <div class="sort">店铺</div>
+    </div>
+    <div class="filter-list" *ngIf="status == 8">
+      <div class="category-item rank active">厂商</div>
+      <div class="category-item time">排序</div>
+      <div class="category-item time">日期</div>
+      <div class="sort">店铺</div>
+    </div>
   </div>
+</ion-header>
+
+
+<ion-content>
   <div class="repair-list">
     <div class="repair-focus">
       <div class="focus-head">
