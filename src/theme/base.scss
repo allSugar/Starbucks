@@ -39,8 +39,7 @@ ion-header.header {
     &.toolbar {
       min-height: 48px
     }
-    .toolbar-background-ios,
-    .toolbar-background-md {
+    .toolbar-background {
       background: $blue;
       border-bottom: 1px solid $black-blue;
     }
@@ -57,6 +56,11 @@ ion-header.header {
       position: absolute;
       width: 100%;
       height: 48PX;
+    }
+    &.border-none {
+      .toolbar-background {
+        border: 0;
+      }
     }
     &:after {
       display: none;
