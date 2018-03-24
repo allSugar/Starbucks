@@ -1,0 +1,33 @@
+page-damage {
+  .damage-list {
+    overflow: hidden;
+    .damage-item {
+      float: left;
+      width: 44.4%;
+      height: 160px;
+      margin-left: 3.8%;
+      margin-top: 14px;
+      background-color: white;
+      .icon-damage {
+        width: 71px;
+        height: 71px;
+        margin: 16px auto;
+        img {
+          width: 100%;
+        }
+      }
+      .num {
+        line-height: 20px;
+        text-align: center;
+        color: $main-text;
+        em {
+          font-size: 24px;
+        }
+      }
+      .describe {
+        text-align: center;
+        color: $secondary-text;
+      }
+    }
+  }
+}

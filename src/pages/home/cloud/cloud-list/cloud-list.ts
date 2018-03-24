@@ -1,13 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, App, NavParams} from 'ionic-angular';
 
-/**
- * Generated class for the CloudListPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
     selector: 'page-cloud-list',
@@ -33,8 +26,5 @@ export class CloudListPage {
         if (item.page) this.navCtrl.push(item.page)
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad CloudListPage');
-    }
 
 }
