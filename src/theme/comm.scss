@@ -123,13 +123,13 @@
       position: relative;
       float: left;
       line-height: 15px;
-      padding: 12px 5.7% 12px 6.9%;
+      padding: 12px 36px 12px 24px;
       font-size: 15px;
       color: $secondary-text;
       &.rank {
         &:before {
           position: absolute;
-          right: 14%;
+          right: 22px;
           top: 13px;
           content: '';
           border-left: 4px solid transparent;
@@ -138,7 +138,7 @@
         }
         &:after {
           position: absolute;
-          right: 14%;
+          right: 22px;
           top: 20px;
           content: '';
           border-left: 4px solid transparent;
@@ -149,7 +149,7 @@
       &.time {
         &:after {
           position: absolute;
-          right: 10%;
+          right: 22px;
           top: 16px;
           content: '';
           border-left: 4px solid transparent;
@@ -165,15 +165,16 @@
       position: relative;
       float: right;
       line-height: 15px;
-      padding: 12px 5.6% 12px 4%;
+      padding: 12px 20px 12px 14px;
       color: $secondary-text;
       &:before {
+        content: '';
         position: absolute;
         left: 0;
-        top: 10px;
-        content: '';
+        top: 50%;
+        margin-top: -7px;
         width: 1px;
-        height: 19px;
+        height: 14px;
         background-color: $secondary-text;
       }
     }

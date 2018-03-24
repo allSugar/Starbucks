@@ -10,7 +10,7 @@ export class HomePage {
   @ViewChild(Slides) slides: Slides;
   navCtrl: any;
   category: Object[] = [
-    { url: 'repair-order', name: '维修单' },
+    { url: 'repair-order', name: '维修单', page: 'RepairListPage' },
     { url: 'cloud-smart', name: '云智能' },
     { url: 'cloud', name: '云盘' , page: 'CloudListPage'},
     { url: '3D-panorama', name: '3D全景', page: 'PanoramaListPage' },
