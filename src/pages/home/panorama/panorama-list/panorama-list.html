@@ -1,18 +1,40 @@
-<!--
-  Generated template for the PanoramaListPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>panoramaList</ion-title>
+    <ion-title>店面全景</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+  <div class="tabs">
+    <div class="tab-shop">
+      <div class="tab-item tab-icon-none active">我的店面</div>
+      <div class="tab-item">全部店面</div>
+    </div>
+    <div class="select-list">
 
+    </div>
+  </div>
+
+  <div class="shop-list">
+    <div class="shop-detail" *ngFor="let shp of [1,2,3,4,5]">
+      <p class="title">回龙观店</p>
+      <div class="list clearfix">
+        <div class="detail-item">
+          <div class="detail-img">
+            <img src="assets/imgs/change-before.png" alt="">
+          </div>
+          <p class="info">改造前</p>
+        </div>
+        <div class="detail-item">
+          <div class="detail-img">
+            <img src="assets/imgs/change-after.png" alt="">
+          </div>
+          <p class="info">改造后</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
