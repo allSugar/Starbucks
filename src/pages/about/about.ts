@@ -7,7 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  category: any[] = [
+  category: Object[] = [
     { url: 'repair-frequency', name: '维修频率' },
     { url: 'warranty-number', name: '报修次数' },
     { url: 'repair-maintain', name: '维修分类' },

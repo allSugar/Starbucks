@@ -21,7 +21,7 @@
   <div class="ibox">
     <div class="category category-lg">
       <div class="item-list">
-        <div class="item" *ngFor="let cate of category">
+        <div class="item" *ngFor="let cate of category" (click)="goToOtherPage(cate)">
           <div class="item-img">
             <img src="assets/imgs/category/{{ cate.url }}.png" />
           </div>
