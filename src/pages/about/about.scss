@@ -12,7 +12,9 @@ page-about {
       background-size: contain;
     }
   }
-  
+  .ibox {
+    background-color: white;
+  }
 
   .br {
     width: 100%;
@@ -232,33 +234,33 @@ page-about {
 
   .problem-list {
     overflow: hidden;
-      .problem-item {
-        float: left;
-        width: 44.4%;
-        height: 160px;
-        margin-left: 3.8%;
-        margin-top: 14px;
-        background-color: white;
-        @for $i from 1 to 7{
-          .icon-problem-#{$i} {
-            width: 71px;
-            height: 71px;
-            margin: 16px auto;
-            content: url("../assets/imgs/problem/problem_#{$i}.png");
-          }
-          .num {
-            line-height: 20px;
-            text-align: center;
-            color: $main-text;
-            em {
-              font-size: 24px;
-            }
-          }
-          .describe {
-            text-align: center;
-            color: $secondary-text;
-          }
+    .problem-item {
+      float: left;
+      width: 44.4%;
+      height: 160px;
+      margin-left: 3.8%;
+      margin-top: 14px;
+      background-color: white;
+      .icon-problem {
+        width: 71px;
+        height: 71px;
+        margin: 16px auto;
+        img {
+          width: 100%;
+        }
       }
+      .num {
+        line-height: 20px;
+        text-align: center;
+        color: $main-text;
+        em {
+          font-size: 24px;
+        }
+      }
+      .describe {
+          text-align: center;
+          color: $secondary-text;
+        }
     }
   }
 
@@ -916,7 +918,7 @@ page-about {
   }
   .order-retract {
     margin-top: 10px;
-    padding: 30px;
+    padding: 15px;
     background-color: white;
     overflow: hidden;
     .btn-retract {

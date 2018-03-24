@@ -17,6 +17,32 @@ export class AboutPage {
     { url: 'reason', name: '物损原因' },
     { url: 'remains', name: '遗存问题' }
   ];
+  cloud: any[] = [
+        {url: 'icon_customer', name: '客区'},
+        {url: 'icon_backstage', name: '后区'},
+        {url: 'icon_bar', name: '客区吧台'},
+        {url: 'icon_page', name: '项目图纸'},
+        {url: 'icon_data', name: '项目资料'}
+  ];
+
+    problem: any[] = [
+        {url: 'problem_1', num: '12', name: '设计缺陷'},
+        {url: 'problem_2', num: '12', name: '施工缺陷'},
+        {url: 'problem_3', num: '12', name: '自然损耗'},
+        {url: 'problem_4', num: '12', name: '使用不当'},
+        {url: 'problem_5', num: '12', name: '质量问题'},
+        {url: 'problem_6', num: '12', name: '其他原因'}
+    ];
+
+    import: any[] = [
+        {url: 'import_img1'},
+        {url: 'import_img2'},
+        {url: 'import_img3'},
+        {url: 'import_img4'},
+        {url: 'import_img5'},
+        {url: 'import_img6'}
+    ];
+
   constructor(public navCtrl: NavController) {
 
   }

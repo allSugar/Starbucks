@@ -117,25 +117,9 @@
   <div class="br"></div>
 
   <div class="cloud-page">
-    <div class="clude">
-      <img src="assets/imgs/icon/icon_customer.png" alt="">
-      <p class="title">客区</p>
-    </div>
-    <div class="clude">
-      <img src="assets/imgs/icon/icon_backstage.png" alt="">
-      <p class="title">后区</p>
-    </div>
-    <div class="clude">
-      <img src="assets/imgs/icon/icon_bar.png" alt="">
-      <p class="title">客区吧台</p>
-    </div>
-    <div class="clude">
-      <img src="assets/imgs/icon/icon_page.png" alt="">
-      <p class="title">项目图纸</p>
-    </div>
-    <div class="clude">
-      <img src="assets/imgs/icon/icon_data.png" alt="">
-      <p class="title">项目资料</p>
+    <div class="clude" *ngFor="let item of cloud">
+      <img src="assets/imgs/icon/{{ item.url }}.png" alt="">
+      <p class="title">{{ item.name }}</p>
     </div>
   </div>
 
@@ -234,7 +218,7 @@
   </div>
 
 
-  <div class="sort-page">
+  <div class="sort-page hide">
     <div class="sort-content">
       <p class="sort-title">维修类别</p>
       <ul class="sort-list">
@@ -301,35 +285,12 @@
   </ul>
 
   <ul class="problem-list">
-    <li class="problem-item">
-      <p class="icon-problem-1"></p>
-      <p class="num"><em>12</em>次</p>
-      <p class="describe">设计缺陷</p>
-    </li>
-    <li class="problem-item">
-      <p class="icon-problem-2"></p>
-      <p class="num"><em>12</em>次</p>
-      <p class="describe">设计缺陷</p>
-    </li>
-    <li class="problem-item">
-      <p class="icon-problem-3"></p>
-      <p class="num"><em>12</em>次</p>
-      <p class="describe">设计缺陷</p>
-    </li>
-    <li class="problem-item">
-      <p class="icon-problem-4"></p>
-      <p class="num"><em>12</em>次</p>
-      <p class="describe">设计缺陷</p>
-    </li>
-    <li class="problem-item">
-      <p class="icon-problem-5"></p>
-      <p class="num"><em>12</em>次</p>
-      <p class="describe">设计缺陷</p>
-    </li>
-    <li class="problem-item">
-      <p class="icon-problem-6"></p>
-      <p class="num"><em>12</em>次</p>
-      <p class="describe">设计缺陷</p>
+    <li class="problem-item" *ngFor="let item of problem">
+      <div class="icon-problem">
+        <img src="assets/imgs/problem/{{ item.url }}.png" alt="">
+      </div>
+      <p class="num"><em>{{ item.num }}</em>次</p>
+      <p class="describe">{{ item.name }}</p>
     </li>
   </ul>
 
@@ -388,10 +349,10 @@
 
   <div class="filter-collapse">
     <div class="filter-list">
-      <div class="category-item rank active">排序</div>
-      <div class="category-item time">管辖范围</div>
-      <div class="category-item time">时间</div>
-      <div class="category-item time">问题</div>
+        <div class="category-item rank active">排序</div>
+        <div class="category-item time">管辖范围</div>
+        <div class="category-item time">时间</div>
+        <div class="category-item time">问题</div>
     </div>
     <ul class="select-list hide">
       <li class="select-item">全部</li>
@@ -624,29 +585,9 @@
   <div class="br"></div>
 
   <ul class="import-img">
-    <li class="item-img">
-      <img src="assets/imgs/import/import_img1.png" alt="">
+    <li class="item-img" *ngFor="let item of import">
+      <img src="assets/imgs/import/{{ item.url }}.png" alt="">
       <i class="icon-radio-selected"></i>
-    </li>
-    <li class="item-img">
-      <img src="assets/imgs/import/import_img2.png" alt="">
-      <i class="icon-radio-unselected"></i>
-    </li>
-    <li class="item-img">
-      <img src="assets/imgs/import/import_img3.png" alt="">
-      <i class="icon-radio-unselected"></i>
-    </li>
-    <li class="item-img">
-      <img src="assets/imgs/import/import_img4.png" alt="">
-      <i class="icon-radio-unselected"></i>
-    </li>
-    <li class="item-img">
-      <img src="assets/imgs/import/import_img5.png" alt="">
-      <i class="icon-radio-unselected"></i>
-    </li>
-    <li class="item-img">
-      <img src="assets/imgs/import/import_img6.png" alt="">
-      <i class="icon-radio-unselected"></i>
     </li>
   </ul>
 
@@ -1078,5 +1019,7 @@
   </div>
 
   <div class="br"></div>
+
+
 
 </ion-content>
