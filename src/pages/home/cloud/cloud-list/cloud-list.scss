@@ -1,0 +1,25 @@
+page-cloud-list {
+
+  .cloud-page {
+    .cloud {
+      width: 91.6%;
+      margin: 15px auto 0;
+      padding: 25px 6%;
+      background-color: white;
+      color: $main-text;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+        float: left;
+        width: 30px;
+        height: 27px;
+        margin-right: 4.5%;
+      }
+      .title {
+        float: left;
+        line-height: 27px;
+      }
+    }
+  }
+
+}

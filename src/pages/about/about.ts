@@ -17,13 +17,6 @@ export class AboutPage {
     { url: 'reason', name: '物损原因' },
     { url: 'remains', name: '遗存问题' }
   ];
-  cloud: any[] = [
-        {url: 'icon_customer', name: '客区'},
-        {url: 'icon_backstage', name: '后区'},
-        {url: 'icon_bar', name: '客区吧台'},
-        {url: 'icon_page', name: '项目图纸'},
-        {url: 'icon_data', name: '项目资料'}
-  ];
 
     problem: any[] = [
         {url: 'problem_1', num: '12', name: '设计缺陷'},

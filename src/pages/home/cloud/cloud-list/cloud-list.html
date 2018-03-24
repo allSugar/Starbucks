@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>云盘</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="cloud-page">
+    <div class="cloud" *ngFor="let item of cloud" (click)="goToOtherPage(item)" >
+      <img src="assets/imgs/icon/{{ item.url }}.png" alt="">
+      <p class="title">{{ item.name }}</p>
+    </div>
+  </div>
+
+</ion-content>
