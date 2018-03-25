@@ -1,14 +1,7 @@
-
 <ion-header>
-
   <ion-navbar>
     <ion-title>物损原因</ion-title>
   </ion-navbar>
-
-</ion-header>
-
-
-<ion-content>
   <div class="filter-collapse">
     <div class="filter-list">
       <div class="category-item rank active">排序</div>
@@ -24,13 +17,17 @@
       <li class="select-item">问题由少到多</li>
     </ul>
   </div>
+</ion-header>
 
+
+<ion-content>
   <ul class="damage-list">
     <li class="damage-item" *ngFor="let item of damage">
       <div class="icon-damage">
         <img src="assets/imgs/problem/{{ item.url }}.png" alt="">
       </div>
-      <p class="num"><em>{{ item.num }}</em>次</p>
+      <p class="num">
+        <em>{{ item.num }}</em>次</p>
       <p class="describe">{{ item.name }}</p>
     </li>
   </ul>

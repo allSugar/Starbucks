@@ -10,9 +10,4 @@ export class EfficiencyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EfficiencyPage');
-  }
-
 }

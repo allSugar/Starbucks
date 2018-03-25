@@ -17,9 +17,4 @@ export class RepairNumberPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RepairNumberPage');
-  }
-
 }
