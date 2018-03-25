@@ -56,3 +56,5 @@ storePassword=123456
 
 ### 03-25
 模块tabs放入header中做悬浮处理
+
+03-26   需要修改tabs布局为百分比占位   栅栏布局  增加tabs底线为背景色#f6f6f6
