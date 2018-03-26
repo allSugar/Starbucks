@@ -76,6 +76,10 @@ ion-header.header {
   z-index: 99;
 }
 
+ion-toast .toast-message {
+  text-align: center;
+}
+
 .ion-ios-arrow-back:before,
 .ion-md-arrow-back:before {
   content: '';

@@ -9,43 +9,97 @@
 
 <ion-content>
   <div class="tabs">
-    <div class="tab-shop">
-      <div class="tab-item">我的店面</div>
-      <div class="tab-item active">全部店面</div>
-    </div>
-    <ul class="select-list">
-      <li class="item">
-        <div class="item-img">
-          <img src="assets/imgs/select/select-all.png" alt="">
-        </div>
-        <p class="name">全部</p>
+    <ul class="tabs-list tabs-two">
+      <li class="tab-btn tab-icon-none active">
+        <em class="text">我的店面</em>
       </li>
-      <li class="item">
-        <div class="item-img">
-          <img src="assets/imgs/change-before.png" alt="">
-        </div>
-        <p class="name">李明明</p>
-      </li>
-      <li class="item">
-        <div class="item-img">
-          <img src="assets/imgs/change-before.png" alt="">
-        </div>
-        <p class="name">李明明</p>
-      </li>
-      <li class="item">
-        <div class="item-img">
-          <img src="assets/imgs/change-before.png" alt="">
-        </div>
-        <p class="name">李明明</p>
-      </li>
-      <li class="item">
-        <div class="item-img">
-          <img src="assets/imgs/change-before.png" alt="">
-        </div>
-        <p class="name">李明明</p>
+      <li class="tab-btn tab-icon-both up">
+        <em class="text">全部店面</em>
       </li>
     </ul>
+    <div class="tabs-content">
+
+    </div>
   </div>
+  <div class="tabs">
+    <ul class="tabs-list tabs-two">
+      <li class="tab-btn">
+        <em class="text">我的店面</em>
+      </li>
+      <li class="tab-btn active">
+        <em class="text">全部店面</em>
+      </li>
+    </ul>
+    <div class="tabs-content">
+
+    </div>
+  </div>
+  <div class="tabs">
+    <ul class="tabs-list tabs-two">
+      <li class="tab-btn tab-icon-none">
+        <em class="text">我的店面</em>
+      </li>
+      <li class="tab-btn tab-icon-both down">
+        <em class="text">全部店面</em>
+      </li>
+    </ul>
+    <div class="tabs-content">
+      <ul class="select-list">
+        <li class="item">
+          <div class="item-img">
+            <img src="assets/imgs/select/select-all.png" alt="">
+          </div>
+          <p class="name">全部</p>
+        </li>
+        <li class="item" *ngFor="let item of [1,2,3,4,5]">
+          <div class="item-img">
+            <img src="assets/imgs/change-before.png" alt="">
+          </div>
+          <p class="name">李明明</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="tabs">
+    <ul class="tabs-list tabs-third">
+      <li class="tab-btn tab-icon-both">
+        <em class="text">排序</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">管辖范围</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">时间</em>
+      </li>
+      <li class="tab-sort">
+        <em class="text">店铺</em>
+      </li>
+    </ul>
+    <div class="tabs-content">
+
+    </div>
+  </div>
+
+  <div class="tabs">
+    <ul class="tabs-list tabs-four">
+      <li class="tab-btn tab-icon-both up">
+        <em class="text">排序</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">厂商</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">时间</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">问题</em>
+      </li>
+    </ul>
+    <div class="tabs-content">
+
+    </div>
+  </div>
+
   <div class="shop-detail">
     <p class="title">回龙观店</p>
     <div class="detail-item">
@@ -139,42 +193,35 @@
   </div>
 
   <div class="br"></div>
-  <div class="filter-collapse">
-    <div class="filter-list">
-      <div class="category-item rank active">排序</div>
-      <div class="category-item time">管辖范围</div>
-      <div class="category-item time">时间</div>
-      <div class="sort">分类</div>
+
+  <div class="time-form">
+    <div class="time-input">
+      <input type="text" placeholder="开始时间">
+      <div class="br"></div>
+      <input type="text" placeholder="结束时间">
     </div>
-    <form class="time-form">
-      <div class="time-input">
-        <input type="text" placeholder="开始时间">
-        <div class="br"></div>
-        <input type="text" placeholder="结束时间">
-      </div>
-      <div class="time-list">
-        <div class="item active">45周</div>
-        <div class="item">46周</div>
-        <div class="item">46周</div>
-        <div class="item">本周</div>
-      </div>
-      <div class="time-list">
-        <div class="item active">9月</div>
-        <div class="item">10月</div>
-        <div class="item">11月</div>
-        <div class="item">本月</div>
-      </div>
-      <div class="time-list">
-        <div class="item active">2014年</div>
-        <div class="item">2015年</div>
-        <div class="item">2016年</div>
-        <div class="item">本年</div>
-      </div>
-      <div class="sort-btn">
-        <button class="btn-cancle">取消</button>
-        <button type="submit" class="btn-sure">确定</button>
-      </div>
-    </form>
+    <div class="time-list">
+      <div class="item active">45周</div>
+      <div class="item">46周</div>
+      <div class="item">46周</div>
+      <div class="item">本周</div>
+    </div>
+    <div class="time-list">
+      <div class="item active">9月</div>
+      <div class="item">10月</div>
+      <div class="item">11月</div>
+      <div class="item">本月</div>
+    </div>
+    <div class="time-list">
+      <div class="item active">2014年</div>
+      <div class="item">2015年</div>
+      <div class="item">2016年</div>
+      <div class="item">本年</div>
+    </div>
+    <div class="sort-btn">
+      <button class="btn-cancle">取消</button>
+      <button type="submit" class="btn-sure">确定</button>
+    </div>
   </div>
 
 
@@ -261,10 +308,10 @@
 
   <div class="filter-collapse">
     <div class="filter-list">
-        <div class="category-item rank active">排序</div>
-        <div class="category-item time">管辖范围</div>
-        <div class="category-item time">时间</div>
-        <div class="category-item time">问题</div>
+      <div class="category-item rank active">排序</div>
+      <div class="category-item time">管辖范围</div>
+      <div class="category-item time">时间</div>
+      <div class="category-item time">问题</div>
     </div>
     <ul class="select-list hide">
       <li class="select-item">全部</li>
@@ -287,7 +334,7 @@
 
   <div class="problem-detail">
     <div class="head">
-      <img src="assets/imgs/avater/avater_card.png"  class="avatar-img"alt="">
+      <img src="assets/imgs/avater/avater_card.png" class="avatar-img" alt="">
       <div class="avatar-body">
         <div class="name">
           <em class="text">张小明</em>
@@ -305,13 +352,12 @@
       <img src="assets/imgs/wait_img.png" alt="">
     </div>
     <div class="word">
-      钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯
-      有损坏，总是一闪一闪的。
+      钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯 有损坏，总是一闪一闪的。
     </div>
   </div>
   <div class="problem-detail">
     <div class="head">
-      <img src="assets/imgs/avater/avater_card.png"  class="avatar-img"alt="">
+      <img src="assets/imgs/avater/avater_card.png" class="avatar-img" alt="">
       <div class="avatar-body">
         <div class="name">
           <em class="text">张小明</em>
@@ -329,8 +375,7 @@
       <img src="assets/imgs/wait_img.png" alt="">
     </div>
     <div class="word">
-      钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯
-      有损坏，总是一闪一闪的。
+      钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯 有损坏，总是一闪一闪的。
     </div>
   </div>
 
@@ -346,7 +391,7 @@
 
   <div class="br"></div>
 
-  <div class="media-focus">
+  <div class="repair-focus">
     <div class="focus-head">
       <em class="icon-house"></em>
       <em class="f-left">北京钟楼百货星巴克</em>
@@ -374,7 +419,7 @@
       <p>400单号：201710212569</p>
     </div>
   </div>
-  <div class="media-focus">
+  <div class="repair-focus">
     <div class="focus-head">
       <em class="icon-house"></em>
       <em class="f-left">北京钟楼百货星巴克</em>
@@ -403,7 +448,7 @@
     </div>
   </div>
 
-  <div class="media-focus">
+  <div class="repair-focus">
     <div class="focus-head">
       <em class="icon-house"></em>
       <em class="f-left">北京钟楼百货星巴克</em>
@@ -429,7 +474,7 @@
     <div class="price">￥1,000</div>
   </div>
 
-  <div class="media-focus">
+  <div class="repair-focus">
     <div class="focus-head">
       <em class="icon-house"></em>
       <em class="f-left">北京钟楼百货星巴克</em>
@@ -555,11 +600,11 @@
       <h3 class="title">子订单1</h3>
       <h4 class="sub-title">类型</h4>
       <ul class="type-detail">
-          <li>
-            <em>五金</em>
-            <em>电器</em>
-            <span>电线</span>
-          </li>
+        <li>
+          <em>五金</em>
+          <em>电器</em>
+          <span>电线</span>
+        </li>
         <li>
           <em>五金</em>
           <em>电器</em>
@@ -577,7 +622,8 @@
           <img src="assets/imgs/change-before.png" alt="">
           <p class="intro">厨房吊灯欧普照明</p>
           <p class="value">
-            <span class="price">￥780</span><br />
+            <span class="price">￥780</span>
+            <br />
             <span class="count">×2</span>
           </p>
         </li>
@@ -585,7 +631,8 @@
           <img src="assets/imgs/change-before.png" alt="">
           <p class="intro">厨房吊灯欧普照明</p>
           <p class="value">
-            <span class="price">￥780</span><br />
+            <span class="price">￥780</span>
+            <br />
             <span class="count">×2</span>
           </p>
         </li>
@@ -689,8 +736,8 @@
 
   <div class="media-ibox p-t-b-l border-b-gray">
     <div class="media-img">
-       <img src="assets/imgs/avater/avater_card.png" alt="">
-       <span class="news-count">11</span>
+      <img src="assets/imgs/avater/avater_card.png" alt="">
+      <span class="news-count">11</span>
     </div>
     <div class="media-body">
       <p class="title">北京钟楼百货星巴克</p>
@@ -830,7 +877,7 @@
       </li>
       <li class="info-item">
         <em class="title">下单时间</em>
-        <strong class="text">2017-12-20  12:20</strong>
+        <strong class="text">2017-12-20 12:20</strong>
       </li>
     </ul>
     <em class="icon-arrow-top"></em>

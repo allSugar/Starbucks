@@ -32,7 +32,7 @@ export class LoginPage {
   ) {
     var params = { method: "userManager.findAccount" };
     this.http.get(params).subscribe(res => {
-      if (res.responseCode == 103010) {
+      if (!!res && res.responseCode == 103010) {
         this.accountList = res.responseObj;
       };
     }, error => {
@@ -52,12 +52,14 @@ export class LoginPage {
     }
 
     this.http.get(this.userInfo).subscribe(res => {
-      if (res.responseCode == 101020) {
-        res.responseObj.clientId = res.clientId;
-        this.storage.set("userInfo", JSON.stringify(res.responseObj));
-        this.navCtrl.setRoot(TabsPage);
-      } else if (res.responseMsg) {
-        this.toast.info(res.responseMsg)
+      if (!!res) {
+        if (!!res && res.responseCode == 101020) {
+          res.responseObj.clientId = res.clientId;
+          this.storage.set("userInfo", JSON.stringify(res.responseObj));
+          this.navCtrl.setRoot(TabsPage);
+        } else {
+          this.toast.info(res.responseMsg)
+        }
       } else {
         this.toast.info("登录失败！");
       }
