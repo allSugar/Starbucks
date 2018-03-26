@@ -20,6 +20,6 @@ export class RepairListPage {
     this.status = n;
   }
   goToOtherPage(){
-    this.navCtrl.push('RepairDetailPage');
+    this.navCtrl.push('orderUndoPage');
   }
 }

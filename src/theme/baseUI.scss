@@ -437,3 +437,140 @@
     background-color: white;
   }
 }
+
+//订单详情
+.order-detail {
+  .order-success {
+    width: 100%;
+    height: 64px;
+    padding: 22px 15px;
+    background-image: url("../assets/imgs/bg/bg_success.png");
+    background-size: cover;
+    overflow: hidden;
+    .title {
+      float: left;
+      margin-left: 10px;
+      font-size: 16px;
+      color: white;
+    }
+  }
+  .order-info {
+    margin-top: 10px;
+    padding: 0 20px 15px;
+    background-color: $white;
+    .info-title {
+      width: 71px;
+      line-height: 23px;
+      margin: 0 auto 16px;
+      text-align: center;
+      color: white;
+      background-color: $green;
+    }
+    .info-list {
+      .info-item {
+        font-size: 13px;
+        overflow: hidden;
+        .title {
+          float: left;
+          color: $secondary-text;
+        }
+        .text {
+          float: right;
+          font-weight: normal;
+        }
+        &+.info-item {
+          margin-top: 6px;
+        }
+      }
+      &.info-hide {
+        max-height: 46px;
+        overflow: hidden;
+      }
+    }
+  }
+  .order-point {
+    margin-top: 10px;
+    .point-head {
+      overflow: hidden;
+      background-color: white;
+      font-size: 15px;
+      padding: 11px 13px 11px;
+    }
+    .point-detail {
+      overflow: hidden;
+      padding: 15px;
+      .point-img {
+        float: left;
+        width: 80px;
+        height: 80px;
+        img {
+          max-width: 100%;
+        }
+      }
+      .point-body {
+        position: relative;
+        height: 80px;
+        width: 70%;
+        margin-left: 30%;
+        .point-title {
+          overflow: hidden;
+          .address {
+            float: left;
+            color: $gray;
+          }
+          .pay {
+            float: right;
+            color: $red;
+          }
+          [class*='urgent-'] {
+            float: right;
+            margin-right: 0;
+          }
+        }
+        .point-content {
+          margin-top: 5px;
+          font-size: 13px;
+          color: $gray;
+          .tag {
+            padding: 2px 4px;
+            color: $yellow;
+            border: 1px solid $yellow;
+          }
+        }
+        .point-foot {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          overflow: hidden;
+          color: $gray-light;
+          font-size: 13px;
+          .question {
+            float: right;
+            color: $red;
+          }
+        }
+      }
+    }
+    .point-retract {
+      padding: 15px;
+      background-color: white;
+      overflow: hidden;
+      .btn-retract {
+        float: right;
+        padding: 3px 11px;
+        border: 1px solid $main-text;
+        border-radius: 2px;
+      }
+    }
+  }
+  .order-pay {
+    margin-top: 10px;
+    padding: 21px 12px;
+    background-color: white;
+    .sum {
+      float: right;
+      color: $red;
+    }
+  }
+}

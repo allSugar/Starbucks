@@ -3,16 +3,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-repair-detail',
-  templateUrl: 'repair-detail.html',
+  selector: 'page-order-undo',
+  templateUrl: 'order-undo.html',
 })
-export class RepairDetailPage {
+export class orderUndoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RepairDetailPage');
-  }
-
 }
