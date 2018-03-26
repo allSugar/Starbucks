@@ -10,17 +10,9 @@
 
 <ion-content>
   <div class="stage-page">
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">客区照片1</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-after.png" alt="">
-      <p class="title">客区照片2</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">客区照片3</p>
+    <div class="stage" *ngFor="let item of picture">
+      <img src="assets/imgs/{{ item.url }}.png" alt="">
+      <p class="title"> {{ item.name }} </p>
     </div>
   </div>
 </ion-content>

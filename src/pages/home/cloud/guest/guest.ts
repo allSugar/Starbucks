@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the GuestPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-guest',
@@ -15,11 +8,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GuestPage {
 
+  picture: any[] = [
+      {url: 'change-before', name: '客区照片1'},
+      {url: 'change-after', name: '客区照片2'},
+      {url: 'change-before', name: '客区照片3'},
+      {url: 'explain', name: '使用说明1'},
+      {url: 'explain', name: '使用说明2'}
+  ]
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GuestPage');
-  }
 
 }
