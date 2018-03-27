@@ -5,13 +5,16 @@
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-rate tabs-third">
-      <li class="tab-btn" [ngClass]="{ 'active': status == 1 }" (click)="tabs(1)">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }"
+       (click)="tabs('orderUndoPage')">
         <em class="text">待接单(8)</em>
       </li>
-      <li class="tab-btn" [ngClass]="{ 'active': status == 6 }" (click)="tabs(6)">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }" 
+      (click)="tabs('OrderConductPage')">
         <em class="text">进行中(3)</em>
       </li>
-      <li class="tab-btn" [ngClass]="{ 'active': status == 8 }" (click)="tabs(8)">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }" 
+      (click)="tabs('OrderDonePage')">
         <em class="text">已完成</em>
       </li>
     </ul>

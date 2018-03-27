@@ -1,18 +1,100 @@
-<!--
-  Generated template for the OrderDonePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>orderDone</ion-title>
+  <ion-navbar class="border-none">
+    <ion-title>维修单详情</ion-title>
   </ion-navbar>
-
+  <div class="tabs">
+    <ul class="tabs-rate tabs-four">
+      <li class="tab-btn active">
+        <em class="text">详情</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">流程</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">记录</em>
+      </li>
+      <li class="tab-btn">
+        <em class="text">报价</em>
+      </li>
+    </ul>
+  </div>
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+  <div class="order-detail">
+    <div class="order-status">
+      <em class="icon-smile"></em>
+      <span class="title">维修单已完成</span>
+      <em class="icon-arrow-right-white f-right"></em>
+      <em class="icon-avatar"></em>
+    </div>
+    <div class="order-info">
+      <div class="info-title">订单详情</div>
+      <ul class="info-list info-hide">
+        <li class="info-item">
+          <em class="title">订单号</em>
+          <strong class="text">201712202569</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">400单号</em>
+          <strong class="text">40019892876462</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">门店名称</em>
+          <strong class="text">钟楼百货星巴克</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">维修公司</em>
+          <strong class="text">北京苏南方圆建设有限公司</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">维修员</em>
+          <strong class="text">李斌</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">维修主管</em>
+          <strong class="text">张俊伟</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">维修监理</em>
+          <strong class="text">石海杰</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">店长</em>
+          <strong class="text">蒙伟贤</strong>
+        </li>
+        <li class="info-item">
+          <em class="title">下单时间</em>
+          <strong class="text">2017-12-20 12:20</strong>
+        </li>
+      </ul>
+      <em class="icon-arrow-top"></em>
+    </div>
+    <div class="order-point">
+      <div class="point-head">
+        <span>北京苏南方圆建设有限公司</span>
+        <em class="icon-arrow-right  f-none"></em>
+      </div>
+      <div class="point-detail">
+        <div class="point-img">
+          <img alt="" src="assets/imgs/change-before.png">
+        </div>
+        <div class="point-body">
+          <p class="point-title">
+            <span class="address">A区8栋一层吧台区</span>
+            <span class="pay">¥ 500</span>
+          </p>
+          <p class="point-content">灯具／灯不亮了</p>
+          <p class="point-foot">
+            <span>5张照片</span>
+            <span class="question">灯管自然损坏</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="order-pay">
+      <span>订单总金额</span>
+      <span class="sum">¥ 1,500</span>
+    </div>
+  </div>
 </ion-content>

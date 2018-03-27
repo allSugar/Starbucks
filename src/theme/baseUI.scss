@@ -204,6 +204,7 @@
     }
   }
   .tabs-content {
+    display: none;
     position: absolute;
     top: 100%;
     margin-top: -1px;
@@ -440,7 +441,7 @@
 
 //订单详情
 .order-detail {
-  .order-success {
+  .order-status {
     width: 100%;
     height: 64px;
     padding: 22px 15px;
@@ -490,13 +491,15 @@
   }
   .order-point {
     margin-top: 10px;
+    padding-bottom: 25px;
+    background-color: $white;
     .point-head {
       overflow: hidden;
-      background-color: white;
       font-size: 15px;
       padding: 11px 13px 11px;
     }
     .point-detail {
+      background-color: $body-bg;
       overflow: hidden;
       padding: 15px;
       .point-img {
@@ -553,8 +556,8 @@
       }
     }
     .point-retract {
-      padding: 15px;
-      background-color: white;
+      padding: 15px 15px 0 15px;
+      margin-bottom: -10px;
       overflow: hidden;
       .btn-retract {
         float: right;

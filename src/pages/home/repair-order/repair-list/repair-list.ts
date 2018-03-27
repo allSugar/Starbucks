@@ -9,17 +9,17 @@ import { IonicPage, App } from 'ionic-angular';
 export class RepairListPage {
 
   navCtrl: any;
-  status: number = 6;
+  status: string = 'orderUndoPage';
   constructor(
     public app: App
   ) {
     this.navCtrl = this.app.getRootNav();
   }
 
-  tabs(n: number) {
-    this.status = n;
+  tabs(name: string) {
+    this.status = name;
   }
-  goToOtherPage(){
-    this.navCtrl.push('orderUndoPage');
+  goToOtherPage() {
+    this.navCtrl.push(this.status);
   }
 }
