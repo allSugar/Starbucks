@@ -1,3 +1,38 @@
 page-weekly-issues {
-
+  .issues-list {
+    padding: 12px 5.5% 15px;
+    background-color: white;
+    overflow: hidden;
+    .issues-item {
+      position: relative;
+      float: left;
+      width: 33.333333%;
+    }
+    .issues-content {
+      margin-left: 24%;
+      font-size: 18px;
+      .issues-title {
+        font-size: 12px;
+        color: $secondary-text;
+      }
+    }
+  }
+  .chart-bar {
+    margin-top: 15px;
+    padding: 20px 15px 49px;
+    background-color: white;
+    .chart-title {
+      margin-bottom: 50px;
+      font-size: 16px;
+      overflow: hidden;
+      .total {
+        float: right;
+        font-size: 14px;
+        .icon-arrow-bottom {
+          display: inline-block;
+          margin: 0 0 0 6px;
+        }
+      }
+    }
+  }
 }

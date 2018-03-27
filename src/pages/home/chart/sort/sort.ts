@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import Chart from 'chart.js'
+import Chart from 'chart.js';
 
 @IonicPage()
 @Component({
@@ -15,11 +15,11 @@ export class SortPage {
     }
 
     data: any = [
-        {shopName: '设备维修', percentage: '20%', price:'24000', count: '20',barClass: 'bar-sort-s'},
-        {shopName: '设施维修', percentage: '20%', price:'24000', count: '20',barClass: 'bar-sort-s'},
-        {shopName: '设施保养', percentage: '20%', price:'24000', count: '20',barClass: 'bar-sort-l'},
-        {shopName: '设备保养', percentage: '20%', price:'24000', count: '20',barClass: 'bar-sort-xl'},
-        {shopName: '桌椅维修', percentage: '20%', price:'24000', count: '20',barClass: 'bar-sort-xxl'}
+        {title: '设备维修', percentage: '20%', price:'24000', count: '20'},
+        {title: '设施维修', percentage: '20%', price:'24000', count: '20'},
+        {title: '设施保养', percentage: '20%', price:'24000', count: '20'},
+        {title: '设备保养', percentage: '20%', price:'24000', count: '20'},
+        {title: '桌椅维修', percentage: '20%', price:'24000', count: '20'}
 
     ];
     ionViewDidEnter() {

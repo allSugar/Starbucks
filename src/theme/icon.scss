@@ -247,3 +247,20 @@
   margin-top: 3px;
   content: url("../assets/imgs/icon/icon_hourglass.png");
 }
+
+[class*='icon-issues-'] {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 20px;
+  height: 22px;
+}
+.icon-issues-number {
+  content: url("../assets/imgs/icon/icon_issues_number.png");
+}
+.icon-issues-time {
+  content: url("../assets/imgs/icon/icon_issues_time.png");
+}
+.icon-issues-total {
+  content: url("../assets/imgs/icon/icon_issues_total.png");
+}

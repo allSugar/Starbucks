@@ -15,11 +15,11 @@ export class VulnerablePartsPage {
     }
 
     data: any = [
-        {shopName: '钟楼星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-m'},
-        {shopName: '三里屯星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-s'},
-        {shopName: '后海星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-l'},
-        {shopName: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-xl'},
-        {shopName: '北辰星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-xxl'}
+        {title: '钟楼星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-m'},
+        {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-s'},
+        {title: '后海星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-l'},
+        {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-xl'},
+        {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-xxl'}
 
     ];
     ionViewDidEnter() {

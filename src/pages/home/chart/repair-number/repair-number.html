@@ -9,5 +9,25 @@
 
 
 <ion-content>
-
+  <div class="chart-data">
+    <div class="chart">
+      <div padding-vertical>
+        <canvas #chartPie height="200"></canvas>
+      </div>
+    </div>
+    <ul class="data-list">
+      <li class="data-item" *ngFor="let item of data; let i = index">
+        <em class="bar-frequency-{{ i+1 }}"></em>
+        <div class="data-body">
+          <div class="data-head">
+            <span class="title">{{ item.title }}</span>
+            <span class="percentage">{{ item.percentage }}</span>
+            <span class="price">￥{{ item.price }}</span>
+            <em class="icon-arrow-right f-right"></em>
+          </div>
+          <div class="count">维修{{ item.count }}次</div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </ion-content>

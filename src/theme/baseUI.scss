@@ -192,6 +192,11 @@
         }
       }
     }
+    &.tabs-two {
+      .tab-btn {
+        width: 50%;
+      }
+    }
     &.tabs-third {
       .tab-btn {
         width: 33.333333%;
