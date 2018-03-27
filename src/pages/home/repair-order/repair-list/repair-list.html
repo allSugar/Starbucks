@@ -63,7 +63,7 @@
 
 
 <ion-content>
-  <div class="repair-list" (click)="goToOtherPage()">
+  <div class="repair-list" (click)="goToOtherPage()" *ngFor="let i of [1,2]">
     <div class="repair-focus">
       <div class="focus-head">
         <em class="icon-house"></em>

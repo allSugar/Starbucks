@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { OrderConductPage } from './order-conduct';
 
-import { Test } from '../../../../template/test';
+import { TmplModule } from '../../../../template/template.module';
+
 @NgModule({
   declarations: [
-    OrderConductPage,
-    Test,
+    OrderConductPage
   ],
   imports: [
+    TmplModule,
     IonicPageModule.forChild(OrderConductPage),
   ],
 })
-export class OrderConductPageModule {}
+export class OrderConductPageModule {
+  
+}
