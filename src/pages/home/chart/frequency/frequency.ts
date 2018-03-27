@@ -15,11 +15,11 @@ export class FrequencyPage {
   }
 
   data: any = [
-      {shopName: '钟楼星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-blue'},
-      {shopName: '三里屯星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-green'},
-      {shopName: '后海星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-yellow'},
-      {shopName: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange'},
-      {shopName: '北辰星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-purple'}
+      {title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price:'24000', count: '20'},
+      {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20'},
+      {title: '后海星巴克', percentage: '20%', price:'24000', count: '20'},
+      {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20'},
+      {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20'}
 
   ];
   ionViewDidEnter() {

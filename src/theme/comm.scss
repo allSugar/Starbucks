@@ -328,67 +328,51 @@
         height: 20px;
         border-radius: 2px;
       }
-      .bar-blue {
-        background-color: #1E8CE1;
+
+      $barFrequencyColor: '#1E8CE1' '#8CC42A' '#FDA109' '#F85B25' '#9A34B8';
+      @for $i from 1 to 6 {
+        .bar-frequency-#{$i} {
+          background-color: #{nth($barFrequencyColor,$i)};
+        }
       }
-      .bar-green {
-        background-color: #8CC42A;
+      $barVulnerableColor: '#FB6428' '#FF9102' '#FEBE24' '#FFE506' '#FC481F';
+      @for $i from 1 to 6 {
+        .bar-vulnerable-#{$i} {
+          background-color: #{nth($barVulnerableColor,$i)};
+        }
       }
-      .bar-yellow {
-        background-color: #FDA109;
-      }
-      .bar-orange {
-        background-color: #F85B25;
-      }
-      .bar-purple {
-        background-color: #9A34B8;
-      }
-      .bar-orange-s {
-        background-color: #FB6428;
-      }
-      .bar-orange-m {
-        background-color: #FF9102;
-      }
-      .bar-orange-l {
-        background-color: #FEBE24;
-      }
-      .bar-orange-xl {
-        background-color: #FFE506;
-      }
-      .bar-orange-xxl {
-        background-color: #FC481F;
-      }
-      .bar-sort-s {
-        background-color: #FF8084;
-      }
-      .bar-sort-m {
-        background-color: #FFA15C;
-      }
-      .bar-sort-l {
-        background-color: #FFC45A;
-      }
-      .bar-sort-xl {
-        background-color: #31D5C2;
-      }
-      .bar-sort-xxl {
-        background-color: #ADA8FE;
+      $barSortColor: '#FF8084' '#FFA15C' '#FFC45A' '#31D5C2' '#ADA8FE';
+      @for $i from 1 to 6 {
+        .bar-sort-#{ $i }{
+          background-color: #{nth($barSortColor, $i)};
+        }
       }
       .data-body{
         width: 100%;
         padding-left: 18px;
         .data-head {
           overflow: hidden;
-          .shop-name {
+          .title {
             float: left;
-            width: 38%;
+            width: 45%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
-          .number {
+          .percentage {
             float: left;
-            width: 25%;
+            width: 20%;
             text-align: center;
             color: $secondary-text;
           }
+          .price {
+             float: left;
+             width: 25%;
+             text-align: center;
+             color: $secondary-text;
+           }
         }
+
       }
       .count {
         margin-top: 10px;

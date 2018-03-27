@@ -2,8 +2,53 @@
   <ion-navbar>
     <ion-title>每周问题</ion-title>
   </ion-navbar>
+  <div class="tabs">
+    <ul class="tabs-rate tabs-two">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 1 }" (click)="tabs(1)">
+        <em class="text">紧急维修</em>
+      </li>
+      <li class="tab-btn" [ngClass]="{ 'active': status == 2 }" (click)="tabs(2)">
+        <em class="text">一般维修</em>
+      </li>
+    </ul>
+  </div>
+  <ul class="issues-list">
+    <li class="issues-item">
+      <em class="icon-issues-number"></em>
+      <div class="issues-content">
+        <p>16</p>
+        <p class="issues-title">待解决数</p>
+      </div>
+    </li>
+    <li class="issues-item">
+      <em class="icon-issues-total"></em>
+      <div class="issues-content">
+        <p>16</p>
+        <p class="issues-title">问题总数</p>
+      </div>
+    </li>
+    <li class="issues-item">
+      <em class="icon-issues-number"></em>
+      <div class="issues-content">
+        <p>16</p>
+        <p class="issues-title">平均解决时长</p>
+      </div>
+    </li>
+  </ul>
 </ion-header>
 
 <ion-content>
 
+  <div class="chart-bar">
+    <div class="chart-title">
+      <em>已创建和已解决问题的周累计量</em>
+      <div class="total">
+        <span>总计</span>
+        <em class="icon-arrow-bottom"></em>
+      </div>
+    </div>
+    <div>
+      <canvas #chartBar height="200"></canvas>
+    </div>
+  </div>
 </ion-content>

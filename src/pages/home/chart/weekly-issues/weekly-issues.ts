@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the WeeklyIssuesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import Chart from 'chart.js';
 
 @IonicPage()
 @Component({
@@ -15,6 +9,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class WeeklyIssuesPage {
 
+  @ViewChild('chartBar') chartBar: ElementRef;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidEnter() {
+      Chart.Bar(this.chartBar.nativeElement.getContext("2d"), {
+          data: {
+              labels: ['1', '2', '3', '4', '5'],
+              datasets: [{
+                  label: '已解决',
+                  data: [48, 48, 48, 48, 48, 48],
+                  backgroundColor: '#8CC42A',
+                  stack: 'Stack 0'
+              },{
+                  label: '总计',
+                  data: [100, 100, 100, 100, 100, 100],
+                  backgroundColor: '#DFE6EA',
+                  stack: 'Stack 0'
+              }
+              ]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+  }
+
+  status: number = 1;
+  tabs(n: number) {
+    this.status = n;
   }
 }

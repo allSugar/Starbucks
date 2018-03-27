@@ -11,7 +11,7 @@ export class ChartListPage {
     navCtrl: any;
     category: Object[] = [
         {url: 'repair-frequency', name: '维修频率', page: 'FrequencyPage'},
-        {url: 'warranty-number', name: '报修次数'},
+        {url: 'warranty-number', name: '报修次数', page: 'RepairNumberPage'},
         {url: 'repair-maintain', name: '维修分类', page:'SortPage'},
         {url: 'easy-hart', name: '易损部位', page:'VulnerablePartsPage'},
         {url: 'weekly', name: '每周问题', page:'WeeklyIssuesPage'},
