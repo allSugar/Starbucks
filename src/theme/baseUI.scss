@@ -441,7 +441,7 @@
 
 //订单详情
 .order-detail {
-  .order-status {
+  .status {
     width: 100%;
     height: 64px;
     padding: 22px 15px;
@@ -455,7 +455,7 @@
       color: white;
     }
   }
-  .order-info {
+  .info {
     margin-top: 10px;
     padding: 0 20px 15px;
     background-color: $white;
@@ -489,16 +489,16 @@
       }
     }
   }
-  .order-point {
+  .point {
     margin-top: 10px;
     padding-bottom: 25px;
     background-color: $white;
-    .point-head {
+    .point-title {
       overflow: hidden;
       font-size: 15px;
       padding: 11px 13px 11px;
     }
-    .point-detail {
+    .point-content {
       background-color: $body-bg;
       overflow: hidden;
       padding: 15px;
@@ -515,13 +515,13 @@
         height: 80px;
         width: 70%;
         margin-left: 30%;
-        .point-title {
+        .point-describe {
           overflow: hidden;
           .address {
             float: left;
             color: $gray;
           }
-          .pay {
+          .currency {
             float: right;
             color: $red;
           }
@@ -530,7 +530,7 @@
             margin-right: 0;
           }
         }
-        .point-content {
+        .point-tag {
           margin-top: 5px;
           font-size: 13px;
           color: $gray;
@@ -540,7 +540,7 @@
             border: 1px solid $yellow;
           }
         }
-        .point-foot {
+        .point-action {
           position: absolute;
           left: 0;
           bottom: 0;
@@ -567,7 +567,7 @@
       }
     }
   }
-  .order-pay {
+  .pay {
     margin-top: 10px;
     padding: 21px 12px;
     background-color: white;
