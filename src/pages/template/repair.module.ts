@@ -3,10 +3,12 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { OrderInfoTmpl } from './order-info';
 import { OrderPointTmpl } from './order-point';
+import { RepairOrderTmpl } from './repair-order';
 
 const COMPONENTS = [
   OrderInfoTmpl,
-  OrderPointTmpl
+  OrderPointTmpl,
+  RepairOrderTmpl
 ];
 
 @NgModule({
@@ -14,5 +16,5 @@ const COMPONENTS = [
   imports: [IonicPageModule.forChild(COMPONENTS)],
   exports: [...COMPONENTS],
 })
-export class TmplModule {
+export class RepairModule {
 }

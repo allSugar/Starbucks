@@ -2,14 +2,14 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { orderUndoPage } from './order-undo';
 
-import { TmplModule } from '../../../../template/template.module';
+import { RepairModule } from '../../../../template/repair.module';
 
 @NgModule({
   declarations: [
     orderUndoPage,
   ],
   imports: [
-    TmplModule,
+    RepairModule,
     IonicPageModule.forChild(orderUndoPage),
   ],
 })

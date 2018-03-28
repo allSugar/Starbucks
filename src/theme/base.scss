@@ -9,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+  margin: 0 !important;
   font-weight: normal;
 }
 
@@ -40,8 +40,7 @@ ion-header.header {
       min-height: 48px
     }
     .toolbar-background {
-      background: $blue;
-      //border-bottom: 1px solid $black-blue;
+      background: $blue; //border-bottom: 1px solid $black-blue;
     }
     .toolbar-title {
       color: white;

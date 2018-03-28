@@ -4,16 +4,16 @@
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-rate tabs-four">
-      <li class="tab-btn active">
+      <li class="tab-btn active" [ngClass]="{ 'active': tabStatus == 0 }" (click)="tabs(0)">
         <em class="text">详情</em>
       </li>
-      <li class="tab-btn">
+      <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 1 }" (click)="tabs(1)">
         <em class="text">流程</em>
       </li>
-      <li class="tab-btn">
+      <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 2 }" (click)="tabs(2)">
         <em class="text">记录</em>
       </li>
-      <li class="tab-btn">
+      <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 3 }" (click)="tabs(3)">
         <em class="text">报价</em>
       </li>
     </ul>
@@ -21,20 +21,69 @@
 </ion-header>
 
 <ion-content>
-  <div class="order-detail">
+  <div class="order-detail" *ngIf="tabStatus == 0">
     <div class="status">
       <em class="icon-smile"></em>
       <span class="title">维修单已完成</span>
       <em class="icon-arrow-right-white f-right"></em>
       <em class="icon-avatar"></em>
     </div>
-    <order-info></order-info>>
+    <order-info></order-info>
     <div class="point-list">
       <order-point [retract]="false"></order-point>
     </div>
     <div class="pay">
       <span>订单总金额</span>
       <span class="sum">¥ 1,500</span>
+    </div>
+  </div>
+  <div class="process-list" *ngIf="tabStatus == 1">
+    <div class="process-element">
+      <h3 class="media-title">维修单跟踪</h3>
+      <div class="media-body">
+        <div class="media-timeline">
+          <ul class="timeline-list">
+            <li class="timeline-item">
+              <em class="text">生成维修单</em>
+              <em class="time">5月5日 13:29</em>
+            </li>
+            <li class="timeline-item">
+              <em class="text">维修主管发起材料采购</em>
+              <em class="time">5月5日 14:45</em>
+            </li>
+            <li class="timeline-item">
+              <em class="text">指定维修员</em>
+              <em class="time">5月5日 15:20</em>
+              <span class="describe">维修员张三(15510230114)，上门时间是5月5日17:20</span>
+            </li>
+            <li class="timeline-item">
+              <em class="text">变更维修员</em>
+              <em class="time">5月5日 15:20</em>
+              <span class="describe">维修主管将维修员张三变更为李四(18701298765)</span>
+            </li>
+            <li class="timeline-item">
+              <em class="text">维修员已接单</em>
+              <em class="time">5月5日 21:45</em>
+            </li>
+            <li class="timeline-item">
+              <em class="text">维修员已出发</em>
+              <em class="time">5月5日 15:20</em>
+            </li>
+            <li class="timeline-item">
+              <em class="text">维修员已到达</em>
+              <em class="time">5月5日 15:20</em>
+            </li>
+            <li class="timeline-item">
+              <em class="text">维修中</em>
+              <em class="time">5月5日 21:45</em>
+            </li>
+            <li class="timeline-item">
+              <em class="text">维修订单已完成</em>
+              <em class="time">5月5日 21:45</em>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </ion-content>

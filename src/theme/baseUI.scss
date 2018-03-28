@@ -177,6 +177,7 @@
       em.text {
         position: relative;
         display: inline-block;
+        font-size: 15px;
         vertical-align: top;
       }
       &.active {
@@ -377,9 +378,9 @@
 
 /* 维修单 */
 
-.repair-focus {
+.repair-emement {
   margin-top: 10px;
-  .focus-head {
+  .media-bar {
     width: 100%;
     padding: 12px 12px;
     overflow: hidden;
@@ -390,21 +391,21 @@
       color: $green;
     }
   }
-  .focus-detail {
+  .media-body {
     width: 100%;
     height: 100px;
     padding: 15px;
-    .focus-title {
+    .media-title {
       height: 18px;
       overflow: hidden;
-      .focus-time {
-        float: right;
-        line-height: 18px;
-        font-size: 12px;
-        color: $secondary-text;
-      }
     }
-    .focus-img {
+    .media-time {
+      float: right;
+      line-height: 18px;
+      font-size: 12px;
+      color: $secondary-text;
+    }
+    .media-img {
       margin-top: 15px;
       overflow: hidden;
       img {
@@ -423,7 +424,7 @@
       }
     }
   }
-  .order {
+  .media-info {
     padding: 19px 15px;
     color: $secondary-text;
     background-color: white;
@@ -579,6 +580,88 @@
     .sum {
       float: right;
       color: $red;
+    }
+  }
+}
+
+/* 流程 */
+
+.process-list {
+  color: $main-text;
+  .process-element {
+    min-height: 100%;
+    background-color: $white;
+    .media-title {
+      padding: 18px 0;
+      font-size: 17px;
+      text-align: center;
+    }
+    .media-body {
+      border-top: 1px solid $box-border;
+      padding-left: 30px;
+      padding-bottom: 40px;
+    }
+    .media-timeline {
+      padding: 40px 15px 0 15px;
+      border-left: 1px solid $box-border;
+    }
+    .timeline-list {
+      line-height: 15px;
+      .timeline-item {
+        position: relative;
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          width: 9px;
+          left: -20px;
+        }
+        &::after {
+          top: 3px;
+          height: 9px;
+          background-color: #d0d5de;
+          @include border_radius(100%);
+        }
+        &:last-child {
+          color: $green;
+          &::after {
+            width: 5px;
+            height: 5px;
+            left: -21px;
+            top: 2px;
+            border: 3px solid $green;
+            background-color: $white;
+          }
+          &::before {
+            top: 7px;
+            bottom: 0;
+            background-color: $white;
+          }
+        }
+        &+.timeline-item {
+          margin-top: 40px;
+        }
+      }
+      .text {
+        display: block;
+        margin-right: 100px;
+      }
+      .time {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $gray-light;
+      }
+      .describe {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 5px;
+        font-size: 10px;
+        line-height: 1;
+        color: $gray-light;
+      }
     }
   }
 }
