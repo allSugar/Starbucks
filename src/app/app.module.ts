@@ -10,7 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/index/index';
 import { ForumPage } from '../pages/forum/forum';
-import { AboutPage } from '../pages/about/about';
+import { NewsListPage } from '../pages/news/news-list/news-list';
 import { ContactPage } from '../pages/contact/contact';
 import { MyPage } from '../pages/my/my';
 import { DraggablePage } from '../pages/modules/draggable/draggable';
@@ -39,7 +39,7 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     HomePage,
     ForumPage,
-    AboutPage,
+    NewsListPage,
     ContactPage,
     MyPage,
     DraggablePage
@@ -60,7 +60,7 @@ import { IonicStorageModule } from '@ionic/storage';
     TabsPage,
     HomePage,
     ForumPage,
-    AboutPage,
+    NewsListPage,
     ContactPage,
     MyPage,
     DraggablePage

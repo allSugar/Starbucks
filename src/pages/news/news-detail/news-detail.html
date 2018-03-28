@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>平台通知</ion-title>
+    </ion-navbar>
+    <div class="tabs">
+        <ul class="tabs-rate tabs-third">
+            <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }">
+                <em class="text">新单</em>
+            </li>
+            <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }"
+                (click)="tabs('OrderConductPage')">
+                <em class="text">已完成</em>
+            </li>
+            <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }"
+                (click)="tabs('OrderDonePage')">
+                <em class="text">群消息</em>
+            </li>
+        </ul>
+    </div>
+</ion-header>
+
+<ion-content>
+
+</ion-content>

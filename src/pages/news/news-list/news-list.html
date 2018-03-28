@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>消息</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="ibox">
+    <div class="category">
+      <ul class="item-list">
+        <li class="item border-none" *ngFor="let item of news" (click)="goToOtherPage(item)">
+          <div class="item-img">
+            <img src="assets/imgs/icon/{{ item.url }}.png" alt="">
+          </div>
+          <p class="title">{{ item.name }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="stage-page">
+    <div class="stage p-t-b-xl">
+      <p class="icon-news-warm">
+        <span class="news-count">11</span>
+      </p>
+      <div class="stage-news">
+        <div class="news-name">
+          <span>低温报警</span>
+          <span class="time">2017.12.23</span>
+        </div>
+        <div class="news-detail">798星巴克区天花板低温报警</div>
+      </div>
+    </div>
+    <div class="stage p-t-b-xl">
+      <p class="icon-news-3d">
+        <span class="news-count">6</span>
+      </p>
+      <div class="stage-news">
+        <div class="news-name">
+          <span>3D全景</span>
+          <span class="time">2017.12.23</span>
+        </div>
+        <div class="news-detail">翠微百货星巴克更新3D全景了</div>
+      </div>
+    </div>
+    <div class="stage p-t-b-xl">
+      <p class="icon-news-icloud"></p>
+      <div class="stage-news">
+        <div class="news-name">
+          <span>云盘</span>
+          <span class="time">2017.12.23</span>
+        </div>
+        <div class="news-detail">丰台万达星巴克云盘有更新</div>
+      </div>
+    </div>
+  </div>
+</ion-content>
