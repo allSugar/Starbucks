@@ -17,7 +17,5 @@ export class TabsPage {
   tab4Root = ContactPage;
   tab5Root = MyPage;
 
-  constructor() {
-
-  }
+  constructor() { }
 }

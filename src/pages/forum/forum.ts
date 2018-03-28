@@ -73,6 +73,12 @@ export class ForumPage {
       name: "CalendarPage"
     });
   }
+  goTmpl() {
+    this.navCtrl.push('PageTmplPage', {
+      id: "9",
+      name: "PageTmplPage"
+    });
+  }
 
   loginOut() {
     this.login.loginOut();

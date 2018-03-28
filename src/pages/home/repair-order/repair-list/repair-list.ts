@@ -19,6 +19,7 @@ export class RepairListPage {
   tabs(name: string) {
     this.status = name;
   }
+
   goToOtherPage() {
     this.navCtrl.push(this.status);
   }

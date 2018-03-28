@@ -3,4 +3,101 @@ page-order-done {
     padding-top: 20px;
     height: 100%;
   }
+  .offer {
+    padding-top: 10px;
+    .offer-count {
+      padding: 25px 15px;
+      background-color: $white;
+      overflow: hidden;
+      .item {
+        float: left;
+        width: 50%;
+        height: 40px;
+        font-size: 11px;
+        color: $gray-light;
+      }
+      .number {
+        margin-top: 10px;
+        font-size: 18px;
+        color: $main-text;
+        font-weight: 600;
+      }
+      em.text {
+        font-size: 12px;
+      }
+    }
+    .offer-order {
+      margin-top: 10px;
+      padding: 20px 15px;
+      background-color: $white;
+      color: $gray;
+      .title {
+        position: relative;
+        font-size: 16px;
+        line-height: 18px;
+        &::before {
+          content: '';
+          position: absolute;
+          left: -15px;
+          top: 0;
+          width: 3px;
+          height: 18px;
+          background-color: $green;
+        }
+      }
+      .tag {
+        margin-top: 30px;
+        font-size: 14px;
+        color: $gray-light;
+      }
+      .type-list {
+        margin-top: 10px;
+        .item {
+          overflow: hidden;
+        }
+        .text {
+          float: left;
+          padding: 4px 8px;
+          font-size: 12px;
+          border-radius: 17px;
+          color: #7DE2B8;
+          background-color: #edfdf5;
+          &+.item {
+            content: '>'
+          }
+        }
+      }
+      .hours {
+        margin-top: 10px;
+      }
+      .stuff-list {
+        margin-top: 10px;
+        .item-img {
+          float: left;
+          width: 40px;
+          height: 40px;
+        }
+        .item-body {
+          position: relative;
+          height: 40px;
+          margin-left: 50px;
+          padding-right: 50px;
+          line-height: 20px;
+        }
+        .item-price,
+        .item-number{
+          position: absolute;
+          right: 0;
+          font-size: 12px;
+        }
+        .item-price{
+          top: 0;
+        }
+        .item-number{
+          bottom: 0;
+          color: $gray-light;
+        }
+      }
+    }
+  }
 }

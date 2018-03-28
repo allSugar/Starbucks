@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector:'repair-order-element',
-    template:`<div class="repair-emement">
+  selector: 'repair-order-element',
+  template: `<div class="repair-emement">
     <div class="media-bar">
       <em class="icon-house"></em>
       <em class="f-left">北京钟楼百货星巴克</em>
@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
       <em class="shop-name">苏南方圆</em>
       <em class="icon-light"></em>
     </div>
-    <div class="media-body">
+    <div class="media-body" (click)='goToOtherPage()'>
       <div class="media-title">
         <em class="urgent-general" *ngIf="status == 0">一般</em>
         <em class="urgent-crash" *ngIf="status == 3">紧急</em>
@@ -33,9 +33,14 @@ import { Component, Input } from '@angular/core';
   </div>`
 })
 
-export class RepairOrderTmpl{
-    /*
-    状态：0 -- 一般  3 -- 紧急
-    */ 
-    @Input() status:Number = 0;
+export class RepairOrderTmpl {
+  /*
+  状态：0 -- 一般  3 -- 紧急
+  */
+  @Input() status: Number = 0;
+  @Output() goto = new EventEmitter<any>();
+
+  goToOtherPage() {
+    this.goto.emit();
+  }
 }
