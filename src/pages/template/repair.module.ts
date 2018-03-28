@@ -4,11 +4,13 @@ import { IonicPageModule } from 'ionic-angular';
 import { OrderInfoTmpl } from './order-info';
 import { OrderPointTmpl } from './order-point';
 import { RepairOrderTmpl } from './repair-order';
+import { OrderExplainTmpl } from './order-explain';
 
 const COMPONENTS = [
   OrderInfoTmpl,
   OrderPointTmpl,
-  RepairOrderTmpl
+  RepairOrderTmpl,
+  OrderExplainTmpl
 ];
 
 @NgModule({

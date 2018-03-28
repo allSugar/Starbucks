@@ -15,7 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class OrderConductPage {
 
+  tabStatus:number= 0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  tabs(i: number) {
+    this.tabStatus = i;
   }
 
 }

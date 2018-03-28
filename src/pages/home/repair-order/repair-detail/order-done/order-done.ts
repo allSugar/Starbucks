@@ -7,11 +7,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order-done.html',
 })
 export class OrderDonePage {
-  tabStatus: Number = 0;
+  tabStatus: number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  tabs(i: Number) {
+  tabs(i: number) {
     this.tabStatus = i;
   }
 }

@@ -137,7 +137,6 @@
       }
     }
     &.tabs-third {
-      padding-right: 82px;
       .tab-btn {
         width: 33.333333%;
       }
@@ -157,6 +156,9 @@
           height: 14px;
           background-color: $secondary-text;
         }
+      }
+      &.tabs-sort{
+        padding-right: 82px;
       }
     }
     &.tabs-four {
@@ -685,5 +687,41 @@
     margin-left: -15px;
     font-size: 14px;
     color: $secondary-text;
+  }
+}
+
+/* 记录 */
+
+.explain {
+  margin-top: 10px;
+  padding: 15px 15px 20px 15px;
+  background-color: white;
+  .explain-head {
+    line-height: 25px;
+    overflow: hidden;
+    .title {
+      float: left;
+      font-size: 16px;
+      color: $gray;
+    }
+    .time {
+      float: right;
+      font-size: 10px;
+      color: $gray-light;
+    }
+  }
+  .explain-content {
+    margin-top: 20px;
+    font-size: 15px;
+    color: $gray;
+  }
+  .explain-footer {
+    margin-top: 50px;
+    overflow: hidden;
+    img {
+      float: left;
+      width: 50px;
+      margin-right: 10px;
+    }
   }
 }

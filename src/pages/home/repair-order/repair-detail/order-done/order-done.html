@@ -86,4 +86,8 @@
       </div>
     </div>
   </div>
+  <div class="explain-list" *ngIf="tabStatus == 2">
+    <order-explain></order-explain>
+    <order-explain [status]="1"></order-explain>
+  </div>
 </ion-content>

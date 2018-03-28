@@ -1,5 +1,4 @@
 <ion-header>
-
   <ion-navbar class='border-none'>
     <ion-title>我关注的维修单</ion-title>
   </ion-navbar>
@@ -18,7 +17,7 @@
         <em class="text">已完成</em>
       </li>
     </ul>
-    <ul class="tabs-list tabs-third" *ngIf="status == 1">
+    <ul class="tabs-list tabs-third  tabs-sort" *ngIf="status == 'orderUndoPage'">
       <li class="tab-btn">
         <em class="text">综合</em>
       </li>
@@ -32,7 +31,7 @@
         <em class="text">店铺</em>
       </li>
     </ul>
-    <ul class="tabs-list tabs-third" *ngIf="status == 6">
+    <ul class="tabs-list tabs-third  tabs-sort" *ngIf="status == 'OrderConductPage'">
       <li class="tab-btn">
         <em class="text">厂商</em>
       </li>
@@ -43,7 +42,7 @@
         <em class="text">店铺</em>
       </li>
     </ul>
-    <ul class="tabs-list tabs-third" *ngIf="status == 8">
+    <ul class="tabs-list tabs-third  tabs-sort" *ngIf="status == 'OrderDonePage'">
       <li class="tab-btn">
         <em class="text">厂商</em>
       </li>
