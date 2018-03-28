@@ -210,7 +210,6 @@
     }
   }
   .tabs-content {
-    display: none;
     position: absolute;
     top: 100%;
     margin-top: -1px;
@@ -638,7 +637,7 @@
             background-color: $white;
           }
         }
-        &+.timeline-item {
+        & + .timeline-item {
           margin-top: 40px;
         }
       }
@@ -663,5 +662,28 @@
         color: $gray-light;
       }
     }
+  }
+} 
+//search input
+
+.ibox-search {
+  position: relative;
+  .search-input {
+    display: block;
+    width: 91.7%;
+    height: 30px;
+    margin: 14px auto;
+    text-indent: 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: white;
+  }
+  ion-icon {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    margin-left: -15px;
+    font-size: 14px;
+    color: $secondary-text;
   }
 }
