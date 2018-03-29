@@ -8,9 +8,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  status: number;
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams
+  ) {
+    this.status = navParams.get('status');
   }
 
 
+  tabs(n: number) {
+      this.status = n;
+  }
 
 }
