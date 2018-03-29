@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 
+@IonicPage()
 @Component({
   selector: 'page-my',
   templateUrl: 'my.html',

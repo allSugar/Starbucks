@@ -8,11 +8,6 @@ import { DragDirective } from '../directives/drag/drag';
 
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
-import { HomePage } from '../pages/home/index/index';
-import { ForumPage } from '../pages/forum/forum';
-import { NewsListPage } from '../pages/news/news-list/news-list';
-import { ContactPage } from '../pages/contact/contact';
-import { MyPage } from '../pages/my/my';
 import { DraggablePage } from '../pages/modules/draggable/draggable';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -37,11 +32,6 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     LoginPage,
     TabsPage,
-    HomePage,
-    ForumPage,
-    NewsListPage,
-    ContactPage,
-    MyPage,
     DraggablePage
   ],
   imports: [
@@ -58,11 +48,6 @@ import { IonicStorageModule } from '@ionic/storage';
     MyApp,
     LoginPage,
     TabsPage,
-    HomePage,
-    ForumPage,
-    NewsListPage,
-    ContactPage,
-    MyPage,
     DraggablePage
   ],
   providers: [

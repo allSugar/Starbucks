@@ -13,6 +13,9 @@ ion-app.ios {
 .content-md,
 .content-ios {
   background-color: #f6f6f6;
+  &.content-white {
+    background-color: $white;
+  }
 }
 
 // App Global Sass

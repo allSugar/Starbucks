@@ -10,25 +10,16 @@
 </ion-header>
 
 <ion-content>
-<!-- slide B -->
+  <!-- slide B -->
   <ion-slides autoplay="4200" loop="true" pager="true">
     <ion-slide *ngFor="let n of [1,2,3,4]">
       <img src="assets/imgs/banner/banner{{n}}.jpg" alt="">
     </ion-slide>
   </ion-slides>
-<!-- slide E -->
-<!-- category B -->
+  <!-- slide E -->
+  <!-- category B -->
   <div class="ibox">
-    <div class="category category-lg">
-      <div class="item-list">
-        <div class="item" *ngFor="let cate of category" (click)="goToOtherPage(cate)">
-          <div class="item-img">
-            <img src="assets/imgs/category/{{ cate.url }}.png" />
-          </div>
-          <p class="title">{{ cate.name }}</p>
-        </div>
-      </div>
-    </div>
+    <category-lg [categorys]="category" (goto)="goToOtherPage($event)"></category-lg>
   </div>
   <!-- category E -->
 </ion-content>

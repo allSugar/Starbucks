@@ -1,24 +1,12 @@
-
 <ion-header>
-
   <ion-navbar>
     <ion-title>统计</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content>
+<ion-content class="content-white">
   <div class="ibox">
-    <div class="category">
-      <div class="item-list">
-        <div class="item" *ngFor="let item of category" (click)="goToOtherPage(item)">
-          <div class="item-img">
-            <img src="assets/imgs/category/{{ item.url }}.png" />
-          </div>
-          <p class="title">{{ item.name }}</p>
-        </div>
-      </div>
-    </div>
+    <category [categorys]="category" (goto)="goToOtherPage($event)"></category>
   </div>
 </ion-content>

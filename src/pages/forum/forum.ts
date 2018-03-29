@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { App, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavParams } from 'ionic-angular';
 
 import { DraggablePage } from '../modules/draggable/draggable';
 import { LoginService } from '../../service/LoginService';
 
+@IonicPage()
 @Component({
   selector: 'page-forum',
   templateUrl: 'forum.html',

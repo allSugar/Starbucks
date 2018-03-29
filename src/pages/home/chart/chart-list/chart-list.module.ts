@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ChartListPage } from './chart-list';
 
+import { CategoryModule } from '../../../template/category.module';
+
 @NgModule({
   declarations: [
-    ChartListPage,
+    ChartListPage
   ],
   imports: [
-    IonicPageModule.forChild(ChartListPage),
+    CategoryModule,
+    IonicPageModule.forChild(ChartListPage)
   ],
 })
 export class ChartListPageModule {}
