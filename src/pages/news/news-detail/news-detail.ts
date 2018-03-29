@@ -10,15 +10,15 @@ export class NewsDetailPage {
 
   status: number;
   constructor(
-      public navCtrl: NavController,
-      public navParams: NavParams
+    public navCtrl: NavController,
+    public navParams: NavParams
   ) {
     this.status = navParams.get('status');
   }
 
 
   tabs(n: number) {
-      this.status = n;
+    this.status = n;
   }
 
 }
