@@ -38,7 +38,7 @@
 
 <ion-content>
   <div class="stage-page shop-list">
-    <div class="stage"  *ngFor="let item of shop" (click)="goToOtherPage(item)">
+    <div class="stage"  *ngFor="let item of shop" (click)="goToOtherPage()">
       <img src="assets/imgs/{{ item.url }}.png" alt="">
       <p class="title">{{ item.title }}</p>
     </div>
