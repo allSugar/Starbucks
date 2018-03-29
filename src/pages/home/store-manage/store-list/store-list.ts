@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavParams } from 'ionic-angular';
-import { HomePage } from '../../../home/index/index';
 
 @IonicPage()
 @Component({
@@ -8,6 +7,7 @@ import { HomePage } from '../../../home/index/index';
   templateUrl: 'store-list.html',
 })
 export class StoreManageListPage {
+
   shop: Object[] = [
     { url: 'change-before', title: '钟楼百货星巴克' },
     { url: 'change-before', title: '钟楼百货星巴克' },
@@ -16,6 +16,8 @@ export class StoreManageListPage {
     { url: 'change-before', title: '钟楼百货星巴克' }
   ];
   navCtrl: any;
+  status: number;
+
   constructor(
     public navParams: NavParams,
     public app: App
@@ -24,9 +26,10 @@ export class StoreManageListPage {
   }
 
   goToOtherPage(item) {
-    this.navCtrl.push(HomePage);
+    console.log(1);
+    this.navCtrl.push('StoreIndexPage');
   }
-  status: number;
+
   tabs(n: number) {
     this.status = n;
   }
