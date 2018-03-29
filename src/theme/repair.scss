@@ -1,0 +1,68 @@
+/* 维修单 */
+
+.repair-emement {
+  margin-top: 10px;
+  .media-bar {
+    width: 100%;
+    padding: 12px 12px;
+    overflow: hidden;
+    background-color: white;
+    .shop-name {
+      float: right;
+      margin-left: 4px;
+      color: $green;
+    }
+  }
+  .media-body {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    .media-title {
+      height: 18px;
+      overflow: hidden;
+    }
+    .media-time {
+      float: right;
+      line-height: 18px;
+      font-size: 12px;
+      color: $secondary-text;
+    }
+    .media-img {
+      margin-top: 15px;
+      overflow: hidden;
+      img {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+      }
+      .point-s-img {
+        float: left;
+        width: 16px;
+        height: 4px;
+        margin-left: 15px;
+        margin-top: 18px;
+        content: url("../assets/imgs/point_s.png")
+      }
+    }
+  }
+  .media-info {
+    padding: 19px 15px;
+    color: $secondary-text;
+    background-color: white;
+    p+p {
+      margin-top: 14px;
+    }
+  }
+  .price {
+    padding: 17px 15px;
+    color: $red;
+    font-size: 18px;
+    background-color: white;
+    text-align: right;
+  }
+  .empty {
+    height: 25px;
+    background-color: white;
+  }
+}

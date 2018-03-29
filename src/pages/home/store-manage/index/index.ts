@@ -4,9 +4,9 @@ import {IonicPage, App, NavParams} from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-manage',
-  templateUrl: 'manage.html',
+  templateUrl: 'index.html',
 })
-export class ManagePage {
+export class StoreManagePage {
   shop: Object[] = [
       {url: 'change-before', title: '钟楼百货星巴克', page: 'CloudListPage'},
       {url: 'change-before', title: '钟楼百货星巴克', page: 'HomePage'},

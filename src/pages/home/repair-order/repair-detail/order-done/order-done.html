@@ -90,7 +90,7 @@
     <order-explain></order-explain>
     <order-explain [status]="1"></order-explain>
   </div>
-  <div class="offer">
+  <div class="offer" *ngIf="tabStatus == 3">
     <ul class="offer-count">
       <li class="item">
         <i class="icon-total-time"></i>

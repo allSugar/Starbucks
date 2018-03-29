@@ -1,0 +1,46 @@
+/* 首页分类模块 */
+
+.category {
+  margin: 0 10px;
+  overflow: hidden;
+  .item-list {
+    margin-bottom: -1px;
+    overflow: hidden;
+    .item {
+      float: left;
+      width: 33.333333%;
+      height: 105px;
+      padding: 24px 0 22px 0;
+      font-size: 12px;
+      line-height: 1;
+      border-bottom: 1px solid $border;
+      .item-img {
+        width: 100%;
+        text-align: center;
+        img {
+          width: 34px;
+          height: 35px;
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+      .title {
+        margin-top: 12px;
+        text-align: center;
+      }
+    }
+  }
+  &.category-lg {
+    .item {
+      height: 120px;
+      padding: 19px 0 29px 0;
+      .item-img img {
+        width: 50px;
+        height: 50px;
+      }
+      .title {
+        margin-top: 10px;
+      }
+    }
+  }
+}
