@@ -43,4 +43,5 @@
       <p class="title">{{ item.title }}</p>
     </div>
   </div>
+  <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>
 </ion-content>

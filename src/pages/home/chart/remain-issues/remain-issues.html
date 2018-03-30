@@ -39,23 +39,14 @@
 
 <ion-content>
   <ul class="stage-page">
-    <li class="stage">
+    <li class="stage" *ngFor="let item of [1,2,3,4,5,6]">
       <p class="factory">苏南运维</p>
       <div class="percentage">
         <p class="bg-green"></p>
         <p class="data">
-          <em class="count">0.4 &nbsp; 8天</em>
+          <em class="count">13个问题</em>
+          <em class="count">8天</em>
           <em>苏南方圆</em>
-        </p>
-      </div>
-    </li>
-    <li class="stage">
-      <p class="factory">苏南运维</p>
-      <div class="percentage">
-        <p class="bg-green"></p>
-        <p class="data">
-          <em class="count">0.4 &nbsp; 8天</em>
-          <em>苏南方圆苏南方圆苏南方圆</em>
         </p>
       </div>
     </li>
