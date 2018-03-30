@@ -2,8 +2,7 @@
   margin-top: 15px;
   background-color: white;
   .stage {
-    width: 96%;
-    margin-left: 5%;
+    margin-left: 15px;
     padding: 15px 0;
     line-height: 15px;
     & + .stage {
@@ -93,7 +92,6 @@
       }
     }
   }
-
 }
 
 .filter-collapse {
@@ -380,21 +378,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

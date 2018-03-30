@@ -1,0 +1,31 @@
+.row-ibox {
+  background-color: $white;
+  overflow: hidden;
+  .row-list {
+    margin-left: 15px;
+    margin-bottom: -1px;
+  }
+  .row-item {
+    padding: 15px 0;
+    border-bottom: 1px solid $border;
+    .item-img,
+    .item-body {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .item-img {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      img {
+          position: absolute;
+          top:0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          max-height: 100%;
+          margin: auto;
+      }
+    }
+  }
+}
