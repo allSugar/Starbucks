@@ -16,7 +16,7 @@ export class ChartListPage {
         {url: 'easy-hart', name: '易损部位', page:'VulnerablePartsPage'},
         {url: 'weekly', name: '每周问题', page:'WeeklyIssuesPage'},
         {url: 'efficiency', name: '厂商效率', page:'EfficiencyPage'},
-        {url: 'reason', name: '物损原因', page: 'DamagePage'},
+        {url: 'reason', name: '物损原因', page: 'DamageIndexPage'},
         {url: 'remains', name: '遗存问题', page:'RemainIssuesPage'}
     ];
 

@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 @IonicPage()
 @Component({
-  selector: 'page-remain-issues',
-  templateUrl: 'remain-issues.html',
+  selector: 'page-store-information',
+  templateUrl: 'store-information.html',
 })
-export class RemainIssuesPage {
+export class StoreInformationPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  status: number;
-  tabs(n: number) {
-    this.status = n;
-  }
+
 }

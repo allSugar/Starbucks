@@ -11,11 +11,11 @@ export class StoreIndexPage {
   @ViewChild(Slides) slides: Slides;
   navCtrl: any;
   category: Object[] = [
-    { url: 'repair-order', name: '维修包' },
+    { url: 'repair_kits', name: '维修包' },
     { url: 'cloud-smart', name: '云智能' },
     { url: 'cloud', name: '云盘', page: 'CloudListPage' },
     { url: 'chart', name: '统计', page: 'ChartListPage' },
-    { url: '3D-panorama', name: '维修点管理', page: 'RepairPointListPage' }
+    { url: 'repair_place', name: '维修点管理', page: 'RepairPointListPage' }
   ];
 
   constructor(

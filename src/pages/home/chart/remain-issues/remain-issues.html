@@ -4,10 +4,10 @@
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-list tabs-four">
-      <li class="tab-btn active">
+      <li class="tab-btn" [ngClass]="{ 'active': status ==1 }" (click)="tabs(1)">
         <em class="text">排序</em>
       </li>
-      <li class="tab-btn">
+      <li class="tab-btn" [ngClass]="{ 'active': status ==2 }" (click)="tabs(2)">
         <em class="text">厂商</em>
       </li>
       <li class="tab-btn">
@@ -18,12 +18,19 @@
       </li>
     </ul>
     <div class="tabs-content">
-      <ul class="select-list hide">
+      <ul class="select-list" *ngIf="status == 1">
         <li class="select-item">全部</li>
         <li class="select-item">厂商名字a-z</li>
         <li class="select-item active">厂商名字z-a</li>
         <li class="select-item">问题由多到少</li>
         <li class="select-item">问题由少到多</li>
+      </ul>
+      <ul class="select-list" *ngIf="status == 2">
+        <li class="select-item">全部</li>
+        <li class="select-item">苏南方圆建筑有限公司</li>
+        <li class="select-item active">云筑空间</li>
+        <li class="select-item">苏南发电厂</li>
+        <li class="select-item">苏南方圆建筑有限公司</li>
       </ul>
     </div>
   </div>

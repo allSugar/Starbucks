@@ -32,7 +32,7 @@
 
 <ion-content>
   <ul class="damage-list">
-    <li class="damage-item" *ngFor="let item of damage">
+    <li class="damage-item" *ngFor="let item of damage" (click)="goToOtherPage(item)">
       <div class="icon-damage">
         <img src="assets/imgs/problem/{{ item.url }}.png" alt="">
       </div>

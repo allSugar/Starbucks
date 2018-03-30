@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { DamagePage } from './damage';
+import { DamageIndexPage } from './damage-index';
 
 @NgModule({
   declarations: [
-    DamagePage,
+      DamageIndexPage,
   ],
   imports: [
-    IonicPageModule.forChild(DamagePage),
+    IonicPageModule.forChild(DamageIndexPage),
   ],
 })
 export class DamagePageModule {}
