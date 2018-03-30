@@ -18,19 +18,19 @@
       </li>
     </ul>
     <div class="tabs-content">
-      <ul class="select-list" *ngIf="status == 1">
-        <li class="select-item">全部</li>
-        <li class="select-item">厂商名字a-z</li>
-        <li class="select-item active">厂商名字z-a</li>
-        <li class="select-item">问题由多到少</li>
-        <li class="select-item">问题由少到多</li>
+      <ul class="ranking-list" *ngIf="status == 1">
+        <li class="ranking-item">全部</li>
+        <li class="ranking-item">厂商名字a-z</li>
+        <li class="ranking-item active">厂商名字z-a</li>
+        <li class="ranking-item">问题由多到少</li>
+        <li class="ranking-item">问题由少到多</li>
       </ul>
-      <ul class="select-list" *ngIf="status == 2">
-        <li class="select-item">全部</li>
-        <li class="select-item">苏南方圆建筑有限公司</li>
-        <li class="select-item active">云筑空间</li>
-        <li class="select-item">苏南发电厂</li>
-        <li class="select-item">苏南方圆建筑有限公司</li>
+      <ul class="ranking-list" *ngIf="status == 2">
+        <li class="ranking-item">全部</li>
+        <li class="ranking-item">苏南方圆建筑有限公司</li>
+        <li class="ranking-item active">云筑空间</li>
+        <li class="ranking-item">苏南发电厂</li>
+        <li class="ranking-item">苏南方圆建筑有限公司</li>
       </ul>
     </div>
   </div>
@@ -60,4 +60,5 @@
       </div>
     </li>
   </ul>
+  <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>
 </ion-content>
