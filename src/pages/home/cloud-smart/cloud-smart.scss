@@ -1,3 +1,28 @@
 page-cloud-smart {
-
+  ion-slides {
+    height: auto;
+    .swiper-container-horizontal {
+      .swiper-pagination-bullets {
+        height: 1px;
+        bottom: 12px;
+        .swiper-pagination-bullet {
+          margin: 0 4px;
+          width: 6px;
+          height: 6px;
+          background-color: #e5e5e5;
+          @include border_radius(50%);
+          vertical-align: top;
+        }
+        .swiper-pagination-bullet-active {
+          background-color: #7f7f7f;
+        }
+      }
+    }
+    .swiper-slide {
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+  }
 }

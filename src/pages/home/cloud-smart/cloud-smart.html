@@ -22,8 +22,11 @@
 
 <ion-content>
   <div class="stage-page">
-    <div class="stage cloud-smart">
-      钟楼星巴克（客厅）
-    </div>
+    <div class="stage cloud-smart">钟楼星巴克（客厅)</div>
   </div>
+  <ion-slides autoplay="4200" loop="true" pager="true">
+    <ion-slide *ngFor="let n of [1,2,3]">
+      <img src="assets/imgs/banner/banner{{n}}.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
 </ion-content>

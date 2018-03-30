@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { App, IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -9,11 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class CloudSmartPage {
 
   @ViewChild(Slides) slides: Slides;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams
+  ) {
   }
 
-  
 
+  ionViewDidLoad() {
+      this.slides.autoplayDisableOnInteraction = false;
+  }
 
 
 }
