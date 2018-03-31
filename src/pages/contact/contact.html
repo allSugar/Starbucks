@@ -1,8 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      统计
-    </ion-title>
+    <ion-title>统计</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -16,7 +14,15 @@
         <div class="item-body">北京苏南方圆建设有限公司</div>
       </li>
     </ul>
-    <ul class="row-list">
+    <ul class="row-list row-lg">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img item-xs radius">
+          <img alt="" src="assets/imgs/change-before.png">
+        </div>
+        <div class="item-body">北京苏南方圆建设有限公司</div>
+      </li>
+    </ul>
+    <ul class="row-list row-lg">
       <li class="row-item">
         <div class="item-icon">
           <i class="icon-row-time"></i>
@@ -36,7 +42,7 @@
         <div class="item-body">修改密码</div>
       </li>
     </ul>
-    <ul class="row-list">
+    <ul class="row-list row-llg">
       <li class="row-item" *ngFor="let i of [1,2,3]">
         <div class="item-body">灯具</div>
       </li>
@@ -47,6 +53,38 @@
           <i class="icon-stage-{{ i }}"></i>
         </div>
         <div class="item-body">电气工程</div>
+      </li>
+    </ul>
+    <ul class="row-list row-llg">
+      <li class="row-item" *ngFor="let i of [1,2,3,4,5,6]">
+        <div class="item-icon">
+          <i class="icon-stage-{{ i }}"></i>
+        </div>
+        <div class="item-body">
+          <p class="title">电气工程</p>
+          <p class="repair-firm">维修厂商：北京苏南方圆建设有限公司</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="icon-stage-1"></i>
+        </div>
+        <div class="item-body">
+          <p class="title">灯具/射灯不亮</p>
+          <p class="company">北京苏南方圆建设有限公司</p>
+          <p class="location">一层平面-吧台区</p>
+        </div>
+      </li>
+      <li class="row-item">
+        <div class="item-img radius">
+          <img alt="" src="assets/imgs/change-before.png">
+        </div>
+        <div class="item-body">
+          <p class="name">刘杰楷</p>
+          <p class="telphone">15289760923</p>
+        </div>
       </li>
     </ul>
     <ul class="row-list row-lg">
@@ -158,7 +196,7 @@
     </div>
   </div>
   <div class="tabs">
-    <ul class="tabs-list tabs-third">
+    <ul class="tabs-list tabs-sort tabs-third">
       <li class="tab-btn tab-icon-both">
         <em class="text">排序</em>
       </li>
@@ -176,7 +214,6 @@
 
     </div>
   </div>
-
   <div class="tabs">
     <ul class="tabs-list tabs-four">
       <li class="tab-btn tab-icon-both up">
@@ -353,26 +390,6 @@
 
   <div class="br"></div>
 
-
-  <div class="filter-collapse">
-    <div class="filter-list">
-      <div class="category-item rank active">排序</div>
-      <div class="category-item time">管辖范围</div>
-      <div class="category-item time">时间</div>
-      <div class="category-item time">问题</div>
-    </div>
-    <ul class="select-list hide">
-      <li class="select-item">全部</li>
-      <li class="select-item">厂商名字a-z</li>
-      <li class="select-item active">厂商名字z-a</li>
-      <li class="select-item">问题由多到少</li>
-      <li class="select-item">问题由少到多</li>
-    </ul>
-  </div>
-
-  <div class="br"></div>
-  <div class="br"></div>
-
   <div class="wait-img">
     <img src="assets/imgs/wait_img.png" alt="">
   </div>
@@ -426,40 +443,6 @@
       钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯 有损坏，总是一闪一闪的。
     </div>
   </div>
-
-
-  <div class="br"></div>
-
-  <div class="tabs">
-    <ul class="tabs-rate tabs-third">
-      <li class="tab-btn active">
-        <em class="text">待接单(8)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">进行中(3)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">已完成</em>
-      </li>
-    </ul>
-    <ul class="tabs-rate tabs-four">
-      <li class="tab-btn active">
-        <em class="text">待接单(8)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">进行中(3)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">已完成</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">已完成</em>
-      </li>
-    </ul>
-  </div>
-
-
-
 
   <div class="br"></div>
 
@@ -516,51 +499,6 @@
       <span class="count">2800</span>元
     </li>
   </ul>
-
-  <div class="media-ibox p-t-b-xl m-t-s">
-    <div class="sub-orders">
-      <h3 class="title">子订单1</h3>
-      <h4 class="sub-title">类型</h4>
-      <ul class="type-detail">
-        <li>
-          <em>五金</em>
-          <em>电器</em>
-          <span>电线</span>
-        </li>
-        <li>
-          <em>五金</em>
-          <em>电器</em>
-          <span>插座</span>
-        </li>
-      </ul>
-      <h4 class="sub-title">工时</h4>
-      <p class="work-hours">
-        <em class="icon-clock"></em>
-        <span>3小时</span>
-      </p>
-      <h4 class="sub-title">耗材</h4>
-      <ul>
-        <li class="stuff">
-          <img src="assets/imgs/change-before.png" alt="">
-          <p class="intro">厨房吊灯欧普照明</p>
-          <p class="value">
-            <span class="price">￥780</span>
-            <br />
-            <span class="count">×2</span>
-          </p>
-        </li>
-        <li class="stuff">
-          <img src="assets/imgs/change-before.png" alt="">
-          <p class="intro">厨房吊灯欧普照明</p>
-          <p class="value">
-            <span class="price">￥780</span>
-            <br />
-            <span class="count">×2</span>
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
 
   <div class="br"></div>
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild} from '@angular/core';
-import { App, IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,10 +15,8 @@ export class CloudSmartPage {
   ) {
   }
 
-
   ionViewDidLoad() {
       this.slides.autoplayDisableOnInteraction = false;
   }
-
-
+  
 }
