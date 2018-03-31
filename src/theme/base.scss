@@ -158,3 +158,22 @@ li {
 .border-none {
   border: none !important;
 }
+
+.checkbox {
+  input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    overflow: hidden;
+    @include opacity(0);
+  }
+  input+.checkbox {
+    width: 20px;
+    height: 20px;
+    background-image: url($image-icon + "icon_unselected.png");
+    background-size: 100%;
+  }
+  input:checked+.checkbox {
+    background-image: url($image-icon + "icon_selected.png");
+  }
+}

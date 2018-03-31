@@ -5,11 +5,13 @@
   margin-top: 18px;
   background-size: cover;
 }
+
 .icon-radio-selected {
-  content: url("../assets/imgs/status/icon_selected.png");
+  content: url($image + "status/icon_selected.png");
 }
+
 .icon-radio-unselected {
-  content: url("../assets/imgs/status/icon_unselected.png");
+  content: url($image + "status/icon_unselected.png");
 }
 
 [class*='radio-icon-'] {
@@ -17,9 +19,9 @@
   display: inline-block;
   width: 7px;
   height: 7px;
-  margin-left: 8px;
-  margin-right: 5%;
   border-radius: 50%;
+  margin-left: 4px;
+  margin-right: 4px;
   &:before {
     content: '';
     position: absolute;
@@ -31,49 +33,53 @@
     border-radius: 50%;
   }
 }
+
 .radio-icon-green {
-  background-color: rgba(5,209,175,.6);
+  background-color: rgba(5, 209, 175, .6);
   &:before {
-    border-color: rgba(5,209,175,.3);
+    border-color: rgba(5, 209, 175, .3);
   }
 }
+
 .radio-icon-yellow {
-  background-color: rgba(255,160,84,.6);
+  background-color: rgba(255, 160, 84, .6);
   &:before {
     border-color: rgba(255, 160, 84, .3);
   }
 }
+
 .radio-icon-pink {
-  background-color: rgba(254,141,176,.6);
+  background-color: rgba(254, 141, 176, .6);
   &:before {
-    border-color: rgba(254,141,176, .3);
+    border-color: rgba(254, 141, 176, .3);
   }
 }
+
 .radio-icon-blue {
-  background-color: rgba(75,219,255,.6);
+  background-color: rgba(75, 219, 255, .6);
   &:before {
-    border-color: rgba(75,219,255, .3);
+    border-color: rgba(75, 219, 255, .3);
   }
 }
+
 .radio-icon-purple {
-  background-color: rgba(156,143,254,.6);
+  background-color: rgba(156, 143, 254, .6);
   &:before {
-    border-color: rgba(156,143,254, .3);
+    border-color: rgba(156, 143, 254, .3);
   }
 }
+
 .radio-icon-gray {
-  background-color: rgba(151,166,197,.6);
+  background-color: rgba(151, 166, 197, .6);
   &:before {
-    border-color: rgba(151,166,197, .3);
+    border-color: rgba(151, 166, 197, .3);
   }
 }
 
 .icon-file {
-  float: left;
   width: 60px;
   height: 50px;
-  margin: 0 15px;
-  content: url("../assets/imgs/import/file.png");
+  content: url($image +  "import/file.png");
 }
 
 [class*='icon-explain-'] {
@@ -82,11 +88,13 @@
   height: 25px;
   margin-right: 8px;
 }
+
 .icon-explain-blue {
-  content: url("../assets/imgs/icon/icon_explain_blue.png");
+  content: url($image-icon + "icon_explain_blue.png");
 }
+
 .icon-explain-yellow {
-  content: url("../assets/imgs/icon/icon_explain_yellow.png");
+  content: url($image-icon + "icon_explain_yellow.png");
 }
 
 [class*='icon-total-'] {
@@ -94,13 +102,14 @@
   width: 40px;
   height: 40px;
   margin-right: 9px;
+}
 
-}
 .icon-total-money {
-  content: url("../assets/imgs/icon/icon_total_money.png");
+  content: url($image-icon + "icon_total_money.png");
 }
+
 .icon-total-time {
-  content: url("../assets/imgs/icon/icon_total_time.png");
+  content: url($image-icon + "icon_total_time.png");
 }
 
 .icon-clock {
@@ -109,7 +118,7 @@
   height: 15px;
   margin-top: 2px;
   margin-right: 6px;
-  content: url("../assets/imgs/icon/icon_clock.png");
+  content: url($image-icon + "icon_clock.png");
 }
 
 .icon-phone {
@@ -117,7 +126,7 @@
   width: 16px;
   height: 16px;
   margin-top: 8px;
-  content: url("../assets/imgs/icon/icon_phone.png");
+  content: url($image-icon + "icon_phone.png");
 }
 
 .icon-phone-s {
@@ -126,10 +135,10 @@
   height: 15px;
   margin-top: 1px;
   margin-left: 10px;
-  content: url("../assets/imgs/icon/icon_phone_s.png");
+  content: url($image-icon + "icon_phone_s.png");
 }
 
-[class *= 'icon-news-'] {
+[class *='icon-news-'] {
   position: relative;
   float: left;
   width: 30px;
@@ -137,14 +146,17 @@
   margin-right: 4%;
   background-size: cover;
 }
+
 .icon-news-warm {
-  background-image: url("../assets/imgs/icon/icon_news_warm.png");
+  background-image: url($image-icon + "icon_news_warm.png");
 }
+
 .icon-news-3d {
-  background-image: url("../assets/imgs/icon/icon_news_3d.png");
+  background-image: url($image-icon + "icon_news_3d.png");
 }
+
 .icon-news-icloud {
-  background-image: url("../assets/imgs/icon/icon_news_icloud.png");
+  background-image: url($image-icon + "icon_news_icloud.png");
 }
 
 .icon-house {
@@ -153,17 +165,17 @@
   height: 16px;
   margin-right: 6px;
   margin-top: 2px;
-  content: url("../assets/imgs/focus/house.png");
+  content: url($image-icon + "icon-house.png");
 }
+
 .icon-house-l {
   position: absolute;
   right: 10px;
   top: 50px;
   width: 135px;
   height: 135px;
-  content: url("../assets/imgs/icon/icon_house_l.png");
+  content: url($image-icon + "icon_house_l.png");
 }
-
 
 [class*='icon-arrow-right'] {
   float: left;
@@ -172,11 +184,13 @@
   margin-left: 10px;
   margin-top: 5px;
 }
+
 .icon-arrow-right {
-  content: url("../assets/imgs/icon/icon_arrow_right.png");
+  content: url($image-icon + "icon_arrow_right.png");
 }
+
 .icon-arrow-right-white {
-  content: url("../assets/imgs/icon/icon_arrow_right_white.png");
+  content: url($image-icon + "icon_arrow_right_white.png");
 }
 
 .icon-arrow-top {
@@ -184,7 +198,7 @@
   width: 11px;
   height: 6px;
   margin: 14px auto 0;
-  content: url("../assets/imgs/icon/icon_arrow_top.png");
+  content: url($image-icon + "icon_arrow_top.png");
 }
 
 .icon-arrow-bottom {
@@ -192,7 +206,7 @@
   width: 11px;
   height: 6px;
   margin: 14px auto 0;
-  content: url("../assets/imgs/icon/icon_arrow_bottom.png");
+  content: url($image-icon + "icon_arrow_bottom.png");
 }
 
 .icon-light {
@@ -200,21 +214,21 @@
   width: 12px;
   height: 12px;
   margin-top: 3px;
-  content: url("../assets/imgs/focus/light.png");
+  content: url($image-icon + "icon-light.png");
 }
 
 .icon-star {
   width: 160px;
   height: 22px;
   margin: 0 auto 50px;
-  content: url("../assets/imgs/icon/icon_star.png");
+  content: url($image-icon + "icon_star.png");
 }
 
 .icon-smile {
   float: left;
   width: 20px;
   height: 20px;
-  content: url("../assets/imgs/icon/icon_smile.png");
+  content: url($image-icon + "icon_smile.png");
 }
 
 .icon-avatar {
@@ -222,14 +236,14 @@
   width: 30px;
   height: 30px;
   margin-top: -5px;
-  content: url("../assets/imgs/icon/icon_avatar.png");
+  content: url($image-icon + "icon_avatar.png");
 }
 
 .icon-car {
   float: left;
   width: 22px;
   height: 25px;
-  content: url("../assets/imgs/icon/icon_car.png");
+  content: url($image-icon + "icon_car.png");
 }
 
 .icon-car {
@@ -237,7 +251,7 @@
   width: 22px;
   height: 15px;
   margin-top: 5px;
-  content: url("../assets/imgs/icon/icon_car.png");
+  content: url($image-icon + "icon_car.png");
 }
 
 .icon-hourglass {
@@ -245,7 +259,7 @@
   width: 14px;
   height: 18px;
   margin-top: 3px;
-  content: url("../assets/imgs/icon/icon_hourglass.png");
+  content: url($image-icon + "icon_hourglass.png");
 }
 
 [class*='icon-issues-'] {
@@ -255,12 +269,49 @@
   width: 20px;
   height: 22px;
 }
+
 .icon-issues-number {
-  content: url("../assets/imgs/icon/icon_issues_number.png");
+  content: url($image-icon + "icon_issues_number.png");
 }
+
 .icon-issues-time {
-  content: url("../assets/imgs/icon/icon_issues_time.png");
+  content: url($image-icon + "icon_issues_time.png");
 }
+
 .icon-issues-total {
-  content: url("../assets/imgs/icon/icon_issues_total.png");
+  content: url($image-icon + "icon_issues_total.png");
+}
+
+.icon-row-time,
+.icon-row-cost,
+.icon-row-password {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+  background-size: 100%;
+}
+
+.icon-row-time {
+  background-image: url($image-icon + "icon-time.png");
+}
+
+.icon-row-cost {
+  background-image: url($image-icon + "icon-cost.png");
+}
+
+.icon-row-password {
+  background-image: url($image-icon + "icon-password.png");
+}
+
+@for $i from 1 to 7 {
+  .icon-stage-#{$i} {
+    display: inline-block;
+    vertical-align:top;
+    width: 20px;
+    height: 20px;
+    background: url("../assets/imgs/project/project_#{$i}.png") no-repeat;
+    background-size: 15px 15px;
+    background-position: center center;
+  }
 }

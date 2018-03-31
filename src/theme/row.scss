@@ -4,27 +4,72 @@
   .row-list {
     margin-left: 15px;
     margin-bottom: -1px;
+    .row-item {
+      padding: 15px 0;
+      border-bottom: 1px solid $border;
+      line-height: 20px;
+    }
+    label.row-item {
+      display: block;
+    }
+    &.row-lg {
+      .row-item {
+        padding: 20px 0;
+      }
+    }
+    &.row-llg {
+      .row-item {
+        padding: 25px 0;
+      }
+    }
   }
   .row-item {
-    padding: 15px 0;
-    border-bottom: 1px solid $border;
+    .item-choice,
     .item-img,
+    .item-icon,
     .item-body {
       display: inline-block;
       vertical-align: middle;
+    }
+    .item-choice,
+    .item-img,
+    .item-icon {
+      margin-right: 12px;
+      overflow: hidden;
+    }
+    .item-choice {
+      .checkbox,
+      .radio {
+        float: left;
+      }
+    }
+    .item-icon {
+      [class*="icon-"] {
+        vertical-align: top;
+      }
+      [class*="radio-icon-"] {
+        vertical-align: middle;
+      }
     }
     .item-img {
       position: relative;
       width: 40px;
       height: 40px;
       img {
-          position: absolute;
-          top:0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          max-height: 100%;
-          margin: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        max-height: 100%;
+        margin: auto;
+      }
+      &.radius {
+        @include border_radius(100%);
+      }
+      &.item-lg {
+        width: 60px;
+        height: 50px;
       }
     }
   }

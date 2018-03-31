@@ -3,8 +3,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-contact',
-  templateUrl: 'contact.html'
+    selector: 'page-contact',
+    templateUrl: 'contact.html'
 })
 export class ContactPage {
     category: Object[] = [
@@ -20,16 +20,21 @@ export class ContactPage {
 
 
 
+    status: any = true;
     import: any[] = [
-        {url: 'import_img1'},
-        {url: 'import_img2'},
-        {url: 'import_img3'},
-        {url: 'import_img4'},
-        {url: 'import_img5'},
-        {url: 'import_img6'}
+        { url: 'import_img1' },
+        { url: 'import_img2' },
+        { url: 'import_img3' },
+        { url: 'import_img4' },
+        { url: 'import_img5' },
+        { url: 'import_img6' }
     ];
-  constructor(public navCtrl: NavController) {
+    constructor(public navCtrl: NavController) {
 
-  }
+    }
+
+    change() {
+        console.log("change");
+    }
 
 }

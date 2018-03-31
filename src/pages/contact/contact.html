@@ -9,120 +9,115 @@
 <ion-content>
   <div class="row-ibox">
     <ul class="row-list">
-      <li class="row-item">
-        <div class="item-img">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img radius">
           <img alt="" src="assets/imgs/change-before.png">
         </div>
         <div class="item-body">北京苏南方圆建设有限公司</div>
       </li>
     </ul>
+    <ul class="row-list">
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="icon-row-time"></i>
+        </div>
+        <div class="item-body">维修总计工时</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="icon-row-cost"></i>
+        </div>
+        <div class="item-body">维修总计成本</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="icon-row-password"></i>
+        </div>
+        <div class="item-body">修改密码</div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-body">灯具</div>
+      </li>
+    </ul>
+    <ul class="row-list row-llg">
+      <li class="row-item" *ngFor="let i of [1,2,3,4,5,6]">
+        <div class="item-icon">
+          <i class="icon-stage-{{ i }}"></i>
+        </div>
+        <div class="item-body">电气工程</div>
+      </li>
+    </ul>
+    <ul class="row-list row-lg">
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-green"></i>
+        </div>
+        <div class="item-body">全部</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-yellow"></i>
+        </div>
+        <div class="item-body">未提交</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-pink"></i>
+        </div>
+        <div class="item-body">超时未完成</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-blue"></i>
+        </div>
+        <div class="item-body">已修复</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-purple"></i>
+        </div>
+        <div class="item-body">已提交</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-gray"></i>
+        </div>
+        <div class="item-body">已删除</div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img item-lg">
+          <img src="assets/imgs/change-before.png" alt="">
+        </div>
+        <div class="item-body">客区照片1</div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="icon-file"></i>
+        </div>
+        <div class="item-body">文件</div>
+      </li>
+    </ul>
+    <div class="row-list">
+      <label class="row-item">
+        <div class="item-choice checkbox">
+          <input [(ngModel)]="status" type="checkbox" (change)="change()">
+          <ins class="checkbox"></ins>
+        </div>
+        <div class="item-icon">
+          <i class="icon-file"></i>
+        </div>
+        <div class="item-body">文件</div>
+      </label>
+    </div>
   </div>
 
-  <div class="stage-page">
-    <div class="stage">
-      <img class="user-img" src="assets/imgs/user/time.png" alt="">
-      <p class="user-title">维修总计工时</p>
-    </div>
-    <div class="stage">
-      <img class="user-img" src="assets/imgs/user/cost.png" alt="">
-      <p class="user-title">维修总计成本</p>
-    </div>
-    <div class="stage">
-      <img class="user-img" src="assets/imgs/user/password.png" alt="">
-      <p class="user-title">修改密码</p>
-    </div>
-  </div>
-
-  <div class="stage-page shop-list">
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-  </div>
-
-  <ul class="stage-page">
-    <li class="stage">灯具</li>
-    <li class="stage">灯具</li>
-    <li class="stage">灯具</li>
-    <li class="stage">灯具</li>
-  </ul>
-  <ul class="stage-page">
-    <li class="stage">
-      <em class="icon-stage-1"></em>
-      <em class="f-left">电气工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-2"></em>
-      <em class="f-left">上下水工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-3"></em>
-      <em class="f-left">墙面装饰工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-4"></em>
-      <em class="f-left">地面铺贴工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-5"></em>
-      <em class="f-left">门窗工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-6"></em>
-      <em class="f-left">天花工程</em>
-    </li>
-  </ul>
   <div class="br"></div>
-
-  <div class="stage-page">
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-green"></span>全部
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-yellow"></span>未提交
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-pink"></span>超时未完成
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-blue"></span>已修复
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-purple"></span>已提交
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-gray"></span>已删除
-    </div>
-  </div>
-
-  <div class="br"></div>
-
-  <div class="stage-page">
-    <div class="stage">
-      <span class="icon-radio-selected f-left"></span>
-      <span class="icon-file"></span>
-      <span class="file-name">文件1</span>
-    </div>
-    <div class="stage">
-      <span class="icon-radio-unselected f-left"></span>
-      <span class="icon-file"></span>
-      <span class="file-name">文件2</span>
-    </div>
-  </div>
-
-
 
   <div class="tabs" style="margin-top:10px;">
     <ul class="tabs-list tabs-two">
@@ -160,20 +155,6 @@
       </li>
     </ul>
     <div class="tabs-content">
-      <ul class="select-list">
-        <li class="item">
-          <div class="item-img">
-            <img src="assets/imgs/select/select-all.png" alt="">
-          </div>
-          <p class="name">全部</p>
-        </li>
-        <li class="item" *ngFor="let item of [1,2,3,4,5]">
-          <div class="item-img">
-            <img src="assets/imgs/change-before.png" alt="">
-          </div>
-          <p class="name">李明明</p>
-        </li>
-      </ul>
     </div>
   </div>
   <div class="tabs">
@@ -276,6 +257,22 @@
 
 
   <div class="br"></div>
+
+  <ul class="select-list">
+    <li class="item">
+      <div class="item-img">
+        <img src="assets/imgs/select/select-all.png" alt="">
+      </div>
+      <p class="name">全部</p>
+    </li>
+    <li class="item" *ngFor="let item of [1,2,3,4,5]">
+      <div class="item-img">
+        <img src="assets/imgs/change-before.png" alt="">
+      </div>
+      <p class="name">李明明</p>
+    </li>
+  </ul>
+  <br>
 
   <div class="time-form">
     <div class="time-input">
