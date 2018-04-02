@@ -6,13 +6,13 @@
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-list tabs-third">
-      <li class="tab-btn tab-icon-both active-b-b down">
+      <li class="tab-btn tab-icon-both down" [ngClass]="{ 'active-b-b' : status == 1}" (click)="tabs(1)">
         <em class="text">温度</em>
       </li>
-      <li class="tab-btn tab-icon-both">
+      <li class="tab-btn tab-icon-both" [ngClass]="{ 'active-b-b' : status == 2}" (click)="tabs(2)">
         <em class="text">湿度</em>
       </li>
-      <li class="tab-btn tab-icon-both">
+      <li class="tab-btn tab-icon-both" [ngClass]="{ 'active-b-b' : status == 3}" (click)="tabs(3)">
         <em class="text">耗电量</em>
       </li>
     </ul>
@@ -25,8 +25,36 @@
     <div class="stage cloud-smart">钟楼星巴克（客厅)</div>
   </div>
   <ion-slides autoplay="4200" loop="true" pager="true">
-    <ion-slide *ngFor="let n of [1,2,3]">
-      <img src="assets/imgs/banner/banner{{n}}.jpg" alt="">
+    <ion-slide *ngFor="let n of [1,2,3,4]">
+      <div class="ibox">
+        <div class="category category-llg" >
+          <div class="item-list">
+            <div class="item" *ngFor="let cate of categorys">
+              <div class="item-img">
+                <img src="assets/imgs/icon/{{ cate.url }}.png" />
+              </div>
+              <p class="number">{{ cate.number }}</p>
+              <p class="title">{{ cate.name }}</p>
+            </div>
+          </div>
+      </div>
+      </div>
     </ion-slide>
   </ion-slides>
+  <div class="stage-page">
+    <div class="stage cloud-smart">钟楼星巴克（客厅)</div>
+  </div>
+  <div class="ibox">
+    <div class="category category-llg" >
+      <div class="item-list">
+        <div class="item" *ngFor="let cate of categorys">
+          <div class="item-img">
+            <img src="assets/imgs/icon/{{ cate.url }}.png" />
+          </div>
+          <p class="number">{{ cate.number }}</p>
+          <p class="title">{{ cate.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

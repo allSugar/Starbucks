@@ -43,4 +43,27 @@
       }
     }
   }
+  &.category-llg {
+    .item {
+      height: 220px;
+      padding-top: 50px;
+      padding-bottom: 45px;
+      .item-img img {
+        width: 35px;
+        height: 61px;
+      }
+      .title {
+        margin-top: 6px;
+        font-size: 12px;
+        text-align: center;
+        color: $secondary-text;
+      }
+      .number {
+        margin-top: 15px;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+
+  }
 }
