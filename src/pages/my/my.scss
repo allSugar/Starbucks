@@ -14,12 +14,22 @@ page-my {
     .user-head {
       margin-bottom: 10px;
       background-color: white;
+
       .user-info {
         position: relative;
         height: 285px;
         color: white;
         background-image: url("../assets/imgs/user/banner.png");
         background-size: 100% 100%;
+        &.user-admin {
+          .avatar {
+            top: 70px;
+            border: 2.5px solid rgba(255, 255, 255, 0.2);
+          }
+          .name {
+            padding-top: 192px;
+          }
+      }
         .name {
           padding-top: 69px;
           padding-bottom: 14px;
@@ -74,6 +84,30 @@ page-my {
             height: 3px;
             margin: 0 auto;
             background-color: $green;
+          }
+        }
+      }
+      .user-detail {
+        padding: 25px;
+        background-color: white;
+        .list {
+          .item {
+            &.item {
+              margin-top: 17px;
+            }
+            position: relative;
+            overflow: hidden;
+            .title {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 38%;
+              color: $secondary-text;
+            }
+            .info {
+              margin-left: 38%;
+              font-size: 17px;
+            }
           }
         }
       }

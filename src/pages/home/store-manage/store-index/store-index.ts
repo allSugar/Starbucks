@@ -11,8 +11,8 @@ export class StoreIndexPage {
   @ViewChild(Slides) slides: Slides;
   navCtrl: any;
   category: Object[] = [
-    { url: 'repair_kits', name: '维修单'},
-    { url: 'cloud-smart', name: '云智能' },
+    { url: 'repair_kits', name: '维修包', page: 'RepairKitsPage'},
+    { url: 'cloud-smart', name: '云智能', page:'CloudSmartPage'},
     { url: 'cloud', name: '云盘', page: 'CloudListPage' },
     { url: 'chart', name: '统计', page: 'ChartListPage' },
     { url: 'repair_place', name: '维修点管理', page: 'RepairPointListPage' }

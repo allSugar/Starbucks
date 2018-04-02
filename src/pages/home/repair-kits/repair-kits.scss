@@ -1,0 +1,71 @@
+page-repair-kits {
+  .scroll {
+    position: relative;
+    width: 100%;
+    .nav-list {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22%;
+      background-color: #F3F3F3;
+      overflow: auto;
+      .nav-item {
+        padding: 11px 12.5%;
+        &.active {
+          background-color: white;
+        }
+      }
+    }
+    .nav-contain {
+      margin-left: 22%;
+      width: 88%;
+      padding: 0 10px;
+      background-color: white;
+      overflow: auto;
+      .nav-title {
+        padding: 15px 0 26px 0;
+        color: #777;
+        font-size: 13px;
+      }
+      .item {
+        position: relative;
+        margin-bottom: 30px;
+        .item-img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 70px;
+          height:70px;
+          img {
+            max-width: 100%;
+            vertical-align: middle;
+          }
+        }
+        .item-body {
+          position: relative;
+          height: 70px;
+          margin-left: 80px;
+          .title {
+            font-size: 17px;
+            color: $gray;
+          }
+          .count {
+            font-size: 13px;
+            color: $gray-light;
+            margin-top: 4px;
+          }
+          .item-footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            .price {
+              font-size: 16px;
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
