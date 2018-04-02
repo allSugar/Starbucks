@@ -5,13 +5,15 @@
     margin-left: 15px;
     margin-bottom: -1px;
     .row-item {
+      display: table;
+      width: 100%;
       padding: 15px 0;
       border-bottom: 1px solid $border;
       font-size: 16px;
       line-height: 1;
     }
     label.row-item {
-      display: block;
+      display: table;
     }
     &.row-lg {
       .row-item {
@@ -28,31 +30,39 @@
     .item-choice,
     .item-img,
     .item-icon,
-    .item-body {
-      display: inline-block;
+    .item-body,
+    .item-action {
+      display: table-cell;
       vertical-align: middle;
     }
     .item-choice,
-    .item-img,
+    .item-img .img-center,
     .item-icon {
-      margin-right: 12px;
       overflow: hidden;
     }
     .item-choice {
+      width: 35px;
       .checkbox,
       .radio {
         float: left;
+        margin-right: 15px;
       }
     }
     .item-icon {
+      width: 35px;
       [class*="icon-"] {
         vertical-align: top;
+        margin-right: 15px;
       }
     }
     .item-img {
-      position: relative;
-      width: 40px;
+      width: 55px;
       height: 40px;
+      .img-center {
+        position: relative;
+        height: 100%;
+        margin-right: 15px;
+      }
       img {
         position: absolute;
         top: 0;
@@ -62,23 +72,26 @@
         max-height: 100%;
         margin: auto;
       }
-      &.radius {
+      &.radius .img-center {
         @include border_radius(100%);
       }
-      &.item-xs {
-        width: 30px;
+      &.img-xs {
+        width: 45px;
         height: 30px;
       }
-      &.item-lg {
-        height: 45px;
-        width: 45px;
-      }
-      &.item-llg {
+      &.img-lg {
         width: 60px;
+        height: 45px;
+      }
+      &.img-llg {
+        width: 75px;
         height: 50px;
       }
     }
     .item-body {
+      .job-sort {
+        font-size: 18px;
+      }
       .repair-firm {
         margin-top: 10px;
         font-size: 13px;
@@ -89,6 +102,7 @@
         font-size: 14px;
         color: #7f8393;
       }
+      .facility,
       .location {
         margin-top: 10px;
         font-size: 12px;
@@ -101,6 +115,26 @@
         margin-top: 8px;
         font-size: 16px;
         color: $gray-light;
+      }
+    }
+    .item-action {
+      width: 80px;
+      padding-right: 15px;
+      .icon-point {
+        margin: 7px 15px 7px 0;
+      }
+      >* {
+        float: left;
+      }
+      .tag {
+        display: inline-block;
+        padding: 0 5px;
+        font-size: 11px;
+        line-height: 18px;
+        &.tag-error {
+          color: $red;
+          background-color: rgba(248, 42, 20, .2);
+        }
       }
     }
   }

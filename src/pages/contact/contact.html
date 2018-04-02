@@ -9,37 +9,33 @@
     <ul class="row-list">
       <li class="row-item" *ngFor="let i of [1,2,3]">
         <div class="item-img radius">
-          <img alt="" src="assets/imgs/change-before.png">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
         </div>
         <div class="item-body">北京苏南方圆建设有限公司</div>
       </li>
     </ul>
     <ul class="row-list row-lg">
       <li class="row-item" *ngFor="let i of [1,2,3]">
-        <div class="item-img item-xs radius">
-          <img alt="" src="assets/imgs/change-before.png">
+        <div class="item-img img-xs radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
         </div>
-        <div class="item-body">北京苏南方圆建设有限公司</div>
+        <div class="item-body">
+          <p class="job-sort">店面经理</p>
+        </div>
       </li>
-    </ul>
-    <ul class="row-list row-lg">
-      <li class="row-item">
-        <div class="item-icon">
-          <i class="icon-row-time"></i>
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
         </div>
-        <div class="item-body">维修总计工时</div>
-      </li>
-      <li class="row-item">
-        <div class="item-icon">
-          <i class="icon-row-cost"></i>
+        <div class="item-body">
+          <p class="name">北京苏南方圆建设有限公司</p>
         </div>
-        <div class="item-body">维修总计成本</div>
-      </li>
-      <li class="row-item">
-        <div class="item-icon">
-          <i class="icon-row-password"></i>
-        </div>
-        <div class="item-body">修改密码</div>
       </li>
     </ul>
     <ul class="row-list row-llg">
@@ -55,7 +51,7 @@
         <div class="item-body">电气工程</div>
       </li>
     </ul>
-    <ul class="row-list row-llg">
+    <ul class="row-list">
       <li class="row-item" *ngFor="let i of [1,2,3,4,5,6]">
         <div class="item-icon">
           <i class="icon-stage-{{ i }}"></i>
@@ -67,19 +63,48 @@
       </li>
     </ul>
     <ul class="row-list">
-      <li class="row-item">
-        <div class="item-icon">
-          <i class="icon-stage-1"></i>
+      <label class="row-item">
+        <div class="item-choice checkbox">
+          <input [(ngModel)]="status" type="checkbox" (change)="change()">
+          <ins class="checkbox"></ins>
         </div>
         <div class="item-body">
           <p class="title">灯具/射灯不亮</p>
           <p class="company">北京苏南方圆建设有限公司</p>
           <p class="location">一层平面-吧台区</p>
         </div>
+        <div class="item-action">
+          <i class="icon-point"></i>
+          <ins class="tag tag-error">紧急</ins>
+        </div>
+      </label>
+      <li class="row-item">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="name">刘杰楷</p>
+          <p class="telphone">15289760923</p>
+        </div>
       </li>
       <li class="row-item">
         <div class="item-img radius">
-          <img alt="" src="assets/imgs/change-before.png">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="title">北京苏南方圆建设有限公司</p>
+          <p class="facility">设施维修：灯具、龙头、门窗等</p>
+        </div>
+      </li>
+      <li class="row-item">
+        <div class="item-img img-lg radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
         </div>
         <div class="item-body">
           <p class="name">刘杰楷</p>
@@ -127,8 +152,10 @@
     </ul>
     <ul class="row-list">
       <li class="row-item" *ngFor="let i of [1,2,3]">
-        <div class="item-img item-llg">
-          <img src="assets/imgs/change-before.png" alt="">
+        <div class="item-img img-llg">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
         </div>
         <div class="item-body">客区照片1</div>
       </li>
