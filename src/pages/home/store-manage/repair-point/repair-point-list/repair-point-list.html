@@ -1,10 +1,43 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>repairPointList</ion-title>
+    <ion-title>维修点列表</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <div class="row-ibox">
+    <div class="row-list">
+      <label class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-choice checkbox">
+          <input type="checkbox">
+          <ins class="checkbox-icon"></ins>
+        </div>
+        <div class="item-body">
+          <p class="title">灯具/射灯不亮</p>
+          <p class="company">北京苏南方圆建设有限公司</p>
+          <p class="location">一层平面-吧台区</p>
+        </div>
+        <div class="item-action">
+          <i class="icon-point"></i>
+          <ins class="tag tag-error">紧急</ins>
+        </div>
+      </label>
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <div class="float-box">
+    <label class="float-choice checkbox">
+      <input type="checkbox">
+      <ins class="checkbox-icon"></ins>
+      <em class="text">全选</em>
+    </label>
+    <div class="float-sum">
+      <em class="text">共计：</em>
+      <em class="text">6个</em>
+    </div>
+    <button class="float-btn">提交</button>
+  </div>
+</ion-footer>
