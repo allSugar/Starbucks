@@ -1,4 +1,30 @@
 page-repair-point-list {
+  ion-header.header {
+    ion-navbar {
+      .ion-ios-map,
+      .ion-md-map {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-image: url('../assets/imgs/icon/icon-map.png');
+        background-size: 100%;
+        &::before {
+          display: none;
+        }
+      }
+      .ion-ios-search,
+      .ion-md-search {
+        width: 17px;
+        height: 18px;
+        margin-right: 15px;
+        background-image: url('../assets/imgs/icon/icon-search-lg.png');
+        background-size: 100%;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
   .float-box {
     position: relative;
     min-height: 50px;
