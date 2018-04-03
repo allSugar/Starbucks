@@ -321,3 +321,26 @@
   background-image: url($image-icon + "icon-point.png");
   background-size: 100%;
 }
+
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+[class *= icon-add] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+}
+.icon-add {
+  content: url("../assets/imgs/icon/icon_add.png");
+}
+.icon-add-active {
+  content: url("../assets/imgs/icon/icon_add_active.png");
+}
+
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes

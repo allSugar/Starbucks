@@ -1,52 +1,54 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>repair-kits</ion-title>
-  </ion-navbar>
+  <div class="header-bg"></div>
 
 </ion-header>
 
 
 <ion-content>
-  <div class="scroll">
-    <ul class="nav-list">
-      <li class="nav-item">木材</li>
-      <li class="nav-item active">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
-      <li class="nav-item">木材</li>
+  <div class="tab-container">
+<<<<<<< Updated upstream
+    <div class="tab-nav">
+      <ul>
+        <li class="nav-item" *ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
+      </ul>
+    </div>
+    <div class="tab-menu">
+      <ul  class="menu-list" *ngFor="let cate of contain; let i = index" [ngClass]="{ 'show': status == i }">
+        <p class="tab-title">{{ cate.name }}</p>
+        <li class="tab-item" *ngFor="let item of cate.list">
+          <div class="item-img">
+            <img src="assets/imgs/change-before.png" alt="">
+=======
+    <ul class="tab-nav">
+      <li class="nav-item" *ngFor="let item of nav">{{ item.name }}</li>
+
     </ul>
-    <ul class="nav-contain">
-      <p class="nav-title">木材</p>
-      <li class="item" *ngFor="let n of [1,2,3,4,5,6,7,8]">
+    <ul class="tab-menu" *ngFor="let cate of contain">
+      <p class="tab-title">{{ cate.name }}</p>
+      <li class="tab-item" *ngFor="let item of cate.list">
         <div class="item-img">
           <img src="assets/imgs/change-before.png" alt="">
         </div>
         <div class="item-body">
-          <p class="title">厨房吊灯欧普照明</p>
-          <p class="count">库存数量：25</p>
-          <div class="footer">
-            <p class="price">￥780</p>
+          <p class="title">{{ item.title }}</p>
+          <p class="count">库存数量：{{ item.count }}</p>
+          <div class="item-footer">
+            <span class="price">￥{{ item.price }}</span>
+            <em class="icon-add-active"></em>
+>>>>>>> Stashed changes
           </div>
-        </div>
-      </li>
-    </ul>
+          <div class="item-body">
+            <p class="title">{{ item.title }}</p>
+            <p class="count">库存数量：{{ item.count }}</p>
+            <div class="item-footer">
+              <span class="price">￥{{ item.price }}</span>
+              <em class="icon-add-active"></em>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </ion-content>

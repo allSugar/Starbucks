@@ -106,7 +106,7 @@ page-my {
         background-color: white;
         .list {
           .item {
-            &.item {
+            & + item {
               margin-top: 17px;
             }
             position: relative;

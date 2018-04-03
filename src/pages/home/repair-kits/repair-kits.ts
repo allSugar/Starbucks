@@ -12,8 +12,33 @@ export class RepairKitsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RepairKitsPage');
+  nav: object[] = [
+      {name: '木材'},
+      {name: '木材'},
+      {name: '木材'},
+      {name: '木材'},
+      {name: '木材'}
+  ];
+
+  contain: object[] = [
+      {name: '木材', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+<<<<<<< Updated upstream
+      {name: '木材1', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+      {name: '木材2', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+      {name: '木材3', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+      {name: '木材4', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]}
+  ];
+
+  status: number = 1;
+  tabs(n: number) {
+      this.status = n;
   }
+=======
+      {name: '木材', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+      {name: '木材', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+      {name: '木材', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]},
+      {name: '木材', list: [{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'},{title: '厨房吊灯欧普照明', count: '25', price: '780'}]}
+  ]
+>>>>>>> Stashed changes
 
 }
