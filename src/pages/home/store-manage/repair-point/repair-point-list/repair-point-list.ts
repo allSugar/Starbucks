@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,7 +8,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RepairPointListPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  navCtrl:any;
+  constructor(
+    public app: App,
+    public navParams: NavParams
+  ) {
+    this.navCtrl = this.app.getRootNav();
+  }
+
+  goToOtherPage() {
+    this.navCtrl.push('DrawingMapPage');
   }
 
 }

@@ -97,12 +97,21 @@ $yellow: #fdbe26;
   background-size: 640*$num + px 640*$num + px;
 }
 
-@mixin box_shadow($content) {
-  -webkit-box-shadow: $content;
-  -moz-box-shadow: $content;
-  -ms-box-shadow: $content;
-  -o-box-shadow: $content;
-  box-shadow: $content;
+@mixin box_shadow($n1, $n2:0, $n3:0, $c:rgba(0, 0, 0, 0)) {
+  @if($n1=='none') {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+  }
+  @else {
+    -webkit-box-shadow: $n1 $n2 $n3 $c;
+    -moz-box-shadow: $n1 $n2 $n3 $c;
+    -ms-box-shadow: $n1 $n2 $n3 $c;
+    -o-box-shadow: $n1 $n2 $n3 $c;
+    box-shadow: $n1 $n2 $n3 $c;
+  }
 }
 
 @mixin border_radius($radius:4px) {
@@ -123,6 +132,16 @@ $yellow: #fdbe26;
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+@mixin filter_blur($num:0) {
+  -webkit-filter: blur($num + px);
+  /* Chrome, Opera */
+  -moz-filter: blur($num + px);
+  -ms-filter: blur($num + px);
+  filter: blur($num + px);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=$num, MakeShadow=false);
+  /* IE6~IE9 */
 }
 
 @import 'base';

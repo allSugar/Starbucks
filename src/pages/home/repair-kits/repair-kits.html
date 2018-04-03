@@ -1,14 +1,10 @@
 
 <ion-header>
-
   <div class="header-bg"></div>
-
 </ion-header>
-
 
 <ion-content>
   <div class="tab-container">
-<<<<<<< Updated upstream
     <div class="tab-nav">
       <ul>
         <li class="nav-item" *ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
@@ -20,24 +16,6 @@
         <li class="tab-item" *ngFor="let item of cate.list">
           <div class="item-img">
             <img src="assets/imgs/change-before.png" alt="">
-=======
-    <ul class="tab-nav">
-      <li class="nav-item" *ngFor="let item of nav">{{ item.name }}</li>
-
-    </ul>
-    <ul class="tab-menu" *ngFor="let cate of contain">
-      <p class="tab-title">{{ cate.name }}</p>
-      <li class="tab-item" *ngFor="let item of cate.list">
-        <div class="item-img">
-          <img src="assets/imgs/change-before.png" alt="">
-        </div>
-        <div class="item-body">
-          <p class="title">{{ item.title }}</p>
-          <p class="count">库存数量：{{ item.count }}</p>
-          <div class="item-footer">
-            <span class="price">￥{{ item.price }}</span>
-            <em class="icon-add-active"></em>
->>>>>>> Stashed changes
           </div>
           <div class="item-body">
             <p class="title">{{ item.title }}</p>

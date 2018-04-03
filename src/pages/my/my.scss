@@ -32,6 +32,14 @@ page-my {
           background-size: 100% auto;
           background-position: center;
           @include absolute-full();
+          overflow: hidden;
+          img {
+            position: absolute;
+            @include absolute-full();
+            width: 100%;
+            margin: auto 0;
+            @include filter_blur(30);
+          }
           &::after {
             content: '';
             position: absolute;
@@ -40,7 +48,7 @@ page-my {
             @include opacity(.5);
           }
         }
-        .info-content{
+        .info-content {
           position: absolute;
           @include absolute-full();
         }
@@ -104,9 +112,10 @@ page-my {
       .user-detail {
         padding: 25px;
         background-color: white;
+        line-height: 24px;
         .list {
           .item {
-            & + item {
+            &+item {
               margin-top: 17px;
             }
             position: relative;
