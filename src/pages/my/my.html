@@ -5,28 +5,30 @@
 <ion-content>
   <div class="user">
     <div class="user-head">
-      <div class="user-info">
-        <p class="name">马强</p>
-        <p class="introduce">北京星巴克有限公司 设施经理</p>
-        <img class="avatar" src="assets/imgs/change-before.png" alt="">
+      <div class="user-info user-admin">
+        <div class="info-bg" [ngStyle]="{ 'background-image' : 'url(assets/imgs/avater/avater.png)' }"></div>
+        <div class="info-content">
+            <img class="avatar" src="assets/imgs/avater/avater.png" alt="">
+            <p class="name">马强</p>
+            <p class="introduce">北京星巴克有限公司 设施经理</p>
+        </div>
       </div>
-      <ul class="data-list">
-        <li class="data-item">
-          <p class="num">4</p>
-          <p class="status">待接单</p>
-          <p class="underline"></p>
-        </li>
-        <li class="data-item">
-          <p class="num">5</p>
-          <p class="status">进行中</p>
-          <p class="underline"></p>
-        </li>
-        <li class="data-item">
-          <p class="num">0</p>
-          <p class="status">已完成</p>
-          <p class="underline"></p>
-        </li>
-      </ul>
+      <div class="user-detail">
+        <ul class="list">
+          <li class="item">
+            <p class="title">维修主管</p>
+            <p class="info">李佳乐</p>
+          </li>
+          <li class="item">
+            <p class="title">维修主管电话</p>
+            <p class="info">18701236654</p>
+          </li>
+          <li class="item">
+            <p class="title">地址</p>
+            <p class="info">北京市朝阳区媒体村天畅园7号楼底商</p>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="row-ibox">
       <ul class="row-list row-lg">
@@ -49,31 +51,6 @@
           <div class="item-body">修改密码</div>
         </li>
       </ul>
-    </div>
-  </div>
-  <div class="user">
-    <div class="user-head">
-      <div class="user-info user-admin">
-        <img class="avatar" src="assets/imgs/change-before.png" alt="">
-        <p class="name">马强</p>
-        <p class="introduce">北京星巴克有限公司 设施经理</p>
-      </div>
-      <div class="user-detail">
-        <ul class="list">
-          <li class="item">
-            <p class="title">维修主管</p>
-            <p class="info">李佳乐</p>
-          </li>
-          <li class="item">
-            <p class="title">维修主管电话</p>
-            <p class="info">18701236654</p>
-          </li>
-          <li class="item">
-            <p class="title">地址</p>
-            <p class="info">北京市朝阳区媒体村天畅园7号楼底商</p>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </ion-content>

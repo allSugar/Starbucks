@@ -118,6 +118,13 @@ $yellow: #fdbe26;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=ceil($number*100));
 }
 
+@mixin absolute-full() {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 @import 'base';
 @import 'baseUI';
 @import 'category';
