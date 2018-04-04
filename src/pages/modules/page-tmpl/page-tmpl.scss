@@ -8,7 +8,7 @@ page-page-tmpl {
       width: 10px;
       height: 19px;
       margin-top: -9px;
-      background-image: url( "#{$image}/arrow-back.png");
+      background-image: url("#{$image}/arrow-back.png");
       background-size: contain;
     }
   }
@@ -204,6 +204,39 @@ page-page-tmpl {
         right: 3px;
         top: 3px;
         margin-top: 0;
+      }
+    }
+  }
+  .explain {
+    margin-top: 10px;
+    padding: 15px 15px 19px;
+    background-color: white;
+    .explain-head {
+      line-height: 25px;
+      overflow: hidden;
+      .title {
+        float: left;
+        font-size: 17px;
+        color: $gray;
+      }
+      .time {
+        float: right;
+        font-size: 10px;
+        color: $gray-light;
+      }
+    }
+    .explain-content {
+      margin-top: 20px;
+      font-size: 15px;
+      color: $gray;
+    }
+    .explain-footer {
+      margin-top: 52px;
+      overflow: hidden;
+      img {
+        float: left;
+        width: 50px;
+        margin-right: 10px;
       }
     }
   } //报价

@@ -24,8 +24,8 @@ export class HttpService {
     options = new RequestOptions({ headers: this.headers });
 
     //get请求
-    get(params: any): Observable<any> {
-        if (params) var url = API_ROOT + "?" + querystring.stringify(params);
+    get(params: any, ROOT: Boolean = true): Observable<any> {
+        if (params) var url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
         return this.http.get(url, { headers: this.headers }).map(res => res.json());
     }
 

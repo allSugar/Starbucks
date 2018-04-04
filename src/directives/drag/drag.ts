@@ -1,4 +1,4 @@
-import { Directive, OnChanges, Output, EventEmitter, ElementRef, Renderer, Renderer2 } from '@angular/core';
+import { Directive, OnChanges, ViewChild, Output, EventEmitter, ElementRef, Renderer, Renderer2 } from '@angular/core';
 import { DomController } from 'ionic-angular';
 
 @Directive({
@@ -7,7 +7,7 @@ import { DomController } from 'ionic-angular';
 export class DragDirective implements OnChanges {
 
   @Output() dragend = new EventEmitter<any>();
-
+  
   pressOffsetLeft: number = 0;
   pressOffsetTop: number = 0;
 
@@ -27,6 +27,7 @@ export class DragDirective implements OnChanges {
 
   ngAfterViewInit() {
     let hammer: any = new window['Hammer'](this.elementRef.nativeElement);
+    console.log(this);
 
     hammer.get('press').set({ time: 0 });
 

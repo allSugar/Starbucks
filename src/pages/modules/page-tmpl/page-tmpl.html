@@ -1,11 +1,190 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>静态模版</ion-title>
+    <ion-title>统计</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <div class="tabs">
+  <div class="row-ibox">
+    <ul class="row-list">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">北京苏南方圆建设有限公司</div>
+      </li>
+    </ul>
+    <ul class="row-list row-lg">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img img-xs radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="job-sort">店面经理</p>
+        </div>
+      </li>
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="name">北京苏南方圆建设有限公司</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="row-list row-llg">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-body">灯具</div>
+      </li>
+    </ul>
+    <ul class="row-list row-llg">
+      <li class="row-item" *ngFor="let i of [1,2,3,4,5,6]">
+        <div class="item-icon">
+          <i class="icon-stage-{{ i }}"></i>
+        </div>
+        <div class="item-body">电气工程</div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item" *ngFor="let i of [1,2,3,4,5,6]">
+        <div class="item-icon">
+          <i class="icon-stage-{{ i }}"></i>
+        </div>
+        <div class="item-body">
+          <p class="title">电气工程</p>
+          <p class="repair-firm">维修厂商：北京苏南方圆建设有限公司</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <label class="row-item">
+        <div class="item-choice checkbox">
+          <input [(ngModel)]="status" type="checkbox" (change)="change()">
+          <ins class="checkbox-icon"></ins>
+        </div>
+        <div class="item-body">
+          <p class="title">灯具/射灯不亮</p>
+          <p class="company">北京苏南方圆建设有限公司</p>
+          <p class="location">一层平面-吧台区</p>
+        </div>
+        <div class="item-action">
+          <i class="icon-point"></i>
+          <ins class="tag tag-error">紧急</ins>
+        </div>
+      </label>
+      <li class="row-item">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="name">刘杰楷</p>
+          <p class="telphone">15289760923</p>
+        </div>
+      </li>
+      <li class="row-item">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="title">北京苏南方圆建设有限公司</p>
+          <p class="facility">设施维修：灯具、龙头、门窗等</p>
+        </div>
+      </li>
+      <li class="row-item">
+        <div class="item-img img-lg radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="name">刘杰楷</p>
+          <p class="telphone">15289760923</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="row-list row-lg">
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-green"></i>
+        </div>
+        <div class="item-body">全部</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-yellow"></i>
+        </div>
+        <div class="item-body">未提交</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-pink"></i>
+        </div>
+        <div class="item-body">超时未完成</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-blue"></i>
+        </div>
+        <div class="item-body">已修复</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-purple"></i>
+        </div>
+        <div class="item-body">已提交</div>
+      </li>
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="radio-icon-gray"></i>
+        </div>
+        <div class="item-body">已删除</div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item" *ngFor="let i of [1,2,3]">
+        <div class="item-img img-llg">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">客区照片1</div>
+      </li>
+    </ul>
+    <ul class="row-list">
+      <li class="row-item">
+        <div class="item-icon">
+          <i class="icon-file"></i>
+        </div>
+        <div class="item-body">文件</div>
+      </li>
+    </ul>
+    <div class="row-list">
+      <label class="row-item">
+        <div class="item-choice checkbox">
+          <input [(ngModel)]="status" type="checkbox" (change)="change()">
+          <ins class="checkbox-icon"></ins>
+        </div>
+        <div class="item-icon">
+          <i class="icon-file"></i>
+        </div>
+        <div class="item-body">文件</div>
+      </label>
+    </div>
+  </div>
+
+  <div class="br"></div>
+
+  <div class="tabs" style="margin-top:10px;">
     <ul class="tabs-list tabs-two">
       <li class="tab-btn tab-icon-none active">
         <em class="text">我的店面</em>
@@ -32,36 +211,19 @@
     </div>
   </div>
   <div class="tabs">
-    <ul class="tabs-list tabs-third">
+    <ul class="tabs-list tabs-two">
       <li class="tab-btn tab-icon-none">
         <em class="text">我的店面</em>
       </li>
       <li class="tab-btn tab-icon-both down">
         <em class="text">全部店面</em>
       </li>
-      <li class="tab-btn tab-icon-both down">
-        <em class="text">全部店面</em>
-      </li>
     </ul>
     <div class="tabs-content">
-      <ul class="select-list">
-        <li class="item">
-          <div class="item-img">
-            <img src="assets/imgs/select/select-all.png" alt="">
-          </div>
-          <p class="name">全部</p>
-        </li>
-        <li class="item" *ngFor="let item of [1,2,3,4,5]">
-          <div class="item-img">
-            <img src="assets/imgs/change-before.png" alt="">
-          </div>
-          <p class="name">李明明</p>
-        </li>
-      </ul>
     </div>
   </div>
   <div class="tabs">
-    <ul class="tabs-list tabs-third tabs-sort">
+    <ul class="tabs-list tabs-sort tabs-third">
       <li class="tab-btn tab-icon-both">
         <em class="text">排序</em>
       </li>
@@ -79,7 +241,6 @@
 
     </div>
   </div>
-
   <div class="tabs">
     <ul class="tabs-list tabs-four">
       <li class="tab-btn tab-icon-both up">
@@ -157,69 +318,25 @@
       <p class="info">改造后</p>
     </div>
   </div>
-  <div class="shop-detail">
-    <p class="title">
-      回龙观店
-      <em class="point"></em>
-    </p>
-    <div class="clearfix">
-      <div class="detail-item">
-        <div class="detail-img">
-          <p class="mask">维修后</p>
-          <img src="assets/imgs/change-before.png" alt="">
-        </div>
+
+
+  <div class="br"></div>
+
+  <ul class="select-list">
+    <li class="item">
+      <div class="item-img">
+        <img src="assets/imgs/select/select-all.png" alt="">
       </div>
-      <div class="detail-item">
-        <div class="detail-img">
-          <p class="mask">维修前</p>
-          <img src="assets/imgs/change-after.png" alt="">
-        </div>
+      <p class="name">全部</p>
+    </li>
+    <li class="item" *ngFor="let item of [1,2,3,4,5]">
+      <div class="item-img">
+        <img src="assets/imgs/change-before.png" alt="">
       </div>
-    </div>
-    <div class="problem">
-      整体风格有点突兀，对不合适的地方的设计风格进行整改，已经整改完毕。
-    </div>
-  </div>
-
-  <div class="br"></div>
-
-  <div class="stage-page">
-    <div class="stage">
-      <img class="user-img" src="assets/imgs/user/time.png" alt="">
-      <p class="user-title">维修总计工时</p>
-    </div>
-    <div class="stage">
-      <img class="user-img" src="assets/imgs/user/cost.png" alt="">
-      <p class="user-title">维修总计成本</p>
-    </div>
-    <div class="stage">
-      <img class="user-img" src="assets/imgs/user/password.png" alt="">
-      <p class="user-title">修改密码</p>
-    </div>
-  </div>
-
-  <div class="br"></div>
-
-  <div class="stage-page shop-list">
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-    <div class="stage">
-      <img src="assets/imgs/change-before.png" alt="">
-      <p class="title">钟楼百货星巴克</p>
-    </div>
-  </div>
-
-  <div class="br"></div>
+      <p class="name">李明明</p>
+    </li>
+  </ul>
+  <br>
 
   <div class="time-form">
     <div class="time-input">
@@ -282,38 +399,6 @@
 
   <div class="br"></div>
 
-  <ul class="stage-page">
-    <li class="stage">灯具</li>
-    <li class="stage">灯具</li>
-    <li class="stage">灯具</li>
-    <li class="stage">灯具</li>
-  </ul>
-  <ul class="stage-page">
-    <li class="stage">
-      <em class="icon-stage-1"></em>
-      <em class="f-left">电气工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-2"></em>
-      <em class="f-left">上下水工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-3"></em>
-      <em class="f-left">墙面装饰工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-4"></em>
-      <em class="f-left">地面铺贴工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-5"></em>
-      <em class="f-left">门窗工程</em>
-    </li>
-    <li class="stage">
-      <em class="icon-stage-6"></em>
-      <em class="f-left">天花工程</em>
-    </li>
-  </ul>
 
   <div class="br"></div>
 
@@ -330,26 +415,6 @@
     </li>
   </ul>
 
-  <div class="br"></div>
-
-
-  <div class="filter-collapse">
-    <div class="filter-list">
-      <div class="category-item rank active">排序</div>
-      <div class="category-item time">管辖范围</div>
-      <div class="category-item time">时间</div>
-      <div class="category-item time">问题</div>
-    </div>
-    <ul class="select-list hide">
-      <li class="select-item">全部</li>
-      <li class="select-item">厂商名字a-z</li>
-      <li class="select-item active">厂商名字z-a</li>
-      <li class="select-item">问题由多到少</li>
-      <li class="select-item">问题由少到多</li>
-    </ul>
-  </div>
-
-  <div class="br"></div>
   <div class="br"></div>
 
   <div class="wait-img">
@@ -406,76 +471,6 @@
     </div>
   </div>
 
-
-  <div class="br"></div>
-
-  <div class="tabs">
-    <ul class="tabs-rate tabs-third">
-      <li class="tab-btn active">
-        <em class="text">待接单(8)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">进行中(3)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">已完成</em>
-      </li>
-    </ul>
-    <ul class="tabs-rate tabs-four">
-      <li class="tab-btn active">
-        <em class="text">待接单(8)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">进行中(3)</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">已完成</em>
-      </li>
-      <li class="tab-btn">
-        <em class="text">已完成</em>
-      </li>
-    </ul>
-  </div>
-
-  <div class="br"></div>
-
-  <div class="stage-page">
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-green"></span>全部
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-yellow"></span>未提交
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-pink"></span>超时未完成
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-blue"></span>已修复
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-purple"></span>已提交
-    </div>
-    <div class="stage p-t-b-xl">
-      <span class="radio-icon-gray"></span>已删除
-    </div>
-  </div>
-
-  <div class="br"></div>
-
-  <div class="stage-page">
-    <div class="stage">
-      <span class="icon-radio-selected f-left"></span>
-      <span class="icon-file"></span>
-      <span class="file-name">文件1</span>
-    </div>
-    <div class="stage">
-      <span class="icon-radio-unselected f-left"></span>
-      <span class="icon-file"></span>
-      <span class="file-name">文件2</span>
-    </div>
-  </div>
-
-
   <div class="br"></div>
 
   <ul class="import-img">
@@ -485,6 +480,36 @@
     </li>
   </ul>
 
+  <div class="br"></div>
+
+  <div class="explain">
+    <div class="explain-head">
+      <span class="icon-explain-yellow"></span>
+      <span class="title">说明</span>
+      <span class="time">2017.05.20 12:30</span>
+    </div>
+    <div class="explain-content">客厅灯管线头断了</div>
+    <div class="explain-footer">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+    </div>
+  </div>
+  <div class="explain">
+    <div class="explain-head">
+      <span class="icon-explain-blue"></span>
+      <span class="word">完成说明</span>
+      <span class="time">2017.05.20 12:30</span>
+    </div>
+    <div class="explain-content">客厅灯管线头断了，已修好</div>
+    <div class="explain-footer">
+      <img src="assets/imgs/change-before.png" alt="">
+      <img src="assets/imgs/change-before.png" alt="">
+      <img src="assets/imgs/change-before.png" alt="">
+    </div>
+  </div>
+
+  <div class="br"></div>
   <div class="br"></div>
 
   <ul class="media-ibox p-t-b-xxl">
@@ -501,51 +526,6 @@
       <span class="count">2800</span>元
     </li>
   </ul>
-
-  <div class="media-ibox p-t-b-xl m-t-s">
-    <div class="sub-orders">
-      <h3 class="title">子订单1</h3>
-      <h4 class="sub-title">类型</h4>
-      <ul class="type-detail">
-        <li>
-          <em>五金</em>
-          <em>电器</em>
-          <span>电线</span>
-        </li>
-        <li>
-          <em>五金</em>
-          <em>电器</em>
-          <span>插座</span>
-        </li>
-      </ul>
-      <h4 class="sub-title">工时</h4>
-      <p class="work-hours">
-        <em class="icon-clock"></em>
-        <span>3小时</span>
-      </p>
-      <h4 class="sub-title">耗材</h4>
-      <ul>
-        <li class="stuff">
-          <img src="assets/imgs/change-before.png" alt="">
-          <p class="intro">厨房吊灯欧普照明</p>
-          <p class="value">
-            <span class="price">￥780</span>
-            <br />
-            <span class="count">×2</span>
-          </p>
-        </li>
-        <li class="stuff">
-          <img src="assets/imgs/change-before.png" alt="">
-          <p class="intro">厨房吊灯欧普照明</p>
-          <p class="value">
-            <span class="price">￥780</span>
-            <br />
-            <span class="count">×2</span>
-          </p>
-        </li>
-      </ul>
-    </div>
-  </div>
 
   <div class="br"></div>
 
@@ -575,105 +555,7 @@
 
   <div class="br"></div>
 
-  <div class="ibox">
-    <div class="category">
-      <ul class="item-list">
-        <li class="item border-none">
-          <div class="item-img">
-            <img src="assets/imgs/icon/icon_order.png" alt="">
-          </div>
-          <p class="title">新单</p>
-        </li>
-        <li class="item border-none">
-          <div class="item-img">
-            <img src="assets/imgs/icon/icon_success.png" alt="">
-          </div>
-          <p class="title">已完成</p>
-        </li>
-        <li class="item border-none">
-          <div class="item-img">
-            <img src="assets/imgs/icon/icon_message.png" alt="">
-          </div>
-          <p class="title">群消息</p>
-        </li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="br"></div>
-
-  <div class="stage-page">
-    <div class="stage p-t-b-xl">
-      <p class="icon-news-warm">
-        <span class="news-count">11</span>
-      </p>
-      <div class="stage-news">
-        <div class="news-name">
-          <span>低温报警</span>
-          <span class="time">2017.12.23</span>
-        </div>
-        <div class="news-detail">798星巴克区天花板低温报警</div>
-      </div>
-    </div>
-    <div class="stage p-t-b-xl">
-      <p class="icon-news-3d">
-        <span class="news-count">6</span>
-      </p>
-      <div class="stage-news">
-        <div class="news-name">
-          <span>3D全景</span>
-          <span class="time">2017.12.23</span>
-        </div>
-        <div class="news-detail">翠微百货星巴克更新3D全景了</div>
-      </div>
-    </div>
-    <div class="stage p-t-b-xl">
-      <p class="icon-news-icloud"></p>
-      <div class="stage-news">
-        <div class="news-name">
-          <span>云盘</span>
-          <span class="time">2017.12.23</span>
-        </div>
-        <div class="news-detail">丰台万达星巴克云盘有更新</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="br"></div>
-
-  <div class="media-ibox p-t-b-l border-b-gray">
-    <div class="media-img">
-      <img src="assets/imgs/avater/avater_card.png" alt="">
-      <span class="news-count">11</span>
-    </div>
-    <div class="media-body">
-      <p class="title">北京钟楼百货星巴克</p>
-      <p class="address">A区8栋1层吧台区</p>
-    </div>
-    <div class="media-footer">
-      <em class="icon-light f-left"></em>
-      <em class="media-name f-left">苏南方圆</em>
-      <em class="media-time">2016-11-30 15:42:16</em>
-    </div>
-  </div>
-  <div class="media-ibox p-t-b-l">
-    <div class="media-img">
-      <img src="assets/imgs/avater/avater_card.png" alt="">
-      <span class="news-count">11</span>
-    </div>
-    <div class="media-body">
-      <p class="title">北京钟楼百货星巴克</p>
-      <p class="address">A区8栋1层吧台区</p>
-    </div>
-    <div class="media-footer">
-      <em class="icon-light f-left"></em>
-      <em class="media-name f-left">苏南方圆</em>
-      <em class="media-time">2016-11-30 15:42:16</em>
-    </div>
-  </div>
-
-  <div class="br"></div>
-  <div class="br"></div>
 
   <div class="worker-info">
     <img src="assets/imgs/avater/avater_card.png" alt="" class="worker-img">

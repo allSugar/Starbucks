@@ -13,7 +13,7 @@
     </div>
   </div>
   <!--搜索的结果 -->
-  <ion-list *ngIf="!isSearching">
+  <ion-list *ngIf="isSearching">
     <ion-item-group *ngFor="let contacts of searchingItems;let i = index">
       <ion-item-divider color="light" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</ion-item-divider>
       <ion-item *ngFor="let contact of contacts" (click)="goBack(contact)">

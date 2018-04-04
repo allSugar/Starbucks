@@ -33,7 +33,7 @@ export class AlphaListPage {
     public elementRef: ElementRef,
     private http: HttpService
   ) {
-    this.http.get("assets/data/contacts.json").subscribe(res => {
+    this.http.get("assets/data/contacts.json", false).subscribe(res => {
       this.remitBanks = res;
       this.aLetters.forEach((res, index) => {
         if (this.remitBanks[res] && this.remitBanks[res].lenght != 0) {

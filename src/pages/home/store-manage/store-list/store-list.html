@@ -7,7 +7,6 @@
     <input type="text" class="search-input">
     <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
   </div>
-
   <div class="tabs">
     <ul class="tabs-list tabs-two">
       <li class="tab-btn" [ngClass]="{ 'active':status == 1 }" (click)="tabs(1)">
@@ -38,7 +37,7 @@
 
 <ion-content>
   <div class="stage-page shop-list">
-    <div class="stage"  *ngFor="let item of shop" (click)="goToOtherPage()">
+    <div class="stage" *ngFor="let item of shop" (click)="goToOtherPage()">
       <img src="assets/imgs/{{ item.url }}.png" alt="">
       <p class="title">{{ item.title }}</p>
     </div>
