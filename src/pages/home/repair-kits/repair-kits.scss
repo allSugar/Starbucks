@@ -4,6 +4,7 @@ page-repair-kits {
     height: 170px;
     background-image: url("#{$image-bg}/bg_repair_kits.png");
     background-size: cover;
+    overflow: hidden;
   }
   .tab-container {
     position: relative;
@@ -35,7 +36,6 @@ page-repair-kits {
       overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       .menu-list {
-        display: none;
         .tab-title {
           padding: 15px 0 26px 0;
           color: #777;

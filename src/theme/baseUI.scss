@@ -13,6 +13,13 @@
   height: 30px;
   margin: 10px 15px;
   background-color: white;
+  margin: 14px auto;
+  &.ibox-search-s {
+    width: 85%;
+    .search-input {
+      background-color: rgba(255, 255, 255, .1);
+    }
+  }
   .search-input {
     position: absolute;
     left: 0;
@@ -23,6 +30,7 @@
     text-indent: 10px;
     border: none;
     border-radius: 2px;
+    background-color: white;
   }
   ion-icon {
     position: absolute;

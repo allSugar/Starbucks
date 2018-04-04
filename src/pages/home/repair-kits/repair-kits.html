@@ -1,17 +1,26 @@
 
 <ion-header>
-  <div class="header-bg"></div>
+  <div class="header-bg">
+    <div class="ibox-search ibox-search-s">
+
+      <input class="search-input" type="text">
+
+      <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
+
+    </div>
+  </div>
+
 </ion-header>
 
 <ion-content>
   <div class="tab-container">
     <div class="tab-nav">
       <ul>
-        <li class="nav-item" *ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
+        <li class="nav-item"*ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
       </ul>
     </div>
     <div class="tab-menu">
-      <ul  class="menu-list" *ngFor="let cate of contain; let i = index" [ngClass]="{ 'show': status == i }">
+      <ul  class="menu-list" *ngFor="let cate of contain">
         <p class="tab-title">{{ cate.name }}</p>
         <li class="tab-item" *ngFor="let item of cate.list">
           <div class="item-img">
