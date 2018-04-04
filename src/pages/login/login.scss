@@ -1,11 +1,11 @@
 page-login {
-  .scroll-content{
+  .scroll-content {
     -webkit-overflow-scrolling: auto !important;
   }
   .login-page {
     width: 100%;
     height: 100%;
-    background-image: url("../assets/imgs/login-bg.png");
+    background-image: url("#{$image}/login-bg.png");
     background-size: cover;
     .scroll-content {
       padding-bottom: 0 !important;
@@ -28,15 +28,14 @@ page-login {
         color: #fff !important;
       }
     }
-    ion-select{
+    ion-select {
       padding-top: 4px;
       padding-bottom: 4px;
     }
     .text-input-md,
     .text-input-ios,
     ion-label,
-    .select-text
-     {
+    .select-text {
       margin: 0;
       color: #fff;
     }

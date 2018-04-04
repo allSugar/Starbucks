@@ -7,13 +7,37 @@ page-drawing-map {
     @include box_shadow(0px, 0px, 70px, rgba(3, 1, 0, .25));
     background-color: $white;
     text-align: center;
-    .toolbar .toolbar-background{
+    .toolbar .toolbar-background {
       border: 0;
     }
     .text {
       display: inline-block;
       line-height: 20px;
       padding: 8px 0;
+    }
+    ion-navbar {
+      .ion-ios-easel,
+      .ion-md-easel {
+        width: 15px;
+        height: 16px;
+        margin-left: 10px;
+        background-image: url('#{$image-icon}/icon-filter.png');
+        background-size: 100%;
+        &::before {
+          display: none;
+        }
+      }
+      .ion-ios-help,
+      .ion-md-help {
+        width: 17px;
+        height: 17px;
+        margin-right: 10px;
+        background-image: url('#{$image-icon}/icon-problem.png');
+        background-size: 100%;
+        &::before {
+          display: none;
+        }
+      }
     }
   }
 }

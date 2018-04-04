@@ -7,11 +7,11 @@
 }
 
 .icon-radio-selected {
-  content: url($image + "status/icon_selected.png");
+  content: url("#{$image-status}/icon_selected.png");
 }
 
 .icon-radio-unselected {
-  content: url($image + "status/icon_unselected.png");
+  content: url("#{$image-status}/icon_unselected.png");
 }
 
 [class*='radio-icon-'] {
@@ -77,7 +77,7 @@
 .icon-file {
   width: 60px;
   height: 50px;
-  content: url($image +  "import/file.png");
+  content: url("#{$image}/import/file.png");
 }
 
 [class*='icon-explain-'] {
@@ -88,11 +88,11 @@
 }
 
 .icon-explain-blue {
-  content: url($image-icon + "icon_explain_blue.png");
+  content: url("#{$image-icon}/icon_explain_blue.png");
 }
 
 .icon-explain-yellow {
-  content: url($image-icon + "icon_explain_yellow.png");
+  content: url("#{$image-icon}/icon_explain_yellow.png");
 }
 
 [class*='icon-total-'] {
@@ -103,11 +103,11 @@
 }
 
 .icon-total-money {
-  content: url($image-icon + "icon_total_money.png");
+  content: url("#{$image-icon}/icon_total_money.png");
 }
 
 .icon-total-time {
-  content: url($image-icon + "icon_total_time.png");
+  content: url("#{$image-icon}/icon_total_time.png");
 }
 
 .icon-clock {
@@ -116,7 +116,7 @@
   height: 15px;
   margin-top: 2px;
   margin-right: 6px;
-  content: url($image-icon + "icon_clock.png");
+  content: url("#{$image-icon}/icon_clock.png");
 }
 
 .icon-phone {
@@ -124,7 +124,7 @@
   width: 16px;
   height: 16px;
   margin-top: 8px;
-  content: url($image-icon + "icon_phone.png");
+  content: url("#{$image-icon}/icon_phone.png");
 }
 
 .icon-phone-s {
@@ -133,7 +133,7 @@
   height: 15px;
   margin-top: 1px;
   margin-left: 10px;
-  content: url($image-icon + "icon_phone_s.png");
+  content: url("#{$image-icon}/icon_phone_s.png");
 }
 
 [class *='icon-news-'] {
@@ -146,15 +146,15 @@
 }
 
 .icon-news-warm {
-  background-image: url($image-icon + "icon_news_warm.png");
+  background-image: url("#{$image-icon}/icon_news_warm.png");
 }
 
 .icon-news-3d {
-  background-image: url($image-icon + "icon_news_3d.png");
+  background-image: url("#{$image-icon}/icon_news_3d.png");
 }
 
 .icon-news-icloud {
-  background-image: url($image-icon + "icon_news_icloud.png");
+  background-image: url("#{$image-icon}/icon_news_icloud.png");
 }
 
 .icon-house {
@@ -163,7 +163,7 @@
   height: 16px;
   margin-right: 6px;
   margin-top: 2px;
-  content: url($image-icon + "icon-house.png");
+  content: url("#{$image-icon}/icon-house.png");
 }
 
 .icon-house-l {
@@ -172,7 +172,7 @@
   top: 50px;
   width: 135px;
   height: 135px;
-  content: url($image-icon + "icon_house_l.png");
+  content: url("#{$image-icon}/icon_house_l.png");
 }
 
 [class*='icon-arrow-right'] {
@@ -184,11 +184,11 @@
 }
 
 .icon-arrow-right {
-  content: url($image-icon + "icon_arrow_right.png");
+  content: url("#{$image-icon}/icon_arrow_right.png");
 }
 
 .icon-arrow-right-white {
-  content: url($image-icon + "icon_arrow_right_white.png");
+  content: url("#{$image-icon}/icon_arrow_right_white.png");
 }
 
 .icon-arrow-top {
@@ -196,7 +196,7 @@
   width: 11px;
   height: 6px;
   margin: 14px auto 0;
-  content: url($image-icon + "icon_arrow_top.png");
+  content: url("#{$image-icon}/icon_arrow_top.png");
 }
 
 .icon-arrow-bottom {
@@ -204,7 +204,7 @@
   width: 11px;
   height: 6px;
   margin: 14px auto 0;
-  content: url($image-icon + "icon_arrow_bottom.png");
+  content: url("#{$image-icon}/icon_arrow_bottom.png");
 }
 
 .icon-light {
@@ -212,21 +212,21 @@
   width: 12px;
   height: 12px;
   margin-top: 3px;
-  content: url($image-icon + "icon-light.png");
+  content: url("#{$image-icon}/icon-light.png");
 }
 
 .icon-star {
   width: 160px;
   height: 22px;
   margin: 0 auto 50px;
-  content: url($image-icon + "icon_star.png");
+  content: url("#{$image-icon}/icon_star.png");
 }
 
 .icon-smile {
   float: left;
   width: 20px;
   height: 20px;
-  content: url($image-icon + "icon_smile.png");
+  content: url("#{$image-icon}/icon_smile.png");
 }
 
 .icon-avatar {
@@ -234,14 +234,14 @@
   width: 30px;
   height: 30px;
   margin-top: -5px;
-  content: url($image-icon + "icon_avatar.png");
+  content: url("#{$image-icon}/icon_avatar.png");
 }
 
 .icon-car {
   float: left;
   width: 22px;
   height: 25px;
-  content: url($image-icon + "icon_car.png");
+  content: url("#{$image-icon}/icon_car.png");
 }
 
 .icon-car {
@@ -249,7 +249,7 @@
   width: 22px;
   height: 15px;
   margin-top: 5px;
-  content: url($image-icon + "icon_car.png");
+  content: url("#{$image-icon}/icon_car.png");
 }
 
 .icon-hourglass {
@@ -257,7 +257,7 @@
   width: 14px;
   height: 18px;
   margin-top: 3px;
-  content: url($image-icon + "icon_hourglass.png");
+  content: url("#{$image-icon}/icon_hourglass.png");
 }
 
 [class*='icon-issues-'] {
@@ -269,15 +269,15 @@
 }
 
 .icon-issues-number {
-  content: url($image-icon + "icon_issues_number.png");
+  content: url("#{$image-icon}/icon_issues_number.png");
 }
 
 .icon-issues-time {
-  content: url($image-icon + "icon_issues_time.png");
+  content: url("#{$image-icon}/icon_issues_time.png");
 }
 
 .icon-issues-total {
-  content: url($image-icon + "icon_issues_total.png");
+  content: url("#{$image-icon}/icon_issues_total.png");
 }
 
 .icon-row-time,
@@ -291,15 +291,15 @@
 }
 
 .icon-row-time {
-  background-image: url($image-icon + "icon-time.png");
+  background-image: url("#{$image-icon}/icon-time.png");
 }
 
 .icon-row-cost {
-  background-image: url($image-icon + "icon-cost.png");
+  background-image: url("#{$image-icon}/icon-cost.png");
 }
 
 .icon-row-password {
-  background-image: url($image-icon + "icon-password.png");
+  background-image: url("#{$image-icon}/icon-password.png");
 }
 
 @for $i from 1 to 7 {
@@ -308,7 +308,7 @@
     vertical-align: top;
     width: 20px;
     height: 20px;
-    background: url($image +  "project/project_#{$i}.png") no-repeat;
+    background: url("#{$image}/project/project_#{$i}.png") no-repeat;
     background-size: 15px 15px;
     background-position: center center;
   }
@@ -318,20 +318,22 @@
   display: inline-block;
   width: 16px;
   height: 4px;
-  background-image: url($image-icon + "icon-point.png");
+  background-image: url("#{$image-icon}/icon-point.png");
   background-size: 100%;
 }
 
-[class *= icon-add] {
+[class *=icon-add] {
   position: absolute;
   right: 0;
   bottom: 0;
   width: 20px;
   height: 20px;
 }
+
 .icon-add {
-  content: url("../assets/imgs/icon/icon_add.png");
+  content: url("#{$image-icon}/icon_add.png");
 }
+
 .icon-add-active {
-  content: url("../assets/imgs/icon/icon_add_active.png");
+  content: url("#{$image-icon}/icon_add_active.png");
 }

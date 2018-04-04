@@ -178,11 +178,11 @@ li {
     float: left;
     width: 15px;
     height: 15px;
-    background-image: url($image-icon + "icon_unselected.png");
+    background-image: url("#{$image-icon}/icon_unselected.png");
     background-size: 100%;
   }
   input:checked+.checkbox-icon {
-    background-image: url($image-icon + "icon_selected.png");
+    background-image: url("#{$image-icon}/icon_selected.png");
   }
   .text {
     float: left;

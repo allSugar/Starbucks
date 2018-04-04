@@ -8,7 +8,7 @@ page-page-tmpl {
       width: 10px;
       height: 19px;
       margin-top: -9px;
-      background-image: url("../assets/imgs/arrow-back.png");
+      background-image: url( "#{$image}/arrow-back.png");
       background-size: contain;
     }
   }
@@ -95,7 +95,7 @@ page-page-tmpl {
         padding: 22px 5% 24px 12%;
         margin-left: auto;
         margin-right: auto;
-        background-image: url("../assets/imgs/status/bg_warm_#{$i}.png");
+        background-image: url("#{$image-status}/bg_warm_#{$i}.png");
         background-size: cover;
       }
     }
@@ -103,14 +103,14 @@ page-page-tmpl {
       float: left;
       width: 55px;
       height: 58px;
-      background-image: url("../assets/imgs/status/icon_warn.png");
+      background-image: url("#{$image-status}/icon_warn.png");
       background-size: cover;
     }
     .icon-normal {
       float: left;
       width: 62px;
       height: 58px;
-      background-image: url("../assets/imgs/status/icon_normal.png");
+      background-image: url("#{$image-status}/icon_normal.png");
       background-size: cover;
     }
     .word {
@@ -304,7 +304,7 @@ page-page-tmpl {
     margin-bottom: 5px;
     color: white;
     text-align: center;
-    background-image: url("../assets/imgs/bg/bg_store.png");
+    background-image: url("#{$image-bg}/bg_store.png");
     background-size: cover;
     overflow: hidden;
     .shop-logo {
@@ -354,7 +354,7 @@ page-page-tmpl {
     width: 100%;
     height: 200px;
     padding: 81px 0 30px 6.9%;
-    background-image: url("../assets/imgs/bg/bg_worker.png");
+    background-image: url("#{$image-bg}/bg_worker.png");
     background-size: cover;
     .worker-img {
       position: absolute;

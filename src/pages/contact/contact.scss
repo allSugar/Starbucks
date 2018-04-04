@@ -8,16 +8,14 @@ page-contact {
       width: 10px;
       height: 19px;
       margin-top: -9px;
-      background-image: url("../assets/imgs/arrow-back.png");
+      background-image: url("#{$image}/arrow-back.png");
       background-size: contain;
     }
   }
-
   .br {
     width: 100%;
     height: 50px;
   }
-
   .cloud-page {
     .clude {
       width: 91.6%;
@@ -39,7 +37,6 @@ page-contact {
       }
     }
   }
-
   .sort-page {
     position: absolute;
     left: 0;
@@ -47,7 +44,7 @@ page-contact {
     z-index: 10;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
     .sort-content {
       position: absolute;
       right: 0;
@@ -74,7 +71,7 @@ page-contact {
           border-radius: 3px;
           &.active {
             color: $green;
-            background-color: rgba(5,209,175,.1);
+            background-color: rgba(5, 209, 175, .1);
             border: 1px solid $green;
           }
         }
@@ -89,8 +86,6 @@ page-contact {
       }
     }
   }
-
-
   .status-page {
     padding-top: 35px;
     @for $i from 1 to 3 {
@@ -100,7 +95,7 @@ page-contact {
         padding: 22px 5% 24px 12%;
         margin-left: auto;
         margin-right: auto;
-        background-image: url("../assets/imgs/status/bg_warm_#{$i}.png");
+        background-image: url("#{$image-status}/bg_warm_#{$i}.png");
         background-size: cover;
       }
     }
@@ -108,14 +103,14 @@ page-contact {
       float: left;
       width: 55px;
       height: 58px;
-      background-image: url("../assets/imgs/status/icon_warn.png");
+      background-image: url("#{$image-status}/icon_warn.png");
       background-size: cover;
     }
     .icon-normal {
       float: left;
-      width:62px;
-      height:58px;
-      background-image: url("../assets/imgs/status/icon_normal.png");
+      width: 62px;
+      height: 58px;
+      background-image: url("#{$image-status}/icon_normal.png");
       background-size: cover;
     }
     .word {
@@ -123,9 +118,7 @@ page-contact {
       margin-left: 10%;
       line-height: 58px;
     }
-
   }
-
   .wait-img {
     width: 92%;
     height: 205px;
@@ -134,12 +127,11 @@ page-contact {
       max-width: 100%;
     }
   }
-
   .problem-detail {
     width: 100%;
     padding: 20px 15px 22px 15px;
     background-color: white;
-    & + .problem-detail {
+    &+.problem-detail {
       margin-top: 15px;
     }
     .head {
@@ -194,7 +186,6 @@ page-contact {
       margin-top: 22px;
     }
   }
-
   .import-img {
     padding-top: 3px;
     overflow: hidden;
@@ -216,7 +207,6 @@ page-contact {
       }
     }
   }
-
   .explain {
     margin-top: 10px;
     padding: 15px 15px 19px;
@@ -249,9 +239,7 @@ page-contact {
         margin-right: 10px;
       }
     }
-  }
-
-  //报价
+  } //报价
   .quote {
     float: left;
     width: 50%;
@@ -265,7 +253,6 @@ page-contact {
       color: black;
     }
   }
-
   .sub-orders {
     color: $gray;
     .title {
@@ -292,7 +279,7 @@ page-contact {
     }
     .type-detail {
       margin-bottom: 36px;
-      li + li {
+      li+li {
         margin-top: 11px;
       }
       em:after {
@@ -316,7 +303,7 @@ page-contact {
     }
     .stuff {
       overflow: hidden;
-      & + .stuff {
+      &+.stuff {
         margin-top: 15px;
       }
       img {
@@ -342,9 +329,7 @@ page-contact {
         }
       }
     }
-  }
-
-  //店面信息
+  } //店面信息
   .store-info {
     position: relative;
     width: 100%;
@@ -352,7 +337,7 @@ page-contact {
     margin-bottom: 5px;
     color: white;
     text-align: center;
-    background-image: url("../assets/imgs/bg/bg_store.png");
+    background-image: url("#{$image-bg}/bg_store.png");
     background-size: cover;
     overflow: hidden;
     .shop-logo {
@@ -363,13 +348,13 @@ page-contact {
       margin-top: -38px;
       width: 75px;
       height: 75px;
-      border: 2.5px solid rgba(255,255,255,.5);
+      border: 2.5px solid rgba(255, 255, 255, .5);
       border-radius: 50%;
     }
     .shop-name {
       margin-top: 175px;
       font-size: 16px;
-      font-family:PingFang-SC-Medium;
+      font-family: PingFang-SC-Medium;
     }
   }
   .media-phone {
@@ -378,14 +363,14 @@ page-contact {
     padding-bottom: 16px;
     border-bottom: 1px solid #eee;
     .phone-number {
-      font-size:16px;
+      font-size: 16px;
       color: $gray;
       margin-bottom: 2px;
     }
     .store-manager {
       color: #9197A0;
       font-size: 12px;
-      span + span:before {
+      span+span:before {
         content: '';
         display: inline-block;
         width: 1px;
@@ -396,15 +381,13 @@ page-contact {
         vertical-align: middle;
       }
     }
-  }
-
-  //工人信息
+  } //工人信息
   .worker-info {
     position: relative;
     width: 100%;
     height: 200px;
     padding: 81px 0 30px 6.9%;
-    background-image: url("../assets/imgs/bg/bg_worker.png");
+    background-image: url("#{$image-bg}/bg_worker.png");
     background-size: cover;
     .worker-img {
       position: absolute;
@@ -438,7 +421,6 @@ page-contact {
       }
     }
   }
-
   .worker-rate {
     padding: 50px 5.6%;
     background-color: white;
@@ -455,19 +437,17 @@ page-contact {
         color: $secondary-text;
         border: 1px solid $box-border;
         border-radius: 3px;
-        & + .rate-item {
+        &+.rate-item {
           margin-left: 6%;
         }
         &.active {
           color: $green;
-          background-color:rgba(5, 209, 175, .1);
+          background-color: rgba(5, 209, 175, .1);
           border: 1px solid $green;
         }
       }
-
     }
   }
-
   .worker-data {
     position: relative;
     margin-top: 10px;
@@ -495,7 +475,7 @@ page-contact {
           width: 26%;
           font-size: 22px;
           text-align: center;
-          & + .count {
+          &+.count {
             margin-left: 11%;
           }
           .detail {

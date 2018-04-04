@@ -11,7 +11,7 @@ page-index {
         width: 18px;
         height: 18px;
         margin-right: 10px;
-        background-image: url('../assets/imgs/icon/chatbubbles.png');
+        background-image: url('#{$image-icon}/chatbubbles.png');
         background-size: 100%;
         &::before {
           display: none;

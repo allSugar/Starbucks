@@ -11,7 +11,7 @@
     .card-title {
       height: 183px;
       padding: 35px;
-      background-image: url($bg-image + 'bg_card.png');
+      background-image: url('#{$image-bg}/bg_card.png');
       background-color: #11d3b3;
       background-repeat: no-repeat;
       text-align: center;

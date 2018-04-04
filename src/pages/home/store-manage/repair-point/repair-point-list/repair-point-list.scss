@@ -6,7 +6,7 @@ page-repair-point-list {
         width: 20px;
         height: 20px;
         margin-right: 10px;
-        background-image: url('../assets/imgs/icon/icon-map.png');
+        background-image: url('#{$image-icon}/icon-map.png');
         background-size: 100%;
         &::before {
           display: none;
@@ -17,7 +17,7 @@ page-repair-point-list {
         width: 17px;
         height: 18px;
         margin-right: 15px;
-        background-image: url('../assets/imgs/icon/icon-search-lg.png');
+        background-image: url('#{$image-icon}/icon-search-lg.png');
         background-size: 100%;
         &::before {
           display: none;
