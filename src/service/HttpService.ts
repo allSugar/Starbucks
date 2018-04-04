@@ -14,7 +14,9 @@ import { API_ROOT } from "../providers/httpUrl";
 
 @Injectable()
 export class HttpService {
-    constructor(private http: Http) {
+    constructor(
+        private http: Http
+    ) {
     }
 
     headers = new Headers({
