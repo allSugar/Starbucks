@@ -33,6 +33,7 @@ export class ContactPage {
         private http: HttpService
     ) {
         this.getData();
+        
     }
     getData() {
         this.http.get("assets/data/contacts.json", false).subscribe(res => {

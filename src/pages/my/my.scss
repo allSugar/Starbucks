@@ -20,11 +20,11 @@ page-my {
         color: white;
         &.user-admin {
           .avatar {
-            top: 70px;
-            border: 2.5px solid rgba(255, 255, 255, 0.2);
+            top: 65px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
           }
           .name {
-            padding-top: 192px;
+            padding-top: 185px;
           }
         }
         .info-bg {
@@ -54,7 +54,7 @@ page-my {
         }
         .name {
           padding-top: 69px;
-          padding-bottom: 14px;
+          padding-bottom: 15px;
           font-size: 22px;
           text-align: center;
         }
@@ -115,8 +115,8 @@ page-my {
         line-height: 24px;
         .list {
           .item {
-            &+item {
-              margin-top: 17px;
+            &+.item {
+              margin-top: 15px;
             }
             position: relative;
             overflow: hidden;
