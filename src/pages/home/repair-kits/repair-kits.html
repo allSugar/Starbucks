@@ -1,13 +1,12 @@
 <ion-header>
-  <ion-navbar></ion-navbar>
-  <div class="header-bg">
-    <div class="ibox-search ibox-search-s">
+  <ion-navbar>
+    <div class="ibox-search ibox-search-xs">
       <input class="search-input" type="text">
       <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
     </div>
-  </div>
+  </ion-navbar>
+  <div class="header-bg"></div>
 </ion-header>
-
 <ion-content>
   <div class="tab-container">
     <div class="tab-nav">
@@ -16,7 +15,7 @@
       </ul>
     </div>
     <div class="tab-menu">
-      <ul class="menu-list" *ngFor="let cate of contain">
+      <ul class="menu-list" *ngFor="let cate of contain;">
         <p class="tab-title">{{ cate.name }}</p>
         <li class="tab-item" *ngFor="let item of cate.list">
           <div class="item-img">
