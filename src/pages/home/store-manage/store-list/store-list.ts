@@ -26,7 +26,6 @@ export class StoreManageListPage {
   }
 
   goToOtherPage(item) {
-    console.log(1);
     this.navCtrl.push('StoreIndexPage');
   }
 

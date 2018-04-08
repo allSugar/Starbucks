@@ -322,18 +322,16 @@
   background-size: 100%;
 }
 
-[class *=icon-add] {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+[class *=icon-circle-add] {
+  display: inline-block;
   width: 20px;
   height: 20px;
 }
 
-.icon-add {
+.icon-circle-add {
   content: url("#{$image-icon}/icon_add.png");
 }
 
-.icon-add-active {
+.icon-circle-add-active {
   content: url("#{$image-icon}/icon_add_active.png");
 }

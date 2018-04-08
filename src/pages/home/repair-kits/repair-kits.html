@@ -1,26 +1,22 @@
-
 <ion-header>
+  <ion-navbar></ion-navbar>
   <div class="header-bg">
     <div class="ibox-search ibox-search-s">
-
       <input class="search-input" type="text">
-
       <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
-
     </div>
   </div>
-
 </ion-header>
 
 <ion-content>
   <div class="tab-container">
     <div class="tab-nav">
       <ul>
-        <li class="nav-item"*ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
+        <li class="nav-item" *ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
       </ul>
     </div>
     <div class="tab-menu">
-      <ul  class="menu-list" *ngFor="let cate of contain">
+      <ul class="menu-list" *ngFor="let cate of contain">
         <p class="tab-title">{{ cate.name }}</p>
         <li class="tab-item" *ngFor="let item of cate.list">
           <div class="item-img">
@@ -31,7 +27,7 @@
             <p class="count">库存数量：{{ item.count }}</p>
             <div class="item-footer">
               <span class="price">￥{{ item.price }}</span>
-              <em class="icon-add-active"></em>
+              <i class="icon-circle-add-active"></i>
             </div>
           </div>
         </li>

@@ -1,5 +1,5 @@
-import { Component, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, ToastController, Content } from 'ionic-angular';
 import { HttpService } from "../../service/HttpService";
 
 @IonicPage()
@@ -9,6 +9,7 @@ import { HttpService } from "../../service/HttpService";
 })
 export class ContactPage {
 
+    @ViewChild(Content) content: Content;
     /*搜索的关键字*/
     searchInput: string = '';
     /*请求通讯录的值*/
