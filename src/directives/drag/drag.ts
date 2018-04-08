@@ -1,6 +1,8 @@
 import { Directive, OnChanges, ViewChild, Output, EventEmitter, ElementRef, Renderer, Renderer2 } from '@angular/core';
-import { DomController } from 'ionic-angular';
+import { DomController, Content } from 'ionic-angular';
 import { ContentDirective } from './content';
+
+/* ionic-angular Content 使用节点 或者 ContentDirective */ 
 
 @Directive({
   selector: '[drag]'
@@ -8,6 +10,7 @@ import { ContentDirective } from './content';
 export class DragDirective implements OnChanges {
 
   greeter: ContentDirective;
+  @ViewChild(Content) content: Content;
   @Output() dragend = new EventEmitter<any>();
 
   pressOffsetLeft: number = 0;
@@ -23,10 +26,11 @@ export class DragDirective implements OnChanges {
     public renderer: Renderer,
     public domCtrl: DomController,
     public renderer2: Renderer2,
-    greeter:ContentDirective
+    greeter: ContentDirective
   ) {
     this.greeter = greeter;
-   }
+    console.log(this);
+  }
 
   ngOnChanges() { }
 

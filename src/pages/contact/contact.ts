@@ -60,8 +60,8 @@ export class ContactPage {
      */
     scrollToTop(letter, event) {
         this.show(letter, 1000);
-        if (this.elementRef.nativeElement.querySelector("ion-item-divider#" + letter)) {
-            let scrollTop = this.elementRef.nativeElement.querySelector("ion-item-divider#" + letter).offsetTop;
+        if (this.elementRef.nativeElement.querySelector(".row-title#" + letter)) {
+            let scrollTop = this.elementRef.nativeElement.querySelector(".row-title#" + letter).offsetTop;
             this.content.scrollTo(0, scrollTop, 300);
         }
     }
