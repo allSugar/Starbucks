@@ -23,4 +23,5 @@ export class RepairListPage {
   goToOtherPage() {
     this.navCtrl.push(this.status);
   }
+
 }

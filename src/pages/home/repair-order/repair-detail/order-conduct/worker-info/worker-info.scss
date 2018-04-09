@@ -1,0 +1,134 @@
+page-worker-info {
+  //维修员信息
+  ion-header.header ion-navbar{
+    .toolbar-background {
+      opacity: 0;
+    }
+    &.toolbar {
+       position: relative;
+       z-index: 11;
+     }
+  }
+  .worker-info {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: -48px;
+    padding: 81px 0 30px 6.9%;
+    background-image: url("#{$image-bg}/bg_worker.png");
+    background-size: cover;
+    .worker-img {
+      position: absolute;
+      left: 6.9%;
+      top: 81px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2.5px solid rgba(255, 255, 255, .5);
+    }
+    .worker-body {
+      float: left;
+      margin-left: 32%;
+      color: white;
+      .name {
+        font-size: 18px;
+        margin-top: 8px;
+      }
+      .phone {
+        height: 18px;
+        margin-top: 8px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+      .worker-id {
+        margin-top: 8px;
+        font-size: 13px;
+        .store-name {
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+  .worker-rate {
+    padding: 50px 5.6%;
+    background-color: white;
+    .rate {
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      .rate-item {
+        float: left;
+        width: 29%;
+        height: 28px;
+        text-align: center;
+        line-height: 28px;
+        color: $secondary-text;
+        border: 1px solid $box-border;
+        border-radius: 3px;
+        &+.rate-item {
+          margin-left: 6%;
+        }
+        &.active {
+          color: $green;
+          background-color: rgba(5, 209, 175, .1);
+          border: 1px solid $green;
+        }
+      }
+    }
+  }
+  .worker-data {
+    position: relative;
+    margin-top: 10px;
+    padding: 50px 1.1% 44px 5.5%;
+    background-color: white;
+    overflow: hidden;
+    .data {
+      width: 55%;
+      .title {
+        font-size: 16px;
+        .num {
+          font-size: 24px;
+          color: $green;
+        }
+        .gray {
+          font-size: 13px;
+          color: $secondary-text;
+        }
+      }
+      .data-item {
+        margin-top: 35px;
+        overflow: hidden;
+        .count {
+          float: left;
+          width: 30%;
+          font-size: 22px;
+          text-align: center;
+          &+.count {
+            margin-left: 5%;
+          }
+          .detail {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: $secondary-text;
+          }
+          [class*='bg-'] {
+            display: block;
+            width: 15px;
+            height: 2px;
+            margin: 10px auto 0;
+          }
+          .bg-green {
+            background-color: $green;
+          }
+          .bg-yellow {
+            background-color: #FDD102;
+          }
+          .bg-blue {
+            background-color: #5C73FC;
+          }
+        }
+      }
+    }
+  }
+}

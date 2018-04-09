@@ -20,7 +20,4 @@ export class OrderDonePage {
     this.tabStatus = i;
   }
 
-  goToOtherPage() {
-    this.navCtrl.push('WorkerInfoPage');
-  }
 }

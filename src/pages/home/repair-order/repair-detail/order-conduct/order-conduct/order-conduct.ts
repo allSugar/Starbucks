@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the OrderConductPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, App, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,13 +7,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order-conduct.html',
 })
 export class OrderConductPage {
-
+  navCtrl: any;
   tabStatus:number= 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+      public app: App,
+      public navParams: NavParams
+  ) {
+    this.navCtrl = this.app.getRootNav();
   }
 
   tabs(i: number) {
     this.tabStatus = i;
   }
 
+  goToOtherPage() {
+    this.navCtrl.push('WorkerInfoPage');
+  }
 }

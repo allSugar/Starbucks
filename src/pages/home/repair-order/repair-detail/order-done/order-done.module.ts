@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { OrderDonePage } from './order-done';
 
-import { RepairModule } from '../../../../../template/repair.module';
+import { RepairModule } from '../../../../template/repair.module';
 
 @NgModule({
   declarations: [
