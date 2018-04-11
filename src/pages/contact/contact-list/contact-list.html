@@ -18,7 +18,7 @@
   <div class="row-ibox" *ngIf="!isSearching">
     <ul class="row-list" *ngFor="let contacts of formatContacts;let i = index">
       <li class="row-title" id="{{ letters[i] }}">{{ letters[i] }}</li>
-      <li class="row-item" *ngFor="let contact of contacts" (click)="goBack(contact)">
+      <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
         <div class="item-img img-lg radius">
           <div class="img-center">
             <img alt="" src="assets/imgs/avater/avater.png">

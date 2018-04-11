@@ -1,13 +1,13 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController, Content } from 'ionic-angular';
-import { HttpService } from "../../service/HttpService";
+import { IonicPage, App, NavParams, ToastController, Content } from 'ionic-angular';
+import { HttpService } from "../../../service/HttpService";
 
 @IonicPage()
 @Component({
-    selector: 'page-contact',
-    templateUrl: 'contact.html'
+    selector: 'page-contact-list',
+    templateUrl: 'contact-list.html'
 })
-export class ContactPage {
+export class ContactListPage {
 
     @ViewChild(Content) content: Content;
     /*搜索的关键字*/
@@ -24,16 +24,17 @@ export class ContactPage {
     callback: Function;
     toast: any;
     remitBanks: any;
+    navCtrl: any;
 
     constructor(
-        public navCtrl: NavController,
+        public app: App,
         public navParams: NavParams,
         public toastCtrl: ToastController,
         public elementRef: ElementRef,
         private http: HttpService
     ) {
+        this.navCtrl = this.app.getRootNav();
         this.getData();
-        
     }
     getData() {
         this.http.get("assets/data/contacts.json", false).subscribe(res => {
@@ -89,18 +90,12 @@ export class ContactPage {
         }
     }
 
-    goBack(data) {
-        this.callback(data).then(() => {
-            this.navCtrl.pop();
-        });
+    goToDetail() {
+        this.navCtrl.push('ContactDetailPage');
     }
 
     ionViewWillEnter() {
         this.callback = this.navParams.get("callback")
-    }
-
-    onCancel() {
-        this.navCtrl.pop();
     }
 
     onClear($event) {

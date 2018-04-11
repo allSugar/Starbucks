@@ -18,21 +18,42 @@
 <ion-content>
   <div class="row-ibox">
     <div class="row-list">
-      <label class="row-item" *ngFor="let i of [1,2,3]">
-        <div class="item-choice checkbox">
-          <input type="checkbox">
-          <ins class="checkbox-icon"></ins>
+      <div class="row-item-box" *ngFor="let i of [1,2,3]">
+        <label class="row-item">
+          <div class="item-choice checkbox">
+            <input type="checkbox">
+            <ins class="checkbox-icon"></ins>
+          </div>
+          <div class="item-body">
+            <p class="title">灯具/射灯不亮</p>
+            <p class="company">北京苏南方圆建设有限公司</p>
+            <p class="location">一层平面-吧台区</p>
+          </div>
+          <div class="item-action">
+            <i class="icon-point"></i>
+            <ins class="tag tag-error">紧急</ins>
+          </div>
+        </label>
+        <div class="row-ibox">
+          <div class="row-list">
+            <label class="row-item" *ngFor="let i of [1,2]">
+              <div class="item-choice checkbox">
+                <input type="checkbox">
+                <ins class="checkbox-icon"></ins>
+              </div>
+              <div class="item-body">
+                <p class="title">灯具/射灯不亮</p>
+                <p class="company">北京苏南方圆建设有限公司</p>
+                <p class="location">一层平面-吧台区</p>
+              </div>
+              <div class="item-action">
+                <i class="icon-point"></i>
+                <ins class="tag tag-error">紧急</ins>
+              </div>
+            </label>
+          </div>
         </div>
-        <div class="item-body">
-          <p class="title">灯具/射灯不亮</p>
-          <p class="company">北京苏南方圆建设有限公司</p>
-          <p class="location">一层平面-吧台区</p>
-        </div>
-        <div class="item-action">
-          <i class="icon-point"></i>
-          <ins class="tag tag-error">紧急</ins>
-        </div>
-      </label>
+      </div>
     </div>
   </div>
 </ion-content>
