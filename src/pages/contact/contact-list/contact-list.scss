@@ -5,6 +5,7 @@ page-contact-list {
             .ion-md-add {
                 width: 18px;
                 height: 18px;
+                min-width: 18px;
                 margin-right: 10px;
                 background-image: url('#{$image-icon}/icon-add.png');
                 background-size: 100%;
@@ -19,5 +20,26 @@ page-contact-list {
     }
     .row-list+.row-list {
         margin-top: 10px;
+    }
+    .letter {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        @include transform(translateY(-50%));
+        margin-top: 20px;
+        z-index: 10001;
+        .letter-right {
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            flex-flow: 1;
+            color: #555;
+            align-items: center;
+            line-height: 1;
+            span {
+                display: block;
+                padding: 3px;
+            }
+        }
     }
 }

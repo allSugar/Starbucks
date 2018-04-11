@@ -7,7 +7,6 @@ import { HttpService } from "../../../service/HttpService";
   selector: 'alpha-list-page',
   templateUrl: 'alpha-list.html'
 })
-
 export class AlphaListPage {
 
   @ViewChild(Content) content: Content;

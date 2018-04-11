@@ -8,16 +8,39 @@
     </ion-buttons>
   </ion-navbar>
   <div class="ibox-search">
-    <input type="text" class="search-input">
+    <input type="text" class="search-input" (change)="goSearchResult($event)">
     <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
   </div>
 </ion-header>
 
 <ion-content>
+  <!-- 侧边 -->
+  <div class="letter" *ngIf="!isSearching">
+    <div class="letter-right">
+      <span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{ letter }}</span>
+    </div>
+  </div>
   <!-- 展示列表 -->
   <div class="row-ibox" *ngIf="!isSearching">
     <ul class="row-list" *ngFor="let contacts of formatContacts;let i = index">
       <li class="row-title" id="{{ letters[i] }}">{{ letters[i] }}</li>
+      <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
+        <div class="item-img img-lg radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/avater/avater.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="name" [innerHTML]="contact.userName"></p>
+          <p class="telphone">15289760923</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- 搜索列表 -->
+  <div class="row-ibox" *ngIf="isSearching">
+    <ul class="row-list" *ngFor="let contacts of searchingItems;let i = index">
+      <li class="row-title" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</li>
       <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
         <div class="item-img img-lg radius">
           <div class="img-center">

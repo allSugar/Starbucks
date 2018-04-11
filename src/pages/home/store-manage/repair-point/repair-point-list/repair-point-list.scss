@@ -3,6 +3,7 @@ page-repair-point-list {
         ion-navbar {
             .ion-ios-map,
             .ion-md-map {
+                min-width: 20px;
                 width: 20px;
                 height: 20px;
                 margin-right: 10px;
@@ -14,6 +15,7 @@ page-repair-point-list {
             }
             .ion-ios-search,
             .ion-md-search {
+                min-width: 17px;
                 width: 17px;
                 height: 18px;
                 margin-right: 15px;

@@ -78,7 +78,7 @@ export class ContactListPage {
             this.searchingItems = [];
             this.letters.forEach((res, index) => {
                 let search = this.formatContacts[index].filter((item) => {
-                    return (item.name.indexOf(val) > -1);
+                    return (item.userName.indexOf(val) > -1);
                 })
                 if (search != null && search.length > 0) {
                     this.searchLetters.push(res);
@@ -88,6 +88,7 @@ export class ContactListPage {
         } else {
             this.isSearching = false;
         }
+        console.log(this.searchingItems,this.searchLetters);
     }
 
     goToDetail() {
