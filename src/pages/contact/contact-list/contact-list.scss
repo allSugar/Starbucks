@@ -1,0 +1,23 @@
+page-contact-list {
+    ion-header.header {
+        ion-navbar {
+            .ion-ios-add,
+            .ion-md-add {
+                width: 18px;
+                height: 18px;
+                margin-right: 10px;
+                background-image: url('#{$image-icon}/icon-add.png');
+                background-size: 100%;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .row-ibox {
+        margin-bottom: 10px;
+    }
+    .row-list+.row-list {
+        margin-top: 10px;
+    }
+}

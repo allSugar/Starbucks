@@ -1,0 +1,63 @@
+page-contact-detail {
+    .scroll-content {
+        margin-top: 0 !important;
+    }
+    ion-header.header ion-navbar .toolbar-background {
+        background-color: transparent;
+        border-color: transparent;
+    } //店面信息
+    .store-info {
+        position: relative;
+        width: 100%;
+        height: 242px;
+        color: white;
+        text-align: center;
+        background-image: url("#{$image-bg}/bg_store.png");
+        background-size: cover;
+        overflow: hidden;
+        .shop-logo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -38px;
+            margin-top: -38px;
+            width: 75px;
+            height: 75px;
+            border: 2.5px solid rgba(255, 255, 255, .5);
+            border-radius: 50%;
+        }
+        .shop-name {
+            margin-top: 175px;
+            font-size: 16px;
+            font-family: PingFang-SC-Medium;
+        }
+    }
+    .media-phone {
+        padding-top: 14px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #eee;
+        .phone-number {
+            font-size: 16px;
+            color: $gray;
+            margin-bottom: 2px;
+        }
+        .store-manager {
+            color: #9197A0;
+            font-size: 12px;
+            span+span:before {
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 13px;
+                margin-left: 8px;
+                margin-right: 8px;
+                background-color: #9197A0;
+                vertical-align: middle;
+            }
+        }
+        .icon-phone {
+            float: right;
+            margin-top: 12px;
+        }
+    }
+}

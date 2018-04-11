@@ -8,7 +8,7 @@ export class TabsPage {
   tab1Root = 'HomePage';
   tab2Root = 'ForumPage';
   tab3Root = 'NewsListPage';
-  tab4Root = 'ContactPage';
+  tab4Root = 'ContactListPage';
   tab5Root = 'MyPage';
 
   constructor() { }
