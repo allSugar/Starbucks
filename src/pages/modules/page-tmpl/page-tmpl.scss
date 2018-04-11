@@ -127,65 +127,7 @@ page-page-tmpl {
       max-width: 100%;
     }
   }
-  .problem-detail {
-    width: 100%;
-    padding: 20px 15px 22px 15px;
-    background-color: white;
-    &+.problem-detail {
-      margin-top: 15px;
-    }
-    .head {
-      position: relative;
-      height: 70px;
-      overflow: hidden;
-      .avatar-img {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 70px;
-        height: 70px;
-      }
-      .avatar-body {
-        margin-left: 85px;
-        overflow: hidden;
-        .name {
-          position: relative;
-          font-size: 18px;
-          color: #333;
-          .time {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            font-size: 12px;
-            vertical-align: bottom;
-            color: $secondary-text;
-          }
-        }
-        .detail {
-          margin-top: 6px;
-          color: $secondary-text;
-        }
-        .firm {
-          margin-top: 8px;
-          font-size: 12px;
-          color: #999;
-        }
-      }
-    }
-    .problem-img {
-      width: 97%;
-      height: 200px;
-      margin: 25px auto 0 auto;
-      overflow: hidden;
-      img {
-        max-width: 100%;
-      }
-    }
-    .word {
-      font-size: 16px;
-      margin-top: 22px;
-    }
-  }
+
   .import-img {
     padding-top: 3px;
     overflow: hidden;

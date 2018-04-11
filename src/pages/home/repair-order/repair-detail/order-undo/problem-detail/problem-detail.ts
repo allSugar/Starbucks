@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 @IonicPage()
 @Component({
-  selector: 'page-order-undo',
-  templateUrl: 'order-undo.html',
+  selector: 'page-problem-detail',
+  templateUrl: 'problem-detail.html',
 })
-export class orderUndoPage {
+export class ProblemDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ProblemDetailPage');
+  }
+
 }

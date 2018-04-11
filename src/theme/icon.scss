@@ -334,3 +334,25 @@
 .icon-circle-add-active {
   content: url("#{$image-icon}/icon-circle-add-active.png");
 }
+
+[class*=icon-problem-]{
+  width: 22px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.icon-problem-camera {
+  content: url("#{$image-icon}/icon_problem_camera.png");
+}
+.icon-problem-map {
+  content: url("#{$image-icon}/icon_problem_map.png");
+}
+.icon-problem-calendar {
+  content: url("#{$image-icon}/icon_problem_calendar.png");
+}
+.icon-problem-picture {
+  content: url("#{$image-icon}/icon_problem_picture.png");
+}
+.icon-problem-edit {
+  content: url("#{$image-icon}/icon_problem_edit.png");
+}
