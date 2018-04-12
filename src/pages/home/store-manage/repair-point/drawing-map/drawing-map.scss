@@ -2,6 +2,11 @@ page-drawing-map {
     .tabs .tabs-rate {
         padding-right: 85px;
     }
+    ion-header {
+        .filter-mask {
+            bottom: 0;
+        }
+    }
     ion-footer {
         height: 44px;
         @include box_shadow(0px, 0px, 70px, rgba(3, 1, 0, .25));
@@ -9,11 +14,6 @@ page-drawing-map {
         text-align: center;
         .toolbar .toolbar-background {
             border: 0;
-        }
-        .text {
-            display: inline-block;
-            line-height: 20px;
-            padding: 8px 0;
         }
         ion-navbar {
             .ion-ios-easel,
@@ -39,9 +39,57 @@ page-drawing-map {
                     display: none;
                 }
             }
+            .text {
+                display: inline-block;
+                line-height: 20px;
+                padding: 8px 0;
+            }
         }
     }
     .bar-button-md[icon-only] ion-icon {
         min-width: 0;
+    }
+    .filter-list {
+        position: absolute;
+        top: -1px;
+        left: 0;
+        right: 0;
+        padding: 20px 0;
+        background-color: $white;
+        @include transform(translateY(-100%));
+        .item {
+            padding: 5px 15px;
+            text-align: left;
+            border-left: 5px solid transparent;
+            &+.item {
+                margin-top: 20px;
+            }
+            &.active {
+                border-color: $green;
+            }
+        }
+        [class*="icon"] {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .text {
+            display: inline-block;
+            font-size: 15px;
+            line-height: 1;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    }
+    .filter-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 1px;
+        ;
+        right: 0;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 1;
     }
 }

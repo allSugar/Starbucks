@@ -18,22 +18,58 @@
       </li>
     </ul>
   </div>
+  <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>
 </ion-header>
 
-
 <ion-content>
-
+  <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>
 </ion-content>
 
 <ion-footer>
+  <div class="filter-list" *ngIf="easel">
+    <ul class="list">
+      <li class="item active">
+        <i class="icon"></i>
+        <em class="text">问题</em>
+      </li>
+      <li class="item">
+        <i class="icon"></i>
+        <em class="text">状态</em>
+      </li>
+      <li class="item">
+        <i class="icon"></i>
+        <em class="text">日期</em>
+      </li>
+      <li class="item">
+        <i class="icon"></i>
+        <em class="text">用户</em>
+      </li>
+    </ul>
+  </div>
+  <div class="filter-list" *ngIf="help">
+    <ul class="list">
+      <li class="item active">
+        <i class="icon"></i>
+        <em class="text">问题</em>
+      </li>
+      <li class="item">
+        <i class="icon"></i>
+        <em class="text">文件</em>
+      </li>
+      <li class="item">
+        <i class="icon"></i>
+        <em class="text">张片</em>
+      </li>
+    </ul>
+  </div>
   <ion-navbar>
-    <ion-buttons start>
+    <ion-buttons start (click)="handleFilter('easel')">
       <button ion-button icon-only>
         <ion-icon name="easel"></ion-icon>
       </button>
     </ion-buttons>
     <em class="text">2个问题</em>
-    <ion-buttons end>
+    <ion-buttons end (click)="handleFilter('help')">
       <button ion-button icon-only>
         <ion-icon name="help"></ion-icon>
       </button>
