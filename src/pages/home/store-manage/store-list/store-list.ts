@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, App, NavParams } from 'ionic-angular';
+import { Component, ViewChild} from '@angular/core';
+import { IonicPage, App, NavParams, Content } from 'ionic-angular';
+
+import { HttpService } from '../../../../service/HttpService';
 
 @IonicPage()
 @Component({
@@ -8,23 +10,38 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
 })
 export class StoreManageListPage {
 
-  shop: Object[] = [
-    { url: 'change-before', title: '钟楼百货星巴克' },
-    { url: 'change-before', title: '钟楼百货星巴克' },
-    { url: 'change-before', title: '钟楼百货星巴克' },
-    { url: 'change-before', title: '钟楼百货星巴克' },
-    { url: 'change-before', title: '钟楼百货星巴克' }
-  ];
+  @ViewChild(Content) content: Content;
+
+
+  storeList: Array<any> = [];
+  store: Object[] = [];
   navCtrl: any;
   status: number;
 
   constructor(
     public navParams: NavParams,
-    public app: App
+    public app: App,
+    public http: HttpService,
   ) {
+    this.getData();
     this.navCtrl = this.app.getRootNav();
   }
 
+  getData() {
+    var params = { method: "store.findStoreInfoByStaff", clientId: '14a01fdab38b4bf3b93781e20aa3777b'};
+    this.http.get(params).subscribe(res => {
+        console.log(res)
+        if (!!res && res.responseCode == 157060) {
+            this.storeList = res.responseObj;
+            for(var i=0; i < this.storeList.length; i++){
+              this.store.push( { name:this.storeList[i].storeName, url: this.storeList[i].shopPhotoList});
+            }
+        };
+    }, error => {
+
+    });
+
+  }
   goToOtherPage(item) {
     this.navCtrl.push('StoreIndexPage');
   }

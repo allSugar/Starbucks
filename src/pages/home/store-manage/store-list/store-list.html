@@ -37,9 +37,9 @@
 
 <ion-content>
   <div class="stage-page shop-list">
-    <div class="stage" *ngFor="let item of shop" (click)="goToOtherPage()">
-      <img src="assets/imgs/{{ item.url }}.png" alt="">
-      <p class="title">{{ item.title }}</p>
+    <div class="stage" *ngFor="let item of store" (click)="goToOtherPage()">
+      <img src="{{ item.url }}" alt="">
+      <p class="title">{{ item.name }}</p>
     </div>
   </div>
   <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>

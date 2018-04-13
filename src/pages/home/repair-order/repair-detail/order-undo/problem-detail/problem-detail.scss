@@ -93,7 +93,8 @@ page-problem-detail {
         bottom: 0;
         width: 100%;
         background-color: white;
-        .add-explain {
+        .ibox-input {
+            position: relative;
             height: 50px;
             border-top: 1px solid $border;
             border-bottom: 1px solid $border;
@@ -103,6 +104,17 @@ page-problem-detail {
                 padding: 18px 15px;
                 border: none;
             }
+            button {
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                margin-top: -6px;
+                width: 16px;
+                height: 13px;
+                background: #fff url("#{$image-icon}/icon_send.png");
+                background-size: 100%;
+            }
+
         }
         .icon-list {
             width: 100%;
