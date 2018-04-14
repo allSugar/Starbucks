@@ -14,9 +14,11 @@ export class orderUndoPage {
       public navParams: NavParams
   ) {
     this.navCtrl = this.app.getRootNav();
+
   }
 
   goToOtherPage () {
     this.navCtrl.push('ProblemDetailPage');
   }
+
 }

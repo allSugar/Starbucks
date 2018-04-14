@@ -50,7 +50,7 @@ export class RepairListPage {
   }
 
   goToOtherPage() {
-    this.navCtrl.push(this.status);
+    this.navCtrl.push(this.status,{data: this.order});
   }
 
 }
