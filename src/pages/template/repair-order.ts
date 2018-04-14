@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
 @Component({
   selector: 'repair-order-element',
   template: `<div class="repair-emement">
@@ -15,7 +14,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         <em class="urgent-general" *ngIf="status == 0">一般</em>
         <em class="urgent-crash" *ngIf="status == 3">紧急</em>
         <em class="f-left">8个问题</em>
-        <em class="media-time">2016-11-30 15:42:16</em>
+        <em class="media-time">{{data.createTime}}</em>
       </div>
       <div class="media-img">
         <img src="assets/imgs/change-after.png" alt="">
@@ -27,7 +26,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       </div>
     </div>
     <div class="media-info">
-      <p>系统单号：201710212569</p>
+      <p>系统单号：{{data.orderCode}}</p>
       <p>400单号：201710212569</p>
     </div>
   </div>`
@@ -39,7 +38,7 @@ export class RepairOrderTmpl {
   */
   @Input() status: Number = 0;
   @Output() goto = new EventEmitter<any>();
-
+  @Input() data: any;
   goToOtherPage() {
     this.goto.emit();
   }

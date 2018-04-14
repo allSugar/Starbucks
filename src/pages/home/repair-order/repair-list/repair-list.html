@@ -63,6 +63,6 @@
 
 <ion-content>
   <div class="repair-list">
-    <repair-order-element *ngFor="let i of [0,0,3,0]" [status]="i" (goto)="goToOtherPage()"></repair-order-element>
+    <repair-order-element *ngFor="let item of order" [status]="3" [data]="item" (goto)="goToOtherPage()"></repair-order-element>
   </div>
 </ion-content>

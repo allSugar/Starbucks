@@ -41,7 +41,7 @@
 &higherStaffType=4&staffSource=2&staffType=5&clientId=14a01fdab38b4bf3b93781e20aa3777b<br>
 &appkey=123456&appsecret=123456
 ```
-11.1　 根据门店ID或门店代码获取门店信息
+11.1　 根据门店ID或门店代码获取门店信息  (10.38 done)
 ```
 ?method=repair.getStoreInfoByIdOrCode&id=5&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456
@@ -115,7 +115,7 @@
 ```
 
 ### 下单
-11.9　 创建门店维修单（下单）（文字描述有问题，回头更新）
+11.9　 创建门店维修单（下单）（文字描述有问题，回头更新）(done)
 ```
 ?method=repair.createStoreRepairOrder&srtbIds=2&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456

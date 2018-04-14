@@ -36,7 +36,10 @@ export class StoreManageListPage {
       if (!!res && res.responseCode == 157060) {
         this.storeList = res.responseObj;
         for (let i = 0; i < this.storeList.length; i++) {
-          this.store.push({ name: this.storeList[i].storeName, url: this.storeList[i].shopPhotoList[0] });
+          this.store.push({
+              name: this.storeList[i].storeName,
+              url: this.storeList[i].shopPhotoList[0]
+          });
         }
       };
     }, error => {
