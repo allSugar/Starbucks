@@ -1,4 +1,7 @@
 page-drawing-map {
+    .scroll-content {
+        -webkit-overflow-scrolling: auto !important;
+    }
     .tabs .tabs-rate {
         padding-right: 85px;
     }

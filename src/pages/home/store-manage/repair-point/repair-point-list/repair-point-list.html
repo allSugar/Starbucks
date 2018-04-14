@@ -17,7 +17,7 @@
 <ion-content>
   <div class="row-ibox">
     <div class="row-list">
-      <div class="row-item-box" *ngFor="let i of [1,2,3]">
+      <div class="row-item-box" *ngFor="let list of lists">
         <label class="row-item">
           <div class="item-choice checkbox">
             <input type="checkbox">
@@ -29,13 +29,13 @@
             <p class="location">一层平面-吧台区</p>
           </div>
           <div class="item-action">
-            <i class="icon-point"></i>
+            <i class="icon-point" *ngIf="list.content && list.content.length" (click)="handleShowList(list)"></i>
             <ins class="tag tag-error">紧急</ins>
           </div>
         </label>
-        <div class="row-ibox">
+        <div class="row-ibox" *ngIf="list.status">
           <div class="row-list">
-            <label class="row-item" *ngFor="let i of [1,2]">
+            <label class="row-item" *ngFor="let item of list.content">
               <div class="item-choice checkbox">
                 <input type="checkbox">
                 <ins class="checkbox-icon"></ins>
@@ -46,7 +46,6 @@
                 <p class="location">一层平面-吧台区</p>
               </div>
               <div class="item-action">
-                <i class="icon-point"></i>
                 <ins class="tag tag-error">紧急</ins>
               </div>
             </label>
