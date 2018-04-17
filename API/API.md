@@ -4,12 +4,12 @@
 # API介绍 （http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
 
 ### 登录
-2.37　 根据用户名获取用户简要信息及账号列表
+2.37　 根据用户名获取用户简要信息及账号列表(done)
 ```
 ?method=userManager.findUserAccount&userName=admin&appkey=123456&appsecret=123456
 
 ```
-2.2　 用户登录
+2.2　 用户登录  (done)
 ```
 ?method=userManager.login&userName=admin&passWord=admin
 &accountId=1&appkey=123456&appsecret=123456&clientId=request
@@ -115,7 +115,7 @@
 ```
 
 ### 下单
-11.9　 创建门店维修单（下单）（文字描述有问题，回头更新）
+11.9　 创建门店维修单（下单）（文字描述有问题，回头更新）(done)
 ```
 ?method=repair.createStoreRepairOrder&srtbIds=2&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456
@@ -129,7 +129,7 @@
 ```
 
 ### 获取维修单列表页面 / 获取维修单列表
-11.10　 获取门店维修单列表（返回数据需要稍做一些调整）( 数据不完整 )
+11.10　 获取门店维修单列表（返回数据需要稍做一些调整）
 ```
 ?method=repair.findStoreRepairOrder&pointId=2&statuss=1,2,3,4,5,6
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
@@ -182,8 +182,8 @@
 appsecret=123456
 ```
 
-### 乙方维修单报告 (无数据)
-11.28　 维修员提交维修单问题报告 
+### 乙方维修单报告
+11.28　 维修员提交维修单问题报告
 ```
 ?method=repair.reportStoreRepairOrderItem&id=5&repairWarehouseIds=2&finishFilePaths=
 &clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
