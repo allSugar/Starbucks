@@ -11,8 +11,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     </div>
     <div class="media-body" (click)='goToOtherPage()'>
       <div class="media-title">
-        <em class="urgent-general" *ngIf="status == 0">一般</em>
-        <em class="urgent-crash" *ngIf="status == 3">紧急</em>
+        <em class="urgent-general" *ngIf="data.status == 1">一般</em>
+        <em class="urgent-crash" *ngIf="data.status == 3">紧急</em>
         <em class="f-left">8个问题</em>
         <em class="media-time">{{data.createTime}}</em>
       </div>
@@ -34,7 +34,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 export class RepairOrderTmpl {
   /*
-  状态：0 -- 一般  3 -- 紧急
+  状态：1 -- 一般  3 -- 紧急
   */
   @Input() status: Number = 0;
   @Output() goto = new EventEmitter<any>();

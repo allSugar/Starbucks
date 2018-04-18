@@ -7,14 +7,14 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
   templateUrl: 'order-undo.html',
 })
 export class orderUndoPage {
-
+  data: any;
   navCtrl: any;
   constructor(
       public app: App,
       public navParams: NavParams
   ) {
     this.navCtrl = this.app.getRootNav();
-
+    this.data = navParams.get('data');
   }
 
   goToOtherPage () {

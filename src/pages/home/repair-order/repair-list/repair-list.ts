@@ -30,7 +30,7 @@ export class RepairListPage {
         method: 'repair.findStoreRepairOrder',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
+        console.log(res)
        if(!!res && res.responseCode == 167050){
          this.orderList = res.responseObj;
          for( var i=0; i < this.orderList.length; i++){
@@ -49,8 +49,8 @@ export class RepairListPage {
     this.status = name;
   }
 
-  goToOtherPage() {
-    this.navCtrl.push(this.status,{data: this.order});
+  goToOtherPage(item) {
+    this.navCtrl.push(this.status,{data: item});
   }
 
 }

@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
     <ul class="info-list info-hide">
       <li class="info-item">
         <em class="title">订单号</em>
-        <strong class="text">W_017092_001</strong>
+        <strong class="text">{{ arr.orderCode }}</strong>
       </li>
       <li class="info-item">
         <em class="title">400单号</em>
@@ -47,4 +47,5 @@ import { Component, Input } from '@angular/core';
 })
 export class OrderInfoTmpl {
     @Input() data: any;
+    @Input() arr: any;
 }
