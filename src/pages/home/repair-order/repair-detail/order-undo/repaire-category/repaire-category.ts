@@ -4,10 +4,10 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-problem-detail',
-  templateUrl: 'problem-detail.html',
+  selector: 'page-repaire-category',
+  templateUrl: 'repaire-category.html',
 })
-export class ProblemDetailPage {
+export class RepaireCategoryPage {
   navCtrl: any;
   constructor(
       public app: App,
@@ -17,7 +17,7 @@ export class ProblemDetailPage {
   }
 
   goToOtherPage() {
-    this.navCtrl.push('RepaireCategoryPage');
+    this.navCtrl.push('CategoryDetailPage')
   }
 
 }

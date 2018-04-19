@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>吧台区</ion-title>
+  </ion-navbar>
+  <div class="ibox-search" style="">
+
+    <input class="search-input" type="text">
+
+    <ion-icon name="search-outline" role="img" class="icon icon-ios ion-ios-search-outline" aria-label="search outline" ng-reflect-name="search-outline">&nbsp;搜索</ion-icon>
+
+  </div>
+</ion-header>
+
+
+<ion-content>
+  <div class="row-ibox">
+    <ul class="row-list">
+      <li class="row-item" *ngFor="let i of [1,2,3,4,5,6]" (click)="goToOtherPage()">
+        <div class="item-icon">
+          <i class="icon-stage-{{ i }}"></i>
+        </div>
+        <div class="item-body">
+          <p class="title">电气工程</p>
+          <p class="repair-firm">维修厂商：北京苏南方圆建设有限公司</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</ion-content>
