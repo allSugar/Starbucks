@@ -1,3 +1,41 @@
 page-emergency-level {
-
+  .status-page {
+    padding-top: 35px;
+    @for $i from 1 to 3 {
+      .status-item-#{$i} {
+        width: 83%;
+        height: 100px;
+        padding: 22px 5% 24px 12%;
+        margin-left: auto;
+        margin-right: auto;
+        background-image: url("#{$image-status}/bg_warm_#{$i}.png");
+        background-size: cover;
+      }
+    }
+    .icon-warn {
+      float: left;
+      width: 55px;
+      height: 58px;
+      background-image: url("#{$image-status}/icon_warn.png");
+      background-size: cover;
+    }
+    .icon-normal {
+      float: left;
+      width: 62px;
+      height: 58px;
+      background-image: url("#{$image-status}/icon_normal.png");
+      background-size: cover;
+    }
+    .word {
+      float: left;
+      margin-left: 10%;
+      line-height: 58px;
+    }
+    .choose {
+      float: right;
+      width: 20px;
+      height: 20px;
+      margin-top: 18px;
+    }
+  }
 }

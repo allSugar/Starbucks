@@ -21,19 +21,22 @@
       <span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{ letter }}</span>
     </div>
   </div>
+  <!--热词-->
+  <div class="hot-word" *ngIf="!isSearching">
+    <ul class="hot-list">
+        <li class="hot-item" *ngFor="let item of hotWord" (click)="goToOtherPage()">
+          {{item}}
+        </li>
+    </ul>
+  </div>
   <!-- 展示列表 -->
   <div class="row-ibox" *ngIf="!isSearching">
+    <div class="header">全部</div>
     <ul class="row-list" *ngFor="let contacts of formatContacts;let i = index">
-      <li class="row-title" id="{{ letters[i] }}">{{ letters[i] }}</li>
+      <li class="row-title-lg" id="{{ letters[i] }}">{{ letters[i] }}</li>
       <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
-        <div class="item-img img-lg radius">
-          <div class="img-center">
-            <img alt="" src="assets/imgs/avater/avater.png">
-          </div>
-        </div>
         <div class="item-body">
           <p class="name" [innerHTML]="contact.userName"></p>
-          <p class="telphone">15289760923</p>
         </div>
       </li>
     </ul>
@@ -42,7 +45,7 @@
   <div class="row-ibox" *ngIf="isSearching">
     <ul class="row-list" *ngFor="let contacts of searchingItems;let i = index">
       <li class="row-title" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</li>
-      <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
+      <li class="row-item" *ngFor="let contact of contacts">
         <div class="item-img img-lg radius">
           <div class="img-center">
             <img alt="" src="assets/imgs/avater/avater.png">

@@ -10,12 +10,13 @@ import { HttpService } from "../../../../../../service/HttpService";
 })
 export class CategoryDetailPage {
 
-    @ViewChild(Content) content: Contnt;
+    @ViewChild(Content) content: Content;
     searchInput: string = '';
-    contsctsUrl: string = './contacts.json'
+    contsctsUrl: string = './hotWord.json'
     aLetters: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     letters: any[] = [];
     formatContacts: any = []; //按首字母顺序格式化后的数组
+    hotWord: any = [];
     searchingItems = []; //搜索显示的数组
     searchLetters = [];
     isSearching: Boolean = false;
@@ -35,7 +36,7 @@ export class CategoryDetailPage {
         this.getData();
   }
     getData() {
-        this.http.get("assets/data/contacts.json", false).subscribe(res => {
+        this.http.get("assets/data/hotWord.json", false).subscribe(res => {
             this.remitBanks = res;
             this.aLetters.forEach((res, index) => {
                 if (this.remitBanks[res] && this.remitBanks[res].lenght != 0) {
@@ -43,6 +44,11 @@ export class CategoryDetailPage {
                     this.letters.push(res);
                 }
             })
+           for(var i=0; i < this.formatContacts.length; i++){
+                for(var j=0;j<this.formatContacts[i].length;j++){
+                    if(this.formatContacts[i][j].hotWord) this.hotWord.push(this.formatContacts[i][j].hotWord);
+                }
+           }
         }, error => {
 
         });
@@ -83,11 +89,11 @@ export class CategoryDetailPage {
         } else {
             this.isSearching = false;
         }
-        console.log(this.searchingItems,this.searchLetters);
+
     }
 
-    goToDetail() {
-        this.navCtrl.push('ContactDetailPage');
+    goToOtherPage() {
+        this.navCtrl.push('EmergencyLevelPage');
     }
 
     ionViewWillEnter() {

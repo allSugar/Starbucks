@@ -1,18 +1,34 @@
-<!--
-  Generated template for the EmergencyLevelPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>emergency-level</ion-title>
+    <ion-title>吧台区</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ul class="status-page">
+    <li class="status-item-1">
+      <p class="icon-warn"></p>
+      <p class="word">紧急</p>
+      <label class="choose">
+        <div class="item-choice checkbox">
+          <input  [(ngModel)]="status" type="checkbox"  (change)="change()">
+          <ins class="checkbox-icon"></ins>
+        </div>
+      </label>
+    </li>
+    <li class="status-item-2 m-t-l">
+      <p class="icon-normal"></p>
+      <p class="word">普通</p>
+      <label class="choose">
+        <div class="item-choice checkbox">
+          <input type="checkbox"  [(ngModel)]="status"  (change)="change()">
+          <ins class="checkbox-icon"></ins>
+        </div>
+      </label>
+    </li>
+  </ul>
 </ion-content>
