@@ -95,4 +95,32 @@ page-drawing-map {
         background-color: rgba(0, 0, 0, .5);
         z-index: 1;
     }
+    .drag-area {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .drag-img {
+        position: absolute;
+        height: 100%;
+        img {
+            vertical-align: top;
+            height: 100%;
+            max-width: none;
+        }
+    }
+    .draggable {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border: 1px solid $white;
+        background: #ff7653;
+        line-height: 28px;
+        text-align: center;
+        color: $white;
+        @include border_radius(100%);
+        @include box_shadow(0px 0px 21px rgba(251, 111, 76, 0.56));
+    }
 }

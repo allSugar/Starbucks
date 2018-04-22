@@ -5,8 +5,8 @@ import { HttpService } from "../../../../../../service/HttpService";
 
 @IonicPage()
 @Component({
-  selector: 'page-category-detail',
-  templateUrl: 'category-detail.html',
+    selector: 'page-category-detail',
+    templateUrl: 'category-detail.html',
 })
 export class CategoryDetailPage {
 
@@ -31,10 +31,10 @@ export class CategoryDetailPage {
         public toastCtrl: ToastController,
         public elementRef: ElementRef,
         private http: HttpService
-  ) {
+    ) {
         this.navCtrl = this.app.getRootNav();
         this.getData();
-  }
+    }
     getData() {
         this.http.get("assets/data/hotWord.json", false).subscribe(res => {
             this.remitBanks = res;
@@ -44,11 +44,11 @@ export class CategoryDetailPage {
                     this.letters.push(res);
                 }
             })
-           for(var i=0; i < this.formatContacts.length; i++){
-                for(var j=0;j<this.formatContacts[i].length;j++){
-                    if(this.formatContacts[i][j].hotWord) this.hotWord.push(this.formatContacts[i][j].hotWord);
+            for (var i = 0; i < this.formatContacts.length; i++) {
+                for (var j = 0; j < this.formatContacts[i].length; j++) {
+                    if (this.formatContacts[i][j].hotWord) this.hotWord.push(this.formatContacts[i][j].hotWord);
                 }
-           }
+            }
         }, error => {
 
         });
@@ -61,9 +61,10 @@ export class CategoryDetailPage {
      *定位查找首字母对应的通讯录
      */
     scrollToTop(letter, event) {
+        console.log(letter,event);
         this.show(letter, 1000);
-        if (this.elementRef.nativeElement.querySelector(".row-title#" + letter)) {
-            let scrollTop = this.elementRef.nativeElement.querySelector(".row-title#" + letter).offsetTop;
+        if (this.elementRef.nativeElement.querySelector("#" + letter)) {
+            let scrollTop = this.elementRef.nativeElement.querySelector("#" + letter).offsetTop;
             this.content.scrollTo(0, scrollTop, 300);
         }
     }

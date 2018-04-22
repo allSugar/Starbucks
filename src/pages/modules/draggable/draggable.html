@@ -9,6 +9,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content content>
-  <div class="draggable" #drag drag (dragend)="dragend($event)"></div>
+<ion-content>
+  <div class="drag-border" content>
+      <div class="draggable" #drag drag (dragend)="dragend($event)"></div>
+      <div class="draggable" #drag drag (dragend)="dragend($event)"></div>
+  </div>
 </ion-content>

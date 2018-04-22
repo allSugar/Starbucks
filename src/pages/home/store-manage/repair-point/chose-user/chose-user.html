@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>选择用户</ion-title>
+  </ion-navbar>
+  <div class="ibox-search">
+    <input type="text" class="search-input">
+    <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="row-ibox">
+    <ul class="row-list row-lg" *ngFor="let i of [1,2,3]">
+      <li class="row-item">
+        <div class="item-img img-xs radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/change-before.png">
+          </div>
+        </div>
+        <div class="item-body">
+          <p class="job-sort">店面经理</p>
+        </div>
+      </li>
+      <li class="row-wrapper">
+        <ul class="row-list">
+          <li class="row-item" *ngFor="let i of [1,2,3]">
+            <div class="item-img radius">
+              <div class="img-center">
+                <img alt="" src="assets/imgs/change-before.png">
+              </div>
+            </div>
+            <div class="item-body">
+              <p class="name">刘杰楷</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</ion-content>

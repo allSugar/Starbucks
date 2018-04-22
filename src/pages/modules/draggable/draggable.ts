@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -6,12 +6,9 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'draggable.html',
 })
 export class DraggablePage {
-
-  @ViewChild('content') DragElement: ElementRef;
   constructor(
     public navCtrl: NavController
   ) {
-    console.log(this);
   }
 
   ionViewDidLoad() {

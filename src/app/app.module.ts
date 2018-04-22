@@ -4,9 +4,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { CalendarModule } from 'ion2-calendar';
 import { MyApp } from './app.component';
 
-import { DragDirective } from '../directives/drag/drag';
-import { ContentDirective } from '../directives/drag/content';
-
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { DraggablePage } from '../pages/modules/draggable/draggable';
@@ -29,8 +26,6 @@ import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
-    DragDirective,
-    ContentDirective,
     MyApp,
     LoginPage,
     TabsPage,

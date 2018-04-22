@@ -1,13 +1,16 @@
 page-draggable {
-  .scroll-content {
-    -webkit-overflow-scrolling: auto !important;
-  }
-  .draggable {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 0;
-    left: 0;
-    background-color: $blue;
-  }
+    .scroll-content {
+        -webkit-overflow-scrolling: auto !important;
+    }
+    .drag-border {
+        position: relative;
+    }
+    .draggable {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        left: 0;
+        background-color: $blue;
+    }
 }

@@ -4,11 +4,13 @@ import { IonicPage, App } from 'ionic-angular';
 
 import { HttpService } from '../../../../service/HttpService';
 import { RES_ROOT } from '../../../../providers/httpUrl';
+
 @IonicPage()
 @Component({
   selector: 'page-repair-list',
   templateUrl: 'repair-list.html',
 })
+
 export class RepairListPage {
 
   orderList: Array<any> = [];
@@ -25,23 +27,22 @@ export class RepairListPage {
     this.navCtrl = this.app.getRootNav();
   }
 
-  getData () {
+  getData() {
     var params = {
-        method: 'repair.findStoreRepairOrder',
+      method: 'repair.findStoreRepairOrder',
     }
     this.http.get(params).subscribe(res => {
-        console.log(res)
-       if(!!res && res.responseCode == 167050){
-         this.orderList = res.responseObj;
-         for( var i=0; i < this.orderList.length; i++){
-           var orderList = this.orderList[i];
-            this.order.push({
-                createTime: orderList.createTime,
-                orderCode: orderList.orderCode,
-                status: orderList.status
-            })
-         }
-       }
+      if (!!res && res.responseCode == 167050) {
+        this.orderList = res.responseObj;
+        for (var i = 0; i < this.orderList.length; i++) {
+          var orderList = this.orderList[i];
+          this.order.push({
+            createTime: orderList.createTime,
+            orderCode: orderList.orderCode,
+            status: orderList.status
+          })
+        }
+      }
     });
   }
 
@@ -50,7 +51,6 @@ export class RepairListPage {
   }
 
   goToOtherPage(item) {
-    this.navCtrl.push(this.status,{data: item});
+    this.navCtrl.push(this.status, { data: item });
   }
-
 }

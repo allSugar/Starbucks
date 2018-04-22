@@ -1,5 +1,4 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>苏南易维</ion-title>
   </ion-navbar>
@@ -36,6 +35,12 @@
 </ion-header>
 
 <ion-content>
+  <div class="stage-page shop-list">
+    <div class="stage" (click)="goToOtherPage()">
+      <img src="null" alt="">
+      <p class="title">测试</p>
+    </div>
+  </div>
   <div class="stage-page shop-list">
     <div class="stage" *ngFor="let item of store" (click)="goToOtherPage()">
       <img src="{{ this. item.url ? (RES_ROOT + item.url.fileRecord.filePath) : ''  }}" alt="">

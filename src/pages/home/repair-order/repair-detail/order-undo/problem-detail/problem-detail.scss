@@ -46,10 +46,11 @@ page-problem-detail {
             }
             .avatar-body {
                 margin-left: 85px;
+                line-height: 1;
                 overflow: hidden;
                 .name {
                     position: relative;
-                    color: #333;
+                    color: $gray;
                     .text {
                         font-size: 18px;
                     }
@@ -63,23 +64,21 @@ page-problem-detail {
                     }
                 }
                 .detail {
-                    margin-top: 5px;
+                    margin-top: 10px;
                     color: $secondary-text;
                 }
                 .firm {
-                    margin-top: 5px;
+                    margin-top: 16px;
                     font-size: 12px;
-                    color: #999;
+                    color: $gray-light;
                 }
             }
         }
         .problem-img {
-            width: 97%;
-            height: 200px;
             margin: 25px auto 0 auto;
             overflow: hidden;
             img {
-                max-width: 100%;
+                vertical-align: top;
             }
         }
         .word {
@@ -114,7 +113,6 @@ page-problem-detail {
                 background: #fff url("#{$image-icon}/icon_send.png");
                 background-size: 100%;
             }
-
         }
         .icon-list {
             width: 100%;
