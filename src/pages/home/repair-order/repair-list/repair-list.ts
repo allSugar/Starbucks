@@ -3,8 +3,6 @@ import { IonicPage, App } from 'ionic-angular';
 
 
 import { HttpService } from '../../../../service/HttpService';
-import { RES_ROOT } from '../../../../providers/httpUrl';
-
 @IonicPage()
 @Component({
   selector: 'page-repair-list',

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavParams } from 'ionic-angular';
 import { HttpService } from '../../../../../service/HttpService';
-import { RES_ROOT } from '../../../../../providers/httpUrl';
 
 @IonicPage()
 @Component({
