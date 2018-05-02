@@ -198,6 +198,29 @@
       }
     }
   }
+  //管辖范围
+  .jurisdiction {
+    width: 100%;
+    padding: 40px;
+    overflow: hidden;
+    .item {
+      float: left;
+      width: 50%;
+      text-align: center;
+      img {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+      }
+      .text {
+        margin-top: 14px;
+        color: $secondary-text;
+        &.active {
+          color: $green;
+        }
+      }
+    }
+  }
 }
 
 .time-form {
