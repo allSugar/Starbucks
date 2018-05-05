@@ -16,6 +16,7 @@ export class RepairListPage {
   RES_ROOT: string;
   navCtrl: any;
   status: string = 'orderUndoPage';
+  sta: number = 0;
 
   constructor(
     public app: App,
@@ -49,11 +50,15 @@ export class RepairListPage {
   }
 
   goToOtherPage(name, item) {
-    if (name) {
-      this.navCtrl.push(name);
-    } else {
-      this.navCtrl.push(this.status, { data: item });
-    }
+      if (name) {
+          this.navCtrl.push(name);
+      } else {
+          this.navCtrl.push(this.status, {data: item});
+      }
 
   }
+  show(n: number) {
+      this.sta = n;
+  }
+
 }

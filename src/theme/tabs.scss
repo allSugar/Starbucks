@@ -111,6 +111,9 @@
           height: 14px;
           background-color: $secondary-text;
         }
+        &.active {
+          color: $main-text;
+        }
       }
       &.tabs-sort {
         padding-right: 82px;
