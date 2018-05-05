@@ -28,6 +28,8 @@
       background-color: $green;
     }
     .info-list {
+      max-height: 42px;
+      overflow: hidden;
       .info-item {
         font-size: 13px;
         overflow: hidden;
@@ -43,9 +45,8 @@
           margin-top: 6px;
         }
       }
-      &.info-hide {
-        max-height: 42px;
-        overflow: hidden;
+      &.info-show {
+        max-height: none;
       }
     }
   }

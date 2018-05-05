@@ -14,9 +14,9 @@ export class RepairListPage {
   orderList: Array<any> = [];
   order: Object[] = [];
   RES_ROOT: string;
-
   navCtrl: any;
   status: string = 'orderUndoPage';
+
   constructor(
     public app: App,
     public http: HttpService

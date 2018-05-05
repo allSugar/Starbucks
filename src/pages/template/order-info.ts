@@ -4,7 +4,7 @@ import { Component, Input } from '@angular/core';
     selector: 'order-info',
     template: `<div class="info">
     <div class="info-title">订单详情</div>
-    <ul class="info-list info-hide">
+    <ul class="info-list" [ngClass]="{'info-show': status == 1}">
       <li class="info-item">
         <em class="title">订单号</em>
         <strong class="text">W_017092_002</strong>
@@ -42,12 +42,17 @@ import { Component, Input } from '@angular/core';
         <strong class="text">2017-12-20 12:20</strong>
       </li>
     </ul>
-    <em class="icon-arrow-top"></em>
+    <em class="icon-arrow-top" *ngIf="status == 0" (click)="tabs(1)"></em>
+    <em class="icon-arrow-bottom" *ngIf="status == 1" (click)="tabs(0)"></em>
   </div>`
 })
 export class OrderInfoTmpl {
     @Input() data: any;
     @Input() arr: any;
+    status: number = 0;
+    tabs (n: number) {
+        this.status = n;
+    }
     constructor(){
       console.log(this);
     }
