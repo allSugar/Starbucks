@@ -11,11 +11,11 @@
       <span class="title">厂商未接单</span>
     </div>
     <order-info [arr]="data"></order-info>
-    <div class="point-list" >
+    <div class="point-list">
       <order-point [done]="false" (goto)="goToDetailPage()"></order-point>
     </div>
     <div class="add-photo">
-      <i class="icon-add-photo"></i>
+      <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>
       <em class="text">添加问题</em>
     </div>
   </div>

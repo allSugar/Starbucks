@@ -17,6 +17,10 @@ export class orderUndoPage {
     this.data = navParams.get('data');
   }
 
+  goToOtherPage(name:string){
+    this.navCtrl.push(name);
+  }
+
   goToDetailPage () {
     this.navCtrl.push('ProblemDetailPage');
   }

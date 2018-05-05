@@ -60,5 +60,4 @@ export class RepairListPage {
   show(n: number) {
     this.sta = this.sta == n ? 0 : n;
   }
-
 }
