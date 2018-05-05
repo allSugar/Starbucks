@@ -7,6 +7,16 @@
       </button>
     </ion-buttons>
   </ion-navbar>
+  <div class="tabs">
+    <ul class="tabs-rate tabs-two">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'ContactListPage' }" (click)="tabs('ContactListPage')">
+        <em class="text">星巴克</em>
+      </li>
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'RepairUnit' }" (click)="tabs('RepairUnit')">
+        <em class="text">维修单位</em>
+      </li>
+    </ul>
+  </div>
   <div class="ibox-search">
     <input type="text" class="search-input" (change)="goSearchResult($event)">
     <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
@@ -14,44 +24,81 @@
 </ion-header>
 
 <ion-content>
-  <!-- 侧边 -->
-  <div class="letter" *ngIf="!isSearching">
-    <div class="letter-right">
-      <span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{ letter }}</span>
+  <div class="contact-list" *ngIf="status == 'ContactListPage'">
+    <!-- 侧边 -->
+    <div class="letter" *ngIf="!isSearching">
+      <div class="letter-right">
+        <span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{ letter }}</span>
+      </div>
+    </div>
+    <!-- 展示列表 -->
+    <div class="row-ibox" *ngIf="!isSearching">
+      <ul class="row-list" *ngFor="let contacts of formatContacts;let i = index">
+        <li class="row-title" id="{{ letters[i] }}">{{ letters[i] }}</li>
+        <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
+          <div class="item-img img-lg radius">
+            <div class="img-center">
+              <img alt="" src="assets/imgs/avater/avater.png">
+            </div>
+          </div>
+          <div class="item-body">
+            <p class="name" [innerHTML]="contact.userName"></p>
+            <p class="telphone">15289760923</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 搜索列表 -->
+    <div class="row-ibox" *ngIf="isSearching">
+      <ul class="row-list" *ngFor="let contacts of searchingItems;let i = index">
+        <li class="row-title" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</li>
+        <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
+          <div class="item-img img-lg radius">
+            <div class="img-center">
+              <img alt="" src="assets/imgs/avater/avater.png">
+            </div>
+          </div>
+          <div class="item-body">
+            <p class="name" [innerHTML]="contact.userName"></p>
+            <p class="telphone">15289760923</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
-  <!-- 展示列表 -->
-  <div class="row-ibox" *ngIf="!isSearching">
-    <ul class="row-list" *ngFor="let contacts of formatContacts;let i = index">
-      <li class="row-title" id="{{ letters[i] }}">{{ letters[i] }}</li>
-      <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
-        <div class="item-img img-lg radius">
-          <div class="img-center">
-            <img alt="" src="assets/imgs/avater/avater.png">
+  <div class="repair-unit-list" *ngIf="status == 'RepairUnit'">
+    <div class="row-ibox">
+      <ul class="row-list" *ngFor="let item of RepairUnitList">
+        <li class="row-item" (click)="RepairUnitToggle(item)">
+          <div class="item-img img-xs radius">
+            <div class="img-center">
+              <img alt="" src="assets/imgs/change-before.png">
+            </div>
           </div>
-        </div>
-        <div class="item-body">
-          <p class="name" [innerHTML]="contact.userName"></p>
-          <p class="telphone">15289760923</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- 搜索列表 -->
-  <div class="row-ibox" *ngIf="isSearching">
-    <ul class="row-list" *ngFor="let contacts of searchingItems;let i = index">
-      <li class="row-title" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</li>
-      <li class="row-item" *ngFor="let contact of contacts" (click)="goToDetail()">
-        <div class="item-img img-lg radius">
-          <div class="img-center">
-            <img alt="" src="assets/imgs/avater/avater.png">
+          <div class="item-body">
+            <p class="title">北京苏南方圆建设有限公司</p>
+            <p class="facility">设施维修：灯具、龙头、门窗等</p>
+            <i class="icon-arrow-bottom"></i>
           </div>
-        </div>
-        <div class="item-body">
-          <p class="name" [innerHTML]="contact.userName"></p>
-          <p class="telphone">15289760923</p>
-        </div>
-      </li>
-    </ul>
+        </li>
+        <li class="row-wrapper" *ngIf="item.status">
+          <ul class="row-list">
+            <li class="row-item" *ngFor="let item of [1,2,3,4]">
+              <div class="item-img radius">
+                <div class="img-center">
+                  <img alt="" src="assets/imgs/change-before.png">
+                </div>
+              </div>
+              <div class="item-body">
+                <div class="item-body">
+                  <p class="name">刘杰楷</p>
+                  <p class="telphone">15289760923</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </ion-content>

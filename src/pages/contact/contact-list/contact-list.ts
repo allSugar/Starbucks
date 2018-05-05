@@ -25,6 +25,13 @@ export class ContactListPage {
     toast: any;
     remitBanks: any;
     navCtrl: any;
+    status: string = 'ContactListPage';
+    RepairUnitList: any[] = [
+        { id: 1, status: false },
+        { id: 1, status: false },
+        { id: 1, status: false }
+    ]
+
 
     constructor(
         public app: App,
@@ -35,6 +42,13 @@ export class ContactListPage {
     ) {
         this.navCtrl = this.app.getRootNav();
         this.getData();
+    }
+    tabs(name) {
+        this.status = name;
+    }
+    RepairUnitToggle(data) {
+        data.status = !data.status;
+
     }
     getData() {
         this.http.get("assets/data/contacts.json", false).subscribe(res => {
@@ -88,7 +102,7 @@ export class ContactListPage {
         } else {
             this.isSearching = false;
         }
-        console.log(this.searchingItems,this.searchLetters);
+        console.log(this.searchingItems, this.searchLetters);
     }
 
     goToDetail() {
