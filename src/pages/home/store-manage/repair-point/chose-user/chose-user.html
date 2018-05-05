@@ -10,8 +10,8 @@
 
 <ion-content>
   <div class="row-ibox">
-    <ul class="row-list row-lg" *ngFor="let i of [1,2,3]">
-      <li class="row-item">
+    <ul class="row-list" *ngFor="let item of UserList">
+      <li class="row-item" (click)="toggle(item)">
         <div class="item-img img-xs radius">
           <div class="img-center">
             <img alt="" src="assets/imgs/change-before.png">
@@ -19,18 +19,22 @@
         </div>
         <div class="item-body">
           <p class="job-sort">店面经理</p>
+          <i *ngIf="item.status" class="icon-arrow-bottom"></i>
+          <i *ngIf="!item.status" class="icon-arrow-right"></i>
         </div>
       </li>
-      <li class="row-wrapper">
+      <li class="row-wrapper" *ngIf="item.status">
         <ul class="row-list">
-          <li class="row-item" *ngFor="let i of [1,2,3]">
+          <li class="row-item" *ngFor="let item of [1,2,3,4]">
             <div class="item-img radius">
               <div class="img-center">
                 <img alt="" src="assets/imgs/change-before.png">
               </div>
             </div>
             <div class="item-body">
-              <p class="name">刘杰楷</p>
+              <div class="item-body">
+                <p class="name">刘杰楷</p>
+              </div>
             </div>
           </li>
         </ul>

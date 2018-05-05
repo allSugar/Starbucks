@@ -134,8 +134,15 @@
       }
       .icon-arrow-bottom {
         position: absolute;
-        top: 0;
+        top: 50%;
         right: 30px;
+        margin: -3px 0 0 0;
+      }
+      .icon-arrow-right {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        margin: -5px 0 0 0;
       }
     }
     .item-action {

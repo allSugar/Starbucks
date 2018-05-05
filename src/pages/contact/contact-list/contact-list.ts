@@ -30,7 +30,7 @@ export class ContactListPage {
         { id: 1, status: false },
         { id: 1, status: false },
         { id: 1, status: false }
-    ]
+    ];
 
 
     constructor(
@@ -48,7 +48,6 @@ export class ContactListPage {
     }
     RepairUnitToggle(data) {
         data.status = !data.status;
-
     }
     getData() {
         this.http.get("assets/data/contacts.json", false).subscribe(res => {

@@ -47,18 +47,19 @@ export class RepairListPage {
 
   tabs(name: string) {
     this.status = name;
+    this.sta = 0;
   }
 
   goToOtherPage(name, item) {
-      if (name) {
-          this.navCtrl.push(name);
-      } else {
-          this.navCtrl.push(this.status, {data: item});
-      }
+    if (name) {
+      this.navCtrl.push(name);
+    } else {
+      this.navCtrl.push(this.status, { data: item });
+    }
 
   }
   show(n: number) {
-      this.sta = n;
+    this.sta = this.sta == n ? 0 : n;
   }
 
 }

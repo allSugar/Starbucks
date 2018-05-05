@@ -78,7 +78,8 @@
           <div class="item-body">
             <p class="title">北京苏南方圆建设有限公司</p>
             <p class="facility">设施维修：灯具、龙头、门窗等</p>
-            <i class="icon-arrow-bottom"></i>
+            <i *ngIf="item.status" class="icon-arrow-bottom"></i>
+            <i *ngIf="!item.status" class="icon-arrow-right"></i>
           </div>
         </li>
         <li class="row-wrapper" *ngIf="item.status">

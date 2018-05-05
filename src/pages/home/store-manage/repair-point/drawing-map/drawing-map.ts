@@ -23,7 +23,6 @@ export class DrawingMapPage {
     public app: App,
     public navParams: NavParams
   ) {
-    console.log(this);
     this.navCtrl = this.app.getRootNav();
   }
 
@@ -37,7 +36,6 @@ export class DrawingMapPage {
     name == 'easel' ? this.help = false : this.easel = false;
   }
   checkEdge() {
-    console.log(this);
     this.edge = this.edge;
   }
   dragend(event, block) {

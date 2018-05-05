@@ -1,114 +1,105 @@
 <ion-header>
-    <ion-navbar class='border-none'>
-        <ion-title>我关注的维修单</ion-title>
-    </ion-navbar>
-    <div class="tabs">
-        <ul class="tabs-rate tabs-third">
-            <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }"
-                (click)="tabs('orderUndoPage'); show(0)">
-                <em class="text">待接单(8)</em>
-            </li>
-            <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }"
-                (click)="tabs('OrderConductPage'); show(0)">
-                <em class="text">进行中(3)</em>
-            </li>
-            <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }"
-                (click)="tabs('OrderDonePage'); show(0)">
-                <em class="text">已完成</em>
-            </li>
-        </ul>
-        <ul class="tabs-list tabs-third  tabs-sort" *ngIf="status == 'orderUndoPage'">
-            <li class="tab-btn" (click)="show(1)" [ngClass]="{ 'active':sta == 1 }">
-                <em class="text">综合</em>
-            </li>
-            <li class="tab-btn" (click)="show(2)" [ngClass]="{ 'active':sta == 2 }">
-                <em class="text">紧急</em>
-            </li>
-            <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
-                <em class="text">厂商</em>
-            </li>
-            <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
-                <em class="text">店铺</em>
-            </li>
-        </ul>
-        <ul class="tabs-list tabs-third  tabs-sort" *ngIf="status == 'OrderConductPage'">
-            <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
-                <em class="text">厂商</em>
-            </li>
-            <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
-                <em class="text">排序</em>
-            </li>
-            <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
-                <em class="text">店铺</em>
-            </li>
-        </ul>
-        <ul class="tabs-list tabs-third  tabs-sort" *ngIf="status == 'OrderDonePage'">
-            <li class="tab-btn">
-                <em class="text" (click)="show(3)">厂商</em>
-            </li>
-            <li class="tab-btn">
-                <em class="text" (click)="show(5)">排序</em>
-            </li>
-            <li class="tab-btn">
-                <em class="text" (click)="show(6)">日期</em>
-            </li>
-            <li class="tab-sort">
-                <em class="text" (click)="show(3)">店铺</em>
-            </li>
-        </ul>
-        <div class="tabs-content">
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 1 }">
-                <li class="ranking-item">综合</li>
-                <li class="ranking-item">厂商名字a-z</li>
-                <li class="ranking-item active">厂商名字z-a</li>
-                <li class="ranking-item">问题由多到少</li>
-                <li class="ranking-item">问题由少到多</li>
-            </ul>
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 2 }">
-                <li class="ranking-item active">紧急</li>
-                <li class="ranking-item">一般</li>
-            </ul>
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
-                <li class="ranking-item">紧急</li>
-                <li class="ranking-item">一般</li>
-            </ul>
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 4 }">
-                <li class="ranking-item">星巴克</li>
-                <li class="ranking-item">苏南方圆</li>
-                <li class="ranking-item active">星巴克</li>
-                <li class="ranking-item">苏南方圆</li>
-            </ul>
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
-                <li class="ranking-item">店铺</li>
-                <li class="ranking-item">星巴克</li>
-                <li class="ranking-item">星巴克</li>
-                <li class="ranking-item active">星巴克</li>
-                <li class="ranking-item">星巴克</li>
-                <li class="ranking-item">星巴克</li>
-            </ul>
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 5 }">
-                <li class="ranking-item">排序</li>
-                <li class="ranking-item">厂商名字a-z</li>
-                <li class="ranking-item active">厂商名字z-a</li>
-                <li class="ranking-item">问题由多到少</li>
-                <li class="ranking-item">问题由少到多</li>
-            </ul>
-            <ul class="ranking-list" [ngClass]="{ 'hide':sta != 6 }">
-                    <li class="ranking-item">日期</li>
-                    <li class="ranking-item">今天</li>
-                    <li class="ranking-item active">昨天</li>
-                    <li class="ranking-item">前天</li>
-                </ul>
-        </div>
+  <ion-navbar class='border-none'>
+    <ion-title>我关注的维修单</ion-title>
+  </ion-navbar>
+  <div class="tabs">
+    <ul class="tabs-rate tabs-third">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }" (click)="tabs('orderUndoPage'); show(0)">
+        <em class="text">待接单(8)</em>
+      </li>
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }" (click)="tabs('OrderConductPage'); show(0)">
+        <em class="text">进行中(3)</em>
+      </li>
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }" (click)="tabs('OrderDonePage'); show(0)">
+        <em class="text">已完成</em>
+      </li>
+    </ul>
+    <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'orderUndoPage'">
+      <li class="tab-btn" (click)="show(1)" [ngClass]="{ 'active':sta == 1 }">
+        <em class="text">综合</em>
+      </li>
+      <li class="tab-btn" (click)="show(2)" [ngClass]="{ 'active':sta == 2 }">
+        <em class="text">紧急</em>
+      </li>
+      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
+        <em class="text">厂商</em>
+      </li>
+      <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
+        <em class="text">店铺</em>
+      </li>
+    </ul>
+    <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'OrderConductPage'">
+      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
+        <em class="text">厂商</em>
+      </li>
+      <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
+        <em class="text">排序</em>
+      </li>
+      <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
+        <em class="text">店铺</em>
+      </li>
+    </ul>
+    <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'OrderDonePage'">
+      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
+        <em class="text">厂商</em>
+      </li>
+      <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
+        <em class="text">排序</em>
+      </li>
+      <li class="tab-btn" (click)="show(6)" [ngClass]="{ 'active':sta == 6 }">
+        <em class="text">日期</em>
+      </li>
+      <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
+        <em class="text">店铺</em>
+      </li>
+    </ul>
+    <div class="tabs-content">
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 1 }">
+        <li class="ranking-item">综合</li>
+        <li class="ranking-item">厂商名字a-z</li>
+        <li class="ranking-item active">厂商名字z-a</li>
+        <li class="ranking-item">问题由多到少</li>
+        <li class="ranking-item">问题由少到多</li>
+      </ul>
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 2 }">
+        <li class="ranking-item active">紧急</li>
+        <li class="ranking-item">一般</li>
+      </ul>
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 4 }">
+        <li class="ranking-item">星巴克</li>
+        <li class="ranking-item">苏南方圆</li>
+        <li class="ranking-item active">星巴克</li>
+        <li class="ranking-item">苏南方圆</li>
+      </ul>
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
+        <li class="ranking-item">星巴克</li>
+        <li class="ranking-item">星巴克</li>
+        <li class="ranking-item active">星巴克</li>
+        <li class="ranking-item">星巴克</li>
+        <li class="ranking-item">星巴克</li>
+      </ul>
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 5 }">
+        <li class="ranking-item">排序</li>
+        <li class="ranking-item">厂商名字a-z</li>
+        <li class="ranking-item active">厂商名字z-a</li>
+        <li class="ranking-item">问题由多到少</li>
+        <li class="ranking-item">问题由少到多</li>
+      </ul>
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 6 }">
+        <li class="ranking-item">日期</li>
+        <li class="ranking-item">今天</li>
+        <li class="ranking-item active">昨天</li>
+        <li class="ranking-item">前天</li>
+      </ul>
     </div>
+  </div>
 </ion-header>
 
 
 <ion-content>
-    <div class="repair-list">
-        <repair-order-element *ngFor="let item of order" [data]="item"
-                              (goto)="goToOtherPage($event,item)"></repair-order-element>
-    </div>
-    <div class="full-mask" *ngIf="sta != 0" (click)="show(0)"></div>
+  <div class="repair-list">
+    <repair-order-element *ngFor="let item of order" [data]="item" (goto)="goToOtherPage($event,item)"></repair-order-element>
+  </div>
+  <div class="full-mask" *ngIf="sta != 0" (click)="show(0)"></div>
 
 </ion-content>
