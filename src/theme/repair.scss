@@ -66,3 +66,17 @@
     background-color: white;
   }
 }
+
+.add-photo {
+  padding: 15px;
+  background-color: $white;
+  overflow: hidden;
+  .icon-add-photo {
+    float: left;
+    overflow: hidden;
+  }
+  .text{
+    float: left;
+    margin-left: 15px;
+  }
+}
