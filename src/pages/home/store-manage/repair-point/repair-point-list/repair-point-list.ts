@@ -38,7 +38,7 @@ export class RepairPointListPage {
     return false;
   }
 
-  goToOtherPage() {
-    this.navCtrl.push('DrawingMapPage');
+  goToOtherPage(item) {
+    this.navCtrl.push(item);
   }
 }

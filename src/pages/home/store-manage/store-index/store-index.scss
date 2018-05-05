@@ -1,3 +1,18 @@
 page-store-index {
-
+  ion-header.header {
+    ion-navbar {
+      .ion-ios-map,
+      .ion-md-map {
+        min-width: 20px;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-image: url('#{$image-icon}/icon-map.png') !important;
+        background-size: 100%;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
 }

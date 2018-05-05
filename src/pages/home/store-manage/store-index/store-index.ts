@@ -15,7 +15,7 @@ export class StoreIndexPage {
     { url: 'cloud-smart', name: '云智能', page:'CloudSmartPage'},
     { url: 'cloud', name: '云盘', page: 'CloudListPage' },
     { url: 'chart', name: '统计', page: 'ChartListPage' },
-    { url: 'repair_place', name: '维修点管理', page: 'RepairPointListPage' }
+    { url: 'repair_place', name: '问题管理', page: 'RepairPointListPage' }
   ];
 
   constructor(
@@ -26,7 +26,11 @@ export class StoreIndexPage {
   }
 
   goToOtherPage(item) {
-    if (item.page) this.navCtrl.push(item.page);
+    if (item.page) {
+      this.navCtrl.push(item.page);
+    }else {
+      this.navCtrl.push(item);
+    }
   }
 
   ionViewDidLoad() {

@@ -56,7 +56,6 @@ export class RepairListPage {
     } else {
       this.navCtrl.push(this.status, { data: item });
     }
-
   }
   show(n: number) {
     this.sta = this.sta == n ? 0 : n;
