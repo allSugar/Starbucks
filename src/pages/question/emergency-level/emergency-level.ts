@@ -11,16 +11,14 @@ export class EmergencyLevelPage {
   status: any = true;
   navCtrl: any;
   constructor(
-      public app: App,
-      public navParams: NavParams
+    public app: App,
+    public navParams: NavParams
   ) {
     this.navCtrl = this.app.getRootNav();
   }
-  goToOtherPage(item) {
-    this.navCtrl.push(item)
+  
+  rowStatusChange(name) {
+    this.navCtrl.push(name)
   }
-    change() {
-        console.log("change");
-    }
 
 }

@@ -33,12 +33,10 @@ export class RepairPointListPage {
     this.navCtrl = this.app.getRootNav();
   }
 
-  handleShowList(item: Object) {
-    item['status'] = !item['status'];
-    return false;
+  goToOtherPage(name) {
+    this.navCtrl.push(name);
   }
-
-  goToOtherPage(item) {
-    this.navCtrl.push(item);
+  goToDetailPage() {
+    this.navCtrl.push("ProblemDetailPage");
   }
 }

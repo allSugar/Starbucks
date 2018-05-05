@@ -18,37 +18,18 @@
   <div class="row-ibox">
     <div class="row-list">
       <div class="row-item-box" *ngFor="let list of lists">
-        <label class="row-item">
-          <div class="item-choice checkbox">
+        <div class="row-item">
+          <label class="item-choice checkbox">
             <input type="checkbox">
             <ins class="checkbox-icon"></ins>
-          </div>
-          <div class="item-body">
+          </label>
+          <div class="item-body" (click)="goToDetailPage()">
             <p class="title">灯具/射灯不亮</p>
             <p class="company">北京苏南方圆建设有限公司</p>
             <p class="location">一层平面-吧台区</p>
           </div>
-          <div class="item-action">
-            <i class="icon-point" *ngIf="list.content && list.content.length" (click)="handleShowList(list)"></i>
+          <div class="item-action" (click)="goToDetailPage()">
             <ins class="tag tag-error">紧急</ins>
-          </div>
-        </label>
-        <div class="row-ibox" *ngIf="list.status">
-          <div class="row-list">
-            <label class="row-item" *ngFor="let item of list.content">
-              <div class="item-choice checkbox">
-                <input type="checkbox">
-                <ins class="checkbox-icon"></ins>
-              </div>
-              <div class="item-body">
-                <p class="title">灯具/射灯不亮</p>
-                <p class="company">北京苏南方圆建设有限公司</p>
-                <p class="location">一层平面-吧台区</p>
-              </div>
-              <div class="item-action">
-                <ins class="tag tag-error">紧急</ins>
-              </div>
-            </label>
           </div>
         </div>
       </div>

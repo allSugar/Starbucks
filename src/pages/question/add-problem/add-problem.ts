@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, App, NavParams } from 'ionic-angular';
 
 
 @IonicPage()
@@ -9,11 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddProblemPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  navCtrl: any;
+  constructor(
+    public app: App,
+    public navParams: NavParams
+  ) {
+    this.navCtrl = this.app.getRootNav()
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddProblemPage');
+  goToOtherPage() {
+    this.navCtrl.push("ProblemDetailPage");
   }
 
 }

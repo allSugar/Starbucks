@@ -1,6 +1,6 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 h1,
@@ -9,205 +9,205 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 !important;
-    font-weight: normal;
+  margin: 0 !important;
+  font-weight: normal;
 }
 
 ins,
 em {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 em,
 em.text {
-    font-style: normal;
-    font-size: 14px;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .content.content-md,
 .content.content-ios {
-    color: $main-text;
+  color: $main-text;
 }
 
 [ion-button].button-md,
 [ion-button].button-ios {
-    @include box_shadow(none);
-    @include border_radius();
+  @include box_shadow(none);
+  @include border_radius();
 }
 
 ion-header.header {
-    ion-navbar {
-        &.toolbar {
-            min-height: 48px
-        }
-        .toolbar-background {
-            background: $blue; //border-bottom: 1px solid $black-blue;
-        }
-        .toolbar-title {
-            color: white;
-            font-size: 18px;
-            font-weight: 400;
-            text-align: center;
-        }
-        ion-title {
-            left: 0;
-            top: 0;
-            padding: 0 90px 1px;
-            position: absolute;
-            width: 100%;
-            height: 48PX;
-        }
-        &.border-none {
-            .toolbar-background {
-                border: 0;
-            }
-        }
-        &:after {
-            display: none;
-        }
+  ion-navbar {
+    &.toolbar {
+      min-height: 48px
+    }
+    .toolbar-background {
+      background: $blue; //border-bottom: 1px solid $black-blue;
+    }
+    .toolbar-title {
+      color: white;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+    }
+    ion-title {
+      left: 0;
+      top: 0;
+      padding: 0 90px 1px;
+      position: absolute;
+      width: 100%;
+      height: 48PX;
+    }
+    &.border-none {
+      .toolbar-background {
+        border: 0;
+      }
     }
     &:after {
-        display: none;
+      display: none;
     }
+  }
+  &:after {
+    display: none;
+  }
 }
 
 ion-footer.footer {
-    ion-navbar {
-        &.toolbar {
-            min-height: 44px;
-        }
-        .toolbar-background {
-            background-color: $white;
-        }
+  ion-navbar {
+    &.toolbar {
+      min-height: 44px;
     }
-    &::before{
-      display: none;
+    .toolbar-background {
+      background-color: $white;
     }
+  }
+  &::before {
+    display: none;
+  }
 }
 
 .bar-buttons-md[start] {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -ms-flex-order: 1;
-    order: 1;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .back-button.show-back-button {
-    margin: 0;
-    z-index: 99;
+  margin: 0;
+  z-index: 99;
 }
 
 ion-toast .toast-message {
-    text-align: center;
+  text-align: center;
 }
 
 .ion-ios-arrow-back:before,
 .ion-md-arrow-back:before {
-    content: '';
-    width: 10px;
-    height: 20px;
-    @include back_size(.5);
-    background-image: url($icon-path);
-    background-position: -10px -9px;
+  content: '';
+  width: 10px;
+  height: 20px;
+  @include back_size(.5);
+  background-image: url($icon-path);
+  background-position: -10px -9px;
 }
 
 .ion-ios-arrow-back:before {
-    margin-left: 6px;
+  margin-left: 6px;
 }
 
 .ion-md-arrow-back:before {
-    margin: 0;
+  margin: 0;
 }
 
 .back-button-md {
-    min-width: 0 !important;
+  min-width: 0 !important;
 }
 
 .clearfix {
-    zoom: 1;
+  zoom: 1;
 }
 
 .clearfix:after {
-    content: ' ';
-    width: 0;
-    display: block;
-    clear: both;
+  content: ' ';
+  width: 0;
+  display: block;
+  clear: both;
 }
 
 .f-left {
-    float: left !important;
+  float: left !important;
 }
 
 .f-right {
-    float: right !important;
+  float: right !important;
 }
 
 .f-none {
-    float: none !important;
+  float: none !important;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .m-t-l {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .m-t-s {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .p-t-b-l {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .p-t-b-xl {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 
 .p-t-b-xxl {
-    padding-top: 25px;
-    padding-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .border-b-gray {
-    border-bottom: 1px solid #E7E8E8;
+  border-bottom: 1px solid #E7E8E8;
 }
 
 .border-none {
-    border: none !important;
+  border: none !important;
 }
 
 .checkbox {
-    display: inline-block;
+  display: inline-block;
+  overflow: hidden;
+  input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
     overflow: hidden;
-    input {
-        height: 0;
-        width: 0;
-        visibility: hidden;
-        overflow: hidden;
-        @include opacity(0);
-    }
-    input+.checkbox-icon {
-        float: left;
-        width: 15px;
-        height: 15px;
-        background-image: url("#{$image-icon}/icon_unselected.png");
-        background-size: 100%;
-    }
-    input:checked+.checkbox-icon {
-        background-image: url("#{$image-icon}/icon_selected.png");
-    }
-    .text {
-        float: left;
-        margin-left: 10px;
-        color: $secondary-text;
-    }
+    @include opacity(0);
+  }
+  input+.checkbox-icon {
+    float: left;
+    width: 15px;
+    height: 15px;
+    background-image: url("#{$image-icon}/icon_unselected.png");
+    background-size: 100%;
+  }
+  input:checked+.checkbox-icon {
+    background-image: url("#{$image-icon}/icon_selected.png");
+  }
+  .text {
+    float: left;
+    margin-left: 10px;
+    color: $secondary-text;
+  }
 }

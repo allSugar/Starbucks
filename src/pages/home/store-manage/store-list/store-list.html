@@ -35,17 +35,25 @@
 </ion-header>
 
 <ion-content>
-  <div class="stage-page shop-list">
-    <div class="stage" (click)="goToOtherPage()">
-      <img src="null" alt="">
-      <p class="title">测试</p>
-    </div>
-  </div>
-  <div class="stage-page shop-list">
-    <div class="stage" *ngFor="let item of store" (click)="goToOtherPage()">
-      <img src="{{ this. item.url ? (RES_ROOT + item.url.fileRecord.filePath) : ''  }}" alt="">
-      <p class="title">{{ item.name }}</p>
-    </div>
+  <div class="row-ibox">
+    <ul class="row-list">
+      <li class="row-item" (click)="goToOtherPage()">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="assets/imgs/avater/avater_card.png">
+          </div>
+        </div>
+        <div class="item-body">钟楼百货星巴克</div>
+      </li>
+      <li class="row-item" *ngFor="let item of store" (click)="goToOtherPage()">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt="" src="{{ this. item.url ? (RES_ROOT + item.url.fileRecord.filePath) : ''  }}">
+          </div>
+        </div>
+        <div class="item-body">{{ item.name }}</div>
+      </li>
+    </ul>
   </div>
   <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>
 </ion-content>

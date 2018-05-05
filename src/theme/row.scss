@@ -184,6 +184,40 @@
   }
 }
 
+.row-status-ibox {
+  padding: 35px 30px 0 30px;
+  .row-item {
+    display: block;
+    padding: 21px 15px 21px 35px;
+    height: 100px;
+    &+.row-item {
+      margin-top: 30px;
+    }
+  }
+  @for $i from 1 to 3 {
+    .row-#{nth($rowStatusBg, $i)} {
+      background: {
+        image: url("#{$image-status}/bg_warm_#{$i}.png");
+        size: cover;
+        repeat: no-repeat;
+      }
+    }
+  }
+  [class*="icon-"],
+  .text {
+    float: left;
+  }
+  .text {
+    margin: 20px 0 20px 40px;
+    font-size: 18px;
+    line-height: 1;
+  }
+  .checkbox {
+    float: right;
+    margin: 19px 0;
+  }
+}
+
 .contact-list {
   .row-list {
     border-bottom: 1px solid $border;

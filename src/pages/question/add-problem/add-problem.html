@@ -1,24 +1,38 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>吧台区</ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>吧台区</ion-title>
+  </ion-navbar>
 </ion-header>
 
-
 <ion-content>
-    <div class="problem-detail">
-        <div class="head">
-            <img alt="" class="avatar-img" src="assets/imgs/avater/avater_card.png">
-            <div class="avatar-body">
-                <div class="name">
-                    <em class="text">张小明</em>
-                    <em class="time">2018-1-27</em>
-                </div>
-                <div class="detail">灯具／灯不亮了</div>
-                <div class="firm">
-                    维修厂商：北京苏南方圆建设有限公司
-                </div>
-            </div>
+  <div class="problem-detail">
+    <div class="head">
+      <img alt="" class="avatar-img" src="assets/imgs/avater/avater_card.png">
+      <div class="avatar-body">
+        <div class="name">
+          <em class="text">张小明</em>
+          <em class="time">2018-1-27</em>
         </div>
+        <div class="detail">灯具／灯不亮了</div>
+        <div class="firm">
+          维修厂商：北京苏南方圆建设有限公司
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="add-photo">
+    <i class="icon-add-photo"></i>
+    <em class="text">添加问题</em>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <div class="ibox-footer-input">
+    <input type="text" placeholder="备注说明...">
+    <button type="submit"></button>
+  </div>
+  <div class="ibox-footer-button">
+    <button class="footer-btn btn-normal" (click)="goToOtherPage()">保存</button>
+    <button class="footer-btn btn-success" (click)="goToOtherPage()">提交</button>
+  </div>
+</ion-footer>

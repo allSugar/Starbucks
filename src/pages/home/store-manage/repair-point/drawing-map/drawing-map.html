@@ -19,16 +19,17 @@
     </ul>
   </div>
   <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>
-  <i class="icon-add-question" ngDraggable #block="ngDraggable" [preventDefaultEvent]="true" 
-  (endOffset)="dragend($event, block)"></i>
+  <i class="icon-add-question" ngDraggable [bounds]="area" [inBounds]="true" #block="ngDraggable" [preventDefaultEvent]="true"
+    (endOffset)="dragend($event, block)"></i>
 </ion-header>
 
 <ion-content>
   <div class="drag-area" #area>
-    <div class="drag-img" ngDraggable [bounds]="area" [inBounds]="true"  [outOfBounds]="edge" #myBounds>
-      <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1524388066&di=e7f0272e8ad8ade81a2562f183872db9&src=http://pic.58pic.com/58pic/16/79/04/11C58PICGWF_1024.jpg" alt="">
-      <div class="draggable" ngDraggable [bounds]="myBounds" [ngStyle]="{'left':'10px','top':'20px'}"
-      [preventDefaultEvent]="true" [inBounds]="true"></div>
+    <div class="drag-img" ngDraggable [bounds]="area" [inBounds]="true" [outOfBounds]="edge" #myBounds>
+      <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1524388066&di=e7f0272e8ad8ade81a2562f183872db9&src=http://pic.58pic.com/58pic/16/79/04/11C58PICGWF_1024.jpg"
+        alt="">
+      <div class="draggable" ngDraggable [bounds]="myBounds" [ngStyle]="{'left':'10px','top':'20px'}" [preventDefaultEvent]="true"
+        [inBounds]="true"></div>
     </div>
   </div>
   <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>
@@ -45,7 +46,7 @@
         <i class="icon"></i>
         <em class="text">状态</em>
       </li>
-      <li class="item">
+      <li class="item" (click)="openCalendar()">
         <i class="icon"></i>
         <em class="text">日期</em>
       </li>

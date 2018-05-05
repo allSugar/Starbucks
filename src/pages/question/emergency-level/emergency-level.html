@@ -1,34 +1,27 @@
-
 <ion-header>
-
   <ion-navbar>
     <ion-title>吧台区</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content>
-  <ul class="status-page">
-    <li class="status-item-1">
-      <p class="icon-warn"></p>
-      <p class="word">紧急</p>
-      <label class="choose">
-        <div class="item-choice checkbox">
-          <input  [(ngModel)]="status" type="checkbox"  (change)="change()">
-          <ins class="checkbox-icon" (click)="goToOtherPage('AddProblemPage')"></ins>
-        </div>
-      </label>
-    </li>
-    <li class="status-item-2 m-t-l">
-      <p class="icon-normal"></p>
-      <p class="word">普通</p>
-      <label class="choose">
-        <div class="item-choice checkbox">
-          <input type="checkbox"  [(ngModel)]="status"  (change)="change()">
-          <ins class="checkbox-icon" (click)="goToOtherPage('AddProblemPage')"></ins>
-        </div>
-      </label>
-    </li>
-  </ul>
+  <div class="row-status-ibox">
+    <label class="row-item row-warn">
+      <i class="icon-warn"></i>
+      <em class="text">紧急</em>
+      <div class="item-choice checkbox">
+        <input type="checkbox" (change)="rowStatusChange('AddProblemPage')">
+        <ins class="checkbox-icon"></ins>
+      </div>
+    </label>
+    <label class="row-item row-normal">
+      <i class="icon-normal"></i>
+      <em class="text">普通</em>
+      <div class="item-choice checkbox">
+        <input type="checkbox" (change)="rowStatusChange('AddProblemPage')">
+        <ins class="checkbox-icon"></ins>
+      </div>
+    </label>
+  </div>
 </ion-content>

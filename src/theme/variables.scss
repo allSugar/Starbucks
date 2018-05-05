@@ -66,6 +66,9 @@ $red: #fc3d31;
 $gray: #333;
 $gray-light: #999;
 $yellow: #fdbe26;
+
+$rowStatusBg: 'warn' 'normal';
+
 @mixin transform($content) {
   -webkit-transform: $content;
   -moz-transform: $content;
@@ -156,3 +159,4 @@ $yellow: #fdbe26;
 @import 'comm';
 @import 'feedBtn';
 @import 'icon';
+@import 'calendar';

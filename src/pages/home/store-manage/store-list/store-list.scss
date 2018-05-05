@@ -1,3 +1,10 @@
 page-manage {
-
+  .row-ibox {
+    .row-list {
+      margin: 0;
+      .row-item {
+        padding-left: 15px;
+      }
+    }
+  }
 }

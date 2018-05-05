@@ -13,7 +13,9 @@ export class CalendarPage {
   date: Date = new Date();
   weekdays: any[] = ['日', '一', '二', '三', '四', '五', '六'];
 
-  constructor(public modalCtrl: ModalController) {
+  constructor(
+    public modalCtrl: ModalController
+  ) {
     console.log(this.weekdays);
   }
 
@@ -24,7 +26,7 @@ export class CalendarPage {
       weekdays: this.weekdays,
       defaultDate: this.date,
       closeLabel: '取消',
-      doneLabel:'确定'
+      doneLabel: '确定'
     };
 
     let myCalendar = this.modalCtrl.create(CalendarModal, {
@@ -40,7 +42,6 @@ export class CalendarPage {
       console.log(date);
       console.log('type', type);
     })
-
   }
 
   ionViewDidLoad() {
