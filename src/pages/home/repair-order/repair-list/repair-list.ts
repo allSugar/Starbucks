@@ -48,7 +48,12 @@ export class RepairListPage {
     this.status = name;
   }
 
-  goToOtherPage(item) {
-    this.navCtrl.push(this.status, { data: item });
+  goToOtherPage(name, item) {
+    if (name) {
+      this.navCtrl.push(name);
+    } else {
+      this.navCtrl.push(this.status, { data: item });
+    }
+
   }
 }

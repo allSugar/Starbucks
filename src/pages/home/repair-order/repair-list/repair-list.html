@@ -4,16 +4,13 @@
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-rate tabs-third">
-      <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }"
-       (click)="tabs('orderUndoPage')">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }" (click)="tabs('orderUndoPage')">
         <em class="text">待接单(8)</em>
       </li>
-      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }" 
-      (click)="tabs('OrderConductPage')">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }" (click)="tabs('OrderConductPage')">
         <em class="text">进行中(3)</em>
       </li>
-      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }" 
-      (click)="tabs('OrderDonePage')">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }" (click)="tabs('OrderDonePage')">
         <em class="text">已完成</em>
       </li>
     </ul>
@@ -63,7 +60,7 @@
 
 <ion-content>
   <div class="repair-list">
-    <repair-order-element *ngFor="let item of order" [data]="item" (goto)="goToOtherPage(item)"></repair-order-element>
+    <repair-order-element *ngFor="let item of order" [data]="item" (goto)="goToOtherPage($event,item)"></repair-order-element>
   </div>
   <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>
 

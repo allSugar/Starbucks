@@ -8,10 +8,10 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
 })
 export class OrderConductPage {
   navCtrl: any;
-  tabStatus:number= 0;
+  tabStatus: number = 0;
   constructor(
-      public app: App,
-      public navParams: NavParams
+    public app: App,
+    public navParams: NavParams
   ) {
     this.navCtrl = this.app.getRootNav();
   }
@@ -20,7 +20,10 @@ export class OrderConductPage {
     this.tabStatus = i;
   }
 
-  goToOtherPage() {
-    this.navCtrl.push('WorkerInfoPage');
+  goToOtherPage(name) {
+    this.navCtrl.push(name);
+  }
+  goToDetailPage() {
+    this.navCtrl.push('ProblemDetailPage');
   }
 }

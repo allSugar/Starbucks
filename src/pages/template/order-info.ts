@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'order-info',
-    template: `<div class="info">
+  selector: 'order-info',
+  template: `<div class="info">
     <div class="info-title">订单详情</div>
     <ul class="info-list" [ngClass]="{'info-show': status == 1}">
       <li class="info-item">
@@ -47,13 +47,12 @@ import { Component, Input } from '@angular/core';
   </div>`
 })
 export class OrderInfoTmpl {
-    @Input() data: any;
-    @Input() arr: any;
-    status: number = 0;
-    tabs (n: number) {
-        this.status = n;
-    }
-    constructor(){
-      console.log(this);
-    }
+  @Input() data: any;
+  @Input() arr: any;
+  status: number = 0;
+  constructor() {
+  }
+  tabs(n: number) {
+    this.status = n;
+  }
 }

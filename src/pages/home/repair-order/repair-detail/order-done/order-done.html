@@ -22,7 +22,7 @@
 
 <ion-content>
   <div class="order-detail" *ngIf="tabStatus == 0">
-    <div class="status">
+    <div class="status" (click)="goToOtherPage('WorkerInfoPage')">
       <em class="icon-smile"></em>
       <span class="title">维修单已完成</span>
       <em class="icon-arrow-right-white f-right"></em>
@@ -30,7 +30,7 @@
     </div>
     <order-info></order-info>
     <div class="point-list">
-      <order-point [retract]="false"></order-point>
+      <order-point [retract]="false" (goto)="goToDetailPage()"></order-point>
     </div>
     <div class="pay">
       <span>订单总金额</span>

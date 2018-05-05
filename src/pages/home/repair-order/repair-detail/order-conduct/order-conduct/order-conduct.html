@@ -19,15 +19,15 @@
 
 <ion-content>
   <div class="order-detail" *ngIf="tabStatus == 0">
-    <div class="status">
+    <div class="status" (click)="goToOtherPage('WorkerInfoPage')">
       <em class="icon-car"></em>
       <span class="title">维修员已出发</span>
       <em class="icon-arrow-right-white f-right"></em>
-      <i class="icon-avatar" (click)="goToOtherPage()"></i>
+      <i class="icon-avatar"></i>
     </div>
     <order-info></order-info>
     <div class="point-list">
-      <order-point [retract]="false"></order-point>
+      <order-point [done]="false" [retract]="false" (goto)="goToDetailPage()"></order-point>
     </div>
   </div>
   <div class="process-list" *ngIf="tabStatus == 1">

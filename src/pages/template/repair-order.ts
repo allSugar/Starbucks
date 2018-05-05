@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'repair-order-element',
   template: `<div class="repair-emement">
-    <div class="media-bar">
+    <div class="media-bar" (click)="goToOtherPage('StoreIndexPage')">
       <em class="icon-house"></em>
       <em class="f-left">北京钟楼百货星巴克</em>
       <em class="icon-arrow-right"></em>
@@ -39,7 +39,7 @@ export class RepairOrderTmpl {
   @Input() status: Number = 0;
   @Output() goto = new EventEmitter<any>();
   @Input() data: any;
-  goToOtherPage() {
-    this.goto.emit();
+  goToOtherPage(name) {
+    this.goto.emit(name);
   }
 }

@@ -16,18 +16,18 @@
 
 <ion-content>
   <div class="shop-list">
-    <div class="shop-detail" *ngFor="let item of store">
-      <p class="title">{{ item.name }}</p>
+    <div class="shop-detail" *ngFor="let item of ['回龙观店','天通苑店','西二旗店']">
+      <p class="title">{{ item }}</p>
       <div class="list clearfix">
         <div class="detail-item">
           <div class="detail-img">
-            <img src="{{ this. item.url1 ? (RES_ROOT + item.url1.fileRecord.filePath) : ''  }}" alt="">
+            <img src="/assets/imgs/change-before.png" alt="">
           </div>
           <p class="info">改造前</p>
         </div>
         <div class="detail-item">
           <div class="detail-img">
-            <img src="{{ this. item.url2 ? (RES_ROOT + item.url2.fileRecord.filePath) : ''  }}" alt="">
+            <img src="/assets/imgs/change-after.png" alt="">
           </div>
           <p class="info">改造后</p>
         </div>

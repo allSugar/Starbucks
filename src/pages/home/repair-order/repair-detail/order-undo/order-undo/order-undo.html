@@ -1,9 +1,7 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>待接单详情</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content>
@@ -14,7 +12,7 @@
     </div>
     <order-info [arr]="data"></order-info>
     <div class="point-list" >
-      <order-point (click)="goToOtherPage()"></order-point>
+      <order-point [done]="false" (goto)="goToDetailPage()"></order-point>
     </div>
   </div>
 </ion-content>
