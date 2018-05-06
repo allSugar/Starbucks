@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>维修分类</ion-title>
   </ion-navbar>
-  <tabs [status]="status"></tabs>
+  <tabs [status]="status" (goto)="tabs($event)"></tabs>
 </ion-header>
 
 
@@ -28,4 +28,5 @@
       </li>
     </ul>
   </div>
+  <div class="full-mask" *ngIf="status != 0" (click)="tabs(0)"></div>
 </ion-content>

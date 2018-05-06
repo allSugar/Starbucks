@@ -10,4 +10,8 @@ export class EfficiencyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+  status: number = 0;
+  tabs(n: number) {
+    this.status = n;
+  }
 }

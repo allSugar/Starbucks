@@ -14,6 +14,10 @@ export class VulnerablePartsPage {
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
 
+    status: number = 0;
+    tabs(n: number) {
+      this.status = n;
+    }
     data: any = [
         {title: '钟楼星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-m'},
         {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20',barClass: 'bar-orange-s'},

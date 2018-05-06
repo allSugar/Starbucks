@@ -14,6 +14,10 @@ export class DamageIndexPage {
   ) {
       this.navCtrl = this.app.getRootNav();
   }
+  status: number = 0;
+  tabs(n: number) {
+    this.status = n;
+  }
   goToOtherPage(item) {
       if(item.page) this.navCtrl.push(item.page);
   }

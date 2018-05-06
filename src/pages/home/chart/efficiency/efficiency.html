@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>厂商效率</ion-title>
   </ion-navbar>
-  <tabs [status]="status"></tabs>
+  <tabs [status]="status" (goto)="tabs($event)"></tabs>
 </ion-header>
 
 
@@ -49,4 +49,5 @@
       </div>
     </li>
   </ul>
+  <div class="full-mask" *ngIf="status != 0" (click)="tabs(0)"></div>
 </ion-content>

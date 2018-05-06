@@ -13,6 +13,10 @@ export class SortPage {
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }
+  status: number = 0;
+  tabs(n: number) {
+    this.status = n;
+  }
 
     data: any = [
         {title: '设备维修', percentage: '20%', price:'24000', count: '20'},

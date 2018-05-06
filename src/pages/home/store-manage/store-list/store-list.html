@@ -15,8 +15,8 @@
         <em class="text">全部店面</em>
       </li>
     </ul>
-    <div class="tabs-content" *ngIf="status == 1">
-      <ul class="select-list">
+    <div class="tabs-content">
+      <ul class="select-list" *ngIf="status == 1">
         <li class="item">
           <div class="item-img">
             <img src="assets/imgs/select/select-all.png" alt="">
@@ -29,6 +29,13 @@
           </div>
           <p class="name">李明明</p>
         </li>
+      </ul>
+      <ul class="ranking-list" *ngIf="status == 2">
+        <li class="ranking-item">星巴克</li>
+        <li class="ranking-item">苏南易维</li>
+        <li class="ranking-item active">星巴克</li>
+        <li class="ranking-item">苏南易维</li>
+        <li class="ranking-item">星巴克</li>
       </ul>
     </div>
   </div>

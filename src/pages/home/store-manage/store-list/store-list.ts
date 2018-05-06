@@ -52,6 +52,6 @@ export class StoreManageListPage {
   }
 
   tabs(n: number) {
-    this.status = n;
+    this.status = this.status == n ? 0 : n;
   }
 }

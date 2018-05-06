@@ -10,10 +10,10 @@
       <li class="tab-btn" [ngClass]="{ 'active': status ==2 }" (click)="tabs(2)">
         <em class="text">厂商</em>
       </li>
-      <li class="tab-btn">
+      <li class="tab-btn" [ngClass]="{ 'active': status ==3 }" (click)="tabs(3)">
         <em class="text">时间</em>
       </li>
-      <li class="tab-btn">
+      <li class="tab-btn" [ngClass]="{ 'active': status ==4 }" (click)="tabs(4)">
         <em class="text">问题</em>
       </li>
     </ul>
@@ -32,6 +32,36 @@
         <li class="ranking-item">苏南发电厂</li>
         <li class="ranking-item">苏南方圆建筑有限公司</li>
       </ul>
+      <div class="time-form" *ngIf="status == 3">
+        <div class="time-input">
+          <input placeholder="开始时间" type="text">
+          <div class="br"></div>
+          <input placeholder="结束时间" type="text">
+        </div>
+        <div class="time-list">
+          <div class="item active">45周</div>
+          <div class="item">46周</div>
+          <div class="item">46周</div>
+          <div class="item">本周</div>
+        </div>
+        <div class="time-list">
+          <div class="item active">9月</div>
+          <div class="item">10月</div>
+          <div class="item">11月</div>
+          <div class="item">本月</div>
+        </div>
+        <div class="time-list">
+          <div class="item active">2014年</div>
+          <div class="item">2015年</div>
+          <div class="item">2016年</div>
+          <div class="item">本年</div>
+        </div>
+        <div class="sort-btn">
+          <button class="btn-cancle">取消</button>
+          <button class="btn-sure" type="submit">确定</button>
+        </div>
+      </div>
+
     </div>
   </div>
 </ion-header>
@@ -51,5 +81,5 @@
       </div>
     </li>
   </ul>
-  <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>
+  <div class="full-mask" *ngIf="status != 0" (click)="tabs(0)"></div>
 </ion-content>

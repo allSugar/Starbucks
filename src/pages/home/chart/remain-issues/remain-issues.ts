@@ -11,8 +11,8 @@ export class RemainIssuesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  status: number;
+  status: number = 0;
   tabs(n: number) {
-    this.status = n;
+    this.status = this.status == n ? 0 : n;
   }
 }
