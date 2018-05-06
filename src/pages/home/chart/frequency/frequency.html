@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>维修频率</ion-title>
   </ion-navbar>
-  <tabs [status]="status"></tabs>
+  <tabs [status]="status" (goto)="tabs($event)"></tabs>
 </ion-header>
 
 <ion-content>
@@ -17,7 +17,7 @@
         <em class="bar-frequency-{{ i+1 }}"></em>
         <div class="data-body">
           <div class="data-head">
-            <span class="title">{{ item.title }}</span>
+            <span class="title" (click)="changeData()">{{ item.title }}</span>
             <span class="percentage">{{ item.percentage }}</span>
             <span class="price">￥{{ item.price }}</span>
             <em class="icon-arrow-right f-right"></em>

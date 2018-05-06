@@ -13,16 +13,35 @@ export class FrequencyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-    status: number = 0;
-    tabs(n: number) {
-        this.status = n;
-    }
+  status: number = 0;
+  tabs(n: number) {
+    this.status = n;
+  }
+  changeData(){
+    this.data = this.data2;
+  }
   data: any = [
+    {title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price:'24000', count: '20'},
+    {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20'},
+    {title: '后海星巴克', percentage: '20%', price:'24000', count: '20'},
+    {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20'},
+    {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20'}
+
+  ];
+  data1: any = [
       {title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price:'24000', count: '20'},
       {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20'},
       {title: '后海星巴克', percentage: '20%', price:'24000', count: '20'},
       {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20'},
       {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20'}
+
+  ];
+  data2: any = [
+    {title: '星期一', percentage: '20%', price:'24000', count: '20'},
+    {title: '星期二', percentage: '20%', price:'24000', count: '20'},
+    {title: '星期三', percentage: '20%', price:'24000', count: '20'},
+    {title: '星期四', percentage: '20%', price:'24000', count: '20'},
+    {title: '星期五', percentage: '20%', price:'24000', count: '20'}
 
   ];
   ionViewDidEnter() {

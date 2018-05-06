@@ -1,4 +1,4 @@
-import {Component, Input, Output } from '@angular/core';
+import {Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'tabs',
@@ -18,14 +18,14 @@ import {Component, Input, Output } from '@angular/core';
                 </li>
             </ul>
             <div class="tabs-content">
-                <ul class="ranking-list" [ngClass]="{ 'hide':status != 1 }" (click)="tabs(1)">
+                <ul class="ranking-list" [ngClass]="{ 'hide':status != 1 }">
                     <li class="ranking-item">全部</li>
                     <li class="ranking-item">厂商名字a-z</li>
                     <li class="ranking-item active">厂商名字z-a</li>
                     <li class="ranking-item">问题由多到少</li>
                     <li class="ranking-item">问题由少到多</li>
                 </ul>
-                <ul class="jurisdiction" [ngClass]="{ 'hide':status != 2 }" (click)="tabs(2)">
+                <ul class="jurisdiction" [ngClass]="{ 'hide':status != 2 }">
                     <li class="item">
                         <img src="assets/imgs/select/select-all.png" alt="">
                         <p class="text active">全部店面</p>
@@ -35,7 +35,7 @@ import {Component, Input, Output } from '@angular/core';
                         <p class="text">我管辖的</p>
                     </li>
                 </ul>
-                <div class="time-form" [ngClass]="{ 'hide':status != 3 }" (click)="tabs(3)">
+                <div class="time-form" [ngClass]="{ 'hide':status != 3 }">
                     <div class="time-input">
                         <input placeholder="开始时间" type="text">
                         <div class="br"></div>
@@ -69,8 +69,9 @@ import {Component, Input, Output } from '@angular/core';
 })
 export class TabsTmpl {
     @Input() status: number;
-
+    @Output() goto= new EventEmitter<number>();
     tabs(n: number) {
-        this.status = n;
+        this.status = this.status == n ? 0: n;
+        this.goto.emit(this.status);
     }
 }
