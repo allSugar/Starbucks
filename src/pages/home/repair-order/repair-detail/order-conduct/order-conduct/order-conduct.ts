@@ -23,7 +23,7 @@ export class OrderConductPage {
   goToOtherPage(name) {
     this.navCtrl.push(name);
   }
-  goToDetailPage() {
-    this.navCtrl.push('ProblemDetailPage');
+  goToDetailPage(name) {
+    this.navCtrl.push(name);
   }
 }

@@ -1,17 +1,17 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'order-point',
-    template: `<div class="point">
+  selector: 'order-point',
+  template: `<div class="point">
     <div class="point-title">
       <span>北京钟楼百货星巴克</span>
-      <em class="icon-arrow-right  f-none"></em>
+      <em class="icon-arrow-right f-none"></em>
     </div>
-    <div class="point-content" (click)="goToOtherPage()">
-      <div class="point-img">
+    <div class="point-content">
+      <div class="point-img" (click)="goToOtherPage('OrderImgDetailPage')">
         <img alt="" src="assets/imgs/change-before.png">
       </div>
-      <div class="point-body">
+      <div class="point-body" (click)="goToOtherPage('ProblemDetailPage')">
         <p class="point-describe">
           <span class="address">A区8栋一层吧台区</span>
           <span *ngIf="done" class="currency">¥ 500</span>
@@ -31,12 +31,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class OrderPointTmpl {
-    @Input() retract: Boolean = true;
-    @Input() done: Boolean = true;
-    @Output() goto = new EventEmitter<any>();
-    constructor(){}
 
-    goToOtherPage(){
+  @Input() retract: Boolean = true;
+  @Input() done: Boolean = true;
+  @Input() detail: Boolean = true;
+  @Output() goto = new EventEmitter<any>();
+
+  constructor() { }
+
+  goToOtherPage(name) {
+    if (name === "OrderImgDetailPage" || !this.done) {
       this.goto.emit(name);
     }
+  }
 }

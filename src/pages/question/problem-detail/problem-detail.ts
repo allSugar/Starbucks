@@ -10,10 +10,15 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
 export class ProblemDetailPage {
   navCtrl: any;
   constructor(
-      public app: App,
-      public navParams: NavParams
+    public app: App,
+    public navParams: NavParams
   ) {
     this.navCtrl = this.app.getRootNav();
+    if (this.navParams.get('remove')) {
+      let len = this.navParams.get('len'),
+      startIndex = this.navCtrl.getViews().length - len;
+      this.navCtrl.remove(startIndex, len);
+    }
   }
 
   goToOtherPage() {

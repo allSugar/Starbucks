@@ -13,6 +13,7 @@ export class DrawingMapPage {
   help: Boolean = false;
   easel: Boolean = false;
   status: any;
+  pointStatus: Number = 0;
   edge = {
     top: false,
     left: true,
@@ -29,7 +30,10 @@ export class DrawingMapPage {
   ) {
     this.navCtrl = this.app.getRootNav();
   }
-
+  tabs(number: Number) {
+    this.pointStatus = number;
+    this.handleFilter(false);
+  }
   handleFilter(name) {
     if (!name) {
       this.help = false;
@@ -45,7 +49,7 @@ export class DrawingMapPage {
   dragend(event, block) {
     if (!!block) {
       if (!!event.x && !!event.y) {
-        this.navCtrl.push("RepairPointListPage");
+        this.navCtrl.push("RepaireCategoryPage", { len: 4 });
       }
       block.resetPosition();
     }

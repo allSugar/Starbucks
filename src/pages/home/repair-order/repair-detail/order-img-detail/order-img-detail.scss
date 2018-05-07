@@ -1,0 +1,16 @@
+page-order-img-detail {
+  .scroll-content {
+    background-color: $white;
+  }
+  .img-ibox {
+    padding: 15px;
+    .img-item {
+      img {
+        vertical-align: top;
+      }
+      &+.img-item {
+        margin-top: 15px;
+      }
+    }
+  }
+}

@@ -16,9 +16,9 @@ export class EmergencyLevelPage {
   ) {
     this.navCtrl = this.app.getRootNav();
   }
-  
+
   rowStatusChange(name) {
-    this.navCtrl.push(name)
+    this.navCtrl.push(name, { len: this.navParams.get('len') })
   }
 
 }

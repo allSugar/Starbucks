@@ -1,4 +1,8 @@
 page-repair-kits {
+  .content-md,
+  .content-ios {
+    background-color: #224e9d;
+  }
   ion-header.header ion-navbar .toolbar-background {
     @include opacity(0);
   }
@@ -6,8 +10,11 @@ page-repair-kits {
     width: 100%;
     height: 170px;
     margin-top: -48px;
-    background-image: url("#{$image-bg}/bg_repair_kits.png");
-    background-size: cover;
+    background: {
+      image: url("#{$image-bg}/bg_repair_kits.png");
+      size: cover;
+      repeat: no-repeat;
+    }
     overflow: hidden;
   }
   .tab-container {

@@ -109,21 +109,28 @@ page-drawing-map {
       max-width: none;
     }
   }
-  .draggable {
+  .draggable-point {
     position: absolute;
     top: 0;
     left: 0;
     width: 30px;
     height: 30px;
     border: 1px solid $white;
-    background: #ff7653;
     line-height: 28px;
     text-align: center;
     color: $white;
     @include border_radius(100%);
-    @include box_shadow(0px 0px 21px rgba(251,
-    111,
-    76,
-    0.56));
+  }
+  .point-repair {
+    background-color: #ff7653;
+    @include box_shadow(0px 0px 21px rgba(251,111,76,.56));
+  }
+  .point-photo {
+    background-color: $green;
+    @include box_shadow(0px 0px 21px rgba(5,209,175,.56));
+  }
+  .point-file {
+    background-color: #00c5fe;
+    @include box_shadow(0px 0px 21px rgba(0,197,254,0.56));
   }
 }

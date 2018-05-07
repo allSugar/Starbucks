@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="add-photo">
-    <i class="icon-add-photo"></i>
+    <i class="icon-add-photo" (click)="presentActionSheet()"></i>
     <em class="text">添加问题</em>
   </div>
 </ion-content>
@@ -32,7 +32,6 @@
     <button type="submit"></button>
   </div>
   <div class="ibox-footer-button">
-    <button class="footer-btn btn-normal" (click)="goToOtherPage()">保存</button>
-    <button class="footer-btn btn-success" (click)="goToOtherPage()">提交</button>
+    <button class="footer-btn btn-success" (click)="goToOtherPage()">保存</button>
   </div>
 </ion-footer>

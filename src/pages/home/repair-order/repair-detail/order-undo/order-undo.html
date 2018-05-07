@@ -12,7 +12,7 @@
     </div>
     <order-info [arr]="data"></order-info>
     <div class="point-list">
-      <order-point [done]="false" (goto)="goToDetailPage()"></order-point>
+      <order-point [done]="false" (goto)="goToDetailPage($event)"></order-point>
     </div>
     <div class="add-photo">
       <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>

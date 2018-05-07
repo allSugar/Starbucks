@@ -10,14 +10,14 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
 export class RepaireCategoryPage {
   navCtrl: any;
   constructor(
-      public app: App,
-      public navParams: NavParams
+    public app: App,
+    public navParams: NavParams
   ) {
     this.navCtrl = this.app.getRootNav();
   }
 
   goToOtherPage() {
-    this.navCtrl.push('CategoryDetailPage')
+    this.navCtrl.push('CategoryDetailPage', { len: this.navParams.get('len') })
   }
 
 }

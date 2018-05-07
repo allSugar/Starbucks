@@ -27,7 +27,11 @@
     </div>
     <order-info></order-info>
     <div class="point-list">
-      <order-point [done]="false" [retract]="false" (goto)="goToDetailPage()"></order-point>
+      <order-point [done]="false" [retract]="false" (goto)="goToDetailPage($event)"></order-point>
+    </div>
+    <div class="add-photo">
+      <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>
+      <em class="text">添加问题</em>
     </div>
   </div>
   <div class="process-list" *ngIf="tabStatus == 1">

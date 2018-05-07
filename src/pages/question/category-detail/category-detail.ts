@@ -94,11 +94,14 @@ export class CategoryDetailPage {
     }
 
     goToOtherPage() {
-        this.navCtrl.push('EmergencyLevelPage');
+        this.navCtrl.push('EmergencyLevelPage',{ len: this.navParams.get('len') });
+    }
+    goToDetail(){
+        
     }
 
     ionViewWillEnter() {
-        this.callback = this.navParams.get("callback")
+        this.callback = this.navParams.get("callback");
     }
 
     onClear($event) {
