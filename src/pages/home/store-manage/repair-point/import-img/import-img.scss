@@ -1,0 +1,23 @@
+page-import-img {
+  .import-img {
+    padding-top: 3px;
+    overflow: hidden;
+    .item-img {
+      position: relative;
+      float: left;
+      width: 32%;
+      margin-bottom: 3px;
+      margin-left: .8%;
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+      [class*='icon-radio-'] {
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        margin-top: 0;
+      }
+    }
+  }
+}

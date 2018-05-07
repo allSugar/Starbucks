@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>客区</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ul class="import-img">
+    <li class="item-img" *ngFor="let item of img">
+      <img src="assets/imgs/import/{{ item.url }}.png" alt="">
+      <i class="icon-radio-selected"></i>
+    </li>
+  </ul>
+</ion-content>
