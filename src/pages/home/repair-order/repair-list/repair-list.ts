@@ -61,4 +61,17 @@ export class RepairListPage {
   show(n: number) {
     this.sta = this.sta == n ? 0 : n;
   }
+
+  oindex: Number = 0;
+  changeActive(i:Number) {
+    this.oindex = i;
+    this.sta = 0;
+  }
+  sort: object[] = [
+    { filter: '全部'},
+    { filter: '厂商名字a-z'},
+    { filter: '厂商名字z-a'},
+    { filter: '问题由多到少'},
+    { filter: '问题由少到多'}
+  ]
 }
