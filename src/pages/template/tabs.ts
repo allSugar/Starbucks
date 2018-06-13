@@ -19,11 +19,7 @@ import {Component, Input, Output, EventEmitter } from '@angular/core';
             </ul>
             <div class="tabs-content">
                 <ul class="ranking-list" [ngClass]="{ 'hide':status != 1 }">
-                    <li class="ranking-item">全部</li>
-                    <li class="ranking-item">厂商名字a-z</li>
-                    <li class="ranking-item active">厂商名字z-a</li>
-                    <li class="ranking-item">问题由多到少</li>
-                    <li class="ranking-item">问题由少到多</li>
+                    <li class="ranking-item" *ngFor="let item of contain;let i= index" [ngClass]="{'true':'active'}[i == oindex]" (click)="changeActive(i)">{{ item.filter }}</li>
                 </ul>
                 <ul class="jurisdiction" [ngClass]="{ 'hide':status != 2 }">
                     <li class="item">
@@ -72,6 +68,19 @@ export class TabsTmpl {
     @Output() goto= new EventEmitter<number>();
     tabs(n: number) {
         this.status = this.status == n ? 0: n;
+        this.goto.emit(this.status);
+    }
+    contain: object[] = [
+      { filter: '全部'},
+      { filter: '厂商名字a-z'},
+      { filter: '厂商名字z-a'},
+      { filter: '问题由多到少'},
+      { filter: '问题由少到多'}
+    ]
+    oindex: Number=0;
+    changeActive(i:Number) {
+        this.oindex = i;
+        this.status = 0;
         this.goto.emit(this.status);
     }
 }
