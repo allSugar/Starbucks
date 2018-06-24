@@ -17,19 +17,21 @@
 <ion-content>
   <div class="row-ibox">
     <div class="row-list">
-      <div class="row-item-box" *ngFor="let list of lists">
+      <div class="row-item-box" *ngFor="let item of storeRepairTemporaryBillList">
         <div class="row-item">
           <label class="item-choice checkbox">
             <input type="checkbox">
             <ins class="checkbox-icon"></ins>
           </label>
-          <div class="item-body" (click)="goToDetailPage()">
+          <div class="item-body" (click)="goToDetailPage(item.id)">
             <p class="title">灯具/射灯不亮</p>
             <p class="company">北京苏南方圆建设有限公司</p>
             <p class="location">一层平面-吧台区</p>
           </div>
           <div class="item-action" (click)="goToDetailPage()">
-            <ins class="tag tag-error">紧急</ins>
+            <ins class="tag tag-error" *ngIf="item.emergency === 1">十万火急</ins>
+            <ins class="tag tag-error" *ngIf="item.emergency === 2">紧急</ins>
+            <ins class="tag tag-error" *ngIf="!item.emergency || item.emergency === 3">普通</ins>
           </div>
         </div>
       </div>
@@ -46,8 +48,9 @@
     </label>
     <div class="float-sum">
       <em class="text">共计：</em>
-      <em class="text">6个</em>
+      <em class="text">{{ storeRepairTemporaryBillList.length }}个</em>
     </div>
-    <button class="float-btn" (click)="goToOtherPage('RepairListPage')">提交</button>
+    <button class="float-btn" (click)="goToOtherPage('RepairListPage')" *ngIf="!storeRepairTemporaryBillList.length">提交</button>
+    <button class="float-btn" *ngIf="storeRepairTemporaryBillList.length">提交</button>
   </div>
 </ion-footer>

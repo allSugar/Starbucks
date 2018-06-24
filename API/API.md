@@ -1,7 +1,7 @@
 # 本地测试（http://localhost:8080/YunZhuServer/yunzhuApi/getData）
 # 外网测试（http://121.42.197.153:8080/YunZhuServer/yunzhuApi/getData）
 # 外网正式（http://www.sunanyun.com/yunzhuApi/getData）
-# API介绍 （http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
+# API介绍（http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
 
 ### 登录
 2.37　 根据用户名获取用户简要信息及账号列表(done)
@@ -41,7 +41,7 @@
 &higherStaffType=4&staffSource=2&staffType=5&clientId=14a01fdab38b4bf3b93781e20aa3777b<br>
 &appkey=123456&appsecret=123456
 ```
-11.1　 根据门店ID或门店代码获取门店信息  (10.38 done)
+11.1　 根据门店ID或门店代码获取门店信息  ( done)
 ```
 ?method=repair.getStoreInfoByIdOrCode&id=5&clientId=14a01fdab38b4bf3b93781e20aa3777b
 &appkey=123456&appsecret=123456

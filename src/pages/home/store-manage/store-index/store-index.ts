@@ -10,9 +10,10 @@ export class StoreIndexPage {
 
   @ViewChild(Slides) slides: Slides;
   navCtrl: any;
+  storeInfoId: number;
   category: Object[] = [
-    { url: 'repair_kits', name: '维修包', page: 'RepairKitsPage'},
-    { url: 'cloud-smart', name: '云智能', page:'CloudSmartPage'},
+    { url: 'repair_kits', name: '维修包', page: 'RepairKitsPage' },
+    { url: 'cloud-smart', name: '云智能', page: 'CloudSmartPage' },
     { url: 'cloud', name: '云盘', page: 'CloudListPage' },
     { url: 'chart', name: '统计', page: 'ChartListPage' },
     { url: 'repair_place', name: '问题管理', page: 'RepairPointListPage' }
@@ -26,14 +27,13 @@ export class StoreIndexPage {
   }
 
   goToOtherPage(item) {
-    if (item.page) {
-      this.navCtrl.push(item.page);
-    }else {
-      this.navCtrl.push(item);
-    }
+    this.navCtrl.push(item.page ? item.page : item, {
+      storeInfoId: this.storeInfoId
+    });
   }
 
   ionViewDidLoad() {
+    this.storeInfoId = this.navParams.get("storeInfoId");
     this.slides.autoplayDisableOnInteraction = false;
   }
 }

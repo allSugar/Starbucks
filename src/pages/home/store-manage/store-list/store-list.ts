@@ -37,8 +37,9 @@ export class StoreManageListPage {
         this.storeList = res.responseObj;
         for (let i = 0; i < this.storeList.length; i++) {
           this.store.push({
-              name: this.storeList[i].storeName,
-              url: this.storeList[i].shopPhotoList[0]
+            id: this.storeList[i].id,
+            name: this.storeList[i].storeName,
+            url: this.storeList[i].shopPhotoList[0]
           });
         }
       };
@@ -48,7 +49,9 @@ export class StoreManageListPage {
 
   }
   goToOtherPage(item) {
-    this.navCtrl.push('StoreIndexPage');
+    this.navCtrl.push('StoreIndexPage', {
+      storeInfoId: item ? item.id : 0
+    });
   }
 
   tabs(n: number) {
