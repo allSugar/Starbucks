@@ -27,12 +27,18 @@ export class HttpService {
 
     //get请求
     get(params: any, ROOT: Boolean = true): Observable<any> {
-        if (params) var url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
+        if (typeof ROOT === "undefined") {
+            params = params || {};
+            params.clientId = '14a01fdab38b4bf3b93781e20aa3777b';
+        }
+        let url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
         return this.http.get(url, { headers: this.headers }).map(res => res.json());
     }
 
     //post请求
     post(params: any): Observable<any> {
+        params = params || {};
+        params.clientId = '14a01fdab38b4bf3b93781e20aa3777b';
         return this.http.post(API_ROOT, querystring.stringify(params), { headers: this.headers }).map(res => res.json());
     }
 }

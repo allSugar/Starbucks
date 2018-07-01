@@ -2,13 +2,20 @@
   <ion-navbar>
     <ion-title>苏南易维</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="goToOtherPage('DrawingMapPage')">
+      <button ion-button icon-only (click)="toggleMenu()">
         <ion-icon name="map"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
-
+<div *ngIf="menuStatus" class="slider-ibox">
+  <div class="slider-content">
+    <ul class="list">
+      <li class="item" *ngFor="let item of drawingList" (click)="goToOtherPage('DrawingMapPage',item)">{{ item.dataContent }}</li>
+    </ul>
+  </div>
+  <i class="slider-mask" (click)="toggleMenu()"></i>
+</div>
 <ion-content>
   <ion-slides autoplay="4200" loop="true" pager="true">
     <ion-slide *ngFor="let n of [1,2,3,4]">

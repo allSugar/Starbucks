@@ -3,6 +3,7 @@ import { IonicPage, App, NavParams, ModalController } from 'ionic-angular';
 import { CalendarModal, CalendarModalOptions } from 'ion2-calendar';
 
 import { HttpService } from '../../../../../service/HttpService';
+import { RES_ROOT } from '../../../../../providers/httpUrl';
 
 @IonicPage()
 @Component({
@@ -30,12 +31,18 @@ export class DrawingMapPage {
     left: 0
   };
   orignal: any = {
-    x: 0,
-    y: 0
+    coordinateX: 0,
+    coordinateY: 0
   };
   clientWidth: any;
   date: Date = new Date();
   weekdays: any[] = ['日', '一', '二', '三', '四', '五', '六'];
+  storeInfoId: Number;
+  drawingId: Number;
+  RES_ROOT: string;
+  drawingImg: Object = {
+    fileRecord: {}
+  };
 
   constructor(
     public app: App,
@@ -44,10 +51,24 @@ export class DrawingMapPage {
     public http: HttpService
   ) {
     this.navCtrl = this.app.getRootNav();
+    this.drawingId = this.navParams.get("drawingId");
+    this.storeInfoId = this.navParams.get("storeInfoId");
+    this.RES_ROOT = RES_ROOT;
+    this.getDrawingImg();
     this.getPointListData();
   }
+  getDrawingImg() {
+    let params = { method: "store.findStoreCompletionDataFile", id: this.drawingId, fileType: 2 };
+    this.http.get(params).subscribe(res => {
+      if (!!res && res.responseCode == 162030 && res.responseObj.length) {
+        this.drawingImg = res.responseObj[0];
+      }
+    }, error => {
+
+    });
+  }
   getPointListData() {
-    let params = { method: "store.findPoint", clientId: '14a01fdab38b4bf3b93781e20aa3777b', type: 2 };
+    let params = { method: "store.findPoint", type: 2, drawingId: this.drawingId };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 179020) {
         console.log(res);
@@ -84,7 +105,7 @@ export class DrawingMapPage {
         this.position.y = event.y;
         this.orignal.coordinateX = this.clientWidth - 30 - this.position.left + this.position.x;
         this.orignal.coordinateY = this.position.y;
-        this.navCtrl.push("RepaireCategoryPage", { len: 4 });
+        this.navCtrl.push("RepaireCategoryPage", { len: 4, storeInfoId: this.storeInfoId });
       }
       block.resetPosition();
     }

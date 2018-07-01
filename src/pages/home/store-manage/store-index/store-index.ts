@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { App, IonicPage, NavParams, Slides } from 'ionic-angular';
 
+import { HttpService } from '../../../../service/HttpService';
+
 @IonicPage()
 @Component({
   selector: 'page-index',
@@ -10,7 +12,9 @@ export class StoreIndexPage {
 
   @ViewChild(Slides) slides: Slides;
   navCtrl: any;
-  storeInfoId: number;
+  menuStatus: Boolean = false;
+  storeInfoId: any;
+  drawingList: Object;
   category: Object[] = [
     { url: 'repair_kits', name: '维修包', page: 'RepairKitsPage' },
     { url: 'cloud-smart', name: '云智能', page: 'CloudSmartPage' },
@@ -21,19 +25,43 @@ export class StoreIndexPage {
 
   constructor(
     public app: App,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public http: HttpService
   ) {
+    this.storeInfoId = this.navParams.get("storeInfoId");
     this.navCtrl = this.app.getRootNav();
+    this.getDrawingList();
   }
 
-  goToOtherPage(item) {
-    this.navCtrl.push(item.page ? item.page : item, {
-      storeInfoId: this.storeInfoId
+  toggleMenu() {
+    this.menuStatus = !this.menuStatus;
+  }
+
+  getDrawingList() {
+    let params = { method: "store.findStoreCompletionData", storeInfoId: this.storeInfoId ? this.storeInfoId : 1 };
+    this.http.get(params).subscribe(res => {
+      if (!!res && res.responseCode == 161030) {
+        this.drawingList = res.responseObj;
+      }
+    }, error => {
+
     });
   }
 
+  goToOtherPage(item, self) {
+    let obj = {
+      storeInfoId: "",
+      drawingId: ""
+    };
+    if (self) {
+      obj.storeInfoId = this.storeInfoId;
+      obj.drawingId = self.id;
+    }
+    this.navCtrl.push(item.page ? item.page : item, obj);
+  }
+
   ionViewDidLoad() {
-    this.storeInfoId = this.navParams.get("storeInfoId");
+
     this.slides.autoplayDisableOnInteraction = false;
   }
 }

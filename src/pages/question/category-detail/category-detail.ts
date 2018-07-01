@@ -35,6 +35,7 @@ export class CategoryDetailPage {
         this.navCtrl = this.app.getRootNav();
         this.getData();
     }
+    // repair.findStoreRepairWarehouseForPage  维修库
     getData() {
         this.http.get("assets/data/hotWord.json", false).subscribe(res => {
             this.remitBanks = res;
@@ -61,7 +62,7 @@ export class CategoryDetailPage {
      *定位查找首字母对应的通讯录
      */
     scrollToTop(letter, event) {
-        console.log(letter,event);
+        console.log(letter, event);
         this.show(letter, 1000);
         if (this.elementRef.nativeElement.querySelector("#" + letter)) {
             let scrollTop = this.elementRef.nativeElement.querySelector("#" + letter).offsetTop;
@@ -94,10 +95,10 @@ export class CategoryDetailPage {
     }
 
     goToOtherPage() {
-        this.navCtrl.push('EmergencyLevelPage',{ len: this.navParams.get('len') });
+        this.navCtrl.push('EmergencyLevelPage', { len: this.navParams.get('len') });
     }
-    goToDetail(){
-        
+    goToDetail() {
+
     }
 
     ionViewWillEnter() {

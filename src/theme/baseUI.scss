@@ -66,3 +66,31 @@
     background-size: 100%;
   }
 }
+
+.slider-ibox {
+  .slider-content,
+  .slider-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 21;
+  }
+  .slider-content {
+    left: 50%;
+    background-color: $white;
+  }
+  .slider-mask {
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, .5);
+  }
+  .list {
+    .item {
+      padding: 10px 0 10px 15px;
+      &+.item {
+        border-top: 1px solid $border;
+      }
+    }
+  }
+}
