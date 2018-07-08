@@ -11,13 +11,15 @@ import "rxjs/add/operator/switchMap";
 import "rxjs/add/observable/throw";
 import * as querystring from 'querystring';
 import { API_ROOT } from "../providers/httpUrl";
+import { LoginService } from "./LoginService"
 
 @Injectable()
 export class HttpService {
+
     constructor(
-        private http: Http
-    ) {
-    }
+        private http: Http,
+        public login: LoginService
+    ) { }
 
     headers = new Headers({
         "Accept": "application/json",
@@ -27,9 +29,9 @@ export class HttpService {
 
     //get请求
     get(params: any, ROOT: Boolean = true): Observable<any> {
-        if (typeof ROOT === "undefined") {
+        if (typeof params !== "string") {
             params = params || {};
-            params.clientId = '14a01fdab38b4bf3b93781e20aa3777b';
+            params.clientId = this.login.userInfo["clientId"];
         }
         let url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
         return this.http.get(url, { headers: this.headers }).map(res => res.json());
@@ -38,7 +40,7 @@ export class HttpService {
     //post请求
     post(params: any): Observable<any> {
         params = params || {};
-        params.clientId = '14a01fdab38b4bf3b93781e20aa3777b';
+        params.clientId = this.login.userInfo["clientId"];
         return this.http.post(API_ROOT, querystring.stringify(params), { headers: this.headers }).map(res => res.json());
     }
 }

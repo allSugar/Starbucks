@@ -12,12 +12,20 @@ export class ProblemDetailPage {
 
   navCtrl: any;
   detailData: Object = [];
+  pointId: any;
+  storeInfoId: any;
+  problem: any;
+
   constructor(
     public app: App,
     public navParams: NavParams,
     public http: HttpService
   ) {
     this.navCtrl = this.app.getRootNav();
+    if (this.navParams.get("pointId")) {
+      this.pointId = this.navParams.get("pointId");
+      this.storeInfoId = this.navParams.get("storeInfoId");
+    }
     if (this.navParams.get('remove')) {
       let len = this.navParams.get('len'),
         startIndex = this.navCtrl.getViews().length - len;
@@ -27,11 +35,7 @@ export class ProblemDetailPage {
   }
 
   getListData() {
-    let id;
-    if (this.navParams.get("id")) {
-      id = this.navParams.get("id");
-    }
-    let params = { method: "repair.getStoreRepairTemporaryBillById", clientId: '14a01fdab38b4bf3b93781e20aa3777b', id: id };
+    let params = { method: "repair.getStoreRepairTemporaryBillById", id: this.pointId };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 165040) {
         this.detailData = res.responseObj;
@@ -41,7 +45,7 @@ export class ProblemDetailPage {
     });
   }
   goToOtherPage() {
-    this.navCtrl.push('RepaireCategoryPage');
+    this.navCtrl.push('RepaireCategoryPage', { len: 2, storeInfoId: this.storeInfoId });
   }
 
 }

@@ -19,8 +19,10 @@ export abstract class BaseUI {
      * @returns {Loading} 
      * @memberof BaseUI
      */
-    protected showLoading(loadingCtrl: LoadingController,
-        message: string): Loading {
+    protected showLoading(
+        loadingCtrl: LoadingController,
+        message: string = "请稍后"
+    ): Loading {
         let loader = loadingCtrl.create({
             content: message,
             dismissOnPageChange: true //页面变化的时候自动关闭 loading
@@ -35,7 +37,7 @@ export abstract class BaseUI {
      * 
      * @protected
      * @param {ToastController} toastCtrl 
-     * @param {string} message 
+     * @param {string} message  
      * @returns {Toast} 
      * @memberof BaseUI
      */

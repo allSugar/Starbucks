@@ -11,7 +11,7 @@
 <ion-content>
   <div class="row-ibox">
     <ul class="row-list">
-      <li class="row-item" *ngFor="let item of RepairWarehouse;let i = index" (click)="goToOtherPage()">
+      <li class="row-item" *ngFor="let item of RepairWarehouse;let i = index" (click)="goToOtherPage(item)">
         <div class="item-icon">
           <i class="icon-stage-{{ i + 1 }}"></i>
         </div>

@@ -47,7 +47,9 @@ export class CategoryDetailPage {
             })
             for (var i = 0; i < this.formatContacts.length; i++) {
                 for (var j = 0; j < this.formatContacts[i].length; j++) {
-                    if (this.formatContacts[i][j].hotWord) this.hotWord.push(this.formatContacts[i][j].hotWord);
+                    if (this.formatContacts[i][j].hotWord) {
+                        this.hotWord.push(this.formatContacts[i][j].hotWord);
+                    }
                 }
             }
         }, error => {
@@ -95,7 +97,7 @@ export class CategoryDetailPage {
     }
 
     goToOtherPage() {
-        this.navCtrl.push('EmergencyLevelPage', { len: this.navParams.get('len') });
+        this.navCtrl.push('EmergencyLevelPage', { len: this.navParams.get('len') + 1 });
     }
     goToDetail() {
 

@@ -31,7 +31,7 @@
       <!-- <img src="{{ RES_ROOT + drawingImg.fileRecord.filePath + drawingImg.fileRecord.fileName }}" -->
         <!-- alt=""> -->
         <!-- repair 红色  photo 绿色 file 蓝色 -->
-      <!-- <i class="draggable-point point-repair" *ngIf="pointStatus == 1 || pointStatus == 0" [ngStyle]="{'left':'183px','top':'275px'}"
+      <i class="draggable-point point-repair" *ngIf="pointStatus == 1 || pointStatus == 0" [ngStyle]="{'left':'183px','top':'275px'}"
         (click)="goToOtherPage('ProblemDetailPage')"></i>
       <i class="draggable-point point-repair" *ngIf="pointStatus == 1 || pointStatus == 0" [ngStyle]="{'left':'100px','top':'275px'}"
         (click)="goToOtherPage('ProblemDetailPage')"></i>
@@ -42,7 +42,7 @@
       <i class="draggable-point point-file" *ngIf="pointStatus == 3 || pointStatus == 0" [ngStyle]="{'left':'252px','top':'215px'}"
         (click)="goToOtherPage('ImportFilePage')"></i>
       <i class="draggable-point point-file" *ngIf="pointStatus == 3 || pointStatus == 0" [ngStyle]="{'left':'152px','top':'315px'}"
-        (click)="goToOtherPage('ImportFilePage')"></i> -->
+        (click)="goToOtherPage('ImportFilePage')"></i>
     </div>
   </div>
   <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>
@@ -71,15 +71,18 @@
   </div>
   <div class="filter-list" *ngIf="help">
     <ul class="list">
-      <li class="item" (click)="tabs(1)" [ngClass]="{ 'active' : pointStatus == 1 }" (click)="goToOtherPage('RepairPointListPage')">
+      <!-- (click)="goToOtherPage('RepairPointListPage')" -->
+      <li class="item" (click)="tabs(1)" [ngClass]="{ 'active' : pointStatus == 1 }" (click)="tabs(1)">
         <i class="icon"></i>
         <em class="text">问题</em>
       </li>
-      <li class="item" (click)="tabs(2)" [ngClass]="{ 'active' : pointStatus == 2 }" (click)="goToOtherPage('ImportImgPage')">
+      <!-- (click)="goToOtherPage('ImportImgPage')" -->
+      <li class="item" (click)="tabs(2)" [ngClass]="{ 'active' : pointStatus == 2 }" (click)="tabs(2)">
         <i class="icon"></i>
         <em class="text">照片</em>
       </li>
-      <li class="item" (click)="tabs(3)" [ngClass]="{ 'active' : pointStatus == 3 }" (click)="goToOtherPage('ImportFilePage')">
+      <!-- (click)="goToOtherPage('ImportFilePage')" -->
+      <li class="item" (click)="tabs(3)" [ngClass]="{ 'active' : pointStatus == 3 }" (click)="tabs(3)">
         <i class="icon"></i>
         <em class="text">文件</em>
       </li>

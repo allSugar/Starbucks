@@ -30,9 +30,13 @@ export class DrawingMapPage {
     y: 0,
     left: 0
   };
-  orignal: any = {
+  Point: any = {
+    method: "store.createPoint",
     coordinateX: 0,
-    coordinateY: 0
+    coordinateY: 0,
+    type: 2,
+    diameter: 30,
+    colour: "point-repair",
   };
   clientWidth: any;
   date: Date = new Date();
@@ -52,8 +56,9 @@ export class DrawingMapPage {
   ) {
     this.navCtrl = this.app.getRootNav();
     this.drawingId = this.navParams.get("drawingId");
-    this.storeInfoId = this.navParams.get("storeInfoId");
+    this.Point.storeInfoId = this.navParams.get("storeInfoId");
     this.RES_ROOT = RES_ROOT;
+    this.Point.drawingId = this.drawingId;
     this.getDrawingImg();
     this.getPointListData();
   }
@@ -78,6 +83,13 @@ export class DrawingMapPage {
     });
   }
   tabs(number: Number) {
+    if (number <= 1) {
+      this.Point.colour = "point-repair";
+    } else if (number === 2) {
+      this.Point.colour = "point-photo";
+    } else if (number === 3) {
+      this.Point.colour = "point-file";
+    }
     this.pointStatus = number;
     this.handleFilter(false);
   }
@@ -103,9 +115,9 @@ export class DrawingMapPage {
       if (!!event.x && !!event.y) {
         this.position.x = event.x;
         this.position.y = event.y;
-        this.orignal.coordinateX = this.clientWidth - 30 - this.position.left + this.position.x;
-        this.orignal.coordinateY = this.position.y;
-        this.navCtrl.push("RepaireCategoryPage", { len: 4, storeInfoId: this.storeInfoId });
+        this.Point.coordinateX = this.clientWidth - 30 - this.position.left + this.position.x;
+        this.Point.coordinateY = this.position.y;
+        this.navCtrl.push("RepaireCategoryPage", { len: 0, Point: this.Point });
       }
       block.resetPosition();
     }

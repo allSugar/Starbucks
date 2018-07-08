@@ -6,6 +6,9 @@ import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { Storage } from '@ionic/storage';
+
+import { HttpService } from '../../../service/HttpService';
 
 declare var cordova: any; //导入第三方的库定义到 TS 项目中
 
@@ -18,9 +21,12 @@ export class AddProblemPage extends BaseUI {
 
 
   navCtrl: any;
-  len: Number = 5;
+  len: any;
   userId: string;
   lastImage: string = null;
+  problem: any;
+  Point: any;
+
   constructor(
     public app: App,
     public navParams: NavParams,
@@ -32,22 +38,50 @@ export class AddProblemPage extends BaseUI {
     public camera: Camera,
     public transfer: FileTransfer,
     public file: File,
-    public filePath: FilePath
+    public filePath: FilePath,
+    public storage: Storage,
+    public http: HttpService
   ) {
     super();
-    this.navCtrl = this.app.getRootNav();
+
+    this.Point = this.navParams.get('Point');
+    this.problem = this.navParams.get('problem');
+    this.problem.date = this.crtTimeFtt(new Date());
     let len = this.navParams.get('len');
     if (len) {
       this.len = len;
     }
+
+    this.storage.get("userInfo").then(res => {
+      this.problem.name = JSON.parse(res).name;
+    });
+
+    this.navCtrl = this.app.getRootNav();
   }
 
   ionViewDidEnter() {
     this.userId = '1';
   }
 
+  creatPoint() {
+    let loading = super.showLoading(this.loadingCtrl);
+    this.http.get(this.Point).subscribe(res => {
+      loading.dismiss();
+      if (!!res && res.responseCode === 179010) {
+        this.creatProblem();
+      }
+    });
+  }
+  creatProblem() {
+    this.http.post(this.problem).subscribe(res => {
+      if (!!res && res.responseCode === 165010) {
+        this.goToOtherPage();
+      }
+    });
+  }
   goToOtherPage() {
-    this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len });
+    console.log(this);
+    this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len + 1 });
   }
 
   presentActionSheet() {
@@ -150,7 +184,7 @@ export class AddProblemPage extends BaseUI {
 
     const fileTransfer: FileTransferObject = this.transfer.create();
 
-    var loading = super.showLoading(this.loadingCtrl, targetPath);
+    let loading = super.showLoading(this.loadingCtrl, targetPath);
 
     //开始正式地上传
     fileTransfer.upload(targetPath, url, options).then(data => {
@@ -164,5 +198,12 @@ export class AddProblemPage extends BaseUI {
       loading.dismiss();
       super.showToast(this.toastCtrl, "图片上传发生错误，请重试。");
     });
+  }
+
+  crtTimeFtt(val) {
+    if (val != null) {
+      var date = new Date(val);
+      return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
   }
 }

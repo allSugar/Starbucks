@@ -12,11 +12,17 @@ import { HttpService } from '../../../service/HttpService';
 export class RepaireCategoryPage {
 
   navCtrl: any;
-  storeInfoId: Number;
+  storeInfoId: any;
+  Point: any;
   topClass: any;
   len: any;
-  page: String = "CategoryDetailPage";
+  page: String = "EmergencyLevelPage";
+  // page: String = "RepaireCategoryPage";
   RepairWarehouse: Object[];
+  higherLevelId: any;
+  problem: any = {
+    method: "repair.saveStoreRepairTemporaryBill"
+  };
 
   constructor(
     public app: App,
@@ -24,16 +30,29 @@ export class RepaireCategoryPage {
     public http: HttpService
   ) {
     this.navCtrl = this.app.getRootNav();
+    this.Point = this.navParams.get("Point");
     this.storeInfoId = this.navParams.get("storeInfoId");
     let topClass = this.navParams.get("topClass");
     this.topClass = topClass ? topClass : 1;
-    this.len = this.navParams.get('len');
+    this.len = this.navParams.get("len");
+    this.problem = this.navParams.get("problem") || {};
+    console.log(this.storeInfoId ? this.storeInfoId : (this.Point.storeInfoId ? this.Point.storeInfoId : 1));
+    this.problem.storeInfoId = this.storeInfoId ? this.storeInfoId : (this.Point.storeInfoId ? this.Point.storeInfoId : 1);
+
+    if (this.navParams.get("higherLevelId")) {
+      this.higherLevelId = this.navParams.get("higherLevelId");
+    }
 
     this.getRepairWarehouse();
   }
 
   getRepairWarehouse() {
-    let params = { method: "repair.findStoreRepairWarehouseForPage", storeInfoId: this.storeInfoId ? this.storeInfoId : 1, topClass: this.topClass };
+    let params = { method: "repair.findStoreRepairWarehouseForPage", storeInfoId: this.problem.storeInfoId, topClass: this.topClass, higherLevelId: "" };
+    if (this.higherLevelId) {
+      params.higherLevelId = this.higherLevelId;
+    } else {
+      delete params.higherLevelId;
+    }
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 164030 && res.responseObj.length) {
         this.RepairWarehouse = res.responseObj;
@@ -42,8 +61,10 @@ export class RepaireCategoryPage {
 
     });
   }
-  goToOtherPage() {
-    this.navCtrl.push(this.page, { len: this.len, topClass: this.topClass + 1 })
+  goToOtherPage(item) {
+    this.problem.describe = this.problem.describe || "";
+    this.problem.describe += (item.repairContent + "/");
+    this.problem.storeRepairWarehouseId = item.id;
+    this.navCtrl.push(this.page, { len: this.len + 1, topClass: item.topClass + 1, higherLevelId: item.id, problem: this.problem, Point: this.Point });
   }
-
 }

@@ -25,7 +25,7 @@ export class RepairPointListPage {
   }
 
   getListData() {
-    let params = { method: "repair.findStoreRepairTemporaryBillList", clientId: '14a01fdab38b4bf3b93781e20aa3777b' };
+    let params = { method: "repair.findStoreRepairTemporaryBillList" };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 165030) {
         this.storeRepairTemporaryBillList = res.responseObj;
@@ -37,9 +37,10 @@ export class RepairPointListPage {
   goToOtherPage(name) {
     this.navCtrl.push(name);
   }
-  goToDetailPage(id) {
+  goToDetailPage(pointId) {
     this.navCtrl.push("ProblemDetailPage", {
-      id: id
+      pointId: pointId,
+      storeInfoId: this.storeInfoId
     });
   }
 }

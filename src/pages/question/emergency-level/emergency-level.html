@@ -4,14 +4,13 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content>
   <div class="row-status-ibox">
     <label class="row-item row-warn">
       <i class="icon-warn"></i>
       <em class="text">紧急</em>
       <div class="item-choice checkbox">
-        <input type="checkbox" (change)="rowStatusChange('AddProblemPage')">
+        <input name="emergency" value="2" type="radio" [(ngModel)]="problem.emergency" (change)="rowStatusChange(problem.emergency)">
         <ins class="checkbox-icon"></ins>
       </div>
     </label>
@@ -19,7 +18,7 @@
       <i class="icon-normal"></i>
       <em class="text">普通</em>
       <div class="item-choice checkbox">
-        <input type="checkbox" (change)="rowStatusChange('AddProblemPage')">
+        <input name="emergency" value="3" type="radio" [(ngModel)]="problem.emergency" (change)="rowStatusChange(problem.emergency)">
         <ins class="checkbox-icon"></ins>
       </div>
     </label>

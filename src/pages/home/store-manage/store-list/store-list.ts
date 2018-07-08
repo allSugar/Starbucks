@@ -31,7 +31,7 @@ export class StoreManageListPage {
   }
 
   getData() {
-    var params = { method: "store.findStoreInfoByStaff", clientId: '14a01fdab38b4bf3b93781e20aa3777b' };
+    var params = { method: "store.findStoreInfoByStaff" };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 157060) {
         this.storeList = res.responseObj;

@@ -50,18 +50,18 @@ export class StoreIndexPage {
 
   goToOtherPage(item, self) {
     let obj = {
-      storeInfoId: "",
-      drawingId: ""
+      storeInfoId: this.storeInfoId ? this.storeInfoId : 1,
+      drawingId: self ? self.id : ""
     };
-    if (self) {
-      obj.storeInfoId = this.storeInfoId;
-      obj.drawingId = self.id;
-    }
+    this.menuStatus = false;
     this.navCtrl.push(item.page ? item.page : item, obj);
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    this.menuStatus = false;
+  }
 
+  ionViewDidLoad() {
     this.slides.autoplayDisableOnInteraction = false;
   }
 }

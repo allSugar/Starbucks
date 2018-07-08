@@ -25,10 +25,7 @@ export class OrderDonePage {
         this.navCtrl = this.app.getRootNav();
     }
     material() {
-        var params = {
-            method: 'repair.findStoreRepairOrderGoods',
-            clientId: '14a01fdab38b4bf3b93781e20aa3777b'
-        }
+        let params = { method: 'repair.findStoreRepairOrderGoods' }
         this.http.get(params).subscribe(res => {
             if (!!res && res.responseCode == 167050) {
                 this.list = res.responseObj;
@@ -36,10 +33,7 @@ export class OrderDonePage {
         });
     }
     hours() {
-        var params = {
-            method: 'repair.reportMaintenanceHours',
-            clientId: '14a01fdab38b4bf3b93781e20aa3777b'
-        }
+        let params = { method: 'repair.reportMaintenanceHours' }
         this.http.get(params).subscribe(res => {
             if (!!res && res.responseCode == 167050) {
                 this.list = res.responseObj;

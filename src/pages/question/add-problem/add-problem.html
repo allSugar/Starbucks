@@ -10,10 +10,10 @@
       <img alt="" class="avatar-img" src="assets/imgs/avater/avater_card.png">
       <div class="avatar-body">
         <div class="name">
-          <em class="text">张小明</em>
-          <em class="time">2018-1-27</em>
+          <em class="text">{{ problem.name }}</em>
+          <em class="time">{{ problem.date }}</em>
         </div>
-        <div class="detail">灯具／灯不亮了</div>
+        <div class="detail">{{ problem.describe }}</div>
         <div class="firm">
           维修厂商：北京苏南方圆建设有限公司
         </div>
@@ -28,7 +28,7 @@
 
 <ion-footer>
   <div class="ibox-footer-input">
-    <input type="text" placeholder="备注说明...">
+    <input type="text" placeholder="备注说明..." [(ngModel)]="problem.faultDes">
     <button type="submit"></button>
   </div>
   <div class="ibox-footer-button">
