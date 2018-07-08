@@ -59,34 +59,24 @@
             (click)="changeActive(i)" [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 2 }">
-        <li class="ranking-item active">紧急</li>
-        <li class="ranking-item">一般</li>
+        <li class="ranking-item" *ngFor="let item of mode; let i = index"
+            (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 4 }">
-        <li class="ranking-item">星巴克</li>
-        <li class="ranking-item">苏南方圆</li>
-        <li class="ranking-item active">星巴克</li>
-        <li class="ranking-item">苏南方圆</li>
+        <li class="ranking-item" *ngFor="let item of shop; let i = index"
+            (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
-        <li class="ranking-item">星巴克</li>
-        <li class="ranking-item">星巴克</li>
-        <li class="ranking-item active">星巴克</li>
-        <li class="ranking-item">星巴克</li>
-        <li class="ranking-item">星巴克</li>
+        <li class="ranking-item" *ngFor="let item of shop; let i = index"
+            (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 5 }">
-        <li class="ranking-item">排序</li>
-        <li class="ranking-item">厂商名字a-z</li>
-        <li class="ranking-item active">厂商名字z-a</li>
-        <li class="ranking-item">问题由多到少</li>
-        <li class="ranking-item">问题由少到多</li>
+        <li class="ranking-item" *ngFor="let item of sort; let i = index"
+            (click)="changeActive(i)" [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 6 }">
-        <li class="ranking-item">日期</li>
-        <li class="ranking-item">今天</li>
-        <li class="ranking-item active">昨天</li>
-        <li class="ranking-item">前天</li>
+        <li class="ranking-item" *ngFor="let item of date; let i = index"
+            (click)="changeActive(i)" [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
     </div>
   </div>

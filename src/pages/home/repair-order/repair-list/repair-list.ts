@@ -31,7 +31,6 @@ export class RepairListPage {
       method: 'repair.findStoreRepairOrder',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
       if (!!res && res.responseCode == 167050) {
         this.orderList = res.responseObj;
         for (var i = 0; i < this.orderList.length; i++) {
@@ -45,6 +44,7 @@ export class RepairListPage {
       }
     });
   }
+
 
   tabs(name: string) {
     this.status = name;
@@ -73,5 +73,29 @@ export class RepairListPage {
     { filter: '厂商名字z-a'},
     { filter: '问题由多到少'},
     { filter: '问题由少到多'}
-  ]
+  ];
+  mode: object[] = [
+    {filter: '紧急'},
+    {filter: '一般'}
+  ];
+  shop: object[] = [
+    {filter: '苏南方圆'},
+    {filter: '星巴克'},
+    {filter: '苏南方圆'},
+    {filter: '星巴克'},
+    {filter: '苏南方圆'}
+  ];
+  shop: object[] = [
+    {filter: '苏南方圆'},
+    {filter: '星巴克'},
+    {filter: '苏南方圆'},
+    {filter: '星巴克'},
+    {filter: '苏南方圆'}
+  ];
+  date: object[] = [
+    {filter: '日期'},
+    {filter: '昨天'},
+    {filter: '今天'},
+    {filter: '前天'}
+  ];
 }

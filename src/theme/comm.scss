@@ -216,8 +216,8 @@
         height: 20px;
         border-radius: 2px;
       }
-      $barFrequencyColor: '#1E8CE1' '#8CC42A' '#FDA109' '#F85B25' '#9A34B8';
-      @for $i from 1 to 6 {
+      $barFrequencyColor: '#1E8CE1' '#8CC42A' '#FDA109' '#F85B25' '#9A34B8' '#565656' '#996523';
+      @for $i from 1 to 8 {
         .bar-frequency-#{$i} {
           background-color: #{nth($barFrequencyColor,$i)};
         }

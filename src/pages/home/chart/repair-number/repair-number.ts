@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import Chart from 'chart.js';
 
+import { HttpService } from '../../../../service/HttpService';
 
 @IonicPage()
 @Component({
@@ -10,21 +11,38 @@ import Chart from 'chart.js';
 })
 export class RepairNumberPage {
     @ViewChild('chartPie') chartPie: ElementRef;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    data: Object[] = [];
+    dataList: Object[] = [];
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public http: HttpService
+  ) {
+    this.getData();
+  }
+  getData() {
+    var params = {
+      method: 'statistics.repairItemWeekStatistics',
+    }
+    this.http.get(params).subscribe(res => {
+      console.log(res)
+      if (!!res && res.responseCode == 168080) {
+        this.dataList = res.responseObj.repairStatisticsList;
+        for (var i = 0; i < this.dataList.length; i++) {
+          this.data.push({
+            num: this.dataList[i].repairNum,
+            price: this.dataList[i].repairPrice,
+            day: this.dataList[i].weekDay
+          })
+        }
+      }
+    });
   }
   status: number = 0;
   tabs(n: number) {
     this.status = n;
   }
-    data: any = [
-        {title: '钟楼星巴克', percentage: '20%', price:'24000', count: '20'},
-        {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20'},
-        {title: '后海星巴克', percentage: '20%', price:'24000', count: '20'},
-        {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20'},
-        {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20'}
-
-    ];
-    ionViewDidEnter() {
+  ionViewDidEnter() {
         Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
             data: {
                 datasets: [
