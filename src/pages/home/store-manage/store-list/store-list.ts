@@ -33,7 +33,6 @@ export class StoreManageListPage {
   getData() {
     var params = { method: "store.findStoreInfoByStaff" };
     this.http.get(params).subscribe(res => {
-      alert(res.responseCode);
       if (!!res && res.responseCode == 157060) {
         this.storeList = res.responseObj;
         for (let i = 0; i < this.storeList.length; i++) {

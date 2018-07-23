@@ -65,8 +65,9 @@ export class RepaireCategoryPage {
     if (!item.hasSubset) {
       this.page = "EmergencyLevelPage";
     }
-    this.problem.describe = this.problem.describe || "";
-    this.problem.describe += (item.repairContent + "/");
+    // 
+    this.problem.faultDes = this.problem.faultDes || "";
+    this.problem.faultDes += (item.repairContent + "/");
     this.problem.storeRepairWarehouseId = item.storeRepairWarehouseId;
     this.navCtrl.push(this.page, { len: this.len + 1, topClass: item.topClass + 1, higherLevelId: item.id, problem: this.problem, Point: this.Point });
   }
