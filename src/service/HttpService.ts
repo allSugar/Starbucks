@@ -11,7 +11,7 @@ import "rxjs/add/operator/switchMap";
 import "rxjs/add/observable/throw";
 import * as querystring from 'querystring';
 import { API_ROOT } from "../providers/httpUrl";
-import { LoginService } from "./LoginService"
+import { LoginService } from "./LoginService";
 
 @Injectable()
 export class HttpService {
@@ -31,7 +31,10 @@ export class HttpService {
     get(params: any, ROOT: Boolean = true): Observable<any> {
         if (typeof params !== "string") {
             params = params || {};
-            params.clientId = this.login.userInfo["clientId"];
+            let userInfo = this.login.userInfo;
+            if (userInfo) {
+                params.clientId = this.login.userInfo["clientId"];
+            }
         }
         let url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
         return this.http.get(url, { headers: this.headers }).map(res => res.json());
@@ -40,7 +43,10 @@ export class HttpService {
     //post请求
     post(params: any): Observable<any> {
         params = params || {};
-        params.clientId = this.login.userInfo["clientId"];
+        let userInfo = this.login.userInfo;
+        if (userInfo) {
+            params.clientId = this.login.userInfo["clientId"];
+        }
         return this.http.post(API_ROOT, querystring.stringify(params), { headers: this.headers }).map(res => res.json());
     }
 }

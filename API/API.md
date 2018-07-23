@@ -21,7 +21,7 @@
 10.5　 根据条件获取门店附件（全景图，门店照，使用说明）
 ```
 ?method=store.findStoreFile&storeInfoIds=1,2,3&fileType=2
-&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456
+&clientId=14a01fdab38b4bf3b93781e20aa3777b&appkey=123456&appsecret=123456saveStoreRepairTemporaryBill
 ```
 ### 我的
 11.34　 根据条件获取订单统计

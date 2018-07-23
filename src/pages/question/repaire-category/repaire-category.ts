@@ -8,7 +8,7 @@ import { HttpService } from '../../../service/HttpService';
   selector: 'page-repaire-category',
   templateUrl: 'repaire-category.html',
 })
-// repair.findStoreRepairWarehouseForPage  维修库列表  11-25
+
 export class RepaireCategoryPage {
 
   navCtrl: any;
@@ -16,12 +16,13 @@ export class RepaireCategoryPage {
   Point: any;
   topClass: any;
   len: any;
-  page: String = "EmergencyLevelPage";
-  // page: String = "RepaireCategoryPage";
+  page: String = "RepaireCategoryPage";
   RepairWarehouse: Object[];
   higherLevelId: any;
   problem: any = {
-    method: "repair.saveStoreRepairTemporaryBill"
+    method: "repair.saveStoreRepairTemporaryBill",
+    faultPointPaths: "1",
+    faultDesPaths: "1"
   };
 
   constructor(
@@ -35,8 +36,7 @@ export class RepaireCategoryPage {
     let topClass = this.navParams.get("topClass");
     this.topClass = topClass ? topClass : 1;
     this.len = this.navParams.get("len");
-    this.problem = this.navParams.get("problem") || {};
-    console.log(this.storeInfoId ? this.storeInfoId : (this.Point.storeInfoId ? this.Point.storeInfoId : 1));
+    this.problem = this.navParams.get("problem") || this.problem;
     this.problem.storeInfoId = this.storeInfoId ? this.storeInfoId : (this.Point.storeInfoId ? this.Point.storeInfoId : 1);
 
     if (this.navParams.get("higherLevelId")) {
@@ -62,9 +62,12 @@ export class RepaireCategoryPage {
     });
   }
   goToOtherPage(item) {
+    if (!item.hasSubset) {
+      this.page = "EmergencyLevelPage";
+    }
     this.problem.describe = this.problem.describe || "";
     this.problem.describe += (item.repairContent + "/");
-    this.problem.storeRepairWarehouseId = item.id;
+    this.problem.storeRepairWarehouseId = item.storeRepairWarehouseId;
     this.navCtrl.push(this.page, { len: this.len + 1, topClass: item.topClass + 1, higherLevelId: item.id, problem: this.problem, Point: this.Point });
   }
 }

@@ -11,6 +11,8 @@ import { HttpService } from '../../../../../service/HttpService';
 export class RepairPointListPage {
 
   navCtrl: any;
+  menuStatus: Boolean = false;
+  drawingList: any;
   storeInfoId: number;
   storeRepairTemporaryBillList: Array<any> = [];
 
@@ -21,9 +23,27 @@ export class RepairPointListPage {
   ) {
     this.navCtrl = this.app.getRootNav();
     this.storeInfoId = this.navParams.get("storeInfoId");
+    this.drawingList = this.navParams.get("drawingList");
+    if (!this.drawingList) {
+      this.getDrawingList();
+    }
     this.getListData();
   }
 
+  toggleMenu() {
+    this.menuStatus = !this.menuStatus;
+  }
+
+  getDrawingList() {
+    let params = { method: "store.findStoreCompletionData", storeInfoId: this.storeInfoId ? this.storeInfoId : 1 };
+    this.http.get(params).subscribe(res => {
+      if (!!res && res.responseCode == 161030) {
+        this.drawingList = res.responseObj;
+      }
+    }, error => {
+
+    });
+  }
   getListData() {
     let params = { method: "repair.findStoreRepairTemporaryBillList" };
     this.http.get(params).subscribe(res => {
@@ -36,6 +56,14 @@ export class RepairPointListPage {
   }
   goToOtherPage(name) {
     this.navCtrl.push(name);
+  }
+  goToDrawingPage(item) {
+    let obj = {
+      storeInfoId: this.storeInfoId ? this.storeInfoId : 1,
+      drawingId: item ? item.id : "",
+    };
+    this.menuStatus = false;
+    this.navCtrl.push("DrawingMapPage", obj);
   }
   goToDetailPage(pointId) {
     this.navCtrl.push("ProblemDetailPage", {

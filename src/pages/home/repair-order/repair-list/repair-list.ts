@@ -85,13 +85,6 @@ export class RepairListPage {
     {filter: '星巴克'},
     {filter: '苏南方圆'}
   ];
-  shop: object[] = [
-    {filter: '苏南方圆'},
-    {filter: '星巴克'},
-    {filter: '苏南方圆'},
-    {filter: '星巴克'},
-    {filter: '苏南方圆'}
-  ];
   date: object[] = [
     {filter: '日期'},
     {filter: '昨天'},

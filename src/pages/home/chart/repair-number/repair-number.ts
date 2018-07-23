@@ -10,9 +10,11 @@ import { HttpService } from '../../../../service/HttpService';
   templateUrl: 'repair-number.html',
 })
 export class RepairNumberPage {
-    @ViewChild('chartPie') chartPie: ElementRef;
-    data: Object[] = [];
-    dataList: Object[] = [];
+
+  @ViewChild('chartPie') chartPie: ElementRef;
+  data: Object[] = [];
+  dataList: Object[] = [];
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -27,13 +29,14 @@ export class RepairNumberPage {
     this.http.get(params).subscribe(res => {
       console.log(res)
       if (!!res && res.responseCode == 168080) {
-        this.dataList = res.responseObj.repairStatisticsList;
-        for (var i = 0; i < this.dataList.length; i++) {
+        let Lists = res.responseObj.repairStatisticsList;
+        this.dataList = Lists;
+        for (var i = 0; i < Lists.length; i++) {
           this.data.push({
-            num: this.dataList[i].repairNum,
-            price: this.dataList[i].repairPrice,
-            day: this.dataList[i].weekDay
-          })
+            num: Lists[i].repairNum,
+            price: Lists[i].repairPrice,
+            day: Lists[i].weekDay
+          });
         }
       }
     });
@@ -43,27 +46,27 @@ export class RepairNumberPage {
     this.status = n;
   }
   ionViewDidEnter() {
-        Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
-            data: {
-                datasets: [
-                    {
-                        data: [20, 30, 15, 10, 25],
-                        backgroundColor: [
-                            "#2A7DFA",
-                            "#36B156",
-                            "#55DCB4",
-                            "#5EE7FF",
-                            "#2A9DFE"
-                        ],
-                        hoverBackgroundColor: [
-                            "#2A7DFA",
-                            "#36B156",
-                            "#55DCB4",
-                            "#5EE7FF",
-                            "#2A9DFE"
-                        ]
-                    }]
-            }
-        });
-    }
+    Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
+      data: {
+        datasets: [
+          {
+            data: [20, 30, 15, 10, 25],
+            backgroundColor: [
+              "#2A7DFA",
+              "#36B156",
+              "#55DCB4",
+              "#5EE7FF",
+              "#2A9DFE"
+            ],
+            hoverBackgroundColor: [
+              "#2A7DFA",
+              "#36B156",
+              "#55DCB4",
+              "#5EE7FF",
+              "#2A9DFE"
+            ]
+          }]
+      }
+    });
+  }
 }

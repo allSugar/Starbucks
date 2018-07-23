@@ -11,8 +11,10 @@ import { HttpService } from '../../../../service/HttpService';
 })
 export class FrequencyPage {
 
-    @ViewChild('chartPie') chartPie: ElementRef;
+  @ViewChild('chartPie') chartPie: ElementRef;
 
+  orderList: any;
+  order: any[];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -34,7 +36,7 @@ export class FrequencyPage {
             createTime: orderList.createTime,
             orderCode: orderList.orderCode,
             status: orderList.status
-          })
+          });
         }
       }
     });
@@ -43,55 +45,55 @@ export class FrequencyPage {
   tabs(n: number) {
     this.status = n;
   }
-  changeData(){
+  changeData() {
     this.data = this.data2;
   }
   data: any = [
-    {title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price:'24000', count: '20'},
-    {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20'},
-    {title: '后海星巴克', percentage: '20%', price:'24000', count: '20'},
-    {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20'},
-    {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20'}
+    { title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '三里屯星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '后海星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '翠微百货星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '北辰星巴克', percentage: '20%', price: '24000', count: '20' }
 
   ];
   data1: any = [
-      {title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price:'24000', count: '20'},
-      {title: '三里屯星巴克', percentage: '20%', price:'24000', count: '20'},
-      {title: '后海星巴克', percentage: '20%', price:'24000', count: '20'},
-      {title: '翠微百货星巴克', percentage: '20%', price:'24000', count: '20'},
-      {title: '北辰星巴克', percentage: '20%', price:'24000', count: '20'}
+    { title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '三里屯星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '后海星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '翠微百货星巴克', percentage: '20%', price: '24000', count: '20' },
+    { title: '北辰星巴克', percentage: '20%', price: '24000', count: '20' }
 
   ];
   data2: any = [
-    {title: '星期一', percentage: '20%', price:'24000', count: '20'},
-    {title: '星期二', percentage: '20%', price:'24000', count: '20'},
-    {title: '星期三', percentage: '20%', price:'24000', count: '20'},
-    {title: '星期四', percentage: '20%', price:'24000', count: '20'},
-    {title: '星期五', percentage: '20%', price:'24000', count: '20'}
+    { title: '星期一', percentage: '20%', price: '24000', count: '20' },
+    { title: '星期二', percentage: '20%', price: '24000', count: '20' },
+    { title: '星期三', percentage: '20%', price: '24000', count: '20' },
+    { title: '星期四', percentage: '20%', price: '24000', count: '20' },
+    { title: '星期五', percentage: '20%', price: '24000', count: '20' }
 
   ];
   ionViewDidEnter() {
-      Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
-          data: {
-              datasets: [
-                  {
-                      data: [20, 30, 15, 10, 25],
-                      backgroundColor: [
-                          "#1E8CE1",
-                          "#8CC42A",
-                          "#FDA109",
-                          "#F85B25",
-                          "#9A34B8"
-                      ],
-                      hoverBackgroundColor: [
-                          "#1E8CE1",
-                          "#8CC42A",
-                          "#FDA109",
-                          "#F85B25",
-                          "#9A34B8"
-                      ]
-                  }]
-          }
-      });
+    Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
+      data: {
+        datasets: [
+          {
+            data: [20, 30, 15, 10, 25],
+            backgroundColor: [
+              "#1E8CE1",
+              "#8CC42A",
+              "#FDA109",
+              "#F85B25",
+              "#9A34B8"
+            ],
+            hoverBackgroundColor: [
+              "#1E8CE1",
+              "#8CC42A",
+              "#FDA109",
+              "#F85B25",
+              "#9A34B8"
+            ]
+          }]
+      }
+    });
   }
 }

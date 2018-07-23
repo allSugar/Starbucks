@@ -14,7 +14,7 @@ export class StoreIndexPage {
   navCtrl: any;
   menuStatus: Boolean = false;
   storeInfoId: any;
-  drawingList: Object;
+  drawingList: any;
   category: Object[] = [
     { url: 'repair_kits', name: '维修包', page: 'RepairKitsPage' },
     { url: 'cloud-smart', name: '云智能', page: 'CloudSmartPage' },
@@ -22,6 +22,7 @@ export class StoreIndexPage {
     { url: 'chart', name: '统计', page: 'ChartListPage' },
     { url: 'repair_place', name: '问题管理', page: 'RepairPointListPage' }
   ];
+
 
   constructor(
     public app: App,
@@ -41,7 +42,10 @@ export class StoreIndexPage {
     let params = { method: "store.findStoreCompletionData", storeInfoId: this.storeInfoId ? this.storeInfoId : 1 };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 161030) {
-        this.drawingList = res.responseObj;
+        let Lists = res.responseObj;
+        this.drawingList = Lists.filter(item => {
+          return item.hasSubset === 0;
+        });
       }
     }, error => {
 
@@ -51,8 +55,13 @@ export class StoreIndexPage {
   goToOtherPage(item, self) {
     let obj = {
       storeInfoId: this.storeInfoId ? this.storeInfoId : 1,
-      drawingId: self ? self.id : ""
+      drawingId: self ? self.id : "",
+      drawingList: ""
     };
+
+    if (item.page && item.page === "RepairPointListPage") {
+      obj.drawingList = this.drawingList;
+    }
     this.menuStatus = false;
     this.navCtrl.push(item.page ? item.page : item, obj);
   }

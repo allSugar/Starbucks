@@ -45,7 +45,7 @@ export class AddProblemPage extends BaseUI {
     super();
 
     this.Point = this.navParams.get('Point');
-    this.problem = this.navParams.get('problem');
+    this.problem = this.navParams.get('problem') || {};
     this.problem.date = this.crtTimeFtt(new Date());
     let len = this.navParams.get('len');
     if (len) {
@@ -64,23 +64,24 @@ export class AddProblemPage extends BaseUI {
   }
 
   creatPoint() {
+    console.log(this);
     let loading = super.showLoading(this.loadingCtrl);
     this.http.get(this.Point).subscribe(res => {
       loading.dismiss();
-      if (!!res && res.responseCode === 179010) {
+      if (!!res && res.responseCode == 179010) {
+        this.problem.pointId = res.responseObj.id;
         this.creatProblem();
       }
     });
   }
   creatProblem() {
-    this.http.post(this.problem).subscribe(res => {
-      if (!!res && res.responseCode === 165010) {
+    this.http.get(this.problem).subscribe(res => {
+      if (!!res && res.responseCode == 165010) {
         this.goToOtherPage();
       }
     });
   }
   goToOtherPage() {
-    console.log(this);
     this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len + 1 });
   }
 

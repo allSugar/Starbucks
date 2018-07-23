@@ -7,12 +7,21 @@
       </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button icon-only (click)="goToOtherPage('DrawingMapPage')">
+      <button ion-button icon-only (click)="toggleMenu()">
         <ion-icon name="map"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+
+<div *ngIf="menuStatus" class="slider-ibox">
+  <div class="slider-content">
+    <ul class="list">
+      <li class="item" *ngFor="let item of drawingList" (click)="goToDrawingPage(item)">{{ item.dataContent }}</li>
+    </ul>
+  </div>
+  <i class="slider-mask" (click)="toggleMenu()"></i>
+</div>
 
 <ion-content>
   <div class="row-ibox">

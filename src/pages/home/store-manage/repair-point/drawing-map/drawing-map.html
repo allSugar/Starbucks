@@ -31,18 +31,10 @@
       <!-- <img src="{{ RES_ROOT + drawingImg.fileRecord.filePath + drawingImg.fileRecord.fileName }}" -->
         <!-- alt=""> -->
         <!-- repair 红色  photo 绿色 file 蓝色 -->
-      <i class="draggable-point point-repair" *ngIf="pointStatus == 1 || pointStatus == 0" [ngStyle]="{'left':'183px','top':'275px'}"
+        <!-- pointStatus 红色 == 1 || 0 绿色 === 2 || 0 蓝色 === 3 || 0 -->
+      <i class="draggable-point point-repair"
+      *ngFor="let point of PointListsRepair" [ngStyle]="{'left': point.coordinateX - 20 + 'px','top': point.coordinateY - 20 + 'px'}"
         (click)="goToOtherPage('ProblemDetailPage')"></i>
-      <i class="draggable-point point-repair" *ngIf="pointStatus == 1 || pointStatus == 0" [ngStyle]="{'left':'100px','top':'275px'}"
-        (click)="goToOtherPage('ProblemDetailPage')"></i>
-      <i class="draggable-point point-photo" *ngIf="pointStatus == 2 || pointStatus == 0" [ngStyle]="{'left':'283px','top':'175px'}"
-        (click)="goToOtherPage('ImportImgPage')"></i>
-      <i class="draggable-point point-photo" *ngIf="pointStatus == 2 || pointStatus == 0" [ngStyle]="{'left':'343px','top':'375px'}"
-        (click)="goToOtherPage('ImportImgPage')"></i>
-      <i class="draggable-point point-file" *ngIf="pointStatus == 3 || pointStatus == 0" [ngStyle]="{'left':'252px','top':'215px'}"
-        (click)="goToOtherPage('ImportFilePage')"></i>
-      <i class="draggable-point point-file" *ngIf="pointStatus == 3 || pointStatus == 0" [ngStyle]="{'left':'152px','top':'315px'}"
-        (click)="goToOtherPage('ImportFilePage')"></i>
     </div>
   </div>
   <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>

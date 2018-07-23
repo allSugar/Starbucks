@@ -35,9 +35,9 @@ export class DrawingMapPage {
     coordinateX: 0,
     coordinateY: 0,
     type: 2,
-    diameter: 30,
-    colour: "point-repair",
+    diameter: 30
   };
+  PointListsRepair: any[];
   clientWidth: any;
   date: Date = new Date();
   weekdays: any[] = ['日', '一', '二', '三', '四', '五', '六'];
@@ -56,9 +56,12 @@ export class DrawingMapPage {
   ) {
     this.navCtrl = this.app.getRootNav();
     this.drawingId = this.navParams.get("drawingId");
+
     this.Point.storeInfoId = this.navParams.get("storeInfoId");
-    this.RES_ROOT = RES_ROOT;
     this.Point.drawingId = this.drawingId;
+    
+    this.RES_ROOT = RES_ROOT;
+    
     this.getDrawingImg();
     this.getPointListData();
   }
@@ -76,7 +79,7 @@ export class DrawingMapPage {
     let params = { method: "store.findPoint", type: 2, drawingId: this.drawingId };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 179020) {
-        console.log(res);
+        this.PointListsRepair = res.responseObj;
       }
     }, error => {
 
