@@ -46,7 +46,7 @@ export class AddProblemPage extends BaseUI {
 
     this.Point = this.navParams.get('Point');
     this.problem = this.navParams.get('problem') || {};
-    this.problem.faultDes = this.problem.faultDes.substring(0, this.problem.faultDes.length-1);
+    this.problem.faultDes = this.problem.faultDes.substring(0, this.problem.faultDes.length - 1);
     this.problem.date = this.crtTimeFtt(new Date());
     let len = this.navParams.get('len');
     if (len) {
@@ -66,23 +66,29 @@ export class AddProblemPage extends BaseUI {
 
   creatPoint() {
     let loading = super.showLoading(this.loadingCtrl);
+    if (this.Point.status) {
+      this.problem.pointId = this.Point.pointId;
+      this.creatProblem(loading);
+      return false;
+    }
+
     this.http.get(this.Point).subscribe(res => {
-      loading.dismiss();
       if (!!res && res.responseCode == 179010) {
         this.problem.pointId = res.responseObj.id;
-        this.creatProblem();
+        this.creatProblem(loading);
       }
     });
   }
-  creatProblem() {
+  creatProblem(loading) {
     this.http.get(this.problem).subscribe(res => {
+      loading.dismiss();
       if (!!res && res.responseCode == 165010) {
-        this.goToOtherPage();
+        this.goToOtherPage(this.problem.pointId);
       }
     });
   }
-  goToOtherPage() {
-    this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len + 1 });
+  goToOtherPage(id) {
+    this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len + 1, storeInfoId: this.Point.storeInfoId, pointId: id });
   }
 
   presentActionSheet() {
@@ -120,6 +126,7 @@ export class AddProblemPage extends BaseUI {
 
     //获取图片的方法
     this.camera.getPicture(options).then((imagePath) => {
+      alert(imagePath);
       //特别处理 android 平台的文件路径问题
       if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
         this.filePath.resolveNativePath(imagePath) //获取 android 平台下的真实路径
@@ -130,8 +137,7 @@ export class AddProblemPage extends BaseUI {
             let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
             this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
           });
-      }
-      else {
+      } else {
         //获取正确的路径
         var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
         //获取正确的文件名
@@ -139,6 +145,7 @@ export class AddProblemPage extends BaseUI {
         this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
       }
     }, (err) => {
+      console.log(JSON.stringify(err));
       super.showToast(this.toastCtrl, "选择图片出现错误，请在 App 中操作或检查相关权限。");
     });
   }
@@ -147,6 +154,8 @@ export class AddProblemPage extends BaseUI {
   copyFileToLocalDir(namePath, currentName, newFileName) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
       this.lastImage = newFileName;
+      alert(newFileName);
+      this.uploadImage();
     }, error => {
       super.showToast(this.toastCtrl, "存储图片到本地图库出现错误。");
     });
@@ -172,7 +181,9 @@ export class AddProblemPage extends BaseUI {
   uploadImage() {
     var url = 'https://imoocqa.gugujiankong.com/api/account/uploadheadface';
     var targetPath = this.pathForImage(this.lastImage);
+
     var filename = this.userId + ".jpg"; //定义上传后的文件名
+    alert(targetPath);
 
     //fileTransfer 上传的参数
     let options: FileUploadOptions = {

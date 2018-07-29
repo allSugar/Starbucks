@@ -45,7 +45,11 @@ export class ProblemDetailPage {
     });
   }
   goToOtherPage() {
-    this.navCtrl.push('RepaireCategoryPage', { len: 2, storeInfoId: this.storeInfoId });
+    let point = {
+      status: true,
+      pointId: this.pointId,
+      storeInfoId: this.storeInfoId
+    }
+    this.navCtrl.push('RepaireCategoryPage', { len: 1, Point: point });
   }
-
 }

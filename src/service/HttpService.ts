@@ -32,10 +32,11 @@ export class HttpService {
         if (typeof params !== "string") {
             params = params || {};
             let userInfo = this.login.userInfo;
-            if (userInfo) {
+            if (userInfo && params.method !== "userManager.login") {
                 params.clientId = this.login.userInfo["clientId"];
             }
         }
+        alert(JSON.stringify(params.clientId));
         let url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
         return this.http.get(url, { headers: this.headers }).map(res => res.json());
     }

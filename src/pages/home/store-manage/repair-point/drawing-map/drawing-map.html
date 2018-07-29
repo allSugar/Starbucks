@@ -29,12 +29,11 @@
       #myBounds>
       <img src="http://temp.im/466x466/4CD964/fff" alt="">
       <!-- <img src="{{ RES_ROOT + drawingImg.fileRecord.filePath + drawingImg.fileRecord.fileName }}" -->
-        <!-- alt=""> -->
-        <!-- repair 红色  photo 绿色 file 蓝色 -->
-        <!-- pointStatus 红色 == 1 || 0 绿色 === 2 || 0 蓝色 === 3 || 0 -->
-      <i class="draggable-point point-repair"
-      *ngFor="let point of PointListsRepair" [ngStyle]="{'left': point.coordinateX - 20 + 'px','top': point.coordinateY - 20 + 'px'}"
-        (click)="goToOtherPage('ProblemDetailPage')"></i>
+      <!-- alt=""> -->
+      <!-- repair 红色  photo 绿色 file 蓝色 -->
+      <!-- pointStatus 红色 == 1 || 0 绿色 === 2 || 0 蓝色 === 3 || 0 -->
+      <i class="draggable-point point-repair" *ngFor="let point of PointListsRepair" [ngStyle]="{'left': point.coordinateX - 20 + 'px','top': point.coordinateY - 20 + 'px'}"
+        (click)="goToOtherPage('ProblemDetailPage',point)"></i>
     </div>
   </div>
   <i class="filter-mask" *ngIf="easel || help" (click)="handleFilter()"></i>

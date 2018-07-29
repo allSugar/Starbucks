@@ -6,6 +6,7 @@ import { TabsPage } from '../tabs/tabs';
 
 import { HttpService } from '../../service/HttpService';
 import { ToastService } from '../../service/ToastService';
+import { LoginService } from "../../service/LoginService";
 
 @Component({
   selector: 'page-login',
@@ -29,6 +30,7 @@ export class LoginPage {
     public http: HttpService,
     private toast: ToastService,
     private storage: Storage,
+    public login: LoginService
   ) {
     var params = { method: "userManager.findAccount" };
     this.http.get(params).subscribe(res => {
@@ -54,8 +56,12 @@ export class LoginPage {
     this.http.get(this.userInfo).subscribe(res => {
       if (!!res) {
         if (!!res && res.responseCode == 101020) {
-          res.responseObj.clientId = res.clientId;
-          this.storage.set("userInfo", JSON.stringify(res.responseObj));
+          let val = res.responseObj;
+          val.clientId = res.clientId;
+          alert(JSON.stringify(val));
+          this.storage.set("userInfo", JSON.stringify(val));
+          this.login.isLogin = !!val;
+          this.login.userInfo = val;
           this.navCtrl.setRoot(TabsPage);
         } else {
           this.toast.info(res.responseMsg)

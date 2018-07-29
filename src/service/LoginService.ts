@@ -9,20 +9,21 @@ import { LoginPage } from '../pages/login/login';
 export class LoginService {
 
   isLogin: any = false;
-  userInfo:Object;
+  userInfo: Object;
 
   constructor(
     private app: App,
-    private storage: Storage,
+    private storage: Storage
   ) {
   }
 
-  isLoginFun(callback:any) {
+  isLoginFun(callback: any) {
     this.storage.get('userInfo').then((val) => callback(val));
   }
 
   loginOut() {
     this.storage.remove('userInfo');
+    this.userInfo = {};
     this.app.getRootNav().setRoot(LoginPage);
   }
 }

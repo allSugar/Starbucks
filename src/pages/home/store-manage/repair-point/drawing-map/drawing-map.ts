@@ -59,9 +59,9 @@ export class DrawingMapPage {
 
     this.Point.storeInfoId = this.navParams.get("storeInfoId");
     this.Point.drawingId = this.drawingId;
-    
+
     this.RES_ROOT = RES_ROOT;
-    
+
     this.getDrawingImg();
     this.getPointListData();
   }
@@ -125,9 +125,12 @@ export class DrawingMapPage {
       block.resetPosition();
     }
   }
-  goToOtherPage(pageName: String) {
+  goToOtherPage(pageName: String, point: Object) {
     this.status = 1;
-    this.navCtrl.push(pageName);
+    this.navCtrl.push(pageName, {
+      storeInfoId: this.Point.storeInfoId,
+      pointId: point["id"]
+    });
   }
   openCalendar() {
     const options: CalendarModalOptions = {

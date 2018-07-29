@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { App, IonicPage, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavParams, LoadingController } from 'ionic-angular';
 
+import { BaseUI } from '../../../../../directives/comm/baseui';
 import { HttpService } from '../../../../../service/HttpService';
 import { ToastService } from '../../../../../service/ToastService';
 
@@ -9,7 +10,7 @@ import { ToastService } from '../../../../../service/ToastService';
   selector: 'page-repair-point-list',
   templateUrl: 'repair-point-list.html',
 })
-export class RepairPointListPage {
+export class RepairPointListPage extends BaseUI {
 
   navCtrl: any;
   menuStatus: Boolean = false;
@@ -23,16 +24,21 @@ export class RepairPointListPage {
     public app: App,
     public navParams: NavParams,
     public http: HttpService,
-    private toast: ToastService
+    private toast: ToastService,
+    public loadingCtrl: LoadingController,
   ) {
+    super();
+    let loading = super.showLoading(this.loadingCtrl);
+
     this.navCtrl = this.app.getRootNav();
     this.storeInfoId = this.navParams.get("storeInfoId");
     this.drawingList = this.navParams.get("drawingList");
     if (!this.drawingList) {
       this.getDrawingList();
     }
-    this.getListData();
 
+
+    this.getListData(loading);
   }
 
   toggleMenu() {
@@ -49,9 +55,10 @@ export class RepairPointListPage {
 
     });
   }
-  getListData() {
+  getListData(loading) {
     let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId };
     this.http.get(params).subscribe(res => {
+      loading.dismiss();
       if (!!res && res.responseCode == 165030) {
         res.responseObj.map(item => {
           let obj = this.drawingList.filter(self => {
@@ -110,7 +117,6 @@ export class RepairPointListPage {
         this.srtbIds.push(item.id);
       }
     });
-    console.log(this.srtbIds);
   }
   // 　创建门店维修单  repair.createStoreRepairOrder
   onSumbit() {
@@ -118,13 +124,13 @@ export class RepairPointListPage {
       this.toast.info("请选择问题然后提交！");
       return false;
     }
-    let params = { method: "repair.createStoreRepairOrder", storeInfoId: this.storeInfoId, srtbIds: "" };
+    let loading = super.showLoading(this.loadingCtrl),
+      params = { method: "repair.createStoreRepairOrder", storeInfoId: this.storeInfoId, srtbIds: "" };
     this.srtbIds.map((id, index) => {
       params.srtbIds += (index ? "," : "") + id;
     });
     this.http.get(params).subscribe(res => {
-      console.log(res);
-      this.getListData();
+      this.getListData(loading);
     }, error => {
 
     });
