@@ -159,6 +159,10 @@
         padding: 0 5px;
         font-size: 11px;
         line-height: 18px;
+        &.tag-normal {
+          color: #13b9fe;
+          background-color: rgba(19, 185, 254, .2);
+        }
         &.tag-error {
           color: $red;
           background-color: rgba(248, 42, 20, .2);

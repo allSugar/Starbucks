@@ -35,9 +35,9 @@ export class ProblemDetailPage {
   }
 
   getListData() {
-    let params = { method: "repair.getStoreRepairTemporaryBillById", id: this.pointId };
+    let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId, pointId: this.pointId };
     this.http.get(params).subscribe(res => {
-      if (!!res && res.responseCode == 165040) {
+      if (!!res && res.responseCode == 165030) {
         this.detailData = res.responseObj;
       };
     }, error => {

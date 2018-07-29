@@ -46,6 +46,7 @@ export class AddProblemPage extends BaseUI {
 
     this.Point = this.navParams.get('Point');
     this.problem = this.navParams.get('problem') || {};
+    this.problem.faultDes = this.problem.faultDes.substring(0, this.problem.faultDes.length-1);
     this.problem.date = this.crtTimeFtt(new Date());
     let len = this.navParams.get('len');
     if (len) {
@@ -64,7 +65,6 @@ export class AddProblemPage extends BaseUI {
   }
 
   creatPoint() {
-    console.log(this);
     let loading = super.showLoading(this.loadingCtrl);
     this.http.get(this.Point).subscribe(res => {
       loading.dismiss();
