@@ -13,8 +13,8 @@ export class FrequencyPage {
 
   @ViewChild('chartPie') chartPie: ElementRef;
 
-  orderList: any;
-  order: any[];
+  repairList: any;
+  repair: any[];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -24,18 +24,17 @@ export class FrequencyPage {
   }
   getData() {
     var params = {
-      method: 'statistics.repairItemWeekStatistics',
+      method: 'statistics.repairFrequencyStatistics',
     }
     this.http.get(params).subscribe(res => {
       console.log(res)
-      if (!!res && res.responseCode == 168080) {
-        this.orderList = res.responseObj;
-        for (var i = 0; i < this.orderList.length; i++) {
-          var orderList = this.orderList[i];
-          this.order.push({
-            createTime: orderList.createTime,
-            orderCode: orderList.orderCode,
-            status: orderList.status
+      if (!!res && res.responseCode == 167110) {
+        this.repairList = res.responseObj;
+        for (var i = 0; i < this.repairList.length; i++) {
+          var repairList = this.repairList[i];
+          this.repair.push({
+            number: repairList.totalRepairNum,
+            price: repairList.totalRepairPrice
           });
         }
       }
