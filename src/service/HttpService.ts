@@ -36,7 +36,6 @@ export class HttpService {
                 params.clientId = this.login.userInfo["clientId"];
             }
         }
-        alert(JSON.stringify(params.clientId));
         let url = ROOT ? (API_ROOT + "?" + querystring.stringify(params)) : params;
         return this.http.get(url, { headers: this.headers }).map(res => res.json());
     }

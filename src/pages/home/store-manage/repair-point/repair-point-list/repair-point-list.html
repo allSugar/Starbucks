@@ -24,28 +24,33 @@
 </div>
 
 <ion-content>
-  <div class="row-ibox">
-    <div class="row-list">
-      <div class="row-item-box" *ngFor="let item of storeRepairTemporaryBillList">
-        <div class="row-item">
-          <label class="item-choice checkbox">
-            <input type="checkbox" (change)="HandleChange(item)" [(ngModel)]="item.status">
-            <ins class="checkbox-icon"></ins>
-          </label>
-          <div class="item-body" (click)="goToDetailPage(item.id)">
-            <p class="title">{{ item.faultDes ? item.faultDes : "暂无文案" }}</p>
-            <p class="company">北京苏南方圆建设有限公司</p>
-            <p class="location">{{ item.drawing ? item.drawing : "暂无文案" }}</p>
-          </div>
-          <div class="item-action" (click)="goToDetailPage()">
-            <ins class="tag tag-error" *ngIf="item.emergency === 1">十万火急</ins>
-            <ins class="tag tag-error" *ngIf="item.emergency === 2">紧急</ins>
-            <ins class="tag tag-normal" *ngIf="!item.emergency || item.emergency === 3">普通</ins>
+  <ion-list>
+    <div class="row-ibox">
+      <div class="row-list">
+        <div class="row-item-box" *ngFor="let item of storeRepairTemporaryBillList">
+          <div class="row-item">
+            <label class="item-choice checkbox">
+              <input type="checkbox" (change)="HandleChange(item)" [(ngModel)]="item.status">
+              <ins class="checkbox-icon"></ins>
+            </label>
+            <div class="item-body" (click)="goToDetailPage(item.point.id)">
+              <p class="title">{{ item.faultDes ? item.faultDes : "暂无文案" }}</p>
+              <p class="company">北京苏南方圆建设有限公司</p>
+              <p class="location">{{ item.drawing ? item.drawing : "暂无文案" }}</p>
+            </div>
+            <div class="item-action" (click)="goToDetailPage(item.point.id)">
+              <ins class="tag tag-error" *ngIf="item.emergency === 1">十万火急</ins>
+              <ins class="tag tag-error" *ngIf="item.emergency === 2">紧急</ins>
+              <ins class="tag tag-normal" *ngIf="!item.emergency || item.emergency === 3">普通</ins>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
 <ion-footer>

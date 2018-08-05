@@ -9,6 +9,7 @@ import { Camera } from '@ionic-native/camera';
 import { Storage } from '@ionic/storage';
 
 import { HttpService } from '../../../service/HttpService';
+import { RES_ROOT } from '../../../providers/httpUrl';
 
 declare var cordova: any; //导入第三方的库定义到 TS 项目中
 
@@ -23,9 +24,11 @@ export class AddProblemPage extends BaseUI {
   navCtrl: any;
   len: any;
   userId: string;
+  userInfo: any;
   lastImage: string = null;
   problem: any;
   Point: any;
+  img: any;
 
   constructor(
     public app: App,
@@ -54,7 +57,8 @@ export class AddProblemPage extends BaseUI {
     }
 
     this.storage.get("userInfo").then(res => {
-      this.problem.name = JSON.parse(res).name;
+      this.userInfo = JSON.parse(res);
+      this.problem.name = this.userInfo.name;
     });
 
     this.navCtrl = this.app.getRootNav();
@@ -62,33 +66,6 @@ export class AddProblemPage extends BaseUI {
 
   ionViewDidEnter() {
     this.userId = '1';
-  }
-
-  creatPoint() {
-    let loading = super.showLoading(this.loadingCtrl);
-    if (this.Point.status) {
-      this.problem.pointId = this.Point.pointId;
-      this.creatProblem(loading);
-      return false;
-    }
-
-    this.http.get(this.Point).subscribe(res => {
-      if (!!res && res.responseCode == 179010) {
-        this.problem.pointId = res.responseObj.id;
-        this.creatProblem(loading);
-      }
-    });
-  }
-  creatProblem(loading) {
-    this.http.get(this.problem).subscribe(res => {
-      loading.dismiss();
-      if (!!res && res.responseCode == 165010) {
-        this.goToOtherPage(this.problem.pointId);
-      }
-    });
-  }
-  goToOtherPage(id) {
-    this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len + 1, storeInfoId: this.Point.storeInfoId, pointId: id });
   }
 
   presentActionSheet() {
@@ -117,7 +94,7 @@ export class AddProblemPage extends BaseUI {
 
   takePicture(sourceType) {
     //定义相机的一些参数
-    var options = {
+    let options = {
       quality: 100, //图片的质量
       sourceType: sourceType,
       saveToPhotoAlbum: false, //是否保存拍摄的照片到相册中去
@@ -126,7 +103,6 @@ export class AddProblemPage extends BaseUI {
 
     //获取图片的方法
     this.camera.getPicture(options).then((imagePath) => {
-      alert(imagePath);
       //特别处理 android 平台的文件路径问题
       if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
         this.filePath.resolveNativePath(imagePath) //获取 android 平台下的真实路径
@@ -139,13 +115,12 @@ export class AddProblemPage extends BaseUI {
           });
       } else {
         //获取正确的路径
-        var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-        //获取正确的文件名
-        var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+        let correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1),
+          //获取正确的文件名
+          currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
         this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
       }
     }, (err) => {
-      console.log(JSON.stringify(err));
       super.showToast(this.toastCtrl, "选择图片出现错误，请在 App 中操作或检查相关权限。");
     });
   }
@@ -154,8 +129,6 @@ export class AddProblemPage extends BaseUI {
   copyFileToLocalDir(namePath, currentName, newFileName) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
       this.lastImage = newFileName;
-      alert(newFileName);
-      this.uploadImage();
     }, error => {
       super.showToast(this.toastCtrl, "存储图片到本地图库出现错误。");
     });
@@ -163,7 +136,7 @@ export class AddProblemPage extends BaseUI {
 
   //为文件生成一个新的文件名
   createFileName() {
-    var d = new Date(),
+    let d = new Date(),
       n = d.getTime(),
       newFileName = n + ".jpg"; //拼接文件名
     return newFileName;
@@ -178,12 +151,50 @@ export class AddProblemPage extends BaseUI {
     }
   }
 
-  uploadImage() {
-    var url = 'https://imoocqa.gugujiankong.com/api/account/uploadheadface';
-    var targetPath = this.pathForImage(this.lastImage);
 
-    var filename = this.userId + ".jpg"; //定义上传后的文件名
-    alert(targetPath);
+
+  crtTimeFtt(val) {
+    if (val != null) {
+      let date = new Date(val);
+      return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+  }
+
+  creatPoint() {
+    let loading = super.showLoading(this.loadingCtrl);
+    if (this.Point.status) {
+      this.problem.pointId = this.Point.pointId;
+      this.creatProblem(loading);
+      return false;
+    }
+
+    this.http.get(this.Point).subscribe(res => {
+      if (!!res && res.responseCode == 179010) {
+        this.problem.pointId = res.responseObj.id;
+        this.creatProblem(loading);
+      }
+    });
+  }
+
+  creatProblem(loading) {
+    this.http.get(this.problem).subscribe(res => {
+      if (!!res && res.responseCode == 165010) {
+        this.problem.id = res.responseObj.id;
+        if (this.lastImage) {
+          this.uploadImage(loading);
+        } else {
+          loading.dismiss();
+          this.goToOtherPage();
+        }
+      }
+    });
+  }
+
+  uploadImage(loading) {
+    let url = RES_ROOT + '/ajaxUpload/FileUploader/uploadFile',
+      targetPath = this.pathForImage(this.lastImage);
+
+    let filename = this.userId + ".jpg"; //定义上传后的文件名
 
     //fileTransfer 上传的参数
     let options: FileUploadOptions = {
@@ -196,26 +207,47 @@ export class AddProblemPage extends BaseUI {
 
     const fileTransfer: FileTransferObject = this.transfer.create();
 
-    let loading = super.showLoading(this.loadingCtrl, targetPath);
 
     //开始正式地上传
     fileTransfer.upload(targetPath, url, options).then(data => {
       loading.dismiss();
-      super.showToast(this.toastCtrl, "图片上传成功。");
+
+      let response = data.response;
+
+      if (typeof response === "string") {
+        response = JSON.parse(response)
+      }
+
+      if (!response["result"]) {
+        loading.dismiss();
+        super.showToast(this.toastCtrl, "上传图片返回异常");
+        return false;
+      }
+
+      let imagePath = RES_ROOT + response["dir"] + response["serverFileName"];
       //在用户看清弹窗提示后进行页面的关闭
-      setTimeout(() => {
-        this.viewCtrl.dismiss();
-      }, 3000);
+      this.relationProblem(loading, imagePath);
     }, err => {
       loading.dismiss();
       super.showToast(this.toastCtrl, "图片上传发生错误，请重试。");
     });
   }
 
-  crtTimeFtt(val) {
-    if (val != null) {
-      var date = new Date(val);
-      return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-    }
+  relationProblem(loading, imagePath) {
+    let params = { method: "repair.addStoreRepairTemporaryBillFile", fileType: 1, filePaths: imagePath };
+    params["storeRepairTemporaryBillId"] = this.problem.id;
+    this.http.get(params).subscribe(res => {
+      loading.dismiss();
+      alert(JSON.stringify(res));
+      if (res.responseCode == "166010") {
+        this.goToOtherPage();
+      }
+    }, error => {
+      loading.dismiss();
+    });
+  }
+
+  goToOtherPage() {
+    this.navCtrl.push("ProblemDetailPage", { remove: true, len: this.len + 1, storeInfoId: this.Point.storeInfoId, pointId: this.problem.pointId });
   }
 }

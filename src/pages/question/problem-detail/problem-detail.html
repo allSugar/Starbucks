@@ -15,27 +15,32 @@
 </ion-header>
 
 <ion-content>
-  <div class="problem-detail" *ngFor="let item of detailData">
-    <div class="head">
-      <img src="assets/imgs/avater/avater_card.png" class="avatar-img" alt="">
-      <div class="avatar-body">
-        <div class="name">
-          <em class="text">张小明</em>
-          <em class="time">{{ item.createTime }}</em>
-        </div>
-        <div class="detail">{{ item.faultDes ? item.faultDes : "暂无文案" }}</div>
-        <div class="firm">
-          维修厂商：北京苏南方圆建设有限公司
+  <ion-list>
+    <div class="problem-detail" *ngFor="let item of detailData">
+      <div class="head">
+        <img src="assets/imgs/avater/avater_card.png" class="avatar-img" alt="">
+        <div class="avatar-body">
+          <div class="name">
+            <em class="text">张小明</em>
+            <em class="time">{{ item.createTime }}</em>
+          </div>
+          <div class="detail">{{ item.faultDes ? item.faultDes : "暂无文案" }}</div>
+          <div class="firm">
+            维修厂商：北京苏南方圆建设有限公司
+          </div>
         </div>
       </div>
+      <div class="problem-img">
+        <img src="assets/imgs/wait_img.png" alt="">
+      </div>
+      <div class="word">
+        钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯 有损坏，总是一闪一闪的。
+      </div>
     </div>
-    <div class="problem-img">
-      <img src="assets/imgs/wait_img.png" alt="">
-    </div>
-    <div class="word">
-      钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯 有损坏，总是一闪一闪的。
-    </div>
-  </div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
 <ion-footer>

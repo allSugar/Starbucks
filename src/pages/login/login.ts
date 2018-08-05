@@ -20,7 +20,7 @@ export class LoginPage {
     clientId: "request",
     userName: "13920905364",
     passWord: "a1234567",
-    accountId: ""
+    accountId: 3
   }
 
   accountList: Array<any> = [];
@@ -58,7 +58,7 @@ export class LoginPage {
         if (!!res && res.responseCode == 101020) {
           let val = res.responseObj;
           val.clientId = res.clientId;
-          alert(JSON.stringify(val));
+          alert(JSON.stringify(res.clientId));
           this.storage.set("userInfo", JSON.stringify(val));
           this.login.isLogin = !!val;
           this.login.userInfo = val;

@@ -211,3 +211,12 @@ li {
     color: $secondary-text;
   }
 }
+
+ion-list.list-md,
+ion-list.list-ios {
+  margin: 0;
+}
+
+ion-infinite-scroll-content[state=loading] .infinite-loading{
+  margin: 0;
+}

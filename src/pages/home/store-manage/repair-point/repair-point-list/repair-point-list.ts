@@ -19,6 +19,9 @@ export class RepairPointListPage extends BaseUI {
   storeRepairTemporaryBillList: Array<any> = [];
   srtbIds: Array<any> = [];
   checkAll: Boolean = false;
+  pageNumber: any = 0;
+  totalNumber: any;
+  loading: any;
 
   constructor(
     public app: App,
@@ -44,7 +47,16 @@ export class RepairPointListPage extends BaseUI {
   toggleMenu() {
     this.menuStatus = !this.menuStatus;
   }
+  doInfinite(infiniteScroll) {
+    if (this.pageNumber === this.totalNumber) {
+      infiniteScroll.complete();
+      infiniteScroll.enable(false);
+      return false;
+    }
+    let loading = super.showLoading(this.loadingCtrl);
 
+    this.getListData(loading, infiniteScroll);
+  }
   getDrawingList() {
     let params = { method: "store.findStoreCompletionData", storeInfoId: this.storeInfoId ? this.storeInfoId : 1 };
     this.http.get(params).subscribe(res => {
@@ -55,12 +67,18 @@ export class RepairPointListPage extends BaseUI {
 
     });
   }
-  getListData(loading) {
-    let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId };
+  getListData(loading, infiniteScroll: any = false) {
+    let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId, pageNumber: this.pageNumber + 1 };
     this.http.get(params).subscribe(res => {
       loading.dismiss();
+      if (infiniteScroll) {
+        infiniteScroll.complete();
+      }
       if (!!res && res.responseCode == 165030) {
+        this.totalNumber = this.totalNumber || res["totalNumber"];
+        this.pageNumber = res["pageNumber"];
         res.responseObj.map(item => {
+          this.storeRepairTemporaryBillList.push(item);
           let obj = this.drawingList.filter(self => {
             if (item.point) {
               return item.point.drawingId === self.id;
@@ -70,11 +88,8 @@ export class RepairPointListPage extends BaseUI {
             item.drawing = obj[0].dataContent;
           }
         });
-        this.storeRepairTemporaryBillList = res.responseObj;
         this.checkAll = (this.srtbIds.length === this.storeRepairTemporaryBillList.length);
       };
-    }, error => {
-
     });
   }
   goToOtherPage(name) {
@@ -105,7 +120,6 @@ export class RepairPointListPage extends BaseUI {
       });
     }
     this.checkAll = (this.srtbIds.length === this.storeRepairTemporaryBillList.length);
-    console.log(this.srtbIds);
   }
   HandleCheckAllChange(event) {
     let status = event.target.checked;
