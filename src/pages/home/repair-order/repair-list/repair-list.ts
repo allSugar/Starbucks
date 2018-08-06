@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, App } from 'ionic-angular';
+import { IonicPage, App, LoadingController} from 'ionic-angular';
 
 
+import { BaseUI } from '../../../../directives/comm/baseui';
 import { HttpService } from '../../../../service/HttpService';
 @IonicPage()
 @Component({
@@ -9,7 +10,7 @@ import { HttpService } from '../../../../service/HttpService';
   templateUrl: 'repair-list.html',
 })
 
-export class RepairListPage {
+export class RepairListPage extends BaseUI  {
 
   orderList: Array<any> = [];
   order: Object[] = [];
@@ -17,34 +18,47 @@ export class RepairListPage {
   navCtrl: any;
   status: string = 'orderUndoPage';
   sta: number = 0;
+  pageNumber: any = 0;
+  totalNumber: any;
 
   constructor(
     public app: App,
-    public http: HttpService
-  ) {
-    this.getData();
-    this.navCtrl = this.app.getRootNav();
-  }
+    public http: HttpService,
+    public loadingCtrl: LoadingController,
 
-  getData() {
-    var params = {
-      method: 'repair.findStoreRepairOrder',
+  ) {
+
+    super();
+    let loading = super.showLoading(this.loadingCtrl);
+
+    this.navCtrl = this.app.getRootNav();
+    this.getListData(loading);
+  }
+  doInfinite(infiniteScroll) {
+    if (this.pageNumber === this.totalNumber) {
+      infiniteScroll.complete();
+      infiniteScroll.enable(false);
+      return false;
     }
+    let loading = super.showLoading(this.loadingCtrl);
+    this.getListData(loading, infiniteScroll);
+  }
+  getListData(loading, infiniteScroll: any = false) {
+    let params = { method: "repair.findStoreRepairOrder", pageNumber: this.pageNumber + 1 };
     this.http.get(params).subscribe(res => {
-      if (!!res && res.responseCode == 167050) {
-        this.orderList = res.responseObj;
-        for (var i = 0; i < this.orderList.length; i++) {
-          var orderList = this.orderList[i];
-          this.order.push({
-            createTime: orderList.createTime,
-            orderCode: orderList.orderCode,
-            status: orderList.status
-          })
-        }
+      loading.dismiss();
+      if (infiniteScroll) {
+        infiniteScroll.complete();
       }
+      if (!!res && res.responseCode == 167050) {
+        res.responseObj.map(item => {
+          this.orderList.push(item);
+        });
+        this.totalNumber = this.totalNumber || res["totalNumber"];
+        this.pageNumber = res["pageNumber"];
+      };
     });
   }
-
 
   tabs(name: string) {
     this.status = name;

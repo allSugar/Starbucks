@@ -85,8 +85,13 @@
 
 <ion-content>
   <div class="repair-list">
-    <repair-order-element *ngFor="let item of order" [data]="item" (goto)="goToOtherPage($event,item)"></repair-order-element>
+    <repair-order-element *ngFor="let item of orderList" [data]="item" (goto)="goToOtherPage($event,item)"></repair-order-element>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </div>
+
   <div class="full-mask" *ngIf="sta != 0" (click)="show(0)"></div>
 
 </ion-content>
