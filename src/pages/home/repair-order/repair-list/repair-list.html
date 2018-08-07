@@ -5,13 +5,13 @@
   <div class="tabs">
     <ul class="tabs-rate tabs-third">
       <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }" (click)="tabs('orderUndoPage'); show(0)">
-        <em class="text">待接单(8)</em>
+        <em class="text">待接单( {{waitingOrder}} )</em>
       </li>
       <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }" (click)="tabs('OrderConductPage'); show(0)">
-        <em class="text">进行中(3)</em>
+        <em class="text">进行中( {{processingOrder}} )</em>
       </li>
       <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }" (click)="tabs('OrderDonePage'); show(0)">
-        <em class="text">已完成</em>
+        <em class="text">已完成( {{completedOrder}} )</em>
       </li>
     </ul>
     <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'orderUndoPage'">
@@ -86,7 +86,6 @@
 <ion-content>
   <div class="repair-list">
     <repair-order-element *ngFor="let item of orderList" [data]="item" (goto)="goToOtherPage($event,item)"></repair-order-element>
-
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
       <ion-infinite-scroll-content></ion-infinite-scroll-content>
     </ion-infinite-scroll>

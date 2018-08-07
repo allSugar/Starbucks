@@ -16,7 +16,6 @@ export class orderUndoPage {
     this.navCtrl = this.app.getRootNav();
     this.data = navParams.get('data');
   }
-
   goToOtherPage(name:string){
     this.navCtrl.push(name);
   }

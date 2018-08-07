@@ -21,6 +21,10 @@ export class RepairListPage extends BaseUI  {
   pageNumber: any = 0;
   totalNumber: any;
 
+  waitingOrder: number = 0;
+  processingOrder: number = 0;
+  completedOrder: number = 0;
+
   constructor(
     public app: App,
     public http: HttpService,
@@ -52,6 +56,13 @@ export class RepairListPage extends BaseUI  {
       }
       if (!!res && res.responseCode == 167050) {
         res.responseObj.map(item => {
+          if(item.status === 1) {
+            this.waitingOrder++;
+          }else if(item.status === 2){
+            this.processingOrder++;
+          }else if(item.status === 3){
+            this.completedOrder++;
+          }
           this.orderList.push(item);
         });
         this.totalNumber = this.totalNumber || res["totalNumber"];

@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
     <ul class="info-list" [ngClass]="{'info-show': status == 1}">
       <li class="info-item">
         <em class="title">订单号</em>
-        <strong class="text">W_017092_002</strong>
+        <strong class="text">{{data.orderCode}}</strong>
       </li>
       <li class="info-item">
         <em class="title">400单号</em>
@@ -39,7 +39,7 @@ import { Component, Input } from '@angular/core';
       </li>
       <li class="info-item">
         <em class="title">下单时间</em>
-        <strong class="text">2017-12-20 12:20</strong>
+        <strong class="text">{{data.createTime}}</strong>
       </li>
     </ul>
     <em class="icon-arrow-top" *ngIf="status == 0" (click)="tabs(1)"></em>
@@ -48,7 +48,6 @@ import { Component, Input } from '@angular/core';
 })
 export class OrderInfoTmpl {
   @Input() data: any;
-  @Input() arr: any;
   status: number = 0;
   constructor() {
   }
