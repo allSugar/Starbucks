@@ -214,6 +214,7 @@ export class AddProblemPage extends BaseUI {
 
       let response = data.response;
 
+      alert(JSON.stringify(response));
       if (typeof response === "string") {
         response = JSON.parse(response)
       }
@@ -224,7 +225,7 @@ export class AddProblemPage extends BaseUI {
         return false;
       }
 
-      let imagePath = RES_ROOT + response["dir"] + response["serverFileName"];
+      let imagePath = response["dir"] + response["serverFileName"];
       //在用户看清弹窗提示后进行页面的关闭
       this.relationProblem(loading, imagePath);
     }, err => {
@@ -236,6 +237,7 @@ export class AddProblemPage extends BaseUI {
   relationProblem(loading, imagePath) {
     let params = { method: "repair.addStoreRepairTemporaryBillFile", fileType: 1, filePaths: imagePath };
     params["storeRepairTemporaryBillId"] = this.problem.id;
+    alert(JSON.stringify(params));
     this.http.get(params).subscribe(res => {
       loading.dismiss();
       alert(JSON.stringify(res));

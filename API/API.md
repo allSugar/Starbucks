@@ -3,6 +3,20 @@
 # 外网正式（http://www.sunanyun.com/yunzhuApi/getData）
 # API介绍（http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
 
+# 账号
+### 维修主管和维修员
+    15503308184
+    123456
+
+### 店长
+    16666666666
+    123456
+
+### 项目经理 
+    13920905364
+    a1234567
+
+
 ### 登录
 2.37　 根据用户名获取用户简要信息及账号列表(done)
 ```
@@ -13,9 +27,6 @@
 ```
 ?method=userManager.login&userName=admin&passWord=admin
 &accountId=1&appkey=123456&appsecret=123456&clientId=request
-帐号：13920905364
-密码：a1234567
-权限：项目经理
 ```
 ### 首页
 10.5　 根据条件获取门店附件（全景图，门店照，使用说明）

@@ -18,9 +18,9 @@ export class LoginPage {
   userInfo: any = {
     method: "userManager.login",
     clientId: "request",
-    userName: "13920905364",
-    passWord: "a1234567",
-    accountId: 3
+    userName: "15503308184",
+    passWord: "123456",
+    accountId: Number
   }
 
   accountList: Array<any> = [];
@@ -32,24 +32,43 @@ export class LoginPage {
     private storage: Storage,
     public login: LoginService
   ) {
-    var params = { method: "userManager.findAccount" };
+    this.GetAccountList();
+  }
+
+  HandleChange() {
+    this.GetAccountList();
+  }
+
+  GetAccountList() {
+    if (!this.userInfo.userName) {
+      this.toast.info("请输入用户名！");
+      this.accountList = [];
+      return false;
+    }
+
+    let params = { method: "userManager.findUserAccount", userName: this.userInfo.userName };
     this.http.get(params).subscribe(res => {
-      if (!!res && res.responseCode == 103010) {
-        this.accountList = res.responseObj;
-      };
+      if (!!res && res.responseCode == 103070) {
+        this.accountList = res.responseObj.accountList;
+        this.userInfo.accountId = this.accountList[0].id;
+      } else {
+        this.accountList = [];
+        this.toast.info("请输入正确对用户名！");
+      }
     }, error => {
 
     });
+
   }
 
   logIn() {
     if (!this.userInfo.userName) {
-      this.toast.info("请输入账号");
+      this.toast.info("请输入账号！");
       return false;
     }
 
     if (!this.userInfo.passWord) {
-      this.toast.info("请输入密码");
+      this.toast.info("请输入密码！");
       return false;
     }
 
@@ -58,7 +77,6 @@ export class LoginPage {
         if (!!res && res.responseCode == 101020) {
           let val = res.responseObj;
           val.clientId = res.clientId;
-          alert(JSON.stringify(res.clientId));
           this.storage.set("userInfo", JSON.stringify(val));
           this.login.isLogin = !!val;
           this.login.userInfo = val;
