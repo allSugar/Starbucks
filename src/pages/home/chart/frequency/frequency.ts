@@ -13,8 +13,8 @@ export class FrequencyPage {
 
   @ViewChild('chartPie') chartPie: ElementRef;
 
-  repairList: any;
-  repair: any[];
+  repairList: Object[] = [];
+  repair: Object[] = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -29,7 +29,7 @@ export class FrequencyPage {
     this.http.get(params).subscribe(res => {
       console.log(res)
       if (!!res && res.responseCode == 167110) {
-        this.repairList = res.responseObj;
+        this.repairList = res.responseObj.repairStatisticsList;
         for (var i = 0; i < this.repairList.length; i++) {
           var repairList = this.repairList[i];
           this.repair.push({
@@ -38,6 +38,7 @@ export class FrequencyPage {
           });
         }
       }
+      console.log(this.repaire)
     });
   }
   status: number = 0;

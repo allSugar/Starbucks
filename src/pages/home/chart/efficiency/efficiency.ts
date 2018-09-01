@@ -23,7 +23,7 @@ export class EfficiencyPage {
     }
     this.http.get(params).subscribe(res => {
       console.log(res)
-      if (!!res && res.responseCode == 167050) {
+      if (!!res && res.responseCode == 168120) {
         this.orderList = res.responseObj;
         for (var i = 0; i < this.orderList.length; i++) {
           var orderList = this.orderList[i];
