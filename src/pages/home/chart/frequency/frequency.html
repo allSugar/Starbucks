@@ -13,16 +13,16 @@
       </div>
     </div>
     <ul class="data-list">
-      <li class="data-item" *ngFor="let item of data; let i = index">
+      <li class="data-item" *ngFor="let item of repairList; let i = index">
         <em class="bar-frequency-{{ i+1 }}"></em>
         <div class="data-body">
           <div class="data-head">
-            <span class="title" (click)="changeData()">{{ item.title }}</span>
+            <span class="title" (click)="changeData()">{{ item.storeName }}</span>
             <span class="percentage">{{ item.percentage }}</span>
-            <span class="price">￥{{ item.price }}</span>
+            <span class="price">￥{{ item.longestDay }}</span>
             <em class="icon-arrow-right f-right"></em>
           </div>
-          <div class="count">维修{{ item.count }}次</div>
+          <div class="count">维修{{ item.repairNum }}次</div>
         </div>
       </li>
     </ul>

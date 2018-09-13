@@ -38,7 +38,6 @@ export class FrequencyPage {
           });
         }
       }
-      console.log(this.repaire)
     });
   }
   status: number = 0;
