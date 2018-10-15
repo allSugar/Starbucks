@@ -30,13 +30,9 @@ export class FrequencyPage {
       console.log(res)
       if (!!res && res.responseCode == 167110) {
         this.repairList = res.responseObj.repairStatisticsList;
-        for (var i = 0; i < this.repairList.length; i++) {
-          var repairList = this.repairList[i];
-          this.repair.push({
-            number: repairList.totalRepairNum,
-            price: repairList.totalRepairPrice
-          });
-        }
+        //for (var i = 0; i < this.repairList.length; i++) {
+        //  var repairList = this.repairList[i];
+        //}
       }
     });
   }
@@ -72,11 +68,17 @@ export class FrequencyPage {
 
   ];
   ionViewDidEnter() {
+    var  lables = [],datas = [];
+    for (var i = 0; i<this.repairList.length;i++){
+      lables.push(this.repairList[i].storeName);
+      datas.push(this.repairList[i].repairNum);
+    }
     Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
       data: {
+        labels: lables,
         datasets: [
           {
-            data: [20, 30, 15, 10, 25],
+            data: datas,
             backgroundColor: [
               "#1E8CE1",
               "#8CC42A",
