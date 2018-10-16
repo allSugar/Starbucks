@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="order-detail">
-    <div class="status">
+    <div class="status" *ngIf="userInfo.currentAccount.accountType === 2">
       <em class="icon-hourglass"></em>
       <span class="title">厂商未接单</span>
     </div>

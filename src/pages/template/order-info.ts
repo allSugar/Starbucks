@@ -47,9 +47,10 @@ import { Component, Input } from '@angular/core';
   </div>`
 })
 export class OrderInfoTmpl {
-  @Input() data: any;
+  @Input() data: any = {};
   status: number = 0;
   constructor() {
+    console.log(this);
   }
   tabs(n: number) {
     this.status = n;

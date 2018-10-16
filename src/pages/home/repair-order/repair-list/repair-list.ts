@@ -56,11 +56,11 @@ export class RepairListPage extends BaseUI {
       }
       if (!!res && res.responseCode == 167050) {
         res.responseObj.map(item => {
-          if (item.status === 1) {
+          if (item.status > 0 && item.status < 4) {
             this.waitingOrder++;
-          } else if (item.status === 2) {
+          } else if (item.status > 3 && item.status < 8) {
             this.processingOrder++;
-          } else if (item.status === 3) {
+          } else if (item.status > 7) {
             this.completedOrder++;
           }
           this.orderList.push(item);
