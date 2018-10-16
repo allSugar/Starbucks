@@ -48,8 +48,8 @@ export class RepairNumberPage {
   ionViewDidEnter() {
     var datas = [], labels = [];
     for (var i=0;i<this.data.length;i++){
-      datas.push(this.data[i].num);
-      labels.push('周' + this.data[i].day);
+      datas.push(this.data[i]["num"]);
+      labels.push('周' + this.data[i]["day"]);
     }
     Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
       data: {

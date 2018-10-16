@@ -31,12 +31,12 @@ export class WeeklyIssuesPage {
         for (var i = 0; i < this.dataList.length; i++) {
           var dataList = this.dataList[i];
           this.data.push({
-            number: dataList.totalRepairNum,
-            price: dataList.totalRepairPrice
+            number: dataList["totalRepairNum"],
+            price: dataList["totalRepairPrice"]
           });
         }
       }
-      console.log(this.repaire)
+      // console.log(this.repaire)
     });
   }
   ionViewDidEnter() {

@@ -70,8 +70,8 @@ export class FrequencyPage {
   ionViewDidEnter() {
     var  lables = [],datas = [];
     for (var i = 0; i<this.repairList.length;i++){
-      lables.push(this.repairList[i].storeName);
-      datas.push(this.repairList[i].repairNum);
+      lables.push(this.repairList[i]["storeName"]);
+      datas.push(this.repairList[i]["repairNum"]);
     }
     Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
       data: {
