@@ -23,17 +23,17 @@ export class SortPage {
   getData() {
     var params = {
       method: 'statistics.repairWarehouseStatistics',
+      warehouseType:'1'
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
-      if (!!res && res.responseCode == 167050) {
-        this.orderList = res.responseObj;
+      if (!!res && res.responseCode == 168110) {
+        this.orderList = res.responseObj.repairStatisticsList;
         for (var i = 0; i < this.orderList.length; i++) {
           var orderList = this.orderList[i];
           this.order.push({
-            createTime: orderList.createTime,
-            orderCode: orderList.orderCode,
-            status: orderList.status
+            repairNum: orderList.repairNum,
+            repairPrice: orderList.repairPrice,
+            warehouseName: orderList.warehouseName
           })
         }
       }
@@ -45,20 +45,20 @@ export class SortPage {
     this.status = n;
   }
 
-    data: any = [
-        {title: '设备维修', percentage: '20%', price:'24000', count: '20'},
-        {title: '设施维修', percentage: '20%', price:'24000', count: '20'},
-        {title: '设施保养', percentage: '20%', price:'24000', count: '20'},
-        {title: '设备保养', percentage: '20%', price:'24000', count: '20'},
-        {title: '桌椅维修', percentage: '20%', price:'24000', count: '20'}
-
-    ];
+   
     ionViewDidEnter() {
+      var data = [],lables =[];
+      for(var i = 0; i < this.order.length; i++ ){
+        data.push(this.order[i]["repairNum"]);
+        lables.push(this.order[i]["warehouseName"]);
+      }
         Chart.Doughnut(this.chartPie.nativeElement.getContext("2d"), {
+
             data: {
+              labels: lables,
                 datasets: [
                     {
-                        data: [20, 30, 15, 10, 25],
+                        data: data,
                         backgroundColor: [
                             "#FF8084",
                             "#FFA15C",
