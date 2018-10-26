@@ -20,8 +20,8 @@ export class orderUndoPage {
     this.userInfo = this.login.userInfo;
     this.navCtrl = this.app.getRootNav();
     this.data = navParams.get('data');
-    console.log(this);
   }
+
   goToOtherPage(name: string) {
     this.navCtrl.push(name);
   }

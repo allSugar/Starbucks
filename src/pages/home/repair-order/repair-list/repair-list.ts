@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, App, LoadingController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, App, LoadingController, NavParams, Content } from 'ionic-angular';
 
 
 import { BaseUI } from '../../../../directives/comm/baseui';
@@ -11,6 +11,8 @@ import { HttpService } from '../../../../service/HttpService';
 })
 
 export class RepairListPage extends BaseUI {
+
+  @ViewChild(Content) content: Content;
 
   orderList: Array<any> = [];
   order: Object[] = [];
@@ -25,20 +27,31 @@ export class RepairListPage extends BaseUI {
   processingOrder: number = 0;
   completedOrder: number = 0;
 
+  paramsStatus: Array<any> = [1, 2, 3];
+
+  infiniteScroll: any;
+
   constructor(
     public app: App,
+    public navParams: NavParams,
     public http: HttpService,
     public loadingCtrl: LoadingController,
-
   ) {
 
     super();
-    let loading = super.showLoading(this.loadingCtrl);
-
     this.navCtrl = this.app.getRootNav();
+
+    if (this.navParams.get('remove')) {
+      let len = this.navParams.get('len'),
+        startIndex = this.navCtrl.getViews().length - len;
+      this.navCtrl.remove(startIndex, len);
+    }
+
+    let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading);
   }
   doInfinite(infiniteScroll) {
+    this.infiniteScroll = this.infiniteScroll || infiniteScroll;
     if (this.pageNumber === this.totalNumber) {
       infiniteScroll.complete();
       infiniteScroll.enable(false);
@@ -48,32 +61,53 @@ export class RepairListPage extends BaseUI {
     this.getListData(loading, infiniteScroll);
   }
   getListData(loading, infiniteScroll: any = false) {
-    let params = { method: "repair.findStoreRepairOrder", pageNumber: this.pageNumber + 1 };
+    let params = { method: "repair.findStoreRepairOrder", statuss: String(this.paramsStatus), pageNumber: this.pageNumber + 1 };
     this.http.get(params).subscribe(res => {
       loading.dismiss();
       if (infiniteScroll) {
         infiniteScroll.complete();
       }
       if (!!res && res.responseCode == 167050) {
-        res.responseObj.map(item => {
-          if (item.status > 0 && item.status < 4) {
-            this.waitingOrder++;
-          } else if (item.status > 3 && item.status < 8) {
-            this.processingOrder++;
-          } else if (item.status > 7) {
-            this.completedOrder++;
-          }
-          this.orderList.push(item);
-        });
+        if (params.statuss == "1,2,3") {
+          this.waitingOrder = res.totalSize;
+        } else if (params.statuss == "4,5,6,7") {
+          this.processingOrder = res.totalSize;
+        } else if (params.statuss == "8,9") {
+          this.completedOrder = res.totalSize;
+        }
+        this.orderList = this.orderList.concat(res.responseObj);
         this.totalNumber = this.totalNumber || res["totalNumber"];
         this.pageNumber = res["pageNumber"];
+        if (
+          this.pageNumber === 1 &&
+          res["totalNumber"] > 1 &&
+          this.infiniteScroll) {
+          this.infiniteScroll.enable(true);
+        }
       };
     });
   }
 
   tabs(name: string) {
+    if (this.status === name) {
+      return false;
+    }
+    this.content.scrollToTop();
+    this.orderList = [];
+    this.pageNumber = 0;
     this.status = name;
     this.sta = 0;
+
+    if (name === "orderUndoPage") {
+      this.paramsStatus = [1, 2, 3];
+    } else if (name === "OrderConductPage") {
+      this.paramsStatus = [4, 5, 6, 7];
+    } else {
+      this.paramsStatus = [8, 9];
+    }
+
+    let loading = super.showLoading(this.loadingCtrl);
+    this.getListData(loading);
   }
 
   goToOtherPage(name, item) {

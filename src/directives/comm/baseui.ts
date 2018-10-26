@@ -45,7 +45,7 @@ export abstract class BaseUI {
         let toast = toastCtrl.create({
             message: message,
             duration: 3000, //默认展示的时长
-            position: 'bottom'
+            position: 'top'
         });
         toast.present();
         return toast;

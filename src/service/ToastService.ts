@@ -4,18 +4,20 @@ import { ToastController } from 'ionic-angular';
 @Injectable()
 
 export class ToastService {
-
-    position:string = "middle";
-
     constructor(
         public toastCtrl: ToastController
     ) { }
 
-    info(content: string) {
+    info(content: string, callback: any) {
         let toast = this.toastCtrl.create({
             message: content,
             duration: 2000,
-            position: this.position
+            position: "top"
+        });
+        toast.onDidDismiss(() => {
+            if (!!callback) {
+                callback()
+            }
         });
         toast.present();
     }
