@@ -1,5 +1,5 @@
-<div class="point">
-  <div *ngIf="currentAccount.id !== 13">
+<div class="point" [ngClass]="{ 'point-checkbox' : isassign }">
+  <div class="point-content-body p-b-xxl" *ngIf="currentAccount.id !== 13">
     <div class="point-title">
       <span>北京钟楼百货星巴克</span>
       <em class="icon-arrow-right f-none"></em>
@@ -25,7 +25,13 @@
       <div class="btn-retract" (click)="deleteStoreRepairOrder()">撤回</div>
     </div>
   </div>
-  <div *ngIf="currentAccount.id === 13">
+  <div class="point-content-checkox">
+    <label class="item-choice checkbox">
+      <input value="2" type="checkbox">
+      <ins class="checkbox-icon"></ins>
+    </label>
+  </div>
+  <div class="point-content-body" *ngIf="currentAccount.id === 13">
     <div class="ponit-content-img">
       <img alt="" src="assets/imgs/change-after.png">
       <img alt="" src="assets/imgs/change-after.png">

@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { App, LoadingController } from 'ionic-angular';
-import { HttpService } from '../../../service/HttpService';
-import { BaseUI } from '../../../directives/comm/baseui';
-import { ToastService } from '../../../service/ToastService';
+import { BaseUI } from '@/../../src/directives/comm/baseui';
+import { ToastService } from '@/../../src/service/ToastService';
 
-import { LoginService } from '../../../service/LoginService';
+import { HttpService } from '@/../../src/service/HttpService';
+import { LoginService } from '@/../../src/service/LoginService';
 
 @Component({
   selector: 'order-point',
@@ -17,6 +17,7 @@ export class OrderPointTmpl extends BaseUI {
   @Input() done: Boolean = true;
   @Input() listdata: any = {};
   @Input() detail: Boolean = true;
+  @Input() isassign: Boolean = false;
 
   @Output() goto = new EventEmitter<any>();
 

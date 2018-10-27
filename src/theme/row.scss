@@ -1,47 +1,66 @@
 .row-ibox {
   background-color: $white;
   overflow: hidden;
+
   .row-list {
     margin-left: 15px;
     margin-bottom: -1px;
+
     .row-item {
       display: table;
       width: 100%;
       padding: 15px 0;
       font-size: 16px;
       line-height: 1;
+
       &+.row-item {
         border-top: 1px solid $border;
       }
+
       &+.row-wrapper {
         border-bottom: 1px solid $border;
       }
     }
+
     label.row-item {
       display: table;
     }
+
     &.row-lg {
       >.row-item {
         padding: 20px 0;
       }
     }
+
     &.row-llg {
       >.row-item {
         padding: 25px 0;
       }
     }
+
+    &.row-inner {
+      margin-left: 0;
+
+      .row-item {
+        padding-left: 15px;
+      }
+    }
   }
+
   .row-title {
     padding-top: 10px;
     font-size: 13px;
     font-weight: 700;
   }
+
   .row-title-lg {
     padding-top: 10px;
     font-size: 14px;
     font-weight: normal;
   }
+
   .row-item {
+
     .item-choice,
     .item-img,
     .item-icon,
@@ -50,34 +69,42 @@
       display: table-cell;
       vertical-align: middle;
     }
+
     .item-choice,
     .item-img .img-center,
     .item-icon {
       overflow: hidden;
     }
+
     .item-choice {
       width: 35px;
+
       .checkbox,
       .radio {
         float: left;
         margin-right: 15px;
       }
     }
+
     .item-icon {
       width: 35px;
+
       [class*="icon-"] {
         vertical-align: top;
         margin-right: 15px;
       }
     }
+
     .item-img {
       width: 55px;
       height: 40px;
+
       .img-center {
         position: relative;
         height: 100%;
         margin-right: 15px;
       }
+
       img {
         position: absolute;
         top: 0;
@@ -87,57 +114,70 @@
         max-height: 100%;
         margin: auto;
       }
+
       &.radius .img-center {
         @include border_radius(100%);
       }
+
       &.img-xs {
         width: 45px;
         height: 30px;
       }
+
       &.img-lg {
         width: 60px;
         height: 45px;
       }
+
       &.img-llg {
         width: 75px;
         height: 50px;
       }
     }
+
     .item-body {
       position: relative;
+
       .job-sort {
         font-size: 18px;
       }
+
       .repair-firm {
         margin-top: 10px;
         font-size: 13px;
         color: #a4a5a8;
       }
+
       .company {
         margin-top: 8px;
         font-size: 14px;
         color: #7f8393;
       }
+
       .facility,
       .location {
         margin-top: 10px;
         font-size: 12px;
         color: #a2abb8;
       }
+
       .name {
         font-size: 17px;
       }
+
       .telphone {
         margin-top: 8px;
         font-size: 16px;
         color: $gray-light;
       }
+
       .icon-arrow-bottom {
         position: absolute;
         top: 50%;
         right: 30px;
         margin: -3px 0 0 0;
       }
+
       .icon-arrow-right {
         position: absolute;
         top: 50%;
@@ -145,42 +185,62 @@
         margin: -5px 0 0 0;
       }
     }
+
     .item-action {
       width: 80px;
       padding-right: 15px;
+
       .icon-point {
         margin: 7px 15px 7px 0;
       }
+
       >* {
         float: left;
       }
+
       .tag {
         float: right;
         padding: 0 5px;
         font-size: 11px;
         line-height: 18px;
+
         &.tag-normal {
           color: #13b9fe;
           background-color: rgba(19, 185, 254, .2);
         }
+
         &.tag-error {
           color: $red;
           background-color: rgba(248, 42, 20, .2);
         }
       }
     }
+
+    .item-right-icon{
+      float: right;
+      padding-right:35px;
+      color: $secondary-text;
+      .icon-arrow-right{
+        right: 15px;
+      }
+    }
   }
+
   .row-item-box {
     margin-left: -15px;
+
     >.row-item {
       padding-left: 15px;
       border-bottom: 1px solid $border;
     }
   }
+
   .row-wrapper {
     margin-left: -15px;
+
     >.row-list {
       margin: 0;
+
       .row-item {
         padding-left: 15px;
       }
@@ -190,14 +250,17 @@
 
 .row-status-ibox {
   padding: 35px 30px 0 30px;
+
   .row-item {
     display: block;
     padding: 21px 15px 21px 35px;
     height: 100px;
+
     &+.row-item {
       margin-top: 30px;
     }
   }
+
   @for $i from 1 to 3 {
     .row-#{nth($rowStatusBg, $i)} {
       background: {
@@ -207,15 +270,18 @@
       }
     }
   }
+
   [class*="icon-"],
   .text {
     float: left;
   }
+
   .text {
     margin: 20px 0 20px 40px;
     font-size: 18px;
     line-height: 1;
   }
+
   .checkbox {
     float: right;
     margin: 19px 0;

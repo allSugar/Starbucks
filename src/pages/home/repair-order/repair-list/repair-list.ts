@@ -2,8 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, App, LoadingController, NavParams, Content } from 'ionic-angular';
 
 
-import { BaseUI } from '../../../../directives/comm/baseui';
-import { HttpService } from '../../../../service/HttpService';
+import { BaseUI } from '@/../../src/directives/comm/baseui';
+import { HttpService } from '@/../../src/service/HttpService';
 @IonicPage()
 @Component({
   selector: 'page-repair-list',
@@ -49,7 +49,7 @@ export class RepairListPage extends BaseUI {
     let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading);
   }
-  
+
   doInfinite(infiniteScroll) {
     this.infiniteScroll = this.infiniteScroll || infiniteScroll;
     if (this.pageNumber === this.totalNumber) {

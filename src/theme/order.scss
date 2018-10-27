@@ -63,9 +63,29 @@
   }
 
   .point {
+    position: relative;
     margin-top: 10px;
-    padding-bottom: 25px;
     background-color: $white;
+
+    .point-content-checkox {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      .item-choice {
+        width: 45px;
+        height: 100%;
+        padding: 0 15px;
+      }
+
+      .checkbox-icon {
+        position: absolute;
+        top: 50%;
+        margin-top: -8px;
+      }
+    }
 
     .point-title {
       overflow: hidden;
@@ -181,8 +201,8 @@
     }
 
     .point-retract {
-      padding: 15px 15px 0 15px;
-      margin-bottom: -10px;
+      padding: 15px;
+      margin-bottom: -25px;
       overflow: hidden;
 
       .btn-retract {
@@ -199,6 +219,16 @@
         &+.btn-retract {
           margin-right: 15px;
         }
+      }
+    }
+
+    &.point-checkbox {
+      .point-content-checkox {
+        display: block;
+      }
+
+      .point-content-body {
+        margin-left: 45px;
       }
     }
   }

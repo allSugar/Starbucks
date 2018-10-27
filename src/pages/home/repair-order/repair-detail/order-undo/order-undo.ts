@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavParams } from 'ionic-angular';
 
+import { HttpService } from '@/../../src/service/HttpService';
 import { LoginService } from '@/../../src/service/LoginService';
 
 @IonicPage()
@@ -14,11 +15,13 @@ export class orderUndoPage {
   navCtrl: any;
   userInfo: any;
   currentAccount: any;
+  isassign: Boolean = false;
 
   constructor(
     public app: App,
     public navParams: NavParams,
-    public login: LoginService
+    public login: LoginService,
+    public http: HttpService
   ) {
     this.currentAccount = this.login.userInfo['currentAccount'];
     this.userInfo = this.login.userInfo;
@@ -34,4 +37,12 @@ export class orderUndoPage {
     this.navCtrl.push(name);
   }
 
+  assignRepair() {
+    console.log(1);
+    this.isassign = true;
+  }
+  
+  assignRepairNext() {
+    this.navCtrl.push("AssignRepairPage");
+  }
 }

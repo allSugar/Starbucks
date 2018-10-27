@@ -7,35 +7,4 @@ page-repair-point-list {
       margin-left: 20px;
     }
   }
-  .float-box {
-    position: relative;
-    min-height: 50px;
-    background-color: $white;
-    padding: 0 135px 0 15px;
-  }
-  .float-choice,
-  .float-sum {
-    padding-top: 15px;
-    float: left;
-    line-height: 20px;
-  }
-  .float-choice {
-    .checkbox-icon {
-      margin-top: 2px;
-    }
-  }
-  .float-sum {
-    margin-left: 15px;
-    font-size: 16px;
-  }
-  .float-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 18px;
-    width: 135px;
-    padding: 16px 0;
-    background-color: $green;
-    color: $white;
-  }
 }
