@@ -3,18 +3,7 @@
 # 外网正式（http://www.sunanyun.com/yunzhuApi/getData）
 # API介绍（http://121.42.197.153:8080/YunZhuServer/api/api.common.xml）
 
-# 账号
-### 维修主管和维修员
-    15503308184
-    123456
 
-### 店长
-    16666666666
-    123456
-
-### 项目经理 
-    13920905364
-    a1234567
 
 
 ### 登录

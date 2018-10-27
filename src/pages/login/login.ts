@@ -78,8 +78,7 @@ export class LoginPage {
           let val = res.responseObj;
           val.clientId = res.clientId;
           this.storage.set("userInfo", JSON.stringify(val));
-          this.login.isLogin = !!val;
-          this.login.userInfo = val;
+          this.login.isLoginFun();
           this.navCtrl.setRoot(TabsPage);
         } else {
           this.toast.info(res.responseMsg)

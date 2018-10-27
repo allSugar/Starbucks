@@ -8,6 +8,7 @@
     background-image: url("#{$image-bg}/bg_success.png");
     background-size: cover;
     overflow: hidden;
+
     .title {
       float: left;
       margin-left: 10px;
@@ -15,10 +16,12 @@
       color: white;
     }
   }
+
   .info {
     margin-top: 10px;
     padding: 0 20px 15px;
     background-color: $white;
+
     .info-title {
       width: 71px;
       line-height: 23px;
@@ -27,80 +30,101 @@
       color: white;
       background-color: $green;
     }
+
     .info-list {
       max-height: 42px;
       overflow: hidden;
+
       .info-item {
-        font-size: 13px;
+
         overflow: hidden;
+
         .title {
           float: left;
+          font-size: 13px;
           color: $secondary-text;
         }
+
         .text {
           float: right;
+          font-size: 13px;
           font-weight: normal;
         }
+
         &+.info-item {
           margin-top: 6px;
         }
       }
+
       &.info-show {
         max-height: none;
       }
     }
   }
+
   .point {
     margin-top: 10px;
     padding-bottom: 25px;
     background-color: $white;
+
     .point-title {
       overflow: hidden;
       font-size: 15px;
       padding: 11px 13px 11px;
     }
+
     .point-content {
       background-color: $body-bg;
       overflow: hidden;
       padding: 15px;
+
       .point-img {
         float: left;
         width: 80px;
         height: 80px;
+
         img {
           max-width: 100%;
         }
       }
+
       .point-body {
         position: relative;
         height: 80px;
         width: 70%;
         margin-left: 30%;
+
         .point-describe {
           overflow: hidden;
+
           .address {
             float: left;
             color: $gray;
           }
+
           .currency {
             float: right;
             color: $red;
           }
+
           [class*='urgent-'] {
             float: right;
             margin-right: 0;
           }
         }
+
         .point-tag {
           margin-top: 5px;
           font-size: 13px;
           color: $gray;
+
           .tag {
             padding: 2px 4px;
             color: $yellow;
             border: 1px solid $yellow;
           }
         }
+
         .point-action {
           position: absolute;
           left: 0;
@@ -109,6 +133,7 @@
           overflow: hidden;
           color: $gray-light;
           font-size: 13px;
+
           .question {
             float: right;
             color: $red;
@@ -116,22 +141,73 @@
         }
       }
     }
+
+    .ponit-content-img {
+      padding: 20px 15px;
+      border-bottom: 1px solid $border;
+      overflow: hidden;
+
+      img {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        border-radius: 3px;
+      }
+
+      .icon-point {
+        height: 40px;
+        margin-left: 10px;
+        vertical-align: top;
+      }
+    }
+
+    .point-info {
+      padding: 15px;
+      border-bottom: 1px solid $border;
+      line-height: 1;
+      font-size: 12px;
+
+      .text {
+        &.title {
+          font-size: 13px;
+          color: $green;
+        }
+
+        &+.text {
+          margin-top: 6px;
+        }
+      }
+    }
+
     .point-retract {
       padding: 15px 15px 0 15px;
       margin-bottom: -10px;
       overflow: hidden;
+
       .btn-retract {
         float: right;
         padding: 3px 11px;
         border: 1px solid $main-text;
         border-radius: 2px;
+
+        &.success {
+          border-color: $green;
+          color: $green;
+        }
+
+        &+.btn-retract {
+          margin-right: 15px;
+        }
       }
     }
   }
+
   .pay {
     margin-top: 10px;
     padding: 21px 12px;
     background-color: white;
+
     .sum {
       float: right;
       color: $red;
@@ -143,27 +219,34 @@
 
 .process-list {
   color: $main-text;
+
   .process-element {
     min-height: 100%;
     background-color: $white;
+
     .media-title {
       padding: 18px 0;
       font-size: 17px;
       text-align: center;
     }
+
     .media-body {
       border-top: 1px solid $box-border;
       padding-left: 30px;
       padding-bottom: 40px;
     }
+
     .media-timeline {
       padding: 40px 15px 0 15px;
       border-left: 1px solid $box-border;
     }
+
     .timeline-list {
       line-height: 15px;
+
       .timeline-item {
         position: relative;
+
         &::before,
         &::after {
           content: '';
@@ -171,14 +254,17 @@
           width: 9px;
           left: -20px;
         }
+
         &::after {
           top: 3px;
           height: 9px;
           background-color: #d0d5de;
           @include border_radius(100%);
         }
+
         &:last-child {
           color: $green;
+
           &::after {
             width: 5px;
             height: 5px;
@@ -187,26 +273,31 @@
             border: 3px solid $green;
             background-color: $white;
           }
+
           &::before {
             top: 7px;
             bottom: 0;
             background-color: $white;
           }
         }
+
         &+.timeline-item {
           margin-top: 40px;
         }
       }
+
       .text {
         display: block;
         margin-right: 100px;
       }
+
       .time {
         position: absolute;
         top: 0;
         right: 0;
         color: $gray-light;
       }
+
       .describe {
         position: absolute;
         top: 100%;
@@ -227,28 +318,34 @@
   margin-top: 10px;
   padding: 15px 15px 20px 15px;
   background-color: white;
+
   .explain-head {
     line-height: 25px;
     overflow: hidden;
+
     .title {
       float: left;
       font-size: 16px;
       color: $gray;
     }
+
     .time {
       float: right;
       font-size: 10px;
       color: $gray-light;
     }
   }
+
   .explain-content {
     margin-top: 20px;
     font-size: 15px;
     color: $gray;
   }
+
   .explain-footer {
     margin-top: 50px;
     overflow: hidden;
+
     img {
       float: left;
       width: 50px;

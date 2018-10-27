@@ -14,11 +14,24 @@ export class LoginService {
   constructor(
     private app: App,
     private storage: Storage
-  ) {
+  ) { }
+
+  isLoginFun(callback: any = null) {
+    this.storage.get('userInfo').then((val) => {
+      val = JSON.parse(val);
+      if (!!val) {
+        this.isLogin = !!val;
+        this.userInfo = val;
+        this.setCurrentAccount(val.currentAccount);
+      }
+      if (callback) {
+        callback(!!val);
+      }
+    });
   }
 
-  isLoginFun(callback: any) {
-    this.storage.get('userInfo').then((val) => callback(val));
+  setCurrentAccount(account) {
+    
   }
 
   loginOut() {

@@ -42,8 +42,8 @@ import { Component, Input } from '@angular/core';
         <strong class="text">{{data.createTime}}</strong>
       </li>
     </ul>
-    <em class="icon-arrow-top" *ngIf="status == 0" (click)="tabs(1)"></em>
-    <em class="icon-arrow-bottom" *ngIf="status == 1" (click)="tabs(0)"></em>
+    <em class="icon-arrow-top" *ngIf="status == 1" (click)="tabs(0)"></em>
+    <em class="icon-arrow-bottom" *ngIf="status == 0" (click)="tabs(1)"></em>
   </div>`
 })
 export class OrderInfoTmpl {

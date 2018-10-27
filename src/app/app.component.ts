@@ -20,10 +20,7 @@ export class MyApp {
         login: LoginService
     ) {
         login.isLoginFun((val) => {
-            val = JSON.parse(val);
-            if (!!val) {
-                login.isLogin = !!val;
-                login.userInfo = val;
+            if (val) {
                 this.rootPage = TabsPage;
             } else {
                 this.rootPage = LoginPage;

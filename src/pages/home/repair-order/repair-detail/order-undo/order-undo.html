@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="order-detail">
-    <div class="status" *ngIf="userInfo.currentAccount.accountType === 2">
+    <div class="status" *ngIf="currentAccount.accountType === 2">
       <em class="icon-hourglass"></em>
       <span class="title">厂商未接单</span>
     </div>
@@ -14,9 +14,13 @@
     <div class="point-list">
       <order-point [listdata]="data" [done]="false" (goto)="goToDetailPage($event)"></order-point>
     </div>
-    <div class="add-photo">
+    <div class="add-photo" *ngIf="currentAccount.id !== 13">
       <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>
       <em class="text">添加问题</em>
     </div>
   </div>
 </ion-content>
+
+<ion-footer *ngIf="currentAccount.id === 13">
+  <button class="footer-button">指派维修员</button>
+</ion-footer>

@@ -319,6 +319,8 @@
   height: 4px;
   background-image: url("#{$image-icon}/icon-point.png");
   background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 [class *=icon-circle-add] {

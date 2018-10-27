@@ -37,7 +37,6 @@ export class RepairListPage extends BaseUI {
     public http: HttpService,
     public loadingCtrl: LoadingController,
   ) {
-
     super();
     this.navCtrl = this.app.getRootNav();
 
@@ -50,6 +49,7 @@ export class RepairListPage extends BaseUI {
     let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading);
   }
+  
   doInfinite(infiniteScroll) {
     this.infiniteScroll = this.infiniteScroll || infiniteScroll;
     if (this.pageNumber === this.totalNumber) {
@@ -60,6 +60,7 @@ export class RepairListPage extends BaseUI {
     let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading, infiniteScroll);
   }
+
   getListData(loading, infiniteScroll: any = false) {
     let params = { method: "repair.findStoreRepairOrder", statuss: String(this.paramsStatus), pageNumber: this.pageNumber + 1 };
     this.http.get(params).subscribe(res => {

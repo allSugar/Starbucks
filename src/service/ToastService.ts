@@ -8,7 +8,7 @@ export class ToastService {
         public toastCtrl: ToastController
     ) { }
 
-    info(content: string, callback: any) {
+    info(content: string, callback: any = null) {
         let toast = this.toastCtrl.create({
             message: content,
             duration: 2000,

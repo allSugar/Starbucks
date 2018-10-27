@@ -44,15 +44,18 @@ ion-header.header {
     &.toolbar {
       min-height: 48px
     }
+
     .toolbar-background {
       background: $blue; //border-bottom: 1px solid $black-blue;
     }
+
     .toolbar-title {
       color: white;
       font-size: 18px;
       font-weight: 400;
       text-align: center;
     }
+
     ion-title {
       left: 0;
       top: 0;
@@ -61,15 +64,18 @@ ion-header.header {
       width: 100%;
       height: 48PX;
     }
+
     &.border-none {
       .toolbar-background {
         border: 0;
       }
     }
+
     &:after {
       display: none;
     }
   }
+
   &:after {
     display: none;
   }
@@ -80,10 +86,12 @@ ion-footer.footer {
     &.toolbar {
       min-height: 44px;
     }
+
     .toolbar-background {
       background-color: $white;
     }
   }
+
   &::before {
     display: none;
   }
@@ -188,6 +196,7 @@ li {
 .checkbox {
   display: inline-block;
   overflow: hidden;
+
   input {
     height: 0;
     width: 0;
@@ -195,6 +204,7 @@ li {
     overflow: hidden;
     @include opacity(0);
   }
+
   input+.checkbox-icon {
     float: left;
     width: 15px;
@@ -202,9 +212,11 @@ li {
     background-image: url("#{$image-icon}/icon_unselected.png");
     background-size: 100%;
   }
+
   input:checked+.checkbox-icon {
     background-image: url("#{$image-icon}/icon_selected.png");
   }
+
   .text {
     float: left;
     margin-left: 10px;
@@ -217,6 +229,15 @@ ion-list.list-ios {
   margin: 0;
 }
 
-ion-infinite-scroll-content[state=loading] .infinite-loading{
+ion-infinite-scroll-content[state=loading] .infinite-loading {
   margin: 0;
+}
+
+.footer-button {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  background-color: $green;
+  font-size: 18px;
+  color: $white;
 }
