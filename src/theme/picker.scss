@@ -1,6 +1,6 @@
 .picker-wrapper {
   .picker-toolbar {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid $border !important;
 
     .picker-toolbar-button {
       width: 50%;
@@ -9,10 +9,34 @@
       .picker-button {
         font-size: 1.4rem;
         font-weight: 400 !important;
+        color: $green;
       }
 
       &.picker-toolbar-cancel {
         text-align: left;
+      }
+    }
+  }
+
+  .picker-columns {
+    .picker-above-highlight {
+      display: block;
+      border: 0;
+      // height: 85px;
+      // @include transform(none);
+    }
+
+    .picker-below-highlight {
+      display: block;
+      border: 0;
+      // top: 120px;
+    }
+
+    .picker-opt {
+      font-size: 14px;
+
+      &.picker-opt-selected {
+        color: $green;
       }
     }
   }

@@ -12,7 +12,7 @@
     <ul class="row-list row-inner row-llg">
       <li class="row-item" (click)="openCalendar()">
         <div class="item-body">
-          <em class="text">日期</em>
+          <em class="text item-title">日期</em>
           <div class="item-right-icon">
             <em class="text">{{ dateFormmat }}</em>
             <i class="icon-arrow-right"></i>
@@ -21,7 +21,7 @@
       </li>
       <li class="row-item">
         <div class="item-body">
-          <em class="text">时间点</em>
+          <em class="text item-title">时间点</em>
           <div class="item-right-icon">
             <ion-datetime displayFormat="HH:mm" [(ngModel)]="time" cancelText="取消" doneText="确定"></ion-datetime>
             <i class="icon-arrow-right"></i>
@@ -30,7 +30,7 @@
       </li>
       <li class="row-item" (click)="assignRepairMan()">
         <div class="item-body">
-          <em class="text">维修员</em>
+          <em class="text item-title">维修员</em>
           <div class="item-right-icon">
             <em class="text">刘斌</em>
             <i class="icon-arrow-right"></i>
@@ -39,7 +39,7 @@
       </li>
       <li class="row-item" (click)="assignRepairMan()">
         <div class="item-body">
-          <em class="text">监理员</em>
+          <em class="text item-title">监理员</em>
           <div class="item-right-icon">
             <em class="text">张国庆</em>
             <i class="icon-arrow-right"></i>

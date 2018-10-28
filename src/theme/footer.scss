@@ -56,10 +56,13 @@ ion-footer.footer {
     }
 
     .footer-button {
+      position: relative;
+      z-index: 5;
       float: left;
       width: 50%;
 
       &.footer-button-quit {
+        z-index: 0;
         color: $main-text;
         background-color: $white;
       }

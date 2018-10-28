@@ -45,8 +45,9 @@
       <p class="text">A区8栋一层吧台区 灯具／灯不亮了</p>
     </div>
     <div class="point-retract">
-      <div class="btn-retract success">材料采购</div>
-      <div class="btn-retract">退回</div>
+      <div class="btn-retract success" (click)="assignMaterial()">材料采购</div>
+      <div class="btn-retract" *ngIf="!isassign">退回</div>
+      <div class="btn-retract" *ngIf="isassign">转给</div>
     </div>
   </div>
 </div>

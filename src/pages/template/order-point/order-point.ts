@@ -55,4 +55,7 @@ export class OrderPointTmpl extends BaseUI {
       }
     });
   }
+  assignMaterial() {
+    this.navCtrl.push("AssignMaterialPage");
+  }
 }
