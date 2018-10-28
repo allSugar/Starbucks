@@ -227,6 +227,9 @@
       float: right;
       padding-right:35px;
       color: $secondary-text;
+      .datetime{
+        padding: 0;
+      }
       .icon-arrow-right{
         right: 15px;
       }

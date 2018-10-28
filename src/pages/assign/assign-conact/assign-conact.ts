@@ -10,6 +10,7 @@ import { HttpService } from "../../../service/HttpService";
 export class AssignConactPage {
 
   @ViewChild(Content) content: Content;
+  navCtrl: any;
   /*搜索的关键字*/
   searchInput: string = '';
   /*请求通讯录的值*/
@@ -24,7 +25,6 @@ export class AssignConactPage {
   callback: Function;
   toast: any;
   remitBanks: any;
-  navCtrl: any;
 
   constructor(
     public app: App,

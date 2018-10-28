@@ -1,0 +1,19 @@
+.picker-wrapper {
+  .picker-toolbar {
+    border-bottom: 1px solid $border;
+
+    .picker-toolbar-button {
+      width: 50%;
+      text-align: right;
+
+      .picker-button {
+        font-size: 1.4rem;
+        font-weight: 400 !important;
+      }
+
+      &.picker-toolbar-cancel {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -43,8 +43,6 @@ export class OrderPointTmpl extends BaseUI {
   }
   deleteStoreRepairOrder() {
     let loading = super.showLoading(this.loadingCtrl),
-      len = 1,
-      startIndex = this.navCtrl.getViews().length - len,
       params = { method: "repair.deleteStoreRepairOrderById", ids: [this.listdata.id] };
 
     this.http.get(params).subscribe(res => {

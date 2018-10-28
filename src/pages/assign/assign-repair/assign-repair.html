@@ -10,11 +10,11 @@
 <ion-content>
   <div class="row-ibox">
     <ul class="row-list row-inner row-llg">
-      <li class="row-item">
+      <li class="row-item" (click)="openCalendar()">
         <div class="item-body">
           <em class="text">日期</em>
           <div class="item-right-icon">
-            <em class="text">2018-02-21</em>
+            <em class="text">{{ dateFormmat }}</em>
             <i class="icon-arrow-right"></i>
           </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="item-body">
           <em class="text">时间点</em>
           <div class="item-right-icon">
-            <em class="text">12:26</em>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="time" cancelText="取消" doneText="确定"></ion-datetime>
             <i class="icon-arrow-right"></i>
           </div>
         </div>
