@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>指定维修员</ion-title>
+  </ion-navbar>
+
+  <div class="ibox-search">
+    <input type="text" class="search-input" (change)="goSearchResult($event)">
+    <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
+  </div>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="contact-list">
+    <!-- 侧边 -->
+    <div class="letter" *ngIf="!isSearching">
+      <div class="letter-right">
+        <span *ngFor="let letter of letters" (click)="scrollToTop(letter,$event)">{{ letter }}</span>
+      </div>
+    </div>
+    <!-- 展示列表 -->
+    <div class="row-ibox" *ngIf="!isSearching">
+      <div class="row-list row-inner" *ngFor="let contacts of formatContacts;let i = index">
+        <li class="row-title" id="{{ letters[i] }}">{{ letters[i] }}</li>
+        <label class="row-item" *ngFor="let contact of contacts">
+          <div class="item-choice checkbox">
+            <input [(ngModel)]="contact.status" type="checkbox" (change)="HandleContactChange(contact)">
+            <ins class="checkbox-icon"></ins>
+          </div>
+          <div class="item-img img-lg radius">
+            <div class="img-center">
+              <img alt="" src="assets/imgs/avater/avater.png">
+            </div>
+          </div>
+          <div class="item-body">
+            <p class="name" [innerHTML]="contact.userName"></p>
+            <p class="telphone">{{ contact.userCode }}</p>
+          </div>
+        </label>
+      </div>
+    </div>
+    <!-- 搜索列表 -->
+    <div class="row-ibox" *ngIf="isSearching">
+      <div class="row-list row-inner" *ngFor="let contacts of searchingItems;let i = index">
+        <li class="row-title" id="{{ searchLetters[i] }}">{{ searchLetters[i] }}</li>
+        <label class="row-item" *ngFor="let contact of contacts">
+          <div class="item-choice checkbox">
+            <input [(ngModel)]="contact.status" type="checkbox" (change)="HandleContactChange(contact)">
+            <ins class="checkbox-icon"></ins>
+          </div>
+          <div class="item-img img-lg radius">
+            <div class="img-center">
+              <img alt="" src="assets/imgs/avater/avater.png">
+            </div>
+          </div>
+          <div class="item-body">
+            <p class="name" [innerHTML]="contact.userName"></p>
+            <p class="telphone">{{ contact.userCode }}</p>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+
+  <div class="footer-button-group">
+    <button class="footer-button footer-button-quit">取消</button>
+    <button class="footer-button">确定</button>
+  </div>
+
+</ion-footer>

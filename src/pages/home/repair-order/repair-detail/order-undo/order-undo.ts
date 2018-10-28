@@ -38,10 +38,9 @@ export class orderUndoPage {
   }
 
   assignRepair() {
-    console.log(1);
     this.isassign = true;
   }
-  
+
   assignRepairNext() {
     this.navCtrl.push("AssignRepairPage");
   }

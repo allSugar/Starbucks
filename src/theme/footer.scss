@@ -4,6 +4,15 @@ ion-footer.footer {
     min-height: 50px;
     background-color: $white;
     padding: 0 135px 0 15px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $border;
+    }
   }
 
   .float-choice,
@@ -36,6 +45,16 @@ ion-footer.footer {
   }
 
   .footer-button-group {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      border-top: 1px solid $border;
+    }
+
     .footer-button {
       float: left;
       width: 50%;

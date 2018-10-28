@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, App, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,11 +8,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AssignRepairPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public app: App,
+    public navParams: NavParams
+  ) {
+    this.navCtrl = this.app.getRootNav();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AssignRepairPage');
+  assignRepairMan() {
+    this.navCtrl.push("AssignConactPage");
   }
-
 }

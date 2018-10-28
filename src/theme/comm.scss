@@ -1,36 +1,45 @@
 .stage-page {
   margin-top: 15px;
   background-color: white;
+
   .stage {
     margin-left: 15px;
     padding: 15px 0;
     line-height: 15px;
+
     &+.stage {
       border-top: 1px solid $border;
     }
+
     overflow: hidden;
+
     img {
       float: left;
       width: 50px;
       height: 50px;
       margin-right: 4.4%;
     }
+
     .title {
       float: left;
       line-height: 50px;
     }
+
     .user-img {
       width: 20px;
       height: 20px;
     }
+
     .user-title {
       float: left;
       line-height: 20px;
     }
+
     .factory {
       margin-bottom: 10px;
       color: $secondary-text;
     }
+
     @for $i from 1 to 7 {
       .icon-stage-#{$i} {
         float: left;
@@ -41,12 +50,14 @@
         background-size: contain;
       }
     }
+
     .percentage {
       position: relative;
       width: 100%;
       height: 40px;
       line-height: 40px;
       color: $main-text;
+
       .bg-green {
         position: absolute;
         left: 0;
@@ -55,39 +66,47 @@
         height: 100%;
         background-color: #E1FCE6;
       }
+
       .data {
         position: absolute;
         left: 15px;
         top: 0;
         z-index: 1;
+
         .count {
           margin-right: 20px;
           color: $green;
         }
       }
     }
+
     .file-name {
       float: left;
       font-size: 16px;
       line-height: 50px;
     }
+
     .stage-news {
       float: left;
       width: 82%;
+
       .news-name {
         font-size: 16px;
+
         .time {
           float: right;
           color: #ccc;
           font-size: 12px;
         }
       }
+
       .news-detail {
         margin-top: 9px;
         font-size: 13px;
         color: #A4A5A8;
       }
     }
+
     &.cloud-smart {
       margin-left: 0;
       text-align: center;
@@ -98,16 +117,19 @@
 
 .shop-list {
   margin-top: 0;
+
   .stage {
     width: 100%;
     margin-left: 0;
     padding-left: 5%;
     border-top: 1px solid $border;
+
     img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
     }
+
     .title {
       line-height: 40px;
     }
@@ -120,38 +142,46 @@
   padding-right: 15px;
   background-color: white;
   overflow: hidden;
+
   .media-img {
     position: absolute;
     left: 15px;
     top: 15px;
     width: 40px;
     height: 40px;
+
     img {
       max-width: 100%;
     }
   }
+
   .media-body {
     float: left;
     margin-left: 52px;
+
     .title {
       font-size: 17px;
     }
+
     .address {
       margin-top: 5px;
       color: $secondary-text;
       font-size: 15px;
     }
   }
+
   .media-footer {
     width: 100%;
     padding-left: 52px;
     padding-top: 13px;
     overflow: hidden;
+
     .media-name {
       float: right;
       margin-left: 4px;
       color: $green;
     }
+
     .media-time {
       float: right;
       margin-top: 3px;
@@ -200,14 +230,18 @@
   background-color: white;
   padding: 40px 26px 35px 23px;
   overflow: hidden;
+
   .data-list {
     margin-top: 40px;
+
     .data-item {
       position: relative;
       overflow: hidden;
+
       &+.data-item {
         margin-top: 19px;
       }
+
       [class*='bar'] {
         position: absolute;
         left: 0;
@@ -216,29 +250,38 @@
         height: 20px;
         border-radius: 2px;
       }
-      $barFrequencyColor: '#1E8CE1' '#8CC42A' '#FDA109' '#F85B25' '#9A34B8' '#565656' '#996523';
+
+      $barFrequencyColor: '#1E8CE1''#8CC42A''#FDA109''#F85B25''#9A34B8''#565656''#996523';
+
       @for $i from 1 to 8 {
         .bar-frequency-#{$i} {
           background-color: #{nth($barFrequencyColor,$i)};
         }
       }
-      $barVulnerableColor: '#FB6428' '#FF9102' '#FEBE24' '#FFE506' '#FC481F';
+
+      $barVulnerableColor: '#FB6428''#FF9102''#FEBE24''#FFE506''#FC481F';
+
       @for $i from 1 to 6 {
         .bar-vulnerable-#{$i} {
           background-color: #{nth($barVulnerableColor,$i)};
         }
       }
-      $barSortColor: '#FF8084' '#FFA15C' '#FFC45A' '#31D5C2' '#ADA8FE';
+
+      $barSortColor: '#FF8084''#FFA15C''#FFC45A''#31D5C2''#ADA8FE';
+
       @for $i from 1 to 6 {
         .bar-sort-#{ $i } {
           background-color: #{nth($barSortColor, $i)};
         }
       }
+
       .data-body {
         width: 100%;
         padding-left: 18px;
+
         .data-head {
           overflow: hidden;
+
           .title {
             float: left;
             width: 45%;
@@ -246,12 +289,14 @@
             overflow: hidden;
             text-overflow: ellipsis;
           }
+
           .percentage {
             float: left;
             width: 20%;
             text-align: center;
             color: $secondary-text;
           }
+
           .price {
             float: left;
             width: 25%;
@@ -260,6 +305,7 @@
           }
         }
       }
+
       .count {
         margin-top: 10px;
       }
@@ -271,12 +317,15 @@
   width: 100%;
   padding: 20px 15px 22px 15px;
   background-color: white;
+
   &+.problem-detail {
     margin-top: 15px;
   }
+
   .head {
     position: relative;
     overflow: hidden;
+
     .avatar-img {
       position: absolute;
       left: 0;
@@ -284,16 +333,20 @@
       width: 70px;
       height: 70px;
     }
+
     .avatar-body {
       margin-left: 85px;
       line-height: 1;
       overflow: hidden;
+
       .name {
         position: relative;
         color: $gray;
+
         .text {
           font-size: 18px;
         }
+
         .time {
           position: absolute;
           right: 0;
@@ -303,10 +356,12 @@
           color: $secondary-text;
         }
       }
+
       .detail {
         margin-top: 10px;
         color: $secondary-text;
       }
+
       .firm {
         margin-top: 16px;
         font-size: 12px;
@@ -314,15 +369,44 @@
       }
     }
   }
+
   .problem-img {
     margin: 25px auto 0 auto;
     overflow: hidden;
+
     img {
       vertical-align: top;
     }
   }
+
   .word {
     font-size: 16px;
     margin-top: 22px;
+  }
+}
+
+.contact-list {
+  .letter {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    @include transform(translateY(-50%));
+    margin-top: 20px;
+    z-index: 10001;
+
+    .letter-right {
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      flex-flow: 1;
+      color: #555;
+      align-items: center;
+      line-height: 1;
+
+      span {
+        display: block;
+        padding: 3px;
+      }
+    }
   }
 }

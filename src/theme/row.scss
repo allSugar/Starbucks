@@ -40,9 +40,16 @@
 
     &.row-inner {
       margin-left: 0;
+      .row-title{
+        padding-left: 15px;
+      }
 
       .row-item {
         padding-left: 15px;
+      }
+
+      &+.row-inner{
+        margin-top: 10px;
       }
     }
   }
