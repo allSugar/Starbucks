@@ -3,7 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 
 import { OrderInfoTmpl } from './order-info';
 import { OrderPointTmpl } from './order-point/order-point';
-import { RepairOrderTmpl } from './repair-order';
+import { RepairOrderTmpl } from './repair-order/repair-order';
 import { OrderExplainTmpl } from './order-explain';
 import { TimeSelectTmpl } from './time-select';
 import { TabsTmpl } from './tabs';

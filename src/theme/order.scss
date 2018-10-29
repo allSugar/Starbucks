@@ -62,6 +62,10 @@
     }
   }
 
+  .point-list {
+    padding-bottom: 10px;
+  }
+
   .point {
     position: relative;
     margin-top: 10px;
@@ -84,6 +88,14 @@
         position: absolute;
         top: 50%;
         margin-top: -8px;
+      }
+    }
+
+    .point-content-body {
+      &.p-b-xxl {
+        .point-retract {
+          margin-bottom: -25px;
+        }
       }
     }
 
@@ -202,7 +214,6 @@
 
     .point-retract {
       padding: 15px;
-      margin-bottom: -25px;
       overflow: hidden;
 
       .btn-retract {

@@ -8,6 +8,14 @@
   <div class="row-status-ibox">
     <label class="row-item row-warn">
       <i class="icon-warn"></i>
+      <em class="text">十万火急</em>
+      <div class="item-choice checkbox">
+        <input name="emergency" value="1" type="radio" [(ngModel)]="problem.emergency" (change)="rowStatusChange(problem.emergency)">
+        <ins class="checkbox-icon"></ins>
+      </div>
+    </label>
+    <label class="row-item row-warn">
+      <i class="icon-warn"></i>
       <em class="text">紧急</em>
       <div class="item-choice checkbox">
         <input name="emergency" value="2" type="radio" [(ngModel)]="problem.emergency" (change)="rowStatusChange(problem.emergency)">

@@ -12,9 +12,11 @@
         <p class="point-describe">
           <span class="address">A区8栋一层吧台区</span>
           <span *ngIf="done" class="currency">¥ 500</span>
-          <em *ngIf="!done" class="urgent-general">一般</em>
+          <em class="urgent-crash" *ngIf="!done && listdata.emergency == 1">十万火急</em>
+          <em class="urgent-crash" *ngIf="!done && listdata.emergency == 2">紧急</em>
+          <em class="urgent-general" *ngIf="!done && listdata.emergency == 3">普通</em>
         </p>
-        <p class="point-tag">灯具／灯不亮了</p>
+        <p class="point-tag">{{ listdata.faultDes }}</p>
         <p class="point-action">
           <span>5张照片</span>
           <span *ngIf="done" class="question">灯管自然损坏</span>
@@ -27,7 +29,7 @@
   </div>
   <div class="point-content-checkox">
     <label class="item-choice checkbox">
-      <input value="2" type="checkbox">
+      <input value="2" type="checkbox" [(ngModel)]="listdata.isChecked" (change)="HandleIsChecked()">
       <ins class="checkbox-icon"></ins>
     </label>
   </div>
@@ -42,11 +44,11 @@
     </div>
     <div class="point-info">
       <p class="text title">刘梦想 15520981232：</p>
-      <p class="text">A区8栋一层吧台区 灯具／灯不亮了</p>
+      <p class="text">A区8栋一层吧台区 {{ listdata.faultDes }}</p>
     </div>
     <div class="point-retract">
       <div class="btn-retract success" (click)="assignMaterial()">材料采购</div>
-      <div class="btn-retract" *ngIf="!isassign">退回</div>
+      <div class="btn-retract" *ngIf="!isassign" (click)="HandleReturnQuestion()">退回</div>
       <div class="btn-retract" *ngIf="isassign">转给</div>
     </div>
   </div>

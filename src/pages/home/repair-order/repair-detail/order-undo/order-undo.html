@@ -12,7 +12,8 @@
     </div>
     <order-info [data]="data"></order-info>
     <div class="point-list">
-      <order-point [listdata]="data" [isassign]="isassign" [done]="false" (goto)="goToDetailPage($event)"></order-point>
+      <order-point *ngFor="let item of data.orderItemList" [listdata]="item" [isassign]="isassign" [done]="false"
+      (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point>
     </div>
     <div class="add-photo" *ngIf="currentAccount.id !== 13">
       <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>
@@ -25,7 +26,7 @@
   <button class="footer-button" *ngIf="!isassign" (click)="assignRepair()">指派维修员</button>
   <div class="float-box" *ngIf="isassign">
     <label class="float-choice checkbox">
-      <input type="checkbox">
+      <input type="checkbox" [(ngModel)]="isCheckedAll" (change)="HandleCheckAll()">
       <ins class="checkbox-icon"></ins>
       <em class="text">全选</em>
     </label>

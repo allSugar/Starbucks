@@ -68,7 +68,7 @@ export class RepairListPage extends BaseUI {
   }
 
   getListData(loading, infiniteScroll: any = false) {
-    let params = { method: "repair.findStoreRepairOrder", statuss: String(this.paramsStatus), pageNumber: this.pageNumber + 1 };
+    let params = { method: "repair.findStoreRepairOrder", statuss: String(this.paramsStatus), includeItem: 1, pageNumber: this.pageNumber + 1 };
     this.http.get(params).subscribe(res => {
       loading.dismiss();
       if (infiniteScroll) {

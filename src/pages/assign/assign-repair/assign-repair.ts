@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, App, ModalController } from 'ionic-angular';
+import { IonicPage, App, ModalController, NavParams } from 'ionic-angular';
 import { CalendarModal, CalendarModalOptions } from 'ion2-calendar';
+
+import { ToastService } from '@/../../src/service/ToastService';
 
 @IonicPage()
 @Component({
@@ -15,11 +17,17 @@ export class AssignRepairPage {
   weekdays: any[] = ['日', '一', '二', '三', '四', '五', '六'];
   dateFormmat: String;
   time: any;
+  repairMember: any = {};
+  params: any = {};
 
   constructor(
     public app: App,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public navParams: NavParams,
+    public toast: ToastService,
   ) {
+
+    this.params.sroiIds = this.navParams.get("ids");
 
     let d = new Date(),
       nd = new Date(d.getTime() + (3600000 * 8));
@@ -27,6 +35,18 @@ export class AssignRepairPage {
     this.time = nd.toISOString();
     this.dateFormmat = new Date().toLocaleDateString().replace(/\//g, "-");
     this.navCtrl = this.app.getRootNav();
+  }
+
+  callBackFromB(params) {
+    return new Promise((resolve, reject) => {
+      resolve();
+      if (this.repairMember.name || params) {
+        this.repairMember = params || this.repairMember;
+        this.params.finishRepairmanId = params.id;
+      } else {
+        this.toast.info("选择维修员失败！");
+      }
+    });
   }
 
   openCalendar() {
@@ -54,6 +74,9 @@ export class AssignRepairPage {
   }
 
   assignRepairMan() {
-    this.navCtrl.push("AssignConactPage");
+    console.log(this.params);
+    this.navCtrl.push("AssignConactPage", {
+      callback: this.callBackFromB.bind(this)
+    });
   }
 }
