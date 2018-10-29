@@ -1,6 +1,9 @@
 <ion-header>
   <ion-navbar class='border-none'>
-    <ion-title>我关注的维修单</ion-title>
+    <ion-title class="title-type">
+      <span>维修单</span>
+    </ion-title>
+    <span class="type" (click)="toggleMenu()" >类型</span>
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-rate tabs-third">
@@ -82,6 +85,21 @@
   </div>
 </ion-header>
 
+<div *ngIf="menuStatus" class="slider-ibox">
+  <div class="slider-content-xl">
+    <div class="time-form">
+      <div class="title">类型</div>
+      <div class="time-list m-t-xl">
+        <div class="item item-xl" *ngFor="let item of sliderData; let $index = index"  (click)="tabsActive($index)" [ngClass]="{'active':item.status == true}">{{ item.label }}</div>
+      </div>
+    </div>
+    <div class="sort-btn">
+      <button class="btn-cancle">取消</button>
+      <button class="btn-sure" type="submit">确定</button>
+    </div>
+  </div>
+  <i class="slider-mask" (click)="toggleMenu()"></i>
+</div>
 
 <ion-content>
   <div class="repair-list">

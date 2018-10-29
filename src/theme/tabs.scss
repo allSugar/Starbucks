@@ -231,6 +231,10 @@
   padding: 0 6.9% 80px 6.9%;
   width: 100%;
   background-color: white;
+  .title {
+    font-size: 16px;
+    margin-top: 30px;
+  }
   .time-input {
     padding: 26px 0 26px 6.5%;
     overflow: hidden;
@@ -268,6 +272,13 @@
         background-color: rgba(5, 209, 175, .1);
         border: 1px solid $green;
       }
+    }
+    .item-xl {
+      width: 30%;
+      margin-bottom: 15px;
+      margin-right: 3%;
+      line-height: 30px;
+      height: 30px;
     }
   }
 }

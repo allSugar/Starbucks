@@ -69,6 +69,7 @@
 
 .slider-ibox {
   .slider-content,
+  .slider-content-xl,
   .slider-mask {
     position: absolute;
     top: 0;
@@ -78,6 +79,10 @@
   }
   .slider-content {
     left: 50%;
+    background-color: $white;
+  }
+  .slider-content-xl {
+    left: 20%;
     background-color: $white;
   }
   .slider-mask {

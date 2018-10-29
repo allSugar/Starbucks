@@ -1,3 +1,20 @@
 page-repair-list {
+  .type {
+    position: relative;
+    float: right;
+    color: white;
+    font-size: 14px;
+    margin-right: 10px;
+    &:before {
+      position: absolute;
+      content:"";
+      left: -30px;
+      top: 2px;
+      width: 20px;
+      height: 20px;
+      background: url("#{$image-icon}/icon-search-lg.png");
+      background-size:100% 100%;
+    }
+  }
 
 }

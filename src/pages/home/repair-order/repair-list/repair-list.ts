@@ -31,6 +31,8 @@ export class RepairListPage extends BaseUI {
 
   infiniteScroll: any;
 
+  menuStatus: Boolean = false;
+
   constructor(
     public app: App,
     public navParams: NavParams,
@@ -48,6 +50,10 @@ export class RepairListPage extends BaseUI {
 
     let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading);
+  }
+
+  toggleMenu() {
+    this.menuStatus = !this.menuStatus;
   }
 
   doInfinite(infiniteScroll) {
@@ -127,6 +133,24 @@ export class RepairListPage extends BaseUI {
     this.oindex = i;
     this.sta = 0;
   }
+
+  sliderData:object[] = [
+    {label: '不限', status: false},
+    {label: '商场', status: true},
+    {label: '影院', status: false},
+    {label: '酒店', status: false},
+    {label: '超市', status: false},
+    {label: '铁路', status: false},
+    {label: '福利院', status: false},
+    {label: '养生馆', status: false},
+    {label: '酒吧', status: false}
+  ];
+  tabsActive($index){
+    this.sliderData.forEach(function (n,i) {
+      n.status = false;
+      i == $index ? n.status = true : '';
+    });
+  }
   sort: object[] = [
     { filter: '全部' },
     { filter: '厂商名字a-z' },
@@ -151,4 +175,6 @@ export class RepairListPage extends BaseUI {
     { filter: '今天' },
     { filter: '前天' }
   ];
+
+
 }

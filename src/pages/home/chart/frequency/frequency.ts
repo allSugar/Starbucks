@@ -27,7 +27,6 @@ export class FrequencyPage {
       method: 'statistics.repairFrequencyStatistics',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
       if (!!res && res.responseCode == 167110) {
         this.repairList = res.responseObj.repairStatisticsList;
         //for (var i = 0; i < this.repairList.length; i++) {
