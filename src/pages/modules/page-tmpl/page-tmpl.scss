@@ -271,5 +271,64 @@ page-page-tmpl {
         }
       }
     }
-  } 
+  }
+
+  .row-item {
+    .icon-no {
+      float: left;
+      width: 18px;
+      height: 14px;
+      margin-right: 20px;
+    }
+    .item-info {
+      float: left;
+      font-size: 14px;
+      .title {
+        em {
+          color: $secondary-text;
+        }
+      }
+      .content {
+        font-size: 12px;
+        color: #ccc;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .expand {
+    padding-top: 15px;
+    background-color: white;
+    .title-second {
+      padding-left: 15px;
+      font-size: 14px;
+      color: $secondary-text;
+    }
+    .media-body {
+      height: 70px;
+      padding: 15px 0;
+      width: 84%;
+      .media-footer {
+        padding: 0;
+      }
+    }
+  }
+
+  .order-child {
+    padding: 15px;
+    background-color: white;
+    .title {
+      position: relative;
+      font-size: 16px;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -15px;
+        top: 5px;
+        width: 3px;
+        height: 18px;
+        background-color: $green;
+      }
+    }
+  }
 }

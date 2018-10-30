@@ -166,6 +166,19 @@
       font-size: 17px;
     }
 
+    .price {
+      float: right;
+      margin-top: 4px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
+
+    .count {
+      float: right;
+      font-size: 12px;
+      color: $secondary-text;
+    }
+
     .address {
       margin-top: 5px;
       color: $secondary-text;
@@ -180,6 +193,7 @@
     width: 100%;
     padding: 15px 0;
     box-sizing: content-box;
+
     .title {
       font-size: 16px;
       .icon-add {
@@ -193,12 +207,12 @@
         font-size: 11px;
       }
     }
-    .content {
+    .media-content {
       font-size: 13px;
       color: $secondary-text;
 
     }
-    .footer {
+    .media-footer {
       position: absolute;
       left: 0;
       bottom: 15px;

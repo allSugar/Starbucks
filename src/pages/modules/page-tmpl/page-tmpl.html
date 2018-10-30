@@ -21,10 +21,10 @@
           <span>钟楼星巴克</span>
           <em>餐饮</em>
         </p>
-        <div class="content">
+        <div class="media-content">
           经理：孟斌  18709872345
         </div>
-        <div class="footer">
+        <div class="media-footer p-none">
           说明：客厅的吊灯时亮时暗，需要维修
         </div>
       </div>
@@ -58,11 +58,68 @@
       </div>
 
     </div>
-
-
   </div>
 
   <div class="br"></div>
+
+  <div class="m-t-s">
+    <div class="row-ibox">
+      <li class="row-list-through">钟楼星巴克</li>
+    </div>
+    <div class="row-ibox">
+      <ul class="row-list border-b m-b-none">
+        <li class="row-item">
+          <img class="icon-no" alt="" src="assets/imgs/change-before.png">
+          <div class="item-info">
+            <div class="title">
+              <span>维修单号：</span>
+              <em>2361860793232932</em>
+            </div>
+            <div class="content">2016-11-30  15:42:16</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="media-ibox p-t-b-xxl border-b">
+      <li class="quote">
+        <em class="icon-total-time"></em>
+        <span>总工时</span>
+        <br />
+        <span class="count">2</span>小时
+      </li>
+      <li class="quote">
+        <em class="icon-total-money"></em>
+        <span>耗材总成本</span>
+        <br />
+        <span class="count">2800</span>元
+      </li>
+    </ul>
+    <div class="expand">
+      <div class="title-second">总耗材</div>
+      <div class="media-ibox border-b-gray" *ngFor="let i of [1,2,3]">
+        <div class="media-img">
+          <img src="assets/imgs/square.png">
+        </div>
+        <div class="media-body">
+          <div class="title">
+            <span>厨房吊灯欧普照明</span>
+            <span class="price">￥780</span>
+          </div>
+          <div class="count">x2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br"></div>
+
+  <div class="order-child">
+    <div class="title">子订单1</div>
+  </div>
+
+  <div class="br"></div>
+
   <div class="row-ibox">
     <ul class="row-list">
       <li class="row-item" *ngFor="let i of [1,2,3]">

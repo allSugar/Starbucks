@@ -7,6 +7,8 @@
     padding: 15px;
     border-bottom: 1px solid $border;
     vertical-align: middle;
+    font-size: 16px;
+
     .icon-add {
       float: right;
       width:15px;
@@ -14,15 +16,18 @@
       background: url("#{$image}/icon/icon-circle-add.png") no-repeat;
       background-size: 100% 100%;
     }
+
     img {
       width: 14px;
       height: 16px;
       margin-right: 10px;
       vertical-align: middle;
     }
+
     .type-detail{
       margin-top: 20px;
       overflow: hidden;
+
       .type-item {
         position: relative;
         float: left;
@@ -33,6 +38,7 @@
         border-radius: 10px;
         color: $green;
         background:rgba(5,209,175,.1);
+
         &:after {
           position: absolute;
           right: 6px;
@@ -64,6 +70,7 @@
       }
     }
   }
+
   .row-list {
     margin-left: 15px;
     margin-bottom: -1px;
@@ -193,6 +200,11 @@
         @include border_radius(100%);
       }
 
+      &.img-s {
+        width: 18px;
+        height: 14px;
+      }
+
       &.img-xs {
         width: 45px;
         height: 30px;
@@ -258,6 +270,13 @@
         right: 30px;
         margin: -5px 0 0 0;
       }
+
+      .order-title {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+
     }
 
     .item-action {

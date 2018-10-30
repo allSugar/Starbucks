@@ -197,8 +197,16 @@ li {
   margin-top: 20px;
 }
 
+.m-b-none {
+  margin-bottom: 0 !important;
+}
+
 .border-b-gray {
-  border-bottom: 1px solid #E7E8E8;
+  border-bottom: 1px solid #E7E8E8 !important;
+}
+
+.border-b{
+  border-bottom: 1px solid #e2e7eb !important;
 }
 
 .border-none {
