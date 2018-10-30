@@ -2,6 +2,68 @@
   background-color: $white;
   overflow: hidden;
 
+  //没有左边的margin
+  .row-list-through {
+    padding: 15px;
+    border-bottom: 1px solid $border;
+    vertical-align: middle;
+    .icon-add {
+      float: right;
+      width:15px;
+      height: 15px;
+      background: url("#{$image}/icon/icon-circle-add.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    img {
+      width: 14px;
+      height: 16px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .type-detail{
+      margin-top: 20px;
+      overflow: hidden;
+      .type-item {
+        position: relative;
+        float: left;
+        padding: 0 20px 0 10px;
+        margin-right: 10px;
+        margin-bottom: 6px;
+        font-size: 12px;
+        border-radius: 10px;
+        color: $green;
+        background:rgba(5,209,175,.1);
+        &:after {
+          position: absolute;
+          right: 6px;
+          top: 3px;
+          content: '×';
+        }
+      }
+    }
+
+    .content {
+      margin-top: 20px;
+      font-size: 15px;
+      color: $secondary-text;
+    }
+    textarea {
+      padding: 15px;
+      width: 100%;
+      resize: none;
+      border: 0;
+    }
+    .photo-list {
+      padding: 15px;
+      overflow: hidden;
+      img {
+        float: left;
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+    }
+  }
   .row-list {
     margin-left: 15px;
     margin-bottom: -1px;

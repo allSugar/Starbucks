@@ -175,6 +175,10 @@ li {
   padding-bottom: 15px;
 }
 
+.p-none {
+  padding: 0 !important;
+}
+
 .p-t-b-xl {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
@@ -201,6 +205,10 @@ li {
   border: none !important;
 }
 
+.font-size-xl {
+  font-size: 16px;
+}
+
 .checkbox {
   display: inline-block;
   overflow: hidden;
@@ -224,7 +232,7 @@ li {
   input:checked+.checkbox-icon {
     background-image: url("#{$image-icon}/icon_selected.png");
   }
-  
+
   .text {
     float: left;
     margin-left: 10px;

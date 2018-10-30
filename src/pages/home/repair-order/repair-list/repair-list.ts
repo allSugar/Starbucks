@@ -147,8 +147,8 @@ export class RepairListPage extends BaseUI {
   ];
   tabsActive($index){
     this.sliderData.forEach(function (n,i) {
-      n.status = false;
-      i == $index ? n.status = true : '';
+      n["status"] = false;
+      i == $index ? n["status"] = true : '';
     });
   }
   sort: object[] = [

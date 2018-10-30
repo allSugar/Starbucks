@@ -1,10 +1,68 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>统计</ion-title>
+    <ion-title>填写报告</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <div class="m-t-s">
+    <div class="row-ibox">
+      <ul class="row-list-through">
+        <img alt="" src="assets/imgs/change-before.png">
+        <span>问题1</span>
+      </ul>
+    </div>
+    <div class="media-ibox border-b-gray">
+      <div class="media-img media-img-xl">
+        <img src="assets/imgs/square.png">
+      </div>
+      <div class="media-body media-body-xl">
+        <p class="title">
+          <span>钟楼星巴克</span>
+          <em>餐饮</em>
+        </p>
+        <div class="content">
+          经理：孟斌  18709872345
+        </div>
+        <div class="footer">
+          说明：客厅的吊灯时亮时暗，需要维修
+        </div>
+      </div>
+  </div>
+    <div class="row-ibox">
+      <ul class="row-list-through">
+        <span class="font-size-xl">类型</span>
+        <i class="icon-add"></i>
+        <ul class="type-detail">
+          <li class="type-item" *ngFor="let i of [1,2,3]">五金 > 电类 > 插座</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="row-ibox">
+      <ul class="row-list-through">
+        <div class="font-size-xl">报修原因</div>
+        <div class="content">
+          <span>设计缺陷</span>
+          <em class="icon-arrow-right f-right"></em>
+        </div>
+      </ul>
+    </div>
+    <div class="row-ibox">
+      <div class="row-list-through border-none p-none">
+        <textarea cols="10" name="" placeholder="请填写说明..." rows="4"></textarea>
+        <div class="photo-list">
+          <img src="assets/imgs/square.png" alt="">
+          <img src="assets/imgs/square.png" alt="">
+          <i class="icon-add-photo icon-add-photo-s"></i>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="br"></div>
   <div class="row-ibox">
     <ul class="row-list">
       <li class="row-item" *ngFor="let i of [1,2,3]">
