@@ -33,8 +33,8 @@
       <ul class="row-list-through">
         <span class="font-size-xl">类型</span>
         <i class="icon-add"></i>
-        <ul class="type-detail">
-          <li class="type-item" *ngFor="let i of [1,2,3]">五金 > 电类 > 插座</li>
+        <ul class="type-list">
+          <li class="type-item-x" *ngFor="let i of [1,2,3]">五金 > 电类 > 插座</li>
         </ul>
       </ul>
     </div>
@@ -114,11 +114,65 @@
 
   <div class="br"></div>
 
-  <div class="order-child">
+  <div class="order-child" *ngFor="let i of [1,2]">
     <div class="title">子订单1</div>
+    <div class="title-second">类型</div>
+    <ul class="type-list">
+      <li class="type-item-x type-item" *ngFor="let i of [1,2,3]">五金 > 电类 > 插座</li>
+    </ul>
+    <div class="title-second">报告及图片</div>
+    <div class="m-t-l">这里是报告说明，报告说明报告说明报告说明，报告说明报告说明</div>
+    <div class="row-ibox p-none">
+      <div class="row-list-through border-none p-none m-t-xl">
+        <div class="photo-list p-none">
+          <img src="assets/imgs/square.png" alt="">
+          <img src="assets/imgs/square.png" alt="">
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="br"></div>
+
+  <div class="tabs">
+    <ul class="tabs-list tabs-two">
+      <li class="tab-btn tab-icon-both active">
+        <em class="text">当日工时</em>
+      </li>
+      <li class="tab-btn tab-icon-both up">
+        <em class="text">员工姓名</em>
+      </li>
+    </ul>
+  </div>
+  <div class="m-t-l">
+    <div class="row-ibox">
+      <li class="row-list-through">2016年11月6日</li>
+    </div>
+    <div class="row-ibox">
+      <ul class="row-list border-b m-b-none">
+        <li class="row-item">
+          <img class="row-img" alt="" src="assets/imgs/avater/avater.png">
+          <div class="item-body">
+            <div class="title">
+              <span>张彬彬</span>
+              <span class="job">木工</span>
+              <span class="time">9.8h</span>
+            </div>
+            <div class="content">当日工时：6.2h</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <ul class="media-ibox p-t-b-xxl border-b">
+      <li class="quote quote-s" *ngFor="let i of [1,2,3,4]">
+        <em class="icon-total-time"></em>
+        <span class="title">伙补 10元</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="br"></div>
+
 
   <div class="row-ibox">
     <ul class="row-list">

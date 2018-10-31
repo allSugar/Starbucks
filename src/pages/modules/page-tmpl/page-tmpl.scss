@@ -182,19 +182,6 @@ page-page-tmpl {
       }
     }
   } //报价
-  .quote {
-    float: left;
-    width: 50%;
-    height: 40px;
-    font-size: 11px;
-    color: $gray-light;
-    .count {
-      font-family: Microsoft YaHei;
-      font-size: 18px;
-      margin-top: 10px;
-      color: black;
-    }
-  }
   .sub-orders {
     color: $gray;
     .title {
@@ -273,7 +260,39 @@ page-page-tmpl {
     }
   }
 
+  .quote {
+    float: left;
+    width: 50%;
+    height: 40px;
+    font-size: 11px;
+    color: $gray-light;
+    .count {
+      font-family: Microsoft YaHei;
+      font-size: 18px;
+      margin-top: 10px;
+      color: black;
+    }
+  }
+
+  .quote-s {
+    .icon-total-time {
+      width: 25px;
+      height: 25px;
+    }
+    .title {
+      color: $gray;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+
   .row-item {
+    .row-img {
+      float: left;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+    }
     .icon-no {
       float: left;
       width: 18px;
@@ -294,6 +313,30 @@ page-page-tmpl {
         margin-top: 10px;
       }
     }
+    .item-body {
+      float: left;
+      margin-left: 10px;
+      .title {
+        .job {
+          display: inline-block;
+          padding: 3px 6px;
+          background-color: #febe13;
+          margin-left: 20px;
+          font-size: 12px;
+          color: white;
+        }
+        .time {
+          margin-left: 20px;
+          font-size: 15px;
+          color: $green;
+        }
+      }
+      .content {
+        margin-top: 10px;
+        font-size: 15px;
+        color: $secondary-text;
+      }
+    }
   }
 
   .expand {
@@ -306,8 +349,9 @@ page-page-tmpl {
     }
     .media-body {
       height: 70px;
-      padding: 15px 0;
-      width: 84%;
+      padding: 15px 0 0 52px;
+      width: 100%;
+      margin-left: 0;
       .media-footer {
         padding: 0;
       }
@@ -315,6 +359,7 @@ page-page-tmpl {
   }
 
   .order-child {
+    margin-top: 15px;
     padding: 15px;
     background-color: white;
     .title {
@@ -329,6 +374,11 @@ page-page-tmpl {
         height: 18px;
         background-color: $green;
       }
+    }
+    .title-second {
+      margin-top: 20px;
+      font-size: 14px;
+      color: $secondary-text;
     }
   }
 }

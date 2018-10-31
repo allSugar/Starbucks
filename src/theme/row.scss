@@ -24,30 +24,6 @@
       vertical-align: middle;
     }
 
-    .type-detail{
-      margin-top: 20px;
-      overflow: hidden;
-
-      .type-item {
-        position: relative;
-        float: left;
-        padding: 0 20px 0 10px;
-        margin-right: 10px;
-        margin-bottom: 6px;
-        font-size: 12px;
-        border-radius: 10px;
-        color: $green;
-        background:rgba(5,209,175,.1);
-
-        &:after {
-          position: absolute;
-          right: 6px;
-          top: 3px;
-          content: '×';
-        }
-      }
-    }
-
     .content {
       margin-top: 20px;
       font-size: 15px;
@@ -207,6 +183,11 @@
 
       &.img-xs {
         width: 45px;
+        height: 30px;
+      }
+
+      &.img-xxs {
+        width: 50px;
         height: 30px;
       }
 

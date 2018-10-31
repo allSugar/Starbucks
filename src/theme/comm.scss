@@ -154,6 +154,7 @@
       max-width: 100%;
     }
   }
+
   .media-img-xl {
     width: 70px;
     height: 70px;
@@ -458,6 +459,38 @@
         display: block;
         padding: 3px;
       }
+    }
+  }
+}
+
+//订单类型分类
+.type-list{
+  margin-top: 20px;
+  overflow: hidden;
+
+  .type-item-x {
+    position: relative;
+    float: left;
+    padding: 0 20px 0 10px;
+    margin-right: 10px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    border-radius: 10px;
+    color: $green;
+    background:rgba(5,209,175,.1);
+
+    &:after {
+      position: absolute;
+      right: 6px;
+      top: 3px;
+      content: '×';
+    }
+  }
+  .type-item {
+    padding: 0 10px;
+
+    &:after {
+      content: '';
     }
   }
 }
