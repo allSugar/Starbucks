@@ -158,6 +158,10 @@ export class RepairListPage extends BaseUI {
       if (this.status === "orderDayPage") {
         name = "orderUndoPage";
       }
+      // RepairDoingPage
+      if (this.roleType === 4 && this.status === "OrderConductPage") {
+        name = "RepairDoingPage";
+      }
       this.navCtrl.push(name, { data: item });
     }
   }

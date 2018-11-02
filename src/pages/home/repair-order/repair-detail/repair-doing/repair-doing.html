@@ -4,7 +4,7 @@
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-rate tabs-four">
-      <li class="tab-btn active" [ngClass]="{ 'active': tabStatus == 0 }" (click)="tabs(0)">
+      <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 0 }" (click)="tabs(0)">
         <em class="text">详情</em>
       </li>
       <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 1 }" (click)="tabs(1)">
@@ -22,19 +22,12 @@
 
 <ion-content>
   <div class="order-detail" *ngIf="tabStatus == 0">
-    <div class="status" (click)="goToOtherPage('WorkerInfoPage')">
-      <em class="icon-smile"></em>
-      <span class="title">维修单已完成</span>
-      <em class="icon-arrow-right-white f-right"></em>
-      <em class="icon-avatar"></em>
-    </div>
-    <order-info></order-info>
+    <order-info [data]="data"></order-info>
     <div class="point-list">
-      <order-point [retract]="false" (goto)="goToDetailPage($event)"></order-point>
-    </div>
-    <div class="pay">
-      <span>订单总金额</span>
-      <span class="sum">¥ 1,500</span>
+      <div *ngFor="let item of data.orderItemList">
+        <!-- 维修员 -->
+        <order-point *ngIf="roleType === 4" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" (goto)="goToDetailPage($event)"></order-point>
+      </div>
     </div>
   </div>
   <div class="process-list" *ngIf="tabStatus == 1">

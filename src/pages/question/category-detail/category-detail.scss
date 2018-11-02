@@ -26,45 +26,4 @@ page-category-detail {
   .row-list+.row-list {
     margin-top: 10px;
   }
-  .hot-word {
-    padding: 15px;
-    background-color: white;
-    margin-bottom: 10px;
-    .header {
-      font-size: 16px;
-    }
-    .hot-list {
-      overflow: hidden;
-      .hot-item {
-        float: left;
-        margin-right: 10px;
-        margin-top: 10px;
-        padding: 5px 10px;
-        font-size: 13px;
-        color:$secondary-text;
-        border: 1px solid $box-border;
-      }
-    }
-  }
-  .letter {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    @include transform(translateY(-50%));
-    margin-top: 20px;
-    z-index: 10001;
-    .letter-right {
-      font-size: 13px;
-      display: flex;
-      flex-direction: column;
-      flex-flow: 1;
-      color: #555;
-      align-items: center;
-      line-height: 1;
-      span {
-        display: block;
-        padding: 3px;
-      }
-    }
-  }
 }
