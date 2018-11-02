@@ -12,8 +12,16 @@
     </div>
     <order-info [data]="data"></order-info>
     <div class="point-list">
-      <order-point *ngFor="let item of data.orderItemList" [listdata]="item" [isassign]="isassign" [done]="false"
-      (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point>
+      <div *ngFor="let item of data.orderItemList">
+        <!-- 店长 -->
+        <order-point *ngIf="roleType === 2" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point>
+        <!-- 维修主管 -->
+        <order-point *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType" [isassign]="isassign"
+          (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point>
+        <!-- 维修员 -->
+        <order-point *ngIf="roleType === 4" [listdata]="item" [roletype]="roleType" [isassign]="isassign"
+          (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point>
+      </div>
     </div>
     <div class="add-photo" *ngIf="currentAccount.id !== 13">
       <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>

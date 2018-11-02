@@ -15,6 +15,7 @@ import { HttpModule } from "@angular/http";
 import { HttpService } from "../service/HttpService";
 import { ToastService } from '../service/ToastService';
 import { LoginService } from '../service/LoginService';
+import { RoleTypeService } from '../service/RoleTypeService';
 
 import { File } from '@ionic-native/file';
 import { FileTransfer } from '@ionic-native/file-transfer';
@@ -53,6 +54,7 @@ import { IonicStorageModule } from '@ionic/storage';
     HttpService,
     ToastService,
     LoginService,
+    RoleTypeService,
     File,
     FileTransfer,
     FilePath,

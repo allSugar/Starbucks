@@ -2,33 +2,43 @@
 
 .repair-emement {
   margin-top: 10px;
+  background-color: $white;
+  overflow: hidden;
+
   .media-bar {
     width: 100%;
     padding: 12px 12px;
     overflow: hidden;
     background-color: white;
+
     .shop-name {
       float: right;
       margin-left: 4px;
       color: $green;
     }
   }
+
   .media-body {
     width: 100%;
     padding: 15px;
+    background-color: $body-bg;
+
     .media-title {
       height: 18px;
       overflow: hidden;
     }
+
     .media-time {
       float: right;
       line-height: 18px;
       font-size: 12px;
       color: $secondary-text;
     }
+
     .media-img {
       margin-top: 15px;
       overflow: hidden;
+
       img {
         float: left;
         width: 40px;
@@ -36,6 +46,7 @@
         margin-right: 5px;
         @include border_radius(3px);
       }
+
       .point-s-img {
         float: left;
         width: 16px;
@@ -46,14 +57,39 @@
       }
     }
   }
+
   .media-info {
+    margin-bottom: -1px;
     padding: 19px 15px;
     color: $secondary-text;
-    background-color: white;
+    border-bottom: 1px solid $border;
+
     p+p {
       margin-top: 14px;
     }
   }
+
+  .media-btn {
+    padding: 15px;
+    overflow: hidden;
+
+    .repair-list-btn {
+      float: right;
+      padding: 3px 11px;
+      border: 1px solid #1b1b1b;
+      border-radius: 2px;
+
+      &.success {
+        border-color: #05d1af;
+        color: #05d1af;
+      }
+
+      &+.repair-list-btn {
+        margin-right: 15px;
+      }
+    }
+  }
+
   .price {
     padding: 17px 15px;
     color: $red;
@@ -61,6 +97,7 @@
     background-color: white;
     text-align: right;
   }
+
   .empty {
     height: 25px;
     background-color: white;
@@ -71,10 +108,12 @@
   padding: 15px;
   background-color: $white;
   overflow: hidden;
+
   .icon-add-photo {
     float: left;
     overflow: hidden;
   }
+
   .text {
     float: left;
     margin-left: 15px;

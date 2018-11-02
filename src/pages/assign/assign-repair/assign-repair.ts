@@ -3,6 +3,7 @@ import { IonicPage, App, ModalController, NavParams } from 'ionic-angular';
 import { CalendarModal, CalendarModalOptions } from 'ion2-calendar';
 
 import { ToastService } from '@/../../src/service/ToastService';
+import { HttpService } from '@/../../src/service/HttpService';
 
 @IonicPage()
 @Component({
@@ -18,16 +19,20 @@ export class AssignRepairPage {
   dateFormmat: String;
   time: any;
   repairMember: any = {};
-  params: any = {};
+  params: any = {
+    method: "repair.operationStoreRepairOrder",
+    status: 3
+  };
 
   constructor(
     public app: App,
     public modalCtrl: ModalController,
     public navParams: NavParams,
     public toast: ToastService,
+    public http: HttpService
   ) {
 
-    this.params.sroiIds = this.navParams.get("ids");
+    this.params.id = this.navParams.get("id");
 
     let d = new Date(),
       nd = new Date(d.getTime() + (3600000 * 8));
@@ -42,7 +47,7 @@ export class AssignRepairPage {
       resolve();
       if (this.repairMember.name || params) {
         this.repairMember = params || this.repairMember;
-        this.params.finishRepairmanId = params.id;
+        this.params.repairmanId = params.id;
       } else {
         this.toast.info("选择维修员失败！");
       }
@@ -77,6 +82,19 @@ export class AssignRepairPage {
     console.log(this.params);
     this.navCtrl.push("AssignConactPage", {
       callback: this.callBackFromB.bind(this)
+    });
+  }
+
+  HandleSave() {
+    let arr = this.time.split("T"),
+      time = arr[1].substring(0, 5);
+    this.params.orderRepairTime = this.dateFormmat + " " + time;
+    this.http.get(this.params).subscribe(res => {
+      if (res.responseCode = "168070") {
+        this.toast.info("指定维修员成功", () => this.navCtrl.push("RepairListPage", { remove: true, len: 3 }));
+      } else {
+        this.toast.info("指定维修员异常");
+      }
     });
   }
 }

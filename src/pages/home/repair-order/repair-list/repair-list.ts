@@ -1,9 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, App, LoadingController, NavParams, Content } from 'ionic-angular';
 
-
 import { BaseUI } from '@/../../src/directives/comm/baseui';
 import { HttpService } from '@/../../src/service/HttpService';
+import { LoginService } from '@/../../src/service/LoginService';
+import { RoleTypeService } from '@/../../src/service/RoleTypeService';
+
 @IonicPage()
 @Component({
   selector: 'page-repair-list',
@@ -23,21 +25,21 @@ export class RepairListPage extends BaseUI {
   pageNumber: any = 0;
   totalNumber: any;
 
-  waitingOrder: number = 0;
-  processingOrder: number = 0;
-  completedOrder: number = 0;
-
   paramsStatus: Array<any> = [1, 2, 3];
 
   infiniteScroll: any;
 
   menuStatus: Boolean = false;
 
+  roleType: Number;
+
   constructor(
     public app: App,
     public navParams: NavParams,
     public http: HttpService,
     public loadingCtrl: LoadingController,
+    public login: LoginService,
+    public role: RoleTypeService
   ) {
     super();
     this.navCtrl = this.app.getRootNav();
@@ -48,6 +50,18 @@ export class RepairListPage extends BaseUI {
       this.navCtrl.remove(startIndex, len);
     }
 
+    let loading = super.showLoading(this.loadingCtrl);
+
+    this.role.setUserRole(val => {
+      this.roleType = val;
+      this.getListData(loading);
+    });
+  }
+
+  SetList() {
+    this.content.scrollToTop();
+    this.orderList = [];
+    this.pageNumber = 0;
     let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading);
   }
@@ -68,22 +82,31 @@ export class RepairListPage extends BaseUI {
   }
 
   getListData(loading, infiniteScroll: any = false) {
-    let params = { method: "repair.findStoreRepairOrder", statuss: String(this.paramsStatus), includeItem: 1, pageNumber: this.pageNumber + 1 };
+    let params = {
+      method: "repair.findStoreRepairOrder",
+      statuss: String(this.paramsStatus),
+      includeItem: 1,
+      pageNumber: this.pageNumber + 1,
+      repairManId: "",
+      orderRepairTimeBegin: "",
+      orderRepairTimeEnd: ""
+    };
+    if (this.roleType === 4) {
+      params.repairManId = this.login.id;
+      if (this.status === "orderDayPage") {
+        let day = new Date().toLocaleDateString().replace(/\//g, "-");
+        // params.orderRepairTime = day + " 00:00:00";
+        // params.orderRepairTimeEnd = day + " 23:59:59";
+      }
+    }
     this.http.get(params).subscribe(res => {
       loading.dismiss();
       if (infiniteScroll) {
         infiniteScroll.complete();
       }
       if (!!res && res.responseCode == 167050) {
-        if (params.statuss == "1,2,3") {
-          this.waitingOrder = res.totalSize;
-        } else if (params.statuss == "4,5,6,7") {
-          this.processingOrder = res.totalSize;
-        } else if (params.statuss == "8,9") {
-          this.completedOrder = res.totalSize;
-        }
         this.orderList = this.orderList.concat(res.responseObj);
-        this.totalNumber = this.totalNumber || res["totalNumber"];
+        this.totalNumber = res["totalNumber"] || this.totalNumber;
         this.pageNumber = res["pageNumber"];
         if (
           this.pageNumber === 1 &&
@@ -99,31 +122,50 @@ export class RepairListPage extends BaseUI {
     if (this.status === name) {
       return false;
     }
-    this.content.scrollToTop();
-    this.orderList = [];
-    this.pageNumber = 0;
+
     this.status = name;
     this.sta = 0;
-
+    // 未接单 
     if (name === "orderUndoPage") {
       this.paramsStatus = [1, 2, 3];
-    } else if (name === "OrderConductPage") {
-      this.paramsStatus = [4, 5, 6, 7];
-    } else {
+    }
+    // 已接单
+    if (name === "orderDayPage") {
+      this.paramsStatus = [4, 5];
+    }
+
+    if (name === "OrderConductPage") {
+      if (this.roleType === 4) {
+        this.paramsStatus = [6, 7];
+      } else {
+        this.paramsStatus = [4, 5, 6, 7];
+      }
+    }
+
+    // 已完成
+    if (name === "OrderDonePage") {
       this.paramsStatus = [8, 9];
     }
 
-    let loading = super.showLoading(this.loadingCtrl);
-    this.getListData(loading);
+    this.SetList();
   }
 
   goToOtherPage(name, item) {
     if (name) {
       this.navCtrl.push(name);
     } else {
-      this.navCtrl.push(this.status, { data: item });
+      let name = this.status;
+      if (this.status === "orderDayPage") {
+        name = "orderUndoPage";
+      }
+      this.navCtrl.push(name, { data: item });
     }
   }
+
+  HandleUpdate() {
+    this.SetList();
+  }
+
   show(n: number) {
     this.sta = this.sta == n ? 0 : n;
   }
@@ -134,21 +176,21 @@ export class RepairListPage extends BaseUI {
     this.sta = 0;
   }
 
-  sliderData:object[] = [
-    {label: '不限', status: false},
-    {label: '商场', status: true},
-    {label: '影院', status: false},
-    {label: '酒店', status: false},
-    {label: '超市', status: false},
-    {label: '铁路', status: false},
-    {label: '福利院', status: false},
-    {label: '养生馆', status: false},
-    {label: '酒吧', status: false}
+  sliderData: object[] = [
+    { label: '不限', status: false },
+    { label: '商场', status: true },
+    { label: '影院', status: false },
+    { label: '酒店', status: false },
+    { label: '超市', status: false },
+    { label: '铁路', status: false },
+    { label: '福利院', status: false },
+    { label: '养生馆', status: false },
+    { label: '酒吧', status: false }
   ];
-  tabsActive($index){
-    this.sliderData.forEach(function (n,i) {
-      n["status"] = false;
-      i == $index ? n["status"] = true : '';
+  tabsActive($index) {
+    this.sliderData.forEach(function (n, i) {
+      n[status] = false;
+      i == $index ? n[status] = true : '';
     });
   }
   sort: object[] = [
@@ -175,6 +217,4 @@ export class RepairListPage extends BaseUI {
     { filter: '今天' },
     { filter: '前天' }
   ];
-
-
 }

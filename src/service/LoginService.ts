@@ -10,11 +10,15 @@ export class LoginService {
 
   isLogin: any = false;
   userInfo: Object;
+  currentAccount: Object;
+  id: any;
 
   constructor(
     private app: App,
     private storage: Storage
-  ) { }
+  ) {
+    
+  }
 
   isLoginFun(callback: any = null) {
     this.storage.get('userInfo').then((val) => {
@@ -22,6 +26,7 @@ export class LoginService {
       if (!!val) {
         this.isLogin = !!val;
         this.userInfo = val;
+        this.setCurrentId(val.id);
         this.setCurrentAccount(val.currentAccount);
       }
       if (callback) {
@@ -31,12 +36,17 @@ export class LoginService {
   }
 
   setCurrentAccount(account) {
-    
+    this.currentAccount = account;
+  }
+  setCurrentId(id) {
+    this.id = id;
   }
 
   loginOut() {
     this.storage.remove('userInfo');
     this.userInfo = {};
+    this.id = "";
+    this.currentAccount = {};
     this.app.getRootNav().setRoot(LoginPage);
   }
 }

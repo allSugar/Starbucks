@@ -1,30 +1,67 @@
-<div class="repair-emement">
-    <div class="media-bar" (click)="goToOtherPage('StoreIndexPage')">
-      <em class="icon-house"></em>
-      <em class="f-left">北京钟楼百货星巴克</em>
-      <em class="icon-arrow-right"></em>
-      <em class="shop-name">苏南方圆</em>
-      <em class="icon-light"></em>
+<div class="repair-emement" *ngIf="roletype !== 4">
+  <div class="media-bar" (click)="goToOtherPage('StoreIndexPage')">
+    <em class="icon-house"></em>
+    <em class="f-left">北京钟楼百货星巴克</em>
+    <em class="icon-arrow-right"></em>
+    <em class="shop-name">苏南方圆</em>
+    <em class="icon-light"></em>
+  </div>
+  <div class="media-body" (click)='goToOtherPage()'>
+    <div class="media-title">
+      <em class="urgent-crash" *ngIf="data.status == 1">十万火急</em>
+      <em class="urgent-crash" *ngIf="data.status == 2">紧急</em>
+      <em class="urgent-general" *ngIf="data.status == 3">普通</em>
+      <em class="f-left">8个问题</em>
+      <em class="media-time">{{data.createTime}}</em>
     </div>
-    <div class="media-body" (click)='goToOtherPage()'>
-      <div class="media-title">
-        <em class="urgent-crash" *ngIf="data.status == 1">十万火急</em>
-        <em class="urgent-crash" *ngIf="data.status == 2">紧急</em>
-        <em class="urgent-general" *ngIf="data.status == 3">普通</em>
-        <em class="f-left">8个问题</em>
-        <em class="media-time">{{data.createTime}}</em>
-      </div>
-      <div class="media-img">
-        <img src="assets/imgs/change-after.png" alt="">
-        <img src="assets/imgs/change-after.png" alt="">
-        <img src="assets/imgs/change-after.png" alt="">
-        <img src="assets/imgs/change-after.png" alt="">
-        <img src="assets/imgs/change-after.png" alt="">
-        <em class="point-img"></em>
-      </div>
-    </div>
-    <div class="media-info">
-      <p>系统单号：{{data.orderCode}}</p>
-      <p>400单号：201710212569</p>
+    <div class="media-img">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <em class="point-img"></em>
     </div>
   </div>
+  <div class="media-info">
+    <p>系统单号：{{data.orderCode}}</p>
+    <p>400单号：201710212569</p>
+  </div>
+</div>
+<div class="repair-emement" *ngIf="roletype === 4">
+  <div class="media-bar">
+    <em class="icon-house"></em>
+    <em class="f-left">北京钟楼百货星巴克</em>
+    <em class="icon-arrow-right"></em>
+    <em class="shop-name">苏南方圆</em>
+    <em class="icon-light"></em>
+  </div>
+  <div class="media-body" (click)='goToOtherPage()'>
+    <div class="media-title">
+      <em class="urgent-crash" *ngIf="data.status == 1">十万火急</em>
+      <em class="urgent-crash" *ngIf="data.status == 2">紧急</em>
+      <em class="urgent-general" *ngIf="data.status == 3">普通</em>
+      <em class="f-left">8个问题</em>
+      <em class="media-time">{{data.createTime}}</em>
+    </div>
+    <div class="media-img">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <img src="assets/imgs/change-after.png" alt="">
+      <em class="point-img"></em>
+    </div>
+  </div>
+  <div class="media-info">
+    <p>系统单号：{{data.orderCode}}</p>
+    <p>400单号：201710212569</p>
+  </div>
+  <div class="media-btn" *ngIf="tabs === 'orderUndoPage'">
+    <div class="repair-list-btn success" (click)="HandleAddRepair()">接单</div>
+  </div>
+  <div class="media-btn" *ngIf="tabs === 'orderDayPage'">
+    <div class="repair-list-btn success" *ngIf="data.status === 4" (click)="HandleGoRepair()">出发</div>
+    <div class="repair-list-btn success" *ngIf="data.status === 5" (click)="HandleArriveRepair()">到达</div>
+  </div>
+</div>
