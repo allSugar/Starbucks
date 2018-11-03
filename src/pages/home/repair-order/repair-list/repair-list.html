@@ -27,7 +27,7 @@
       <li class="tab-btn" (click)="show(2)" [ngClass]="{ 'active':sta == 2 }">
         <em class="text">紧急</em>
       </li>
-      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
+      <li class="tab-btn" (click)="show(3); getStoreList()" [ngClass]="{ 'active':sta == 3 }">
         <em class="text">厂商</em>
       </li>
       <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
@@ -73,8 +73,8 @@
             (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
-        <li class="ranking-item" *ngFor="let item of shop; let i = index"
-            (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
+        <li class="ranking-item" *ngFor="let item of storeList; let i = index"
+            (click)="changeActive(i,item.id)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.company }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 5 }">
         <li class="ranking-item" *ngFor="let item of sort; let i = index"
@@ -106,7 +106,7 @@
 
 <ion-content>
   <div class="repair-list">
-    <repair-order-element *ngFor="let item of orderList" [data]="item" [roletype]="roleType" [tabs]="status" 
+    <repair-order-element *ngFor="let item of orderList" [data]="item" [roletype]="roleType" [tabs]="status"
     (goto)="goToOtherPage($event,item)" (update)="HandleUpdate()"></repair-order-element>
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
       <ion-infinite-scroll-content></ion-infinite-scroll-content>

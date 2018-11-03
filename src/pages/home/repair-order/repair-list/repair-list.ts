@@ -25,6 +25,8 @@ export class RepairListPage extends BaseUI {
   pageNumber: any = 0;
   totalNumber: any;
 
+  storeList: object[] = [];
+
   paramsStatus: Array<any> = [1, 2, 3];
 
   infiniteScroll: any;
@@ -93,7 +95,34 @@ export class RepairListPage extends BaseUI {
     this.getListData(loading, infiniteScroll);
   }
 
-  getListData(loading, infiniteScroll: any = false) {
+  getStoreList(){
+    this.storeList = [];
+    let params = {
+      method: "repairCompanyManager.findRepairCompany",
+      clientId: this.login.userInfo["clientId"]
+    };
+    this.http.get(params).subscribe(res =>{
+      if(!!res && res.responseCode == 174020){
+        var data = res.responseObj;
+        for(var i = 0,Length = data.length; i < Length; i++){
+          this.storeList.push({
+            company: data[i]["companyName"],
+            id: data[i]["id"]
+          })
+        }
+      }
+    })
+  }
+
+  oindex: Number = 0;
+  changeActive(i: Number,id) {
+    this.oindex = i;
+    this.sta = 0;
+    let loading = super.showLoading(this.loadingCtrl);
+    this.getListData(loading, this.infiniteScroll,id)
+  }
+
+  getListData(loading, infiniteScroll: any = false,id) {
     let params = {
       method: "repair.findStoreRepairOrder",
       statuss: String(this.paramsStatus),
@@ -101,7 +130,8 @@ export class RepairListPage extends BaseUI {
       pageNumber: this.pageNumber + 1,
       repairmanId: "",
       orderRepairTimeBegin: "",
-      orderRepairTimeEnd: ""
+      orderRepairTimeEnd: "",
+      id: id
     };
     if (this.roleType === 4) {
       params.repairmanId = this.login.id;
@@ -112,11 +142,13 @@ export class RepairListPage extends BaseUI {
       }
     }
     this.http.get(params).subscribe(res => {
+      this.orderList = [];
       loading.dismiss();
       if (infiniteScroll) {
         infiniteScroll.complete();
       }
       if (!!res && res.responseCode == 167050) {
+        console.log(res)
         this.orderList = this.orderList.concat(res.responseObj);
         this.totalNumber = res["totalNumber"] || this.totalNumber;
         this.pageNumber = res["pageNumber"];
@@ -137,7 +169,7 @@ export class RepairListPage extends BaseUI {
 
     this.status = name;
     this.sta = 0;
-    // 未接单 
+    // 未接单
     if (name === "orderUndoPage") {
       if (this.roleType === 4) {
         this.paramsStatus = [3];
@@ -190,11 +222,7 @@ export class RepairListPage extends BaseUI {
     this.sta = this.sta == n ? 0 : n;
   }
 
-  oindex: Number = 0;
-  changeActive(i: Number) {
-    this.oindex = i;
-    this.sta = 0;
-  }
+
 
   sliderData: object[] = [
     { label: '不限', status: false },
