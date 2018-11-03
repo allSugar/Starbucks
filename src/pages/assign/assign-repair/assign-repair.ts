@@ -79,7 +79,6 @@ export class AssignRepairPage {
   }
 
   assignRepairMan() {
-    console.log(this.params);
     this.navCtrl.push("AssignConactPage", {
       callback: this.callBackFromB.bind(this)
     });

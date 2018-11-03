@@ -76,9 +76,9 @@
         <p class="text">A区8栋一层吧台区 {{ listdata.faultDes }}</p>
       </div>
     </div>
-    <div class="point-retract">
-      <div class="btn-retract success">完成</div>
-      <div class="btn-retract success">添加说明</div>
+    <div class="point-retract" *ngIf="repairstatus > 5">
+      <div class="btn-retract success" (click)="HandleCompleteOrder()">完成</div>
+      <div class="btn-retract success" (click)="AddExplain()">添加说明</div>
     </div>
   </div>
 </div>

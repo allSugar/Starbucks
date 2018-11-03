@@ -19,7 +19,7 @@ export class RepairOrderTmpl {
   @Output() goto = new EventEmitter<any>();
   @Output() update = new EventEmitter<any>();
 
-  params: Object = {
+  params: any = {
     method: "repair.operationStoreRepairOrder",
     id: "",
     status: ""
@@ -36,8 +36,8 @@ export class RepairOrderTmpl {
   }
 
   HandleAddRepair() {
-    this.params.id = (this.data as Object).id;
-    this.params.status = 4;
+    this.params["id"] = (this.data as Object)["id"];
+    this.params["status"] = 4;
 
     this.http.get(this.params).subscribe(res => {
       if (res.responseCode == "167020") {
@@ -49,8 +49,8 @@ export class RepairOrderTmpl {
   }
 
   HandleGoRepair() {
-    this.params.id = (this.data as Object).id;
-    this.params.status = 5;
+    this.params["id"] = (this.data as Object)["id"];
+    this.params["status"] = 5;
 
     this.http.get(this.params).subscribe(res => {
       if (res.responseCode == "167020") {
@@ -62,8 +62,8 @@ export class RepairOrderTmpl {
   }
 
   HandleArriveRepair() {
-    this.params.id = (this.data as Object).id;
-    this.params.status = 6;
+    this.params["id"] = (this.data as Object)["id"];
+    this.params["status"] = 6;
 
     this.http.get(this.params).subscribe(res => {
       if (res.responseCode == "167020") {

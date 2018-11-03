@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavParams } from 'ionic-angular';
 
-import { HttpService } from '../../../service/HttpService';
+import { HttpService } from '@/../../src/service/HttpService';
 
 @IonicPage()
 @Component({

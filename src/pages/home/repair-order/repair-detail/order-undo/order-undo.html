@@ -19,7 +19,7 @@
         <order-point *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType" [isassign]="isassign"
           (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point>
         <!-- 维修员 -->
-        <order-point *ngIf="roleType === 4" [listdata]="item" [roletype]="roleType" [isassign]="isassign"
+        <order-point *ngIf="roleType === 4" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" [isassign]="isassign"
           (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point>
       </div>
     </div>

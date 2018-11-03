@@ -25,6 +25,8 @@ export class OrderPointTmpl extends BaseUI {
   @Output() goto = new EventEmitter<any>();
   // 判断当前问题对象是否选中回调方法
   @Output() ischecked = new EventEmitter<any>();
+  // 完成操作的回调方法
+  @Output() complete = new EventEmitter<any>();
 
   navCtrl: any;
 
@@ -81,4 +83,21 @@ export class OrderPointTmpl extends BaseUI {
   HandleIsChecked() {
     this.ischecked.emit(this.listdata.isChecked);
   }
+
+  AddExplain() {
+    this.navCtrl.push("AddExplainPage", { data: this.listdata });
+  }
+
+  HandleCompleteOrder() {
+
+    let params = { method: "repair.operationStoreRepairOrderItem", sroiIds: this.listdata.id, status: 7 };
+    this.http.get(params).subscribe(res => {
+      if (res.responseCode == "168070") {
+        this.complete.emit(this.listdata.id);
+      } else {
+        this.toast.info("修改问题状态异常，请稍后再试！");
+      }
+    });
+  }
+
 }

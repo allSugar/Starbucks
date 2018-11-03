@@ -50,16 +50,28 @@ export class RepairListPage extends BaseUI {
       this.navCtrl.remove(startIndex, len);
     }
 
+    let defaultTabs = this.navParams.get("tabs");
+
     let loading = super.showLoading(this.loadingCtrl);
 
     this.role.setUserRole(val => {
       this.roleType = val;
-      this.getListData(loading);
+      if (this.roleType === 4) {
+        this.paramsStatus = [3];
+      }
+      if (defaultTabs) {
+        this.tabs(defaultTabs);
+      } else {
+        this.getListData(loading);
+      }
     });
   }
 
   SetList() {
-    this.content.scrollToTop();
+    if (this.content && this.content.scrollToTop) {
+      this.content.scrollToTop();
+    }
+
     this.orderList = [];
     this.pageNumber = 0;
     let loading = super.showLoading(this.loadingCtrl);
@@ -87,12 +99,12 @@ export class RepairListPage extends BaseUI {
       statuss: String(this.paramsStatus),
       includeItem: 1,
       pageNumber: this.pageNumber + 1,
-      repairManId: "",
+      repairmanId: "",
       orderRepairTimeBegin: "",
       orderRepairTimeEnd: ""
     };
     if (this.roleType === 4) {
-      params.repairManId = this.login.id;
+      params.repairmanId = this.login.id;
       if (this.status === "orderDayPage") {
         let day = new Date().toLocaleDateString().replace(/\//g, "-");
         // params.orderRepairTime = day + " 00:00:00";
@@ -118,7 +130,7 @@ export class RepairListPage extends BaseUI {
     });
   }
 
-  tabs(name: string) {
+  tabs(name: string, value) {
     if (this.status === name) {
       return false;
     }
@@ -127,7 +139,11 @@ export class RepairListPage extends BaseUI {
     this.sta = 0;
     // 未接单 
     if (name === "orderUndoPage") {
-      this.paramsStatus = [1, 2, 3];
+      if (this.roleType === 4) {
+        this.paramsStatus = [3];
+      } else {
+        this.paramsStatus = [1, 2, 3];
+      }
     }
     // 已接单
     if (name === "orderDayPage") {
@@ -147,7 +163,7 @@ export class RepairListPage extends BaseUI {
       this.paramsStatus = [8, 9];
     }
 
-    this.SetList();
+    this.SetList(value);
   }
 
   goToOtherPage(name, item) {
