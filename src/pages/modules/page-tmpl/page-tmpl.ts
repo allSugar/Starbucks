@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, ModalController } from 'ionic-angular';
+import { CalendarModal, CalendarModalOptions, DayConfig } from "ion2-calendar";
 
 @IonicPage()
 @Component({
@@ -7,6 +8,35 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'page-tmpl.html',
 })
 export class PageTmplPage {
+
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    ) {
+
+  }
+  date: Date = new Date();
+  openCalendar() {
+    const options: CalendarModalOptions = {
+      title: 'BASIC',
+      defaultDate: this.date
+    };
+
+    let myCalendar = this.modalCtrl.create(CalendarModal, {
+      options: options
+    });
+
+    myCalendar.present();
+
+    myCalendar.onDidDismiss((date, type) => {
+      if (type === 'done') {
+        this.date = date.dateObj;
+      }
+      console.log(date);
+      console.log('type', type);
+    })
+
+  }
 
   category: Object[] = [
     { url: 'repair-frequency', name: '维修频率' },
@@ -30,9 +60,6 @@ export class PageTmplPage {
     { url: 'import_img5' },
     { url: 'import_img6' }
   ];
-  constructor(public navCtrl: NavController) {
-
-  }
 
   change() {
     console.log("change");

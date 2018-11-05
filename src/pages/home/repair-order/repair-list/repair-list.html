@@ -35,7 +35,7 @@
       </li>
     </ul>
     <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'OrderConductPage' || status == 'orderDayPage'">
-      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
+      <li class="tab-btn" (click)="show(3); getStoreList()" [ngClass]="{ 'active':sta == 3 }">
         <em class="text">厂商</em>
       </li>
       <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
@@ -46,7 +46,7 @@
       </li>
     </ul>
     <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'OrderDonePage'">
-      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
+      <li class="tab-btn" (click)="show(3); getStoreList()" [ngClass]="{ 'active':sta == 3 }">
         <em class="text">厂商</em>
       </li>
       <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
@@ -74,7 +74,7 @@
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
         <li class="ranking-item" *ngFor="let item of storeList; let i = index"
-            (click)="changeActive(i,item.id)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.company }}</li>
+            (click)="changeActive(i, item.id, 3)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.company }}</li>
       </ul>
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 5 }">
         <li class="ranking-item" *ngFor="let item of sort; let i = index"
@@ -93,7 +93,7 @@
     <div class="time-form">
       <div class="title">类型</div>
       <div class="time-list m-t-xl">
-        <div class="item item-xl" *ngFor="let item of sliderData; let $index = index"  (click)="tabsActive($index)" [ngClass]="{'active':item.status == true}">{{ item.label }}</div>
+        <div class="item item-xl" *ngFor="let item of sliderData; let $index = index"  (click)="tabsSliderActive($index)" [ngClass]="{'active':item.status == true}">{{ item.label }}</div>
       </div>
     </div>
     <div class="sort-btn">

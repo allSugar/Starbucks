@@ -115,11 +115,13 @@ export class RepairListPage extends BaseUI {
   }
 
   oindex: Number = 0;
-  changeActive(i: Number,id) {
+  changeActive(i: Number,id, j:Number) {
     this.oindex = i;
     this.sta = 0;
     let loading = super.showLoading(this.loadingCtrl);
-    this.getListData(loading, this.infiniteScroll,id)
+
+    this.orderList = [];
+    this.getListData(loading, this.infiniteScroll,id);
   }
 
   getListData(loading, infiniteScroll: any = false,id) {
@@ -142,13 +144,11 @@ export class RepairListPage extends BaseUI {
       }
     }
     this.http.get(params).subscribe(res => {
-      this.orderList = [];
       loading.dismiss();
       if (infiniteScroll) {
         infiniteScroll.complete();
       }
       if (!!res && res.responseCode == 167050) {
-        console.log(res)
         this.orderList = this.orderList.concat(res.responseObj);
         this.totalNumber = res["totalNumber"] || this.totalNumber;
         this.pageNumber = res["pageNumber"];
@@ -166,6 +166,8 @@ export class RepairListPage extends BaseUI {
     if (this.status === name) {
       return false;
     }
+
+    this.oindex = null;
 
     this.status = name;
     this.sta = 0;
@@ -235,10 +237,10 @@ export class RepairListPage extends BaseUI {
     { label: '养生馆', status: false },
     { label: '酒吧', status: false }
   ];
-  tabsActive($index) {
+  tabsSliderActive($index) {
     this.sliderData.forEach(function (n, i) {
-      n[status] = false;
-      i == $index ? n[status] = true : '';
+      n["status"] = false;
+      i == $index ? n["status"] = true : '';
     });
   }
   sort: object[] = [
