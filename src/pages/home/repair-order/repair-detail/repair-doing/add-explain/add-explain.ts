@@ -23,7 +23,7 @@ export class AddExplainPage {
   page: String = "AddExplainPage";
   RepairWarehouse: Object[];
   higherLevelId: any;
-  len: Number = 1;
+  len: any = 1;
 
   constructor(
     public app: App,

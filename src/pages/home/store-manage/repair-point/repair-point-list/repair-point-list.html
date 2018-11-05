@@ -56,7 +56,7 @@
 <ion-footer>
   <div class="float-box">
     <label class="float-choice checkbox">
-      <input type="checkbox" [(checked)]="checkAll" (change)="HandleCheckAllChange($event)">
+      <input type="checkbox" [(ngModel)]="checkAll" (change)="HandleCheckAllChange($event)">
       <ins class="checkbox-icon"></ins>
       <em class="text">全选</em>
     </label>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { App, IonicPage, NavParams, LoadingController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { App, IonicPage, NavParams, LoadingController, Content } from 'ionic-angular';
 
 import { BaseUI } from '../../../../../directives/comm/baseui';
 import { HttpService } from '../../../../../service/HttpService';
@@ -11,6 +11,8 @@ import { ToastService } from '../../../../../service/ToastService';
   templateUrl: 'repair-point-list.html',
 })
 export class RepairPointListPage extends BaseUI {
+
+  @ViewChild(Content) content: Content;
 
   navCtrl: any;
   menuStatus: Boolean = false;
@@ -40,7 +42,19 @@ export class RepairPointListPage extends BaseUI {
       this.getDrawingList();
     }
 
+    this.getListData(loading);
+  }
 
+  SetList() {
+    if (this.content && this.content.scrollToTop) {
+      this.content.scrollToTop();
+    }
+
+    let loading = super.showLoading(this.loadingCtrl);
+    this.pageNumber = 0;
+    this.totalNumber = 0;
+    this.storeRepairTemporaryBillList = [];
+    this.checkAll = false;
     this.getListData(loading);
   }
 
@@ -48,15 +62,17 @@ export class RepairPointListPage extends BaseUI {
     this.menuStatus = !this.menuStatus;
   }
   doInfinite(infiniteScroll) {
+    this.infiniteScroll = this.infiniteScroll || infiniteScroll;
     if (this.pageNumber === this.totalNumber) {
       infiniteScroll.complete();
       infiniteScroll.enable(false);
       return false;
     }
-    let loading = super.showLoading(this.loadingCtrl);
 
+    let loading = super.showLoading(this.loadingCtrl);
     this.getListData(loading, infiniteScroll);
   }
+
   getDrawingList() {
     let params = { method: "store.findStoreCompletionData", storeInfoId: this.storeInfoId ? this.storeInfoId : 1 };
     this.http.get(params).subscribe(res => {
@@ -67,6 +83,7 @@ export class RepairPointListPage extends BaseUI {
 
     });
   }
+
   getListData(loading, infiniteScroll: any = false) {
     let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId, pageNumber: this.pageNumber + 1 };
     this.http.get(params).subscribe(res => {
@@ -88,7 +105,16 @@ export class RepairPointListPage extends BaseUI {
             item.drawing = obj[0].dataContent;
           }
         });
+        
+
         this.checkAll = (this.srtbIds.length === this.storeRepairTemporaryBillList.length);
+
+        if (
+          this.pageNumber === 1 &&
+          this.totalNumber > 1 &&
+          this.infiniteScroll) {
+          this.infiniteScroll.enable(true);
+        }
       };
     });
   }
@@ -138,15 +164,19 @@ export class RepairPointListPage extends BaseUI {
       this.toast.info("请选择问题然后提交！");
       return false;
     }
-    let loading = super.showLoading(this.loadingCtrl),
-      params = { method: "repair.createStoreRepairOrder", storeInfoId: this.storeInfoId, srtbIds: "" };
+
+    let params = { method: "repair.createStoreRepairOrder", storeInfoId: this.storeInfoId, srtbIds: "" };
+
     this.srtbIds.map((id, index) => {
       params.srtbIds += (index ? "," : "") + id;
     });
-    this.http.get(params).subscribe(res => {
-      this.getListData(loading);
-    }, error => {
 
+    this.http.get(params).subscribe(res => {
+      if (res.responseCode == "167010") {
+        this.SetList();
+      } else {
+        this.toast.info("创建订单失败，请稍后再试！");
+      }
     });
   }
 }
