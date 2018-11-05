@@ -15,7 +15,7 @@ export class RepairDoingPage {
   tabStatus: number = 0;
   roleType: any;
   data: any = {};
-  completeLen: Number = 0;
+  completeLen: any = 0;
 
   constructor(
     public app: App,

@@ -24,6 +24,7 @@ export class RoleTypeService {
         callback(this.SetRole());
     }
     SetRole() {
+        console.log(this.login);
         this.currentAccount = this.login.currentAccount;
         let roleid = this.currentAccount["id"];
         switch (roleid) {

@@ -162,7 +162,7 @@ export class RepairListPage extends BaseUI {
     });
   }
 
-  tabs(name: string, value) {
+  tabs(name: string) {
     if (this.status === name) {
       return false;
     }
@@ -195,7 +195,7 @@ export class RepairListPage extends BaseUI {
       this.paramsStatus = [8, 9];
     }
 
-    this.SetList(value);
+    this.SetList();
   }
 
   goToOtherPage(name, item) {
