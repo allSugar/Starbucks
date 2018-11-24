@@ -1,0 +1,31 @@
+<div class="point">
+  <!-- 店长 -->
+  <div class="point-content-body p-b-xxl">
+    <div class="point-title">
+      <span>北京钟楼百货星巴克</span>
+      <em class="icon-arrow-right f-none"></em>
+    </div>
+    <div class="point-content">
+      <div class="point-img" (click)="goToOtherPage('OrderImgDetailPage')">
+        <img alt="" src="assets/imgs/change-before.png">
+      </div>
+      <div class="point-body" (click)="goToOtherPage('ProblemDetailPage')">
+        <p class="point-describe">
+          <span class="address">A区8栋一层吧台区</span>
+          <span *ngIf="!(repairstatus < 8)" class="currency">¥ 500</span>
+          <em class="urgent-crash" *ngIf="repairstatus < 8 && listdata.emergency == 1">十万火急</em>
+          <em class="urgent-crash" *ngIf="repairstatus < 8 && listdata.emergency == 2">紧急</em>
+          <em class="urgent-general" *ngIf="repairstatus < 8 && listdata.emergency == 3">普通</em>
+        </p>
+        <p class="point-tag">{{ listdata.faultDes }}</p>
+        <p class="point-action">
+          <span>5张照片</span>
+          <span *ngIf="!(repairstatus < 8)" class="question">灯管自然损坏</span>
+        </p>
+      </div>
+    </div>
+    <div class="point-retract" *ngIf="repairstatus < 3">
+      <div class="btn-retract" (click)="deleteStoreRepairOrder()">撤回</div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 })
 export class OrderDonePage {
 
+    data: any;
     list: Array<any> = [];
 
     RES_ROOT: string;
@@ -33,7 +34,7 @@ export class OrderDonePage {
 
         this.role.setUserRole(val => {
             this.roleType = val;
-          });
+        });
         this.material();
         this.hours();
     }

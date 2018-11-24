@@ -6,11 +6,11 @@ import { ToastService } from '@/../../src/service/ToastService';
 import { HttpService } from '@/../../src/service/HttpService';
 
 @Component({
-  selector: 'order-point',
-  templateUrl: 'order-point.html'
+  selector: 'order-point-show',
+  templateUrl: 'order-point-show.html'
 })
 
-export class OrderPointTmpl extends BaseUI {
+export class OrderPointShowTmpl extends BaseUI {
 
   // 问题对象
   @Input() listdata: any = {};
@@ -37,6 +37,7 @@ export class OrderPointTmpl extends BaseUI {
     public toast: ToastService
   ) {
     super();
+    console.log(this);
     this.navCtrl = this.app.getRootNav();
   }
 

@@ -22,7 +22,7 @@
 
 <ion-content>
   <div class="order-detail" *ngIf="tabStatus == 0">
-    <div class="status" (click)="goToOtherPage('WorkerInfoPage')">
+    <div class="status" *ngIf="roleType !== 4" (click)="goToOtherPage('WorkerInfoPage')">
       <em class="icon-smile"></em>
       <span class="title">维修单已完成</span>
       <em class="icon-arrow-right-white f-right"></em>
@@ -31,11 +31,18 @@
     <order-info></order-info>
     <div class="point-list">
       <div *ngFor="let item of data.orderItemList">
-         <!-- 维修主管 -->
-        <order-point *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point>
+        <!-- 店长 -->
+        <order-point-show *ngIf="roleType === 2" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status"
+          (goto)="goToDetailPage($event)"></order-point-show>
+        <!-- 维修主管 -->
+        <order-point-show *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType"
+          [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-show>
+        <!-- 维修员 -->
+        <order-point-list *ngIf="roleType === 4" [listdata]="item" [roletype]="roleType"
+          [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-list>
       </div>
     </div>
-    <div class="pay">
+    <div class="pay" *ngIf="roleType !== 4">
       <span>订单总金额</span>
       <span class="sum">¥ 1,500</span>
     </div>

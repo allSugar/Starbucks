@@ -22,6 +22,7 @@ export class OrderConductPage {
   ) {
     this.navCtrl = this.app.getRootNav();
     this.data = this.navParams.get('data');
+    
     this.role.setUserRole(val => {
       this.roleType = val;
     });
