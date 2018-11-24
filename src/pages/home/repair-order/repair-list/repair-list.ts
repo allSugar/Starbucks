@@ -95,16 +95,16 @@ export class RepairListPage extends BaseUI {
     this.getListData(loading, infiniteScroll);
   }
 
-  getStoreList(){
+  getStoreList() {
     this.storeList = [];
     let params = {
       method: "repairCompanyManager.findRepairCompany",
       clientId: this.login.userInfo["clientId"]
     };
-    this.http.get(params).subscribe(res =>{
-      if(!!res && res.responseCode == 174020){
+    this.http.get(params).subscribe(res => {
+      if (!!res && res.responseCode == 174020) {
         var data = res.responseObj;
-        for(var i = 0,Length = data.length; i < Length; i++){
+        for (var i = 0, Length = data.length; i < Length; i++) {
           this.storeList.push({
             company: data[i]["companyName"],
             id: data[i]["id"]
@@ -115,16 +115,14 @@ export class RepairListPage extends BaseUI {
   }
 
   oindex: Number = 0;
-  changeActive(i: Number,id, j:Number) {
+  changeActive(i: Number, id) {
     this.oindex = i;
     this.sta = 0;
     let loading = super.showLoading(this.loadingCtrl);
-
-    this.orderList = [];
-    this.getListData(loading, this.infiniteScroll,id);
+    this.getListData(loading, this.infiniteScroll, id)
   }
 
-  getListData(loading, infiniteScroll: any = false,id) {
+  getListData(loading, infiniteScroll: any = false, id: any = null) {
     let params = {
       method: "repair.findStoreRepairOrder",
       statuss: String(this.paramsStatus),

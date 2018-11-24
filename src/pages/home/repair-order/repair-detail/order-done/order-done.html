@@ -30,7 +30,10 @@
     </div>
     <order-info></order-info>
     <div class="point-list">
-      <order-point [retract]="false" (goto)="goToDetailPage($event)"></order-point>
+      <div *ngFor="let item of data.orderItemList">
+         <!-- 维修主管 -->
+        <order-point *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point>
+      </div>
     </div>
     <div class="pay">
       <span>订单总金额</span>

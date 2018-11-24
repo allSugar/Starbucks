@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavParams } from 'ionic-angular';
-import { HttpService } from '../../../../../service/HttpService';
+
+import { ToastService } from '@/../../src/service/ToastService';
+import { HttpService } from '@/../../src/service/HttpService';
+import { LoginService } from '@/../../src/service/LoginService';
+import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 
 @IonicPage()
 @Component({
@@ -10,19 +14,28 @@ import { HttpService } from '../../../../../service/HttpService';
 export class OrderDonePage {
 
     list: Array<any> = [];
-    order: Object[] = [];
+
     RES_ROOT: string;
     tabStatus: number = 0;
     navCtrl: any;
+    roleType: any;
 
     constructor(
         public app: App,
         public navParams: NavParams,
-        public http: HttpService
+        public toast: ToastService,
+        public login: LoginService,
+        public http: HttpService,
+        public role: RoleTypeService
     ) {
+        this.data = this.navParams.get('data');
+        this.navCtrl = this.app.getRootNav();
+
+        this.role.setUserRole(val => {
+            this.roleType = val;
+          });
         this.material();
         this.hours();
-        this.navCtrl = this.app.getRootNav();
     }
     material() {
         let params = { method: 'repair.findStoreRepairOrderGoods' }
@@ -46,7 +59,7 @@ export class OrderDonePage {
     goToOtherPage(name) {
         this.navCtrl.push(name);
     }
-    goToDetailPage() {
+    goToDetailPage(event) {
         this.navCtrl.push('ProblemDetailPage');
     }
 

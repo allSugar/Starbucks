@@ -24,6 +24,7 @@ export class RepairPointListPage extends BaseUI {
   pageNumber: any = 0;
   totalNumber: any;
   loading: any;
+  infiniteScroll: any;
 
   constructor(
     public app: App,
@@ -105,7 +106,7 @@ export class RepairPointListPage extends BaseUI {
             item.drawing = obj[0].dataContent;
           }
         });
-        
+
 
         this.checkAll = (this.srtbIds.length === this.storeRepairTemporaryBillList.length);
 
