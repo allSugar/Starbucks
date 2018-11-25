@@ -31,6 +31,7 @@ export class OrderDonePage {
     ) {
         this.data = this.navParams.get('data');
         this.navCtrl = this.app.getRootNav();
+        console.log(this);
 
         this.role.setUserRole(val => {
             this.roleType = val;

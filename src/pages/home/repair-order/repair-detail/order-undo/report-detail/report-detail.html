@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ReportDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>报告</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="report-detail">
+    <div class="report-detai-title">
+      <div class="row-ibox">
+        <li class="row-list-through">钟楼星巴克</li>
+      </div>
+      <div class="row-ibox">
+        <ul class="row-list border-b m-b-none">
+          <li class="row-item">
+            <img class="icon-no" alt="" src="assets/imgs/icon/No.png">
+            <div class="item-info">
+              <div class="title">
+                <span>维修单号：</span>
+                <em>2361860793232932</em>
+              </div>
+              <div class="content">2016-11-30 15:42:16</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <ul class="media-ibox p-t-b-xxl border-b">
+        <li class="quote">
+          <em class="icon-total-time"></em>
+          <span>总工时</span>
+          <br />
+          <span class="count">2</span>小时
+        </li>
+        <li class="quote">
+          <em class="icon-total-money"></em>
+          <span>耗材总成本</span>
+          <br />
+          <span class="count">2800</span>元
+        </li>
+      </ul>
+      <div class="expand">
+        <div class="title-second">总耗材</div>
+        <div class="media-ibox border-b-gray" *ngFor="let i of [1,2,3]">
+          <div class="media-img">
+            <img src="assets/imgs/square.png">
+          </div>
+          <div class="media-body">
+            <div class="title">
+              <span>厨房吊灯欧普照明</span>
+              <span class="price">￥780</span>
+            </div>
+            <div class="count">x2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-child" *ngFor="let i of [1,2]">
+      <div class="title">子订单1</div>
+      <div class="title-second">类型</div>
+      <ul class="type-list">
+        <li class="type-item-x type-item" *ngFor="let i of [1,2,3]">五金 > 电类 > 插座</li>
+      </ul>
+      <div class="title-second">报告及图片</div>
+      <div class="m-t-l">这里是报告说明，报告说明报告说明报告说明，报告说明报告说明</div>
+      <div class="row-ibox p-none">
+        <div class="row-list-through border-none p-none m-t-xl">
+          <div class="photo-list p-none">
+            <img src="assets/imgs/square.png" alt="">
+            <img src="assets/imgs/square.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

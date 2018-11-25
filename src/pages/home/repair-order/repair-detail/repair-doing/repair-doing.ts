@@ -86,7 +86,7 @@ export class RepairDoingPage {
     this.http.get(params).subscribe(res => {
       if (res.responseCode == "167020") {
         if (params.status === 8) {
-          this.navCtrl.push("RepairListPage", { tabs: "OrderConductPage" });
+          this.navCtrl.push("RepairListPage", { tabs: "OrderConductPage", remove: true, len: 2 });
         }
       }
     });

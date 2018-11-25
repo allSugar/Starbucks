@@ -1,3 +1,11 @@
 page-report {
+  .report-list {
+    padding: 10px 0;
 
+    .report-item {
+      &+.report-item {
+        margin-top: 10px;
+      }
+    }
+  }
 }

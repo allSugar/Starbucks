@@ -102,6 +102,6 @@ export class OrderPointListTmpl extends BaseUI {
 
   FillInReport() {
     console.log(this);
-    this.navCtrl.push("ReportPage");
+    this.navCtrl.push("ReportPage", { data: this.listdata });
   }
 }

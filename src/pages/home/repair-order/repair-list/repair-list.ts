@@ -62,6 +62,7 @@ export class RepairListPage extends BaseUI {
         this.paramsStatus = [3];
       }
       if (defaultTabs) {
+        
         this.tabs(defaultTabs);
       } else {
         this.getListData(loading);
