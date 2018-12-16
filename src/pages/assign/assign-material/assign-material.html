@@ -20,7 +20,7 @@
         <div class="item-body">
           <em class="text item-title">预期订购天数</em>
           <div class="item-right-icon">
-            <ion-input placeholder="天"></ion-input>
+            <ion-input [(ngModel)]="params.purchaseDays" placeholder="天"></ion-input>
           </div>
         </div>
       </li>
@@ -29,7 +29,7 @@
           <em class="text item-title">文字说明</em>
         </div>
         <div class="item-textarea">
-          <textarea name="" cols="30" rows="10" placeholder="文字说明..."></textarea>
+          <textarea [(ngModel)]="params.purchaseDes" cols="30" rows="10" placeholder="文字说明..."></textarea>
         </div>
       </li>
     </ul>
@@ -38,7 +38,7 @@
 
 <ion-footer>
   <div class="footer-button-group">
-    <button class="footer-button footer-button-quit">取消</button>
-    <button class="footer-button">确定</button>
+    <button class="footer-button footer-button-quit" (click)="HandleQuit()">取消</button>
+    <button class="footer-button" (click)="HandleSave()">确定</button>
   </div>
 </ion-footer>

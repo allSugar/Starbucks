@@ -64,8 +64,8 @@ export class OrderPointListTmpl extends BaseUI {
     });
   }
 
-  assignMaterial() {
-    this.navCtrl.push("AssignMaterialPage");
+  assignMaterial(data) {
+    this.navCtrl.push("AssignMaterialPage", { sroiIds: data.id });
   }
 
   HandleReturnQuestion() {

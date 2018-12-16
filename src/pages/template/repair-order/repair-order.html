@@ -11,7 +11,7 @@
       <em class="urgent-crash" *ngIf="data.status == 1">十万火急</em>
       <em class="urgent-crash" *ngIf="data.status == 2">紧急</em>
       <em class="urgent-general" *ngIf="data.status == 3">普通</em>
-      <em class="f-left">8个问题</em>
+      <em class="f-left">{{ data.orderItemList.length }}个问题</em>
       <em class="media-time">{{data.createTime}}</em>
     </div>
     <div class="media-img">
@@ -41,7 +41,7 @@
       <em class="urgent-crash" *ngIf="data.status == 1">十万火急</em>
       <em class="urgent-crash" *ngIf="data.status == 2">紧急</em>
       <em class="urgent-general" *ngIf="data.status == 3">普通</em>
-      <em class="f-left">8个问题</em>
+      <em class="f-left">{{ data.orderItemList.length }}个问题</em>
       <em class="media-time">{{data.createTime}}</em>
     </div>
     <div class="media-img">
@@ -55,7 +55,7 @@
   </div>
   <div class="media-info">
     <p>系统单号：{{data.orderCode}}</p>
-    <p>400单号：201710212569</p>
+    <p>400单号：40019892876462</p>
   </div>
   <div class="media-btn" *ngIf="tabs === 'orderUndoPage'">
     <div class="repair-list-btn success" (click)="HandleAddRepair()">接单</div>

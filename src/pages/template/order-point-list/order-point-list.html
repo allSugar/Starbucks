@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="point-retract" *ngIf="roletype === 3">
-      <div class="btn-retract success" (click)="assignMaterial()">材料采购</div>
+      <div class="btn-retract success" (click)="assignMaterial(listdata)">材料采购</div>
       <div class="btn-retract" *ngIf="!isassign" (click)="HandleReturnQuestion()">退回</div>
       <div class="btn-retract" *ngIf="isassign">转给</div>
     </div>
