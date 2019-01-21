@@ -3,18 +3,12 @@
     <ion-title>维修单详情</ion-title>
   </ion-navbar>
   <div class="tabs">
-    <ul class="tabs-rate tabs-four">
+    <ul class="tabs-rate tabs-two">
       <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 0 }" (click)="tabs(0)">
         <em class="text">详情</em>
       </li>
       <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 1 }" (click)="tabs(1)">
         <em class="text">流程</em>
-      </li>
-      <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 2 }" (click)="tabs(2)">
-        <em class="text">记录</em>
-      </li>
-      <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 3 }" (click)="tabs(3)">
-        <em class="text">报价</em>
       </li>
     </ul>
   </div>
@@ -31,110 +25,5 @@
       </div>
     </div>
   </div>
-  <div class="process-list" *ngIf="tabStatus == 1">
-    <div class="process-element">
-      <h3 class="media-title">维修单跟踪</h3>
-      <div class="media-body">
-        <div class="media-timeline">
-          <ul class="timeline-list">
-            <li class="timeline-item">
-              <em class="text">生成维修单</em>
-              <em class="time">5月5日 13:29</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修主管发起材料采购</em>
-              <em class="time">5月5日 14:45</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">指定维修员</em>
-              <em class="time">5月5日 15:20</em>
-              <span class="describe">维修员张三(15510230114)，上门时间是5月5日17:20</span>
-            </li>
-            <li class="timeline-item">
-              <em class="text">变更维修员</em>
-              <em class="time">5月5日 15:20</em>
-              <span class="describe">维修主管将维修员张三变更为李四(18701298765)</span>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修员已接单</em>
-              <em class="time">5月5日 21:45</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修员已出发</em>
-              <em class="time">5月5日 15:20</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修员已到达</em>
-              <em class="time">5月5日 15:20</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修中</em>
-              <em class="time">5月5日 21:45</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修订单已完成</em>
-              <em class="time">5月5日 21:45</em>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="explain-list" *ngIf="tabStatus == 2">
-    <order-explain></order-explain>
-    <order-explain [status]="1"></order-explain>
-  </div>
-  <div class="offer-list" *ngIf="tabStatus == 3">
-    <ul class="offer-count">
-      <li class="item">
-        <i class="icon-total-time"></i>
-        <div>
-          <p class="text">总工时</p>
-          <p>
-            <em class="number">2</em>
-            <em class="text">小时</em>
-          </p>
-        </div>
-      </li>
-      <li class="item">
-        <i class="icon-total-money"></i>
-        <div>
-          <p class="text">耗材总成本</p>
-          <p>
-            <em class="number">2800</em>
-            <em class="text">元</em>
-          </p>
-        </div>
-      </li>
-    </ul>
-    <div class="offer-order">
-      <h3 class="title">子订单1</h3>
-      <div class="tag">类型</div>
-      <ul class="type-list">
-        <li class="item">
-          <em class="text">五金</em>
-          <em class="text">电器</em>
-          <em class="text">电线</em>
-        </li>
-      </ul>
-      <div class="tag">工时</div>
-      <div class="hours">
-        <i class="icon-clock"></i>
-        <em class="text">3小时</em>
-      </div>
-      <div class="tag">耗材</div>
-      <ul class="stuff-list">
-        <li class="item">
-          <div class="item-img">
-            <img src="assets/imgs/change-before.png" alt="">
-          </div>
-          <div class="item-body">
-            <p class="item-describe">厨房吊灯欧普照明</p>
-            <em class="item-price">￥ 780</em>
-            <em class="item-number">x2</em>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <track-info-element *ngIf="tabStatus == 1" [id]="data.id"></track-info-element>
 </ion-content>

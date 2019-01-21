@@ -14,7 +14,7 @@
         <em class="text">记录</em>
       </li>
       <li class="tab-btn" [ngClass]="{ 'active': tabStatus == 3 }" (click)="tabs(3)">
-        <em class="text">报价</em>
+        <em class="text">报告</em>
       </li>
     </ul>
   </div>
@@ -28,7 +28,7 @@
       <em class="icon-arrow-right-white f-right"></em>
       <em class="icon-avatar"></em>
     </div>
-    <order-info></order-info>
+    <order-info [data]="data"></order-info>
     <div class="point-list">
       <div *ngFor="let item of data.orderItemList">
         <!-- 店长 -->
@@ -47,55 +47,7 @@
       <span class="sum">¥ 1,500</span>
     </div>
   </div>
-  <div class="process-list" *ngIf="tabStatus == 1">
-    <div class="process-element">
-      <h3 class="media-title">维修单跟踪</h3>
-      <div class="media-body">
-        <div class="media-timeline">
-          <ul class="timeline-list">
-            <li class="timeline-item">
-              <em class="text">生成维修单</em>
-              <em class="time">5月5日 13:29</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修主管发起材料采购</em>
-              <em class="time">5月5日 14:45</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">指定维修员</em>
-              <em class="time">5月5日 15:20</em>
-              <span class="describe">维修员张三(15510230114)，上门时间是5月5日17:20</span>
-            </li>
-            <li class="timeline-item">
-              <em class="text">变更维修员</em>
-              <em class="time">5月5日 15:20</em>
-              <span class="describe">维修主管将维修员张三变更为李四(18701298765)</span>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修员已接单</em>
-              <em class="time">5月5日 21:45</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修员已出发</em>
-              <em class="time">5月5日 15:20</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修员已到达</em>
-              <em class="time">5月5日 15:20</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修中</em>
-              <em class="time">5月5日 21:45</em>
-            </li>
-            <li class="timeline-item">
-              <em class="text">维修订单已完成</em>
-              <em class="time">5月5日 21:45</em>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+  <track-info-element *ngIf="tabStatus == 1" [id]="data.id"></track-info-element> 
   <div class="explain-list" *ngIf="tabStatus == 2">
     <order-explain></order-explain>
     <order-explain [status]="1"></order-explain>
@@ -124,13 +76,11 @@
       </li>
     </ul>
     <div class="offer-order">
-      <h3 class="title">子订单1</h3>
+      <h3 class="title">子订单</h3>
       <div class="tag">类型</div>
       <ul class="type-list">
-        <li class="item">
-          <em class="text">五金</em>
-          <em class="text">电器</em>
-          <em class="text">电线</em>
+        <li class="type-item-x">
+          <em class="text">地板 &gt; 铺地板</em>
         </li>
       </ul>
       <div class="tag">工时</div>

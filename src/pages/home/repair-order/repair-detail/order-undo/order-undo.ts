@@ -32,10 +32,21 @@ export class orderUndoPage {
     this.currentAccount = this.login.currentAccount;
     this.navCtrl = this.app.getRootNav();
     this.data = this.navParams.get('data');
+    this.getOrderdetail()
     this.setDataDefault(this.data);
     this.role.setUserRole(val => {
       this.roleType = val;
     });
+  }
+
+  getOrderdetail() {
+    let params = {
+      method: 'repair.getStoreRepairOrderById',
+      id: this.data.id
+    }
+    this.http.get(params).subscribe(res => {
+      console.log(res)
+    })
   }
 
   setDataDefault(data) {

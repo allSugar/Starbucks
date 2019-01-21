@@ -1,6 +1,31 @@
 page-order-done {
-  .process-list {
-    padding-top: 10px;
-    height: 100%;
-  }
+    .process-list {
+        padding-top: 10px;
+        height: 100%;
+    }
+
+    .offer-list {
+        .offer-order {
+            .type-list {
+                margin-top: 8px;
+
+                .type-item-x {
+                    padding-right: 10px;
+                }
+
+                .text {
+                    padding: 0;
+                    color: #05d1af;
+                }
+
+                .icon-del {
+                    font-style: normal;
+                    position: absolute;
+                    right: 0;
+                    top: -1px;
+                    padding: 0 6px;
+                }
+            }
+        }
+    }
 }

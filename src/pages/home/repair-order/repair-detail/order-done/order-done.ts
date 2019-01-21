@@ -21,6 +21,8 @@ export class OrderDonePage {
     navCtrl: any;
     roleType: any;
 
+    trackList: Array<any> = [];
+
     constructor(
         public app: App,
         public navParams: NavParams,
@@ -29,16 +31,48 @@ export class OrderDonePage {
         public http: HttpService,
         public role: RoleTypeService
     ) {
-        this.data = this.navParams.get('data');
+
         this.navCtrl = this.app.getRootNav();
-        console.log(this);
 
         this.role.setUserRole(val => {
             this.roleType = val;
         });
+
+        this.data = this.navParams.get('data');
+        this.GetOrderdetail()
+
+        this.GetRepairOrder();
+
         this.material();
         this.hours();
+        console.log(this)
     }
+
+
+    GetOrderdetail() {
+        let params = {
+            method: 'repair.getStoreRepairOrderById',
+            id: this.data.id
+        }
+        this.http.get(params).subscribe(res => {
+            if (res.responseCode == '167060') {
+                res = res.responseObj
+                res.orderItemList = this.data.orderItemList
+                this.data = res
+            }
+        })
+    }
+
+    GetRepairOrder() {
+        let id = this.data ? this.data.id : ''
+        let params = {
+            method: 'repair.getStoreRepairOrderById',
+            id: id
+        }
+        this.http.get(params).subscribe(res => {
+        });
+    }
+
     material() {
         let params = { method: 'repair.findStoreRepairOrderGoods' }
         this.http.get(params).subscribe(res => {
@@ -47,6 +81,7 @@ export class OrderDonePage {
             }
         });
     }
+
     hours() {
         let params = { method: 'repair.reportMaintenanceHours' }
         this.http.get(params).subscribe(res => {
@@ -55,14 +90,16 @@ export class OrderDonePage {
             }
         });
     }
+
     tabs(i: number) {
         this.tabStatus = i;
     }
+
     goToOtherPage(name) {
         this.navCtrl.push(name);
     }
+
     goToDetailPage(event) {
         this.navCtrl.push('ProblemDetailPage');
     }
-
 }

@@ -33,10 +33,25 @@ export class RepairDoingPage {
     }
 
     this.data = this.navParams.get('data');
+    this.GetOrderdetail()
     this.role.setUserRole(val => {
       this.roleType = val;
     });
-    this.SetOrderList();
+  }
+
+  GetOrderdetail() {
+    let params = {
+      method: 'repair.getStoreRepairOrderById',
+      id: this.data.id
+    }
+    this.http.get(params).subscribe(res => {
+      if (res.responseCode == '167060') {
+        res = res.responseObj
+        res.orderItemList = this.data.orderItemList
+        this.data = res
+        this.SetOrderList();
+      }
+    })
   }
 
   SetOrderList() {
