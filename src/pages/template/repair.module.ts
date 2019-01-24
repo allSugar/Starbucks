@@ -9,6 +9,7 @@ import { OrderExplainTmpl } from './order-explain';
 import { TimeSelectTmpl } from './time-select';
 import { TabsTmpl } from './tabs';
 import { TrackInfoTmpl } from './track-info/trackInfo'
+import { ReportTabTmpl } from './reprot-tab/report-tab'
 
 const COMPONENTS = [
   OrderInfoTmpl,
@@ -18,7 +19,8 @@ const COMPONENTS = [
   OrderExplainTmpl,
   TimeSelectTmpl,
   TabsTmpl,
-  TrackInfoTmpl
+  TrackInfoTmpl,
+  ReportTabTmpl
 ];
 
 @NgModule({

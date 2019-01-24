@@ -101,7 +101,6 @@ export class ContactListPage {
         } else {
             this.isSearching = false;
         }
-        console.log(this.searchingItems, this.searchLetters);
     }
 
     goToDetail() {

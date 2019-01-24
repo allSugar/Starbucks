@@ -16,7 +16,6 @@ export class CalendarPage {
   constructor(
     public modalCtrl: ModalController
   ) {
-    console.log(this.weekdays);
   }
 
   openCalendar() {
@@ -39,8 +38,6 @@ export class CalendarPage {
       if (type === 'done') {
         this.date = date.dateObj;
       }
-      console.log(date);
-      console.log('type', type);
     })
   }
 

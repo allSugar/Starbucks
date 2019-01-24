@@ -15,6 +15,5 @@ export class DraggablePage {
   }
 
   dragend(ev) {
-    console.log(ev);
   }
 }

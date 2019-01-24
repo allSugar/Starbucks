@@ -4,6 +4,8 @@ import { IonicPage, App, NavParams } from 'ionic-angular';
 import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 import { HttpService } from '@/../../src/service/HttpService';
 
+import { RepairOrder } from '../untils';
+
 @IonicPage()
 @Component({
   selector: 'page-repair-doing',
@@ -14,6 +16,7 @@ export class RepairDoingPage {
   navCtrl: any;
   tabStatus: number = 0;
   roleType: any;
+  id: any;
   data: any = {};
   completeLen: any = 0;
 
@@ -22,6 +25,7 @@ export class RepairDoingPage {
     public navParams: NavParams,
     public role: RoleTypeService,
     public http: HttpService,
+    public order: RepairOrder
   ) {
     this.navCtrl = this.app.getRootNav();
 
@@ -32,27 +36,17 @@ export class RepairDoingPage {
       this.navCtrl.remove(startIndex, len);
     }
 
-    this.data = this.navParams.get('data');
-    this.GetOrderdetail()
+    this.id = this.navParams.get('id');
+
+    this.order.Init(this.id).then(res => {
+      this.data = res;
+    })
+
     this.role.setUserRole(val => {
       this.roleType = val;
     });
   }
 
-  GetOrderdetail() {
-    let params = {
-      method: 'repair.getStoreRepairOrderById',
-      id: this.data.id
-    }
-    this.http.get(params).subscribe(res => {
-      if (res.responseCode == '167060') {
-        res = res.responseObj
-        res.orderItemList = this.data.orderItemList
-        this.data = res
-        this.SetOrderList();
-      }
-    })
-  }
 
   SetOrderList() {
     this.data.orderItemList.map(item => {

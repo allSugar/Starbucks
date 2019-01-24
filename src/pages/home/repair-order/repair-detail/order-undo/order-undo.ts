@@ -6,6 +6,8 @@ import { HttpService } from '@/../../src/service/HttpService';
 import { LoginService } from '@/../../src/service/LoginService';
 import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 
+import { RepairOrder } from '../untils';
+
 @IonicPage()
 @Component({
   selector: 'page-order-undo',
@@ -13,7 +15,8 @@ import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 })
 export class orderUndoPage {
 
-  data: any;
+  id:any;
+  data: any = {};
   navCtrl: any;
   currentAccount: any;
   isassign: Boolean = false;
@@ -27,26 +30,22 @@ export class orderUndoPage {
     public toast: ToastService,
     public login: LoginService,
     public http: HttpService,
-    public role: RoleTypeService
+    public role: RoleTypeService,
+    public order: RepairOrder
   ) {
     this.currentAccount = this.login.currentAccount;
     this.navCtrl = this.app.getRootNav();
-    this.data = this.navParams.get('data');
-    this.getOrderdetail()
-    this.setDataDefault(this.data);
+    
+    this.id = this.navParams.get('id');
+
+    this.order.Init(this.id).then(res => {
+      this.data = res;
+      this.setDataDefault(this.data);
+    })
+
     this.role.setUserRole(val => {
       this.roleType = val;
     });
-  }
-
-  getOrderdetail() {
-    let params = {
-      method: 'repair.getStoreRepairOrderById',
-      id: this.data.id
-    }
-    this.http.get(params).subscribe(res => {
-      console.log(res)
-    })
   }
 
   setDataDefault(data) {
@@ -98,7 +97,6 @@ export class orderUndoPage {
         ids.push(item.id)
       }
     });
-    console.log(this.data);
     this.navCtrl.push("AssignRepairPage", { id: this.data.id });
   }
 

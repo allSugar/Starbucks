@@ -37,7 +37,6 @@ export class OrderPointShowTmpl extends BaseUI {
     public toast: ToastService
   ) {
     super();
-    console.log(this);
     this.navCtrl = this.app.getRootNav();
   }
 

@@ -101,7 +101,6 @@ export class ReportTypePage {
     if (names.length !== this.topClass){
       names.splice(this.topClass)
     }
-    console.log(this.lists['names'], this.topClass)
     // this.lists['names'].splice(this.topClass, 1)
   }
 }

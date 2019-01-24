@@ -25,7 +25,6 @@ export class WeeklyIssuesPage {
       method: 'statistics.repairItemWeekStatistics',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
       if (!!res && res.responseCode == 167110) {
         this.dataList = res.responseObj.repairStatisticsList;
         for (var i = 0; i < this.dataList.length; i++) {
@@ -36,7 +35,6 @@ export class WeeklyIssuesPage {
           });
         }
       }
-      // console.log(this.repaire)
     });
   }
   ionViewDidEnter() {

@@ -211,7 +211,7 @@ export class RepairListPage extends BaseUI {
       if (this.roleType === 4 && this.status === "OrderConductPage") {
         name = "RepairDoingPage";
       }
-      this.navCtrl.push(name, { data: item });
+      this.navCtrl.push(name, { id: item.id });
     }
   }
 

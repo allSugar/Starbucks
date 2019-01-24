@@ -27,7 +27,6 @@ export class RepairNumberPage {
       method: 'statistics.repairItemWeekStatistics',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
       if (!!res && res.responseCode == 168080) {
         let Lists = res.responseObj.repairStatisticsList;
         this.dataList = Lists;

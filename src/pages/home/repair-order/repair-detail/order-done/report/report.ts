@@ -88,6 +88,16 @@ export class ReportPage extends BaseUI {
       return false;
     }
 
+    if (!this.StoreRepairOrderItem.finishDes){
+      this.toast.info('请填写说明')
+      return false
+    }
+
+    if (!this.StoreRepairOrderItem.maintenanceHours) {
+      this.toast.info('请填写工时')
+      return false
+    }
+
     this.StoreRepairOrderItem.id = this.data.id;
     this.StoreRepairOrderItem.repairWarehouseIds = String(this.StoreRepairOrderItem.repairWarehouseIds)
 
@@ -95,7 +105,7 @@ export class ReportPage extends BaseUI {
     this.http.get(this.StoreRepairOrderItem).subscribe(res => {
       this.loading.dismiss();
       if (res.responseCode == "168060") {
-        this.toast.info("添加报告成功！", () => this.navCtrl.push("ReportDetailPage"));
+        this.toast.info("添加报告成功！", () => this.navCtrl.push("ReportDetailPage", { id: this.data.storeRepairOrderId }));
         return false;
       }
       this.toast.info("添加报告失败，请稍后再试！");
@@ -105,7 +115,6 @@ export class ReportPage extends BaseUI {
   HandleQuit() {
     this.navCtrl.pop();
   }
-
 
   ionViewWillEnter() {
     let params = this.navParams.get('type');
@@ -234,8 +243,6 @@ export class ReportPage extends BaseUI {
         this.toast.info("上传图片返回异常")
         return false;
       }
-
-      alert(JSON.stringify(response))
 
       let imagePath = response["dir"] + response["serverFileName"];
       this.StoreRepairOrderItem.finishFilePaths.push(imagePath)

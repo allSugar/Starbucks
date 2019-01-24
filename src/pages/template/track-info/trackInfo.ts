@@ -56,7 +56,6 @@ export class TrackInfoTmpl {
         this.trackList.map(item => {
           item.operationTimeName = this.DateFormat(item.operationTime, 'MM月dd日 hh:mm')
         })
-        console.log(this.trackList)
       } else {
         this.toast.info('获取流程失败')
       }
@@ -64,6 +63,5 @@ export class TrackInfoTmpl {
   }
 
   ionViewWillEnter() {
-    console.log(this.id)
   }
 }

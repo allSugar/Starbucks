@@ -22,7 +22,6 @@ export class EfficiencyPage {
       method: 'statistics.repairCompanyEfficiencyStatistics',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
       if (!!res && res.responseCode == 168120) {
         this.orderList = res.responseObj;
         for (var i = 0; i < this.orderList.length; i++) {

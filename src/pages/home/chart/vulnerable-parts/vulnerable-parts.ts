@@ -27,9 +27,7 @@ export class VulnerablePartsPage {
       method: 'statistics.repairGoodsStatistics',
     }
     this.http.get(params).subscribe(res => {
-      console.log(res)
       if (!!res && res.responseCode == 168090) {
-        console.log(res)
         this.orderList = res.responseObj;
         for (var i = 0; i < this.orderList.length; i++) {
           var orderList = this.orderList[i];

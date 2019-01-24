@@ -214,7 +214,6 @@ export class AddProblemPage extends BaseUI {
 
       let response = data.response;
 
-      alert(JSON.stringify(response));
       if (typeof response === "string") {
         response = JSON.parse(response)
       }
@@ -237,10 +236,8 @@ export class AddProblemPage extends BaseUI {
   relationProblem(loading, imagePath) {
     let params = { method: "repair.addStoreRepairTemporaryBillFile", fileType: 1, filePaths: imagePath };
     params["storeRepairTemporaryBillId"] = this.problem.id;
-    alert(JSON.stringify(params));
     this.http.get(params).subscribe(res => {
       loading.dismiss();
-      alert(JSON.stringify(res));
       if (res.responseCode == "166010") {
         this.goToOtherPage();
       }

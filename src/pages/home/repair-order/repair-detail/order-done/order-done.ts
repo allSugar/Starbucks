@@ -6,6 +6,8 @@ import { HttpService } from '@/../../src/service/HttpService';
 import { LoginService } from '@/../../src/service/LoginService';
 import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 
+import { RepairOrder } from '../untils';
+
 @IonicPage()
 @Component({
     selector: 'page-order-done',
@@ -13,7 +15,8 @@ import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 })
 export class OrderDonePage {
 
-    data: any;
+    id: any;
+    data: any = {};
     list: Array<any> = [];
 
     RES_ROOT: string;
@@ -29,7 +32,8 @@ export class OrderDonePage {
         public toast: ToastService,
         public login: LoginService,
         public http: HttpService,
-        public role: RoleTypeService
+        public role: RoleTypeService,
+        public order: RepairOrder
     ) {
 
         this.navCtrl = this.app.getRootNav();
@@ -38,39 +42,14 @@ export class OrderDonePage {
             this.roleType = val;
         });
 
-        this.data = this.navParams.get('data');
-        this.GetOrderdetail()
+        this.id = this.navParams.get('id');
 
-        this.GetRepairOrder();
+        this.order.Init(this.id).then(res => {
+            this.data = res;
+        })
 
         this.material();
         this.hours();
-        console.log(this)
-    }
-
-
-    GetOrderdetail() {
-        let params = {
-            method: 'repair.getStoreRepairOrderById',
-            id: this.data.id
-        }
-        this.http.get(params).subscribe(res => {
-            if (res.responseCode == '167060') {
-                res = res.responseObj
-                res.orderItemList = this.data.orderItemList
-                this.data = res
-            }
-        })
-    }
-
-    GetRepairOrder() {
-        let id = this.data ? this.data.id : ''
-        let params = {
-            method: 'repair.getStoreRepairOrderById',
-            id: id
-        }
-        this.http.get(params).subscribe(res => {
-        });
     }
 
     material() {

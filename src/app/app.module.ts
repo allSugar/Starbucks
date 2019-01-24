@@ -16,6 +16,7 @@ import { HttpService } from "../service/HttpService";
 import { ToastService } from '../service/ToastService';
 import { LoginService } from '../service/LoginService';
 import { RoleTypeService } from '../service/RoleTypeService';
+import { RepairOrder } from '../pages/home/repair-order/repair-detail/untils'
 
 import { File } from '@ionic-native/file';
 import { FileTransfer } from '@ionic-native/file-transfer';
@@ -55,6 +56,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ToastService,
     LoginService,
     RoleTypeService,
+    RepairOrder,
     File,
     FileTransfer,
     FilePath,

@@ -64,7 +64,6 @@ export class CategoryDetailPage {
      *定位查找首字母对应的通讯录
      */
     scrollToTop(letter, event) {
-        console.log(letter, event);
         this.show(letter, 1000);
         if (this.elementRef.nativeElement.querySelector("#" + letter)) {
             let scrollTop = this.elementRef.nativeElement.querySelector("#" + letter).offsetTop;

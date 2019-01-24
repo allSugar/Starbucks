@@ -32,8 +32,6 @@ export class PageTmplPage {
       if (type === 'done') {
         this.date = date.dateObj;
       }
-      console.log(date);
-      console.log('type', type);
     })
 
   }
@@ -62,7 +60,6 @@ export class PageTmplPage {
   ];
 
   change() {
-    console.log("change");
   }
 
 }
