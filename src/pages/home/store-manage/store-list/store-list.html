@@ -44,6 +44,15 @@
 <ion-content>
   <div class="row-ibox" *ngIf="store.length">
     <ul class="row-list">
+      <li class="row-item" (click)="goToOtherPage(item)">
+        <div class="item-img radius">
+          <div class="img-center">
+            <img alt=""
+              src="assets/imgs/avater/avater_card.png">
+          </div>
+        </div>
+        <div class="item-body">测试</div>
+      </li>
       <li class="row-item" *ngFor="let item of store" (click)="goToOtherPage(item)">
         <div class="item-img radius">
           <div class="img-center">

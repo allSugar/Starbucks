@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { ToastService } from '@/../../src/service/ToastService';
 import { HttpService } from '@/../../src/service/HttpService';
+import { RES_ROOT } from '@/../../src/providers/httpUrl';
 
 @Component({
   selector: 'repair-order-element',
@@ -19,6 +20,7 @@ export class RepairOrderTmpl {
   @Output() goto = new EventEmitter<any>();
   @Output() update = new EventEmitter<any>();
 
+  RES_ROOT:any;
   params: any = {
     method: "repair.operationStoreRepairOrder",
     id: "",
@@ -29,7 +31,7 @@ export class RepairOrderTmpl {
     public toast: ToastService,
     public http: HttpService
   ) {
-    console.log(this)
+    this.RES_ROOT = RES_ROOT;
   }
 
   goToOtherPage(name) {

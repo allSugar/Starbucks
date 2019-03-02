@@ -20,7 +20,7 @@
     <div class="point-list">
       <div *ngFor="let item of data.orderItemList">
         <!-- 维修员 -->
-        <order-point-list *ngIf="roleType === 4" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" 
+        <order-point-list *ngIf="roleType === 8" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" 
         (goto)="goToDetailPage($event)" (complete)="HandleCompleteOrderList($event)"></order-point-list>
       </div>
     </div>

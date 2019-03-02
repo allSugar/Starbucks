@@ -4,6 +4,7 @@ import { App, LoadingController } from 'ionic-angular';
 import { BaseUI } from '@/../../src/directives/comm/baseui';
 import { ToastService } from '@/../../src/service/ToastService';
 import { HttpService } from '@/../../src/service/HttpService';
+import { RES_ROOT } from '@/../../src/providers/httpUrl';
 
 @Component({
   selector: 'order-point-list',
@@ -29,6 +30,7 @@ export class OrderPointListTmpl extends BaseUI {
   @Output() complete = new EventEmitter<any>();
 
   navCtrl: any;
+  RES_ROOT: any;
 
   constructor(
     public app: App,
@@ -38,6 +40,7 @@ export class OrderPointListTmpl extends BaseUI {
   ) {
     super();
     this.navCtrl = this.app.getRootNav();
+    this.RES_ROOT = RES_ROOT;
   }
 
   goToOtherPage(name) {

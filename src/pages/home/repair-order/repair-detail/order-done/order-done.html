@@ -22,32 +22,36 @@
 
 <ion-content>
   <div class="order-detail" *ngIf="tabStatus == 0">
-    <div class="status" *ngIf="roleType !== 4" (click)="goToOtherPage('WorkerInfoPage')">
+    <!-- 维修员不展示 -->
+    <div class="status" *ngIf="roleType !== 8" (click)="goToOtherPage('WorkerInfoPage')">
       <em class="icon-smile"></em>
       <span class="title">维修单已完成</span>
       <em class="icon-arrow-right-white f-right"></em>
       <em class="icon-avatar"></em>
     </div>
+    <!-- 维修员不展示 -->
     <order-info [data]="data"></order-info>
     <div class="point-list">
       <div *ngFor="let item of data.orderItemList">
         <!-- 店长 -->
-        <order-point-show *ngIf="roleType === 2" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status"
+        <order-point-show *ngIf="roleType === 6" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status"
           (goto)="goToDetailPage($event)"></order-point-show>
         <!-- 维修主管 -->
-        <order-point-show *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType"
+        <order-point-show *ngIf="roleType === 7 && item.status !== 3" [listdata]="item" [roletype]="roleType"
           [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-show>
         <!-- 维修员 -->
-        <order-point-list *ngIf="roleType === 4" [listdata]="item" [roletype]="roleType"
-          [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-list>
+        <order-point-list *ngIf="roleType === 8" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status"
+          (goto)="goToDetailPage($event)"></order-point-list>
       </div>
     </div>
-    <div class="pay" *ngIf="roleType !== 4">
+    <!-- 维修员不显示 -->
+    <div class="pay" *ngIf="roleType !== 8">
       <span>订单总金额</span>
       <span class="sum">¥ 1,500</span>
     </div>
+    <!-- 维修员不展示 -->
   </div>
-  <track-info-element *ngIf="tabStatus == 1" [id]="data.id"></track-info-element> 
+  <track-info-element *ngIf="tabStatus == 1" [id]="data.id"></track-info-element>
   <div class="explain-list" *ngIf="tabStatus == 2">
     <order-explain></order-explain>
     <order-explain [status]="1"></order-explain>

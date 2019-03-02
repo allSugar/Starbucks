@@ -16,10 +16,11 @@ export class MyPage {
     public app: App,
     private login: LoginService
   ) {
+    console.log(this.login)
     this.navCtrl = this.app.getRootNav()
   }
 
   loginOut() {
     this.login.loginOut();
-  };
+  }
 }

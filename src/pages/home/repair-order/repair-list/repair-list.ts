@@ -78,11 +78,13 @@ export class RepairListPage extends BaseUI {
 
     this.role.setUserRole(val => {
       this.roleType = val;
-      if (this.roleType === 4) {
+
+      // 当前账户为维修员
+      if (this.roleType === 8) {
         this.paramsStatus = [3];
       }
-      if (defaultTabs) {
 
+      if (defaultTabs) {
         this.tabs(defaultTabs);
       } else {
         this.getListData(loading);
@@ -190,6 +192,9 @@ export class RepairListPage extends BaseUI {
   oindex: Number = 0;
 
   changeActive(i: Number, id, name) {
+    if (this.content && this.content.scrollToTop) {
+      this.content.scrollToTop();
+    }
     this.params[name] = id;
     this.orderList = [];
     this.pageNumber = 0
@@ -206,6 +211,9 @@ export class RepairListPage extends BaseUI {
   }
 
   changeDateActive(item) {
+    if (this.content && this.content.scrollToTop) {
+      this.content.scrollToTop();
+    }
     this.activeDate = item.id
     this.sta = 0;
     if (this.infiniteScroll) {
@@ -236,8 +244,8 @@ export class RepairListPage extends BaseUI {
 
     this.params.statuss = String(this.paramsStatus);
     this.params.pageNumber = this.pageNumber + 1;
-
-    if (this.roleType === 4) {
+    // 当前账户为维修员
+    if (this.roleType === 8) {
       this.params.repairmanId = this.login.id;
       if (this.status === "orderDayPage") {
         let day = new Date().toLocaleDateString().replace(/\//g, "-");
@@ -273,7 +281,8 @@ export class RepairListPage extends BaseUI {
     this.sta = 0;
     // 未接单
     if (name === "orderUndoPage") {
-      if (this.roleType === 4) {
+      // 当前账户为维修员
+      if (this.roleType === 8) {
         this.paramsStatus = [3];
       } else {
         this.paramsStatus = [1, 2, 3];
@@ -285,7 +294,8 @@ export class RepairListPage extends BaseUI {
     }
 
     if (name === "OrderConductPage") {
-      if (this.roleType === 4) {
+      // 当前账户为维修员
+      if (this.roleType === 8) {
         this.paramsStatus = [6, 7];
       } else {
         this.paramsStatus = [4, 5, 6, 7];
@@ -309,7 +319,8 @@ export class RepairListPage extends BaseUI {
         name = "orderUndoPage";
       }
       // RepairDoingPage
-      if (this.roleType === 4 && this.status === "OrderConductPage") {
+      // 当前账户为维修员
+      if (this.roleType === 8 && this.status === "OrderConductPage") {
         name = "RepairDoingPage";
       }
       this.navCtrl.push(name, { id: item.id });

@@ -1,18 +1,15 @@
 <div class="point" [ngClass]="{ 'point-checkbox' : isassign }">
-  <!-- 维修主管 -->
-  <div class="point-content-checkox" *ngIf="roletype === 3">
+  <!-- 当前账户为维修主管 -->
+  <div class="point-content-checkox" *ngIf="roletype === 7">
     <label class="item-choice checkbox">
       <input value="2" type="checkbox" [(ngModel)]="listdata.isChecked" (change)="HandleIsChecked()">
       <ins class="checkbox-icon"></ins>
     </label>
   </div>
+  <!-- 当前账户为维修主管 -->
   <div class="point-content-body">
-    <div class="ponit-content-img">
-      <img alt="" src="assets/imgs/change-after.png">
-      <img alt="" src="assets/imgs/change-after.png">
-      <img alt="" src="assets/imgs/change-after.png">
-      <img alt="" src="assets/imgs/change-after.png">
-      <img alt="" src="assets/imgs/change-after.png">
+    <div class="ponit-content-img" *ngIf="listdata.faultPointList.length">
+      <img *ngFor="let img of listdata.faultPointList" alt="" src="{{ RES_ROOT + img.fileRecord.thumbnailPath }}">
       <em class="icon-point"></em>
     </div>
     <div class="point-info">
@@ -21,11 +18,13 @@
         <p class="text">A区8栋一层吧台区 {{ listdata.faultDes }}</p>
       </div>
     </div>
-    <div class="point-retract" *ngIf="roletype === 3">
+    <!-- 当前账户为维修主管 -->
+    <div class="point-retract" *ngIf="roletype === 7">
       <div class="btn-retract success" (click)="assignMaterial(listdata)">材料采购</div>
       <div class="btn-retract" *ngIf="!isassign" (click)="HandleReturnQuestion()">退回</div>
       <div class="btn-retract" *ngIf="isassign">转给</div>
     </div>
+    <!-- 当前账户为维修主管 -->
     <div class="point-retract" *ngIf="repairstatus > 5">
       <div class="btn-retract success" *ngIf="repairstatus < 8" (click)="HandleCompleteOrder()">完成</div>
       <div class="btn-retract success" *ngIf="repairstatus < 8" (click)="AddExplain()">添加说明</div>

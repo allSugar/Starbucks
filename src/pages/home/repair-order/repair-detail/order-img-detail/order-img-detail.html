@@ -8,8 +8,8 @@
 <ion-content>
   <div class="img-ibox">
     <ul class="img-list">
-      <li class="img-item" *ngFor="let i of [1,2,3,4]">
-        <img src="assets/imgs/wait_img.png" alt="">
+      <li class="img-item" *ngFor="let img of data">
+        <img src="{{ RES_ROOT + img.fileRecord.filePath }}" alt="">
       </li>
     </ul>
   </div>

@@ -29,9 +29,9 @@
     <div class="point-list">
       <div *ngFor="let item of data.orderItemList">
         <!-- 店长 -->
-        <order-point-show *ngIf="roleType === 2" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-show>
+        <order-point-show *ngIf="roleType === 6" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-show>
         <!-- 维修主管 -->
-        <order-point-show *ngIf="roleType === 3" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" [isassign]="isassign"
+        <order-point-show *ngIf="roleType === 7" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" [isassign]="isassign"
           (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point-show>
       </div>
     </div>

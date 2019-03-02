@@ -33,7 +33,7 @@ export class HomePage {
     this.navCtrl = this.app.getRootNav();
     this.role.setUserRole(val => {
       this.roleType = val;
-      if (this.roleType === 4) {
+      if (this.roleType === 8) {
         this.category = this.Repairman;
       } else {
         this.category = this.Lists;

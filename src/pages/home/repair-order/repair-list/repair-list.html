@@ -6,11 +6,13 @@
     <span class="type" (click)="toggleMenu()">类型</span>
   </ion-navbar>
   <div class="tabs">
-    <ul class="tabs-rate tabs-third" [ngClass]="{ 'tabs-third':roleType !== 4, 'tabs-four':roleType === 4 }">
+    <!-- 当前用户为维修员增加class:tabs-four 不是增加class:tabs-third -->
+    <ul class="tabs-rate tabs-third" [ngClass]="{ 'tabs-third':roleType !== 8, 'tabs-four':roleType === 8 }">
       <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }" (click)="tabs('orderUndoPage'); show(0)">
         <em class="text">待接单</em>
       </li>
-      <li class="tab-btn" *ngIf="roleType === 4" [ngClass]="{ 'active': status == 'orderDayPage' }"
+      <!-- 维修员时存在当日任务，其它角色不存在当日任务tab -->
+      <li class="tab-btn" *ngIf="roleType === 8" [ngClass]="{ 'active': status == 'orderDayPage' }"
         (click)="tabs('orderDayPage'); show(0)">
         <em class="text">当日任务</em>
       </li>

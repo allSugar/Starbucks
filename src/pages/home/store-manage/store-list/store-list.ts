@@ -5,7 +5,7 @@ import { HttpService } from '../../../../service/HttpService';
 import { LoginService } from '@/../../src/service/LoginService';
 import { RoleTypeService } from '@/../../src/service/RoleTypeService';
 import { BaseUI } from '@/../../src/directives/comm/baseui';
-import { RES_ROOT } from '../../../../providers/httpUrl';
+import { RES_ROOT } from '@/../../src/providers/httpUrl';
 
 @IonicPage()
 @Component({

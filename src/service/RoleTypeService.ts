@@ -31,13 +31,13 @@ export class RoleTypeService {
                 this.roleType = 6;
                 break;
             case '店员':
-                this.roleType = 2;
+                this.roleType = 6;
                 break;
             case '维修主管':
-                this.roleType = 3;
+                this.roleType = 7;
                 break;
             case '维修员':
-                this.roleType = 4;
+                this.roleType = 8;
                 break;
             default:
                 break;

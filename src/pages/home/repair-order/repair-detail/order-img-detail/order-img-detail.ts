@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavParams } from 'ionic-angular';
+
+import { RES_ROOT } from '@/../../src/providers/httpUrl';
 
 @IonicPage()
 @Component({
@@ -8,6 +10,13 @@ import { IonicPage } from 'ionic-angular';
 })
 export class OrderImgDetailPage {
 
-  constructor() {
+  data: any = [];
+  RES_ROOT:any;
+  constructor(
+    public navParams: NavParams,
+  ) {
+    this.RES_ROOT = RES_ROOT;
+    this.data = this.navParams.get('data');
+    console.log(this)
   }
 }

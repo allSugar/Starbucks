@@ -42,8 +42,13 @@ export class OrderPointShowTmpl extends BaseUI {
 
   goToOtherPage(name) {
     if (name === "OrderImgDetailPage") {
-      this.goto.emit(name);
+      let data = this.listdata.faultPointList
+      if (data.length) {
+        this.navCtrl.push('OrderImgDetailPage', { data: data })
+      }
+      return false;
     }
+    // this.goto.emit(name);
   }
 
   deleteStoreRepairOrder() {

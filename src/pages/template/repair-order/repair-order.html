@@ -1,4 +1,5 @@
-<div class="repair-emement" *ngIf="roletype !== 4">
+<!-- 当前账户权限不为维修员 -->
+<div class="repair-emement" *ngIf="roletype !== 8">
   <div class="media-bar" (click)="goToOtherPage('StoreIndexPage')">
     <em class="icon-house"></em>
     <em class="f-left">北京钟楼百货星巴克</em>
@@ -28,7 +29,8 @@
     <p>400单号：201710212569</p>
   </div>
 </div>
-<div class="repair-emement" *ngIf="roletype === 4">
+<!-- 当前账户权限为维修员 -->
+<div class="repair-emement" *ngIf="roletype === 8">
   <div class="media-bar">
     <em class="icon-house"></em>
     <em class="f-left">北京钟楼百货星巴克</em>

@@ -6,31 +6,35 @@
 
 <ion-content>
   <div class="order-detail">
-    <div class="status" *ngIf="roleType === 2">
+    <!-- 当前用户为店长 -->
+    <div class="status" *ngIf="roleType === 6">
       <em class="icon-hourglass"></em>
       <span class="title">厂商未接单</span>
     </div>
+    <!-- 当前用户为店长 -->
     <order-info [data]="data"></order-info>
     <div class="point-list">
       <div *ngFor="let item of data.orderItemList">
         <!-- 店长 -->
-        <order-point-show *ngIf="roleType === 2" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-show>
+        <order-point-show *ngIf="roleType === 6" [listdata]="item" [roletype]="roleType" [repairstatus]="data.status" (goto)="goToDetailPage($event)"></order-point-show>
         <!-- 维修主管 -->
-        <order-point-list *ngIf="roleType === 3 && item.status !== 3" [listdata]="item" [roletype]="roleType" [isassign]="isassign"
+        <order-point-list *ngIf="roleType === 7 && item.status !== 3" [listdata]="item" [roletype]="roleType" [isassign]="isassign"
           (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point-list>
         <!-- 维修员 -->
-        <order-point-list *ngIf="roleType === 4" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" [isassign]="isassign"
+        <order-point-list *ngIf="roleType === 8" [listdata]="item" [repairstatus]="data.status" [roletype]="roleType" [isassign]="isassign"
           (goto)="goToDetailPage($event)" (ischecked)="HandleIsChecked($event)"></order-point-list>
       </div>
     </div>
-    <div class="add-photo" *ngIf="roleType === 2">
+    <!-- 当前用户为店长 -->
+    <div class="add-photo" *ngIf="roleType === 6">
       <i class="icon-add-photo" (click)="goToOtherPage('RepairPointListPage')"></i>
       <em class="text">添加问题</em>
     </div>
+    <!-- 当前用户为店长 -->
   </div>
 </ion-content>
 
-<ion-footer *ngIf="currentAccount.id === 13">
+<ion-footer *ngIf="roleType === 7">
   <button class="footer-button" *ngIf="!isassign" (click)="assignRepair()">指派维修员</button>
   <div class="float-box" *ngIf="isassign">
     <label class="float-choice checkbox">
