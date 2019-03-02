@@ -3,6 +3,7 @@ import { IonicPage, App, NavParams, LoadingController } from 'ionic-angular';
 
 import { HttpService } from '../../../service/HttpService';
 import { BaseUI } from '../../../directives/comm/baseui';
+import { RES_ROOT } from '../../../providers/httpUrl';
 
 @IonicPage()
 @Component({
@@ -18,6 +19,7 @@ export class ProblemDetailPage extends BaseUI {
   problem: any;
   pageNumber: any = 0;
   totalNumber: any;
+  RES_ROOT: any;
 
   constructor(
     public app: App,
@@ -27,6 +29,7 @@ export class ProblemDetailPage extends BaseUI {
   ) {
     super();
     let loading = super.showLoading(this.loadingCtrl);
+    this.RES_ROOT = RES_ROOT;
 
     this.navCtrl = this.app.getRootNav();
     if (this.navParams.get("pointId")) {
@@ -52,7 +55,12 @@ export class ProblemDetailPage extends BaseUI {
   }
 
   getListData(loading, infiniteScroll: any = false) {
-    let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId, pointId: this.pointId, pageNumber: this.pageNumber + 1 };
+    let params = {
+      method: "repair.findStoreRepairTemporaryBillList",
+      storeInfoId: this.storeInfoId,
+      pointId: this.pointId,
+      pageNumber: this.pageNumber + 1
+    };
     this.http.get(params).subscribe(res => {
       loading.dismiss();
       if (infiniteScroll) {

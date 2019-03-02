@@ -25,7 +25,20 @@ export class RepairListPage extends BaseUI {
   pageNumber: any = 0;
   totalNumber: any;
 
-  storeList: object[] = [];
+  companyList: object[] = [];
+  storeList: any = [];
+
+  params: any = {
+    method: "repair.findStoreRepairOrder",
+    includeItem: 1,
+    pageNumber: 1,
+    statuss: '',
+    repairmanId: "",
+    orderRepairTimeBegin: "",
+    orderRepairTimeEnd: "",
+    repairCompanyId: '',
+    storeInfoId: ''
+  };
 
   paramsStatus: Array<any> = [1, 2, 3];
 
@@ -34,6 +47,10 @@ export class RepairListPage extends BaseUI {
   menuStatus: Boolean = false;
 
   roleType: Number;
+
+  /* active */
+
+  activeDate: any = 1;
 
   constructor(
     public app: App,
@@ -52,6 +69,9 @@ export class RepairListPage extends BaseUI {
       this.navCtrl.remove(startIndex, len);
     }
 
+    this.getCompanyList()
+    this.getStoreList()
+
     let defaultTabs = this.navParams.get("tabs");
 
     let loading = super.showLoading(this.loadingCtrl);
@@ -62,7 +82,7 @@ export class RepairListPage extends BaseUI {
         this.paramsStatus = [3];
       }
       if (defaultTabs) {
-        
+
         this.tabs(defaultTabs);
       } else {
         this.getListData(loading);
@@ -70,11 +90,35 @@ export class RepairListPage extends BaseUI {
     });
   }
 
+  getFormatDate(date, days) {
+    function getDate(arg) {
+      if (arg === undefined || arg === '') {
+        return ''
+      }
+      let re = arg + ''
+      if (re.length < 2) {
+        re = '0' + re
+      }
+      return re
+    }
+    if (days === undefined || days === '') {
+      days = 0
+    }
+    let _date = new Date(date)
+    _date.setDate(_date.getDate() + days)
+    let month = _date.getMonth() + 1
+    let day = _date.getDate()
+    return _date.getFullYear() + '-' + getDate(month) + '-' + getDate(day)
+  }
+
   SetList() {
     if (this.content && this.content.scrollToTop) {
       this.content.scrollToTop();
     }
-
+    /* 切换tab初始化数据 */
+    this.params.repairCompanyId = ''
+    this.params.storeInfoId = ''
+    /* 切换tab初始化数据 */
     this.orderList = [];
     this.pageNumber = 0;
     let loading = super.showLoading(this.loadingCtrl);
@@ -96,17 +140,19 @@ export class RepairListPage extends BaseUI {
     this.getListData(loading, infiniteScroll);
   }
 
-  getStoreList() {
-    this.storeList = [];
+  getCompanyList() {
+    this.companyList = [{
+      company: '全部厂商',
+      id: ''
+    }];
     let params = {
-      method: "repairCompanyManager.findRepairCompany",
-      clientId: this.login.userInfo["clientId"]
+      method: "repairCompanyManager.findRepairCompany"
     };
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 174020) {
         var data = res.responseObj;
         for (var i = 0, Length = data.length; i < Length; i++) {
-          this.storeList.push({
+          this.companyList.push({
             company: data[i]["companyName"],
             id: data[i]["id"]
           })
@@ -115,34 +161,89 @@ export class RepairListPage extends BaseUI {
     })
   }
 
-  oindex: Number = 0;
-  changeActive(i: Number, id) {
-    this.oindex = i;
-    this.sta = 0;
-    let loading = super.showLoading(this.loadingCtrl);
-    this.getListData(loading, this.infiniteScroll, id)
+  getStoreList() {
+    this.storeList = [{
+      label: '全部店铺',
+      id: ''
+    }];
+    var params = {
+      method: "store.findStoreInfoByStaff",
+      staffSource: this.login.currentAccount['accountType'],
+      staffType: this.roleType,
+      staffUserId: this.login.id
+    };
+    this.http.get(params).subscribe(res => {
+      if (!!res && res.responseCode == 157060) {
+        let data = res.responseObj
+        for (let i = 0; i < data.length; i++) {
+          this.storeList.push({
+            id: data[i].id,
+            label: data[i].storeName,
+          });
+        }
+      };
+    }, error => {
+
+    });
   }
 
-  getListData(loading, infiniteScroll: any = false, id: any = null) {
-    let params = {
-      method: "repair.findStoreRepairOrder",
-      statuss: String(this.paramsStatus),
-      includeItem: 1,
-      pageNumber: this.pageNumber + 1,
-      repairmanId: "",
-      orderRepairTimeBegin: "",
-      orderRepairTimeEnd: "",
-      id: id
-    };
+  oindex: Number = 0;
+
+  changeActive(i: Number, id, name) {
+    this.params[name] = id;
+    this.orderList = [];
+    this.pageNumber = 0
+    if (this.infiniteScroll) {
+      this.infiniteScroll.enable(true);
+    }
+
+    this.oindex = i;
+    this.sta = 0;
+
+    let loading = super.showLoading(this.loadingCtrl);
+
+    this.getListData(loading, this.infiniteScroll)
+  }
+
+  changeDateActive(item) {
+    this.activeDate = item.id
+    this.sta = 0;
+    if (this.infiniteScroll) {
+      this.infiniteScroll.enable(true);
+    }
+
+    let day = new Date(),
+      begin = '',
+      end = ''
+
+    if ('value' in item) {
+      begin = this.getFormatDate(day, 0);
+      end = this.getFormatDate(day, item.value);
+    }
+
+    this.params.orderRepairTimeBegin = begin;
+    this.params.orderRepairTimeEnd = end;
+
+    this.orderList = [];
+    this.pageNumber = 0
+
+    let loading = super.showLoading(this.loadingCtrl);
+
+    this.getListData(loading, this.infiniteScroll)
+  }
+
+  getListData(loading, infiniteScroll: any = false) {
+
+    this.params.statuss = String(this.paramsStatus);
+    this.params.pageNumber = this.pageNumber + 1;
+
     if (this.roleType === 4) {
-      params.repairmanId = this.login.id;
+      this.params.repairmanId = this.login.id;
       if (this.status === "orderDayPage") {
         let day = new Date().toLocaleDateString().replace(/\//g, "-");
-        // params.orderRepairTime = day + " 00:00:00";
-        // params.orderRepairTimeEnd = day + " 23:59:59";
       }
     }
-    this.http.get(params).subscribe(res => {
+    this.http.get(this.params).subscribe(res => {
       loading.dismiss();
       if (infiniteScroll) {
         infiniteScroll.complete();
@@ -223,8 +324,6 @@ export class RepairListPage extends BaseUI {
     this.sta = this.sta == n ? 0 : n;
   }
 
-
-
   sliderData: object[] = [
     { label: '不限', status: false },
     { label: '商场', status: true },
@@ -236,6 +335,7 @@ export class RepairListPage extends BaseUI {
     { label: '养生馆', status: false },
     { label: '酒吧', status: false }
   ];
+
   tabsSliderActive($index) {
     this.sliderData.forEach(function (n, i) {
       n["status"] = false;
@@ -249,21 +349,16 @@ export class RepairListPage extends BaseUI {
     { filter: '问题由多到少' },
     { filter: '问题由少到多' }
   ];
+
   mode: object[] = [
     { filter: '紧急' },
     { filter: '一般' }
   ];
-  shop: object[] = [
-    { filter: '苏南方圆' },
-    { filter: '星巴克' },
-    { filter: '苏南方圆' },
-    { filter: '星巴克' },
-    { filter: '苏南方圆' }
-  ];
+
   date: object[] = [
-    { filter: '日期' },
-    { filter: '昨天' },
-    { filter: '今天' },
-    { filter: '前天' }
+    { label: '不限', id: 1 },
+    { label: '今天', id: 2, value: 0 },
+    { label: '一周内', id: 3, value: -7 },
+    { label: '30天内', id: 4, value: -30 }
   ];
 }

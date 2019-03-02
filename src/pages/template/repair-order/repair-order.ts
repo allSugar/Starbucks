@@ -29,6 +29,7 @@ export class RepairOrderTmpl {
     public toast: ToastService,
     public http: HttpService
   ) {
+    console.log(this)
   }
 
   goToOtherPage(name) {

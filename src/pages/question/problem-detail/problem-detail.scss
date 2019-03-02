@@ -1,46 +1,61 @@
 page-problem-detail {
-  ion-header.header {
-    ion-navbar {
-      .ion-ios-add,
-      .ion-md-add {
-        min-width: 20px;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        background-image: url('#{$image-icon}/icon-add.png');
-        background-size: 100%;
-        &::before {
-          display: none;
+    ion-header.header {
+        ion-navbar {
+            .ion-ios-add,
+            .ion-md-add {
+                min-width: 20px;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                background-image: url("#{$image-icon}/icon-add.png");
+                background-size: 100%;
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            .ion-ios-trash,
+            .ion-md-trash {
+                min-width: 17px;
+                width: 17px;
+                height: 18px;
+                margin-right: 15px;
+                background-image: url("#{$image-icon}/icon_trash.png");
+                background-size: 100%;
+
+                &::before {
+                    display: none;
+                }
+            }
         }
-      }
-      .ion-ios-trash,
-      .ion-md-trash {
-        min-width: 17px;
-        width: 17px;
-        height: 18px;
-        margin-right: 15px;
-        background-image: url('#{$image-icon}/icon_trash.png');
-        background-size: 100%;
-        &::before {
-          display: none;
+    }
+
+    ion-footer {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+
+        .icon-list {
+            width: 100%;
+
+            .icon-item {
+                float: left;
+                width: 20%;
+                padding: 15px 0;
+                text-align: center;
+            }
         }
-      }
     }
-  }
-  ion-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    .icon-list {
-      width: 100%;
-      .icon-item {
-        float: left;
-        width: 20%;
-        padding: 15px 0;
-        text-align: center;
-      }
+
+    .problem-detail .problem-img img {
+        width: 100%;
+        max-width: 100%;
+
+        & + img {
+            margin-top: 10px;
+        }
     }
-  }
 }

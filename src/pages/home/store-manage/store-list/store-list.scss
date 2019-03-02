@@ -1,10 +1,29 @@
 page-manage {
-  .row-ibox {
-    .row-list {
-      margin: 0;
-      .row-item {
-        padding-left: 15px;
-      }
+    .row-ibox {
+        .row-list {
+            margin: 0;
+
+            .row-item {
+                padding-left: 15px;
+            }
+        }
     }
-  }
+
+    .empty {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+
+        .text {
+            vertical-align: middle;
+        }
+
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
 }

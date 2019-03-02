@@ -30,8 +30,8 @@
           </div>
         </div>
       </div>
-      <div class="problem-img">
-        <img src="assets/imgs/wait_img.png" alt="">
+      <div class="problem-img" *ngIf="item.faultPointFileList.length">
+        <img *ngFor="let img of item.faultPointFileList" src="{{ RES_ROOT + img.fileRecord.thumbnailPath }}" alt="">
       </div>
       <div class="word">
         钟楼百货星巴克咖啡厅一楼吧台区的顶部吊灯 有损坏，总是一闪一闪的。

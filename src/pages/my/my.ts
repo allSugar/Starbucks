@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
+import { App, IonicPage } from 'ionic-angular';
+
+import { LoginService } from '../../service/LoginService';
 
 @IonicPage()
 @Component({
@@ -10,9 +11,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 export class MyPage {
 
+  navCtrl: any;
   constructor(
-    public navCtrl: NavController,
-    public statusBar: StatusBar
+    public app: App,
+    private login: LoginService
   ) {
+    this.navCtrl = this.app.getRootNav()
   }
+
+  loginOut() {
+    this.login.loginOut();
+  };
 }

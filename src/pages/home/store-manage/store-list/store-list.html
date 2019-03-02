@@ -3,7 +3,7 @@
     <ion-title>苏南易维</ion-title>
   </ion-navbar>
   <div class="ibox-search">
-    <input type="text" class="search-input">
+    <input type="text" [(ngModel)]="search" (change)="HandleSearch()" class="search-input">
     <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
   </div>
   <div class="tabs">
@@ -42,25 +42,21 @@
 </ion-header>
 
 <ion-content>
-  <div class="row-ibox">
+  <div class="row-ibox" *ngIf="store.length">
     <ul class="row-list">
-      <li class="row-item" (click)="goToOtherPage()">
-        <div class="item-img radius">
-          <div class="img-center">
-            <img alt="" src="assets/imgs/avater/avater_card.png">
-          </div>
-        </div>
-        <div class="item-body">钟楼百货星巴克</div>
-      </li>
       <li class="row-item" *ngFor="let item of store" (click)="goToOtherPage(item)">
         <div class="item-img radius">
           <div class="img-center">
-            <img alt="" src="{{ this. item.url ? (RES_ROOT + item.url.fileRecord.thumbnailPath) : 'assets/imgs/avater/avater_card.png'  }}">
+            <img alt=""
+              src="{{ item.url ? (RES_ROOT + item.url.fileRecord.thumbnailPath) : 'assets/imgs/avater/avater_card.png'  }}">
           </div>
         </div>
         <div class="item-body">{{ item.name }}</div>
       </li>
     </ul>
+  </div>
+  <div class="empty" *ngIf="!store.length">
+    <em class="text">暂无数据</em>
   </div>
   <div class="full-mask" *ngIf="status == 1 || status == 2" (click)="tabs(0)"></div>
 </ion-content>

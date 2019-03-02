@@ -25,7 +25,8 @@ export class AddProblemPage extends BaseUI {
   len: any;
   userId: string;
   userInfo: any;
-  lastImage: string = null;
+  lastImage: any = [];
+  lastImageFroShow: any = [];
   problem: any;
   Point: any;
   img: any;
@@ -93,6 +94,7 @@ export class AddProblemPage extends BaseUI {
   }
 
   takePicture(sourceType) {
+    let loading = super.showLoading(this.loadingCtrl);
     //定义相机的一些参数
     let options = {
       quality: 100, //图片的质量
@@ -111,14 +113,14 @@ export class AddProblemPage extends BaseUI {
             let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
             //获取正确的文件名
             let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
-            this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+            this.copyFileToLocalDir(correctPath, currentName, this.createFileName(), loading);
           });
       } else {
         //获取正确的路径
         let correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1),
           //获取正确的文件名
           currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-        this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+        this.copyFileToLocalDir(correctPath, currentName, this.createFileName(), loading);
       }
     }, (err) => {
       super.showToast(this.toastCtrl, "选择图片出现错误，请在 App 中操作或检查相关权限。");
@@ -126,9 +128,9 @@ export class AddProblemPage extends BaseUI {
   }
 
   //将获取到的图片或者相机拍摄到的图片进行一下另存为，用于后期的图片上传使用
-  copyFileToLocalDir(namePath, currentName, newFileName) {
+  copyFileToLocalDir(namePath, currentName, newFileName, loading) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
-      this.lastImage = newFileName;
+      this.uploadImage(loading, newFileName);
     }, error => {
       super.showToast(this.toastCtrl, "存储图片到本地图库出现错误。");
     });
@@ -150,8 +152,6 @@ export class AddProblemPage extends BaseUI {
       return normalizeURL(cordova.file.dataDirectory + img);
     }
   }
-
-
 
   crtTimeFtt(val) {
     if (val != null) {
@@ -180,19 +180,14 @@ export class AddProblemPage extends BaseUI {
     this.http.get(this.problem).subscribe(res => {
       if (!!res && res.responseCode == 165010) {
         this.problem.id = res.responseObj.id;
-        if (this.lastImage) {
-          this.uploadImage(loading);
-        } else {
-          loading.dismiss();
-          this.goToOtherPage();
-        }
+        this.relationProblem(loading);
       }
     });
   }
 
-  uploadImage(loading) {
+  uploadImage(loading, img) {
     let url = RES_ROOT + '/ajaxUpload/FileUploader/uploadFile',
-      targetPath = this.pathForImage(this.lastImage);
+      targetPath = this.pathForImage(img);
 
     let filename = this.userId + ".jpg"; //定义上传后的文件名
 
@@ -226,15 +221,23 @@ export class AddProblemPage extends BaseUI {
 
       let imagePath = response["dir"] + response["serverFileName"];
       //在用户看清弹窗提示后进行页面的关闭
-      this.relationProblem(loading, imagePath);
+      this.lastImageFroShow.push(RES_ROOT + imagePath)
+      this.lastImage.push(imagePath);
     }, err => {
       loading.dismiss();
       super.showToast(this.toastCtrl, "图片上传发生错误，请重试。");
     });
   }
 
-  relationProblem(loading, imagePath) {
-    let params = { method: "repair.addStoreRepairTemporaryBillFile", fileType: 1, filePaths: imagePath };
+  relationProblem(loading) {
+    let params = {
+      method: "repair.addStoreRepairTemporaryBillFile",
+      remark: this.problem.remark
+    };
+    if(this.lastImage.length){
+      params['fileType'] = 1
+      params['filePaths'] = this.lastImage.join(',')
+    }
     params["storeRepairTemporaryBillId"] = this.problem.id;
     this.http.get(params).subscribe(res => {
       loading.dismiss();

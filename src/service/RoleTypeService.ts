@@ -25,15 +25,18 @@ export class RoleTypeService {
     }
     SetRole() {
         this.currentAccount = this.login.currentAccount;
-        let roleid = this.currentAccount["id"];
-        switch (roleid) {
-            case 18:
+        let name = this.currentAccount["accountName"];
+        switch (name) {
+            case '店长':
+                this.roleType = 6;
+                break;
+            case '店员':
                 this.roleType = 2;
                 break;
-            case 13:
+            case '维修主管':
                 this.roleType = 3;
                 break;
-            case 14:
+            case '维修员':
                 this.roleType = 4;
                 break;
             default:

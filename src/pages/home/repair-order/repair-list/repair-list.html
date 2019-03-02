@@ -3,17 +3,19 @@
     <ion-title class="title-type">
       <span>维修单</span>
     </ion-title>
-    <span class="type" (click)="toggleMenu()" >类型</span>
+    <span class="type" (click)="toggleMenu()">类型</span>
   </ion-navbar>
   <div class="tabs">
     <ul class="tabs-rate tabs-third" [ngClass]="{ 'tabs-third':roleType !== 4, 'tabs-four':roleType === 4 }">
       <li class="tab-btn" [ngClass]="{ 'active': status == 'orderUndoPage' }" (click)="tabs('orderUndoPage'); show(0)">
         <em class="text">待接单</em>
       </li>
-      <li class="tab-btn" *ngIf="roleType === 4" [ngClass]="{ 'active': status == 'orderDayPage' }" (click)="tabs('orderDayPage'); show(0)">
+      <li class="tab-btn" *ngIf="roleType === 4" [ngClass]="{ 'active': status == 'orderDayPage' }"
+        (click)="tabs('orderDayPage'); show(0)">
         <em class="text">当日任务</em>
       </li>
-      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }" (click)="tabs('OrderConductPage'); show(0)">
+      <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderConductPage' }"
+        (click)="tabs('OrderConductPage'); show(0)">
         <em class="text">进行中</em>
       </li>
       <li class="tab-btn" [ngClass]="{ 'active': status == 'OrderDonePage' }" (click)="tabs('OrderDonePage'); show(0)">
@@ -27,7 +29,7 @@
       <li class="tab-btn" (click)="show(2)" [ngClass]="{ 'active':sta == 2 }">
         <em class="text">紧急</em>
       </li>
-      <li class="tab-btn" (click)="show(3); getStoreList()" [ngClass]="{ 'active':sta == 3 }">
+      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
         <em class="text">厂商</em>
       </li>
       <li class="tab-sort" (click)="show(4)" [ngClass]="{ 'active':sta == 4 }">
@@ -35,7 +37,7 @@
       </li>
     </ul>
     <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'OrderConductPage' || status == 'orderDayPage'">
-      <li class="tab-btn" (click)="show(3); getStoreList()" [ngClass]="{ 'active':sta == 3 }">
+      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
         <em class="text">厂商</em>
       </li>
       <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
@@ -46,7 +48,7 @@
       </li>
     </ul>
     <ul class="tabs-list tabs-third tabs-sort" *ngIf="status == 'OrderDonePage'">
-      <li class="tab-btn" (click)="show(3); getStoreList()" [ngClass]="{ 'active':sta == 3 }">
+      <li class="tab-btn" (click)="show(3)" [ngClass]="{ 'active':sta == 3 }">
         <em class="text">厂商</em>
       </li>
       <li class="tab-btn" (click)="show(5)" [ngClass]="{ 'active':sta == 5 }">
@@ -60,29 +62,37 @@
       </li>
     </ul>
     <div class="tabs-content">
+      <!-- 综合 -->
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 1 }">
-        <li class="ranking-item" *ngFor="let item of sort; let i = index"
-            (click)="changeActive(i)" [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
+        <li class="ranking-item" *ngFor="let item of sort; let i = index" (click)="changeActive(i)"
+          [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
+      <!-- 维修单状态 -->
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 2 }">
-        <li class="ranking-item" *ngFor="let item of mode; let i = index"
-            (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
+        <li class="ranking-item" *ngFor="let item of mode; let i = index" (click)="changeActive(i)"
+          [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
+      <!-- 店铺 -->
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 4 }">
-        <li class="ranking-item" *ngFor="let item of shop; let i = index"
-            (click)="changeActive(i)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
-      </ul>
-      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
         <li class="ranking-item" *ngFor="let item of storeList; let i = index"
-            (click)="changeActive(i, item.id, 3)" [ngClass] = "{ 'true' : 'active' }[i == oindex]">{{ item.company }}</li>
+          (click)="changeActive(i, item.id, 'storeInfoId')"
+          [ngClass]="{ 'true' : 'active' }[item.id == params.storeInfoId]">{{ item.label }}</li>
       </ul>
+      <!-- 厂商 -->
+      <ul class="ranking-list" [ngClass]="{ 'hide':sta != 3 }">
+        <li class="ranking-item" *ngFor="let item of companyList; let i = index"
+          (click)="changeActive(i, item.id, 'repairCompanyId')"
+          [ngClass]="{ 'true' : 'active' }[item.id == params.repairCompanyId]">{{ item.company }}</li>
+      </ul>
+      <!-- 排序 -->
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 5 }">
-        <li class="ranking-item" *ngFor="let item of sort; let i = index"
-            (click)="changeActive(i)" [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
+        <li class="ranking-item" *ngFor="let item of sort; let i = index" (click)="changeActive(i)"
+          [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
       </ul>
+      <!-- 日期 -->
       <ul class="ranking-list" [ngClass]="{ 'hide':sta != 6 }">
-        <li class="ranking-item" *ngFor="let item of date; let i = index"
-            (click)="changeActive(i)" [ngClass]="{ 'true' : 'active' }[i == oindex]">{{ item.filter }}</li>
+        <li class="ranking-item" *ngFor="let item of date; let i = index" (click)="changeDateActive(item)"
+          [ngClass]="{ 'true' : 'active' }[item.id === activeDate]">{{ item.label }}</li>
       </ul>
     </div>
   </div>
@@ -93,7 +103,8 @@
     <div class="time-form">
       <div class="title">类型</div>
       <div class="time-list m-t-xl">
-        <div class="item item-xl" *ngFor="let item of sliderData; let $index = index"  (click)="tabsSliderActive($index)" [ngClass]="{'active':item.status == true}">{{ item.label }}</div>
+        <div class="item item-xl" *ngFor="let item of sliderData; let $index = index" (click)="tabsSliderActive($index)"
+          [ngClass]="{'active':item.status == true}">{{ item.label }}</div>
       </div>
     </div>
     <div class="sort-btn">
@@ -107,12 +118,10 @@
 <ion-content>
   <div class="repair-list">
     <repair-order-element *ngFor="let item of orderList" [data]="item" [roletype]="roleType" [tabs]="status"
-    (goto)="goToOtherPage($event,item)" (update)="HandleUpdate()"></repair-order-element>
+      (goto)="goToOtherPage($event,item)" (update)="HandleUpdate()"></repair-order-element>
     <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
       <ion-infinite-scroll-content></ion-infinite-scroll-content>
     </ion-infinite-scroll>
   </div>
-
   <div class="full-mask" *ngIf="sta != 0" (click)="show(0)"></div>
-
 </ion-content>

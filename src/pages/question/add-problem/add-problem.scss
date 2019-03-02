@@ -1,17 +1,57 @@
 page-add-problem {
-  .ibox-footer-button {
-    overflow: hidden;
-    .footer-btn {
-      font-size: 18px;
-      width: 100%;
-      padding: 16px 0;
+    .add-photo {
+        padding-top: 0;
+        padding-right: 0;
+
+        .text {
+            margin-top: 15px;
+        }
     }
-    .btn-normal {
-      background-color: $white;
+
+    .icon-show-photo {
+        float: left;
+        overflow: hidden;
+        position: relative;
+        display: block;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #1b1b1b;
+        border-radius: 3px;
+        margin-top: 15px;
+        margin-right: 15px;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
-    .btn-success {
-      background-color: #05d1af;
-      color: #fff;
+
+    .icon-add-photo {
+        margin-top: 15px;
     }
-  }
+
+    .ibox-footer-button {
+        overflow: hidden;
+
+        .footer-btn {
+            font-size: 18px;
+            width: 100%;
+            padding: 16px 0;
+        }
+
+        .btn-normal {
+            background-color: $white;
+        }
+
+        .btn-success {
+            background-color: #05d1af;
+            color: #fff;
+        }
+    }
 }
