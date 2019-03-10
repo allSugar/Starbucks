@@ -45,8 +45,8 @@
 
 <ion-footer>
   <div class="ibox-footer-input">
-    <input type="text" placeholder="备注说明...">
-    <button type="submit"></button>
+    <input type="text" placeholder="备注说明..." [(ngModel)]="leaveWord">
+    <button type="submit" (click)="handleSaveMessage()"></button>
   </div>
   <ul class="icon-list">
     <li class="icon-item">

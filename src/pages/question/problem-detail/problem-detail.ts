@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, App, NavParams, LoadingController } from 'ionic-angular';
 
-import { HttpService } from '../../../service/HttpService';
+import { HttpService } from '@/../../src/service/HttpService';
 import { BaseUI } from '../../../directives/comm/baseui';
+import { ToastService } from '@/../../src/service/ToastService';
 import { RES_ROOT } from '../../../providers/httpUrl';
 
 @IonicPage()
@@ -20,12 +21,14 @@ export class ProblemDetailPage extends BaseUI {
   pageNumber: any = 0;
   totalNumber: any;
   RES_ROOT: any;
+  leaveWord: any = '';
 
   constructor(
     public app: App,
     public navParams: NavParams,
     public http: HttpService,
     public loadingCtrl: LoadingController,
+    public toast: ToastService
   ) {
     super();
     let loading = super.showLoading(this.loadingCtrl);
@@ -73,6 +76,22 @@ export class ProblemDetailPage extends BaseUI {
         this.totalNumber = this.totalNumber || res["totalNumber"];
         this.pageNumber = res["pageNumber"];
       };
+    });
+  }
+
+  handleSaveMessage() {
+    let params = {
+      methods: 'repair.saveStoreRepairOrderItemMessage',
+      storeRepairOrderItemId: this.pointId,
+      leaveWord: this.leaveWord
+    }
+
+    this.http.get(params).subscribe(res => {
+      if (!!res && res.responseCode == 180010) {
+        this.toast.info('添加留言成功！')
+      }
+    }, error => {
+      this.toast.info('添加留言失败！')
     });
   }
 

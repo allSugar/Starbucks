@@ -353,6 +353,7 @@ export class RepairListPage extends BaseUI {
       i == $index ? n["status"] = true : '';
     });
   }
+
   sort: object[] = [
     { filter: '全部' },
     { filter: '厂商名字a-z' },

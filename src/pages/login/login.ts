@@ -19,6 +19,7 @@ export class LoginPage {
     method: "userManager.login",
     clientId: "request",
     userName: "15503308184",
+    // userName: "16666666666",
     passWord: "123456",
     accountId: Number
   }
@@ -58,7 +59,6 @@ export class LoginPage {
     }, error => {
 
     });
-
   }
 
   logIn() {
