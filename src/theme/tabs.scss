@@ -1,340 +1,403 @@
 /* tab */
 
 .tabs {
-  position: relative;
-  .tabs-list {
-    background-color: $white;
-    border-bottom: 1px solid $border;
-    overflow: hidden;
-    .tab-btn {
-      position: relative;
-      float: left;
-      padding: 12px 0;
-      color: $secondary-text;
-      text-align: center;
-      line-height: 15px;
-      em.text {
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: -14px;
-          border-width: 5px 4px;
-          border-style: solid;
+    position: relative;
+
+    .tabs-list {
+        background-color: $white;
+        border-bottom: 1px solid $border;
+        overflow: hidden;
+
+        .tab-btn {
+            position: relative;
+            float: left;
+            padding: 12px 0;
+            color: $secondary-text;
+            text-align: center;
+            line-height: 15px;
+
+            em.text {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -14px;
+                    border-width: 5px 4px;
+                    border-style: solid;
+                }
+
+                &::before {
+                    display: none;
+                    margin-top: -8px;
+                    border-color: transparent transparent $secondary-text transparent;
+                }
+
+                &::after {
+                    margin-top: -3px;
+                    border-color: $secondary-text transparent transparent transparent;
+                }
+            }
+
+            &.active {
+                color: $main-text;
+
+                em.text::after {
+                    display: none;
+                }
+
+                em.text::before {
+                    display: block;
+                    border-bottom-color: $main-text;
+                }
+            }
+
+            &.active-b-b:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 40%;
+                margin-left: -15%;
+                height: 2px;
+                background-color: $main-text;
+            }
+
+            &.tab-icon-both {
+                em.text::before {
+                    display: block;
+                    margin-top: -12px;
+                }
+
+                em.text::after {
+                    margin-top: 0;
+                }
+            }
+
+            &.tab-icon-none {
+                em.text::before,
+                em.text::after {
+                    display: none;
+                }
+            }
         }
-        &::before {
-          display: none;
-          margin-top: -8px;
-          border-color: transparent transparent $secondary-text transparent;
+
+        .tab-icon-both {
+            &.up {
+                color: $main-text;
+
+                em.text::before {
+                    border-bottom-color: $main-text;
+                }
+            }
+
+            &.down {
+                color: $main-text;
+
+                em.text::after {
+                    border-top-color: $main-text;
+                }
+            }
         }
-        &::after {
-          margin-top: -3px;
-          border-color: $secondary-text transparent transparent transparent;
+
+        &.tabs-two {
+            .tab-btn {
+                width: 50%;
+            }
         }
-      }
-      &.active {
-        color: $main-text;
-        em.text::after {
-          display: none;
+
+        &.tabs-third {
+            .tab-btn {
+                width: 33.333333%;
+            }
+
+            .tab-sort {
+                position: absolute;
+                right: 0;
+                line-height: 15px;
+                padding: 12px 20px 12px 14px;
+                color: $secondary-text;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    margin-top: -7px;
+                    width: 1px;
+                    height: 14px;
+                    background-color: $secondary-text;
+                }
+
+                &.active {
+                    color: $main-text;
+                }
+            }
+
+            &.tabs-sort {
+                padding-right: 82px;
+            }
         }
-        em.text::before {
-          display: block;
-          border-bottom-color: $main-text;
+
+        &.tabs-four {
+            .tab-btn {
+                width: 25%;
+            }
         }
-      }
-      &.active-b-b:after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        width: 40%;
-        margin-left: -15%;
-        height: 2px;
-        background-color: $main-text;
-      }
-      &.tab-icon-both {
-        em.text::before {
-          display: block;
-          margin-top: -12px;
-        }
-        em.text::after {
-          margin-top: 0;
-        }
-      }
-      &.tab-icon-none {
-        em.text::before,
-        em.text::after {
-          display: none;
-        }
-      }
     }
-    .tab-icon-both {
-      &.up {
-        color: $main-text;
-        em.text::before {
-          border-bottom-color: $main-text;
-        }
-      }
-      &.down {
-        color: $main-text;
-        em.text::after {
-          border-top-color: $main-text;
-        }
-      }
-    }
-    &.tabs-two {
-      .tab-btn {
-        width: 50%;
-      }
-    }
-    &.tabs-third {
-      .tab-btn {
-        width: 33.333333%;
-      }
-      .tab-sort {
-        position: absolute;
-        right: 0;
-        line-height: 15px;
-        padding: 12px 20px 12px 14px;
+
+    .tabs-rate {
+        background-color: $blue;
+        line-height: 20px;
+        text-align: center;
         color: $secondary-text;
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 50%;
-          margin-top: -7px;
-          width: 1px;
-          height: 14px;
-          background-color: $secondary-text;
+        overflow: hidden;
+
+        .tab-btn {
+            float: left;
+            padding: 10px 0;
+
+            em.text {
+                position: relative;
+                display: inline-block;
+                font-size: 15px;
+                vertical-align: top;
+            }
+
+            &.active {
+                color: $green;
+
+                em.text::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: -10px;
+                    height: 2px;
+                    background-color: $green;
+                }
+            }
         }
-        &.active {
-          color: $main-text;
+
+        &.tabs-two {
+            .tab-btn {
+                width: 50%;
+            }
         }
-      }
-      &.tabs-sort {
-        padding-right: 82px;
-      }
-    }
-    &.tabs-four {
-      .tab-btn {
-        width: 25%;
-      }
-    }
-  }
-  .tabs-rate {
-    background-color: $blue;
-    line-height: 20px;
-    text-align: center;
-    color: $secondary-text;
-    overflow: hidden;
-    .tab-btn {
-      float: left;
-      padding: 10px 0;
-      em.text {
-        position: relative;
-        display: inline-block;
-        font-size: 15px;
-        vertical-align: top;
-      }
-      &.active {
-        color: $green;
-        em.text::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: -10px;
-          height: 2px;
-          background-color: $green;
+
+        &.tabs-third {
+            .tab-btn {
+                width: 33.333333%;
+            }
         }
-      }
-    }
-    &.tabs-two {
-      .tab-btn {
-        width: 50%;
-      }
-    }
-    &.tabs-third {
-      .tab-btn {
-        width: 33.333333%;
-      }
-    }
-    &.tabs-four {
-      .tab-btn {
-        width: 25%;
-      }
-    }
-  }
-  .tabs-content {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    z-index: 1;
-    margin-top: -1px;
-    border-top: 1px solid $border;
-    background-color: $white;
-    .ranking-list {
-      width: 100%;
-      padding-bottom: 15px;
-      .ranking-item {
-        position: relative;
-        height: 30px;
-        margin-top:15px;
-        padding: 6px 0 6px 25px;
-        font-size: 15px;
-        &.active {
-          color: $green;
-          &:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 5px;
-            height: 30px;
-            background-color: $green;
-          }
+
+        &.tabs-four {
+            .tab-btn {
+                width: 25%;
+            }
         }
-      }
     }
-  }
-  //管辖范围
-  .jurisdiction {
-    width: 100%;
-    padding: 40px;
-    overflow: hidden;
-    .item {
-      float: left;
-      width: 50%;
-      text-align: center;
-      img {
-        display: inline-block;
-        width: 60px;
-        height: 60px;
-      }
-      .text {
-        margin-top: 14px;
-        color: $secondary-text;
-        &.active {
-          color: $green;
+
+    .tabs-content {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 1;
+        margin-top: -1px;
+        border-top: 1px solid $border;
+        background-color: $white;
+
+        .ranking-list {
+            width: 100%;
+            padding-bottom: 15px;
+
+            .ranking-item {
+                position: relative;
+                height: 30px;
+                margin-top: 15px;
+                padding: 6px 0 6px 25px;
+                font-size: 15px;
+
+                &.active {
+                    color: $green;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 5px;
+                        height: 30px;
+                        background-color: $green;
+                    }
+                }
+            }
         }
-      }
+
+        &.tabs-scroll .ranking-list {
+            max-height: 200px;
+            overflow: auto;
+        }
     }
-  }
+
+    //管辖范围
+    .jurisdiction {
+        width: 100%;
+        padding: 40px;
+        overflow: hidden;
+
+        .item {
+            float: left;
+            width: 50%;
+            text-align: center;
+
+            img {
+                display: inline-block;
+                width: 60px;
+                height: 60px;
+            }
+
+            .text {
+                margin-top: 14px;
+                color: $secondary-text;
+
+                &.active {
+                    color: $green;
+                }
+            }
+        }
+    }
 }
 
 .time-form {
-  position: relative;
-  padding: 0 6.9% 80px 6.9%;
-  width: 100%;
-  background-color: white;
-  .title {
-    font-size: 16px;
-    margin-top: 30px;
-  }
-  .time-input {
-    padding: 26px 0 26px 6.5%;
-    overflow: hidden;
-    input {
-      float: left;
-      width: 38%;
-      height: 35px;
-      padding-left: 8%;
-      border: 1px solid $border;
+    position: relative;
+    padding: 0 6.9% 80px 6.9%;
+    width: 100%;
+    background-color: white;
+
+    .title {
+        font-size: 16px;
+        margin-top: 30px;
     }
-    .br {
-      width: 4%;
-      height: 1px;
-      float: left;
-      margin: 16px 4%;
-      background-color: #ccc;
+
+    .time-input {
+        padding: 26px 0 26px 6.5%;
+        overflow: hidden;
+
+        input {
+            float: left;
+            width: 38%;
+            height: 35px;
+            padding-left: 8%;
+            border: 1px solid $border;
+        }
+
+        .br {
+            width: 4%;
+            height: 1px;
+            float: left;
+            margin: 16px 4%;
+            background-color: #ccc;
+        }
     }
-  }
-  .time-list {
-    margin-bottom: 20px;
-    overflow: hidden;
-    .item {
-      float: left;
-      width: 22.5%;
-      height: 26px;
-      line-height: 26px;
-      margin-right: 3%;
-      text-align: center;
-      border: 1px solid $box-border;
-      &:last-child {
-        margin-right: 0;
-      }
-      &.active {
-        color: $green;
-        background-color: rgba(5, 209, 175, .1);
-        border: 1px solid $green;
-      }
+
+    .time-list {
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        .item {
+            float: left;
+            width: 22.5%;
+            height: 26px;
+            line-height: 26px;
+            margin-right: 3%;
+            text-align: center;
+            border: 1px solid $box-border;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.active {
+                color: $green;
+                background-color: rgba(5, 209, 175, 0.1);
+                border: 1px solid $green;
+            }
+        }
+
+        .item-xl {
+            width: 30%;
+            margin-bottom: 15px;
+            margin-right: 3%;
+            line-height: 30px;
+            height: 30px;
+        }
     }
-    .item-xl {
-      width: 30%;
-      margin-bottom: 15px;
-      margin-right: 3%;
-      line-height: 30px;
-      height: 30px;
-    }
-  }
 }
 
 .select-list {
-  padding: 20px;
-  overflow: hidden;
-  .item {
-    float: left;
-    width: 33%;
-    padding-top: 25px;
-    &:first-child {
-      .item-img {
-        &:after {
-          background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    overflow: hidden;
+
+    .item {
+        float: left;
+        width: 33%;
+        padding-top: 25px;
+
+        &:first-child {
+            .item-img {
+                &:after {
+                    background-color: rgba(0, 0, 0, 0);
+                }
+            }
+
+            .name {
+                color: $green;
+            }
         }
-      }
-      .name {
-        color: $green;
-      }
+
+        .item-img {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 100%;
+                height: 100%;
+                content: '';
+            }
+
+            img {
+                widht: 100%;
+                height: 100%;
+            }
+        }
+
+        .name {
+            margin-top: 12px;
+            color: $secondary-text;
+            text-align: center;
+        }
     }
-    .item-img {
-      position: relative;
-      width: 60px;
-      height: 60px;
-      margin: 0 auto;
-      border-radius: 50%;
-      overflow: hidden;
-      &:after {
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-color: rgba(0, 0, 0, .5);
-        width: 100%;
-        height: 100%;
-        content: '';
-      }
-      img {
-        widht: 100%;
-        height: 100%;
-      }
-    }
-    .name {
-      margin-top: 12px;
-      color: $secondary-text;
-      text-align: center;
-    }
-  }
 }
 
 .full-mask {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, .3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
 }

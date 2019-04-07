@@ -1,3 +1,23 @@
 page-frequency {
+    .hide {
+        display: none;
+    }
 
+    .empty-text {
+        margin-top: 10px;
+        background-color: $white;
+        height: 70%;
+        text-align: center;
+        .text{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:after{
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
 }

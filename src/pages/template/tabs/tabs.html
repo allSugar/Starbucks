@@ -1,0 +1,58 @@
+<div class="tabs">
+    <ul class="tabs-list tabs-third tabs-sort">
+        <li class="tab-btn" [ngClass]="{ 'active':status == 1 }" (click)="tabs(1)">
+            <em class="text">排序</em>
+        </li>
+        <li class="tab-btn" [ngClass]="{ 'active':status == 2 }" (click)="tabs(2)">
+            <em class="text">管辖范围</em>
+        </li>
+        <li class="tab-btn" [ngClass]="{ 'active':status == 3 }" (click)="tabs(3)">
+            <em class="text">时间</em>
+        </li>
+        <li class="tab-sort" [ngClass]="{ 'active':status == 4 }" (click)="tabs(4)">
+            <em class="text">分类</em>
+        </li>
+    </ul>
+    <div class="tabs-content">
+        <ul class="ranking-list" [ngClass]="{ 'hide':status != 1 }">
+            <li class="ranking-item" *ngFor="let item of contain;let i= index"
+                [ngClass]="{'true':'active'}[i == oindex]" (click)="changeActive(i)">{{ item.filter }}</li>
+        </ul>
+        <ul class="jurisdiction" [ngClass]="{ 'hide':status != 2 }">
+            <li class="item">
+                <img src="assets/imgs/select/select-all.png" alt="">
+                <p class="text active">全部店面</p>
+            </li>
+            <li class="item">
+                <img src="assets/imgs/select/select-all.png" alt="">
+                <p class="text">我管辖的</p>
+            </li>
+        </ul>
+        <div class="time-form" [ngClass]="{ 'hide':status != 3 }">
+            <div class="time-input">
+                <input placeholder="开始时间" readonly [(ngModel)]="timeBegin" type="text">
+                <div class="br"></div>
+                <input placeholder="结束时间" readonly [(ngModel)]="timeEnd" type="text">
+            </div>
+            <!-- <div class="time-list">
+                <div class="item" *ngFor="let w of Week">
+                    <em class="text">{{ w.week }}周</em>
+                </div>
+            </div> -->
+            <div class="time-list">
+                <div class="item" *ngFor="let m of Month" [ngClass]="{'active' : m.active}" (click)="HandleDateChange(m)">
+                    <em class="text">{{ m.month }}月</em>
+                </div>
+            </div>
+            <div class="time-list">
+                <div class="item" *ngFor="let y of Year" [ngClass]="{'active' : y.active}" (click)="HandleDateChange(y)">
+                    <em class="text">{{ y.year }}年</em>
+                </div>
+            </div>
+            <div class="sort-btn">
+                <button class="btn-cancle" (click)="quit()">取消</button>
+                <button class="btn-sure" type="submit" (click)="SubmitDateChange()">确定</button>
+            </div>
+        </div>
+    </div>
+</div>

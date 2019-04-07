@@ -2,11 +2,11 @@
   <ion-navbar>
     <ion-title>维修频率</ion-title>
   </ion-navbar>
-  <tabs [status]="status" (goto)="tabs($event)"></tabs>
+  <tabs [status]="status" (goto)="tabs($event)" (DateChange)="HandleDateChange($event)"></tabs>
 </ion-header>
 
 <ion-content>
-  <div class="chart-data">
+  <div class="chart-data" [ngClass]="{ 'hide' : !repairList.length }">
     <div class="chart">
       <div padding-vertical>
         <canvas #chartPie height="200"></canvas>
@@ -17,7 +17,7 @@
         <em class="bar-frequency-{{ i+1 }}"></em>
         <div class="data-body">
           <div class="data-head">
-            <span class="title" (click)="changeData()">{{ item.storeName }}</span>
+            <span class="title">{{ item.storeName }}</span>
             <span class="percentage">{{ item.percentage }}</span>
             <span class="price">￥{{ item.longestDay }}</span>
             <em class="icon-arrow-right f-right"></em>
@@ -27,5 +27,8 @@
       </li>
     </ul>
   </div>
-  <div class="full-mask" *ngIf="status != 0" (click)="tabs(0)"></div>
+  <div class="empty-text" [ngClass]="{ 'hide' : repairList.length }">
+    <em class="text">暂无数据</em>
+  </div>
+  <div class="full-mask" *ngIf="status != 0" (click)="status = 0"></div>
 </ion-content>

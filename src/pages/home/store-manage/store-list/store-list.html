@@ -15,7 +15,7 @@
         <em class="text">全部店面</em>
       </li>
     </ul>
-    <div class="tabs-content">
+    <div class="tabs-content tabs-scroll">
       <ul class="select-list" *ngIf="status == 1">
         <li class="item">
           <div class="item-img">
@@ -23,47 +23,47 @@
           </div>
           <p class="name">全部</p>
         </li>
-        <li class="item" *ngFor="let item of [1,2,3,4,5]">
+        <li class="item" *ngFor="let item of jurisdictionStore">
           <div class="item-img">
-            <img src="assets/imgs/change-before.png" alt="">
+            <img src="{{ item.url ? (RES_ROOT + item.url.fileRecord.thumbnailPath) : 'assets/imgs/avater/avater_card.png' }}" alt="">
           </div>
-          <p class="name">李明明</p>
+          <p class="name">{{ item.name }}</p>
         </li>
       </ul>
-      <ul class="ranking-list" *ngIf="status == 2">
-        <li class="ranking-item">星巴克</li>
-        <li class="ranking-item">苏南易维</li>
-        <li class="ranking-item active">星巴克</li>
-        <li class="ranking-item">苏南易维</li>
-        <li class="ranking-item">星巴克</li>
+      <ul class="ranking-list" *ngIf="status == 2 && store.length">
+        <li class="ranking-item" *ngFor="let item of store">{{ item.name }}</li>
       </ul>
     </div>
   </div>
 </ion-header>
 
 <ion-content>
-  <div class="row-ibox" *ngIf="store.length">
-    <ul class="row-list">
-      <li class="row-item" (click)="goToOtherPage(item)">
-        <div class="item-img radius">
-          <div class="img-center">
-            <img alt=""
-              src="assets/imgs/avater/avater_card.png">
+  <ion-list *ngIf="store.length">
+    <div class="row-ibox">
+      <ul class="row-list">
+        <li class="row-item" (click)="goToOtherPage(item)">
+          <div class="item-img radius">
+            <div class="img-center">
+              <img alt="" src="assets/imgs/avater/avater_card.png">
+            </div>
           </div>
-        </div>
-        <div class="item-body">测试</div>
-      </li>
-      <li class="row-item" *ngFor="let item of store" (click)="goToOtherPage(item)">
-        <div class="item-img radius">
-          <div class="img-center">
-            <img alt=""
-              src="{{ item.url ? (RES_ROOT + item.url.fileRecord.thumbnailPath) : 'assets/imgs/avater/avater_card.png'  }}">
+          <div class="item-body">测试</div>
+        </li>
+        <li class="row-item" *ngFor="let item of store" (click)="goToOtherPage(item)">
+          <div class="item-img radius">
+            <div class="img-center">
+              <img alt=""
+                src="{{ item.url ? (RES_ROOT + item.url.fileRecord.thumbnailPath) : 'assets/imgs/avater/avater_card.png' }}">
+            </div>
           </div>
-        </div>
-        <div class="item-body">{{ item.name }}</div>
-      </li>
-    </ul>
-  </div>
+          <div class="item-body">{{ item.name }}</div>
+        </li>
+      </ul>
+    </div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0" *ngIf="store.length">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
   <div class="empty" *ngIf="!store.length">
     <em class="text">暂无数据</em>
   </div>

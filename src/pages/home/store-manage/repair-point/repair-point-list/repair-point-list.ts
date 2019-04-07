@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { App, IonicPage, NavParams, LoadingController, Content } from 'ionic-angular';
 
-import { BaseUI } from '../../../../../directives/comm/baseui';
-import { HttpService } from '../../../../../service/HttpService';
-import { ToastService } from '../../../../../service/ToastService';
+import { BaseUI } from '@/../../src/directives/comm/baseui';
+import { HttpService } from '@/../../src/service/HttpService';
+import { ToastService } from '@/../../src/service/ToastService';
 
 @IonicPage()
 @Component({
@@ -25,6 +25,13 @@ export class RepairPointListPage extends BaseUI {
   totalNumber: any;
   loading: any;
   infiniteScroll: any;
+  searchStatus: Boolean = false;
+  params: any = {
+    method: "repair.findStoreRepairTemporaryBillList",
+    storeInfoId: '',
+    pageNumber: 0,
+    keyWords: ''
+  }
 
   constructor(
     public app: App,
@@ -38,6 +45,9 @@ export class RepairPointListPage extends BaseUI {
 
     this.navCtrl = this.app.getRootNav();
     this.storeInfoId = this.navParams.get("storeInfoId");
+
+    this.params.storeInfoId = this.storeInfoId;
+
     this.drawingList = this.navParams.get("drawingList");
     if (!this.drawingList) {
       this.getDrawingList();
@@ -62,6 +72,11 @@ export class RepairPointListPage extends BaseUI {
   toggleMenu() {
     this.menuStatus = !this.menuStatus;
   }
+
+  toggleSearch() {
+    this.searchStatus = !this.searchStatus
+  }
+
   doInfinite(infiniteScroll) {
     this.infiniteScroll = this.infiniteScroll || infiniteScroll;
     if (this.pageNumber === this.totalNumber) {
@@ -86,8 +101,12 @@ export class RepairPointListPage extends BaseUI {
   }
 
   getListData(loading, infiniteScroll: any = false) {
-    let params = { method: "repair.findStoreRepairTemporaryBillList", storeInfoId: this.storeInfoId, pageNumber: this.pageNumber + 1 };
-    this.http.get(params).subscribe(res => {
+    this.params.pageNumber = this.pageNumber + 1;
+    if (this.params.pageNumber > this.totalNumber) {
+      return false
+    }
+
+    this.http.get(this.params).subscribe(res => {
       loading.dismiss();
       if (infiniteScroll) {
         infiniteScroll.complete();
@@ -119,9 +138,11 @@ export class RepairPointListPage extends BaseUI {
       };
     });
   }
+
   goToOtherPage(name) {
     this.navCtrl.push(name);
   }
+
   goToDrawingPage(item) {
     let obj = {
       storeInfoId: this.storeInfoId ? this.storeInfoId : 1,
@@ -130,12 +151,14 @@ export class RepairPointListPage extends BaseUI {
     this.menuStatus = false;
     this.navCtrl.push("DrawingMapPage", obj);
   }
+
   goToDetailPage(pointId) {
     this.navCtrl.push("ProblemDetailPage", {
       pointId: pointId,
       storeInfoId: this.storeInfoId
     });
   }
+
   HandleChange(item) {
     if (item.status) {
       this.srtbIds.push(item.id);
@@ -148,6 +171,7 @@ export class RepairPointListPage extends BaseUI {
     }
     this.checkAll = (this.srtbIds.length === this.storeRepairTemporaryBillList.length);
   }
+
   HandleCheckAllChange(event) {
     let status = event.target.checked;
     this.srtbIds = [];
@@ -179,5 +203,12 @@ export class RepairPointListPage extends BaseUI {
         this.toast.info("创建订单失败，请稍后再试！");
       }
     });
+  }
+
+  HandleSearch() {
+    this.storeRepairTemporaryBillList = [];
+    this.pageNumber = 0;
+    let loading = super.showLoading(this.loadingCtrl);
+    this.getListData(loading);
   }
 }

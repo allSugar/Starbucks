@@ -12,8 +12,15 @@ import { HttpService } from '../../../../service/HttpService';
 export class RepairNumberPage {
 
   @ViewChild('chartPie') chartPie: ElementRef;
+
   data: Object[] = [];
   dataList: Object[] = [];
+
+  params: any = {
+    method: 'statistics.repairItemWeekStatistics',
+    timeBegin: '',
+    timeEnd: ''
+  }
 
   constructor(
     public navCtrl: NavController,
@@ -22,11 +29,9 @@ export class RepairNumberPage {
   ) {
     this.getData();
   }
+
   getData() {
-    var params = {
-      method: 'statistics.repairItemWeekStatistics',
-    }
-    this.http.get(params).subscribe(res => {
+    this.http.get(this.params).subscribe(res => {
       if (!!res && res.responseCode == 168080) {
         let Lists = res.responseObj.repairStatisticsList;
         this.dataList = Lists;
@@ -37,16 +42,28 @@ export class RepairNumberPage {
             day: Lists[i].weekDay
           });
         }
+
+        this.renderChart()
       }
     });
   }
+
+  HandleDateChange(value) {
+    this.data = [];
+    this.status = 0;
+    this.params.timeBegin = value.timeBegin
+    this.params.timeEnd = value.timeEnd
+    this.getData()
+  }
+
   status: number = 0;
   tabs(n: number) {
     this.status = n;
   }
-  ionViewDidEnter() {
+
+  renderChart() {
     var datas = [], labels = [];
-    for (var i=0;i<this.data.length;i++){
+    for (var i = 0; i < this.data.length; i++) {
       datas.push(this.data[i]["num"]);
       labels.push('周' + this.data[i]["day"]);
     }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <div class="ibox-search ibox-search-xs">
-      <input class="search-input" type="text">
+      <input class="search-input" type="text" [(ngModel)]="params.queryStr" (change)="handleChange()">
       <ion-icon name="search-outline">&nbsp;搜索</ion-icon>
     </div>
   </ion-navbar>
@@ -9,29 +9,34 @@
 </ion-header>
 
 <ion-content>
-  <div class="tab-container">
-    <div class="tab-nav">
-      <ul>
-        <li class="nav-item" *ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
-      </ul>
-    </div>
-    <div class="tab-menu">
-      <ul class="menu-list" *ngFor="let cate of contain;">
-        <p class="tab-title">{{ cate.name }}</p>
-        <li class="tab-item" *ngFor="let item of cate.list">
-          <div class="item-img">
-            <img src="assets/imgs/change-before.png" alt="">
-          </div>
-          <div class="item-body">
-            <p class="title">{{ item.title }}</p>
-            <p class="count">库存数量：{{ item.count }}</p>
-            <div class="item-footer">
-              <span class="price">￥{{ item.price }}</span>
-              <i class="icon-circle-add-active"></i>
+  <ion-list>
+    <div class="tab-container">
+      <!-- <div class="tab-nav">
+        <ul>
+          <li class="nav-item" *ngFor="let item of nav; let i = index" (click)="tabs(i)" [ngClass]="{ 'active': status == i }">{{ item.name }}</li>
+        </ul>
+      </div> -->
+      <div class="tab-menu">
+        <ul class="menu-list">
+          <li class="tab-item" *ngFor="let item of contain">
+            <div class="item-img">
+              <img src="assets/imgs/change-before.png" alt="">
             </div>
-          </div>
-        </li>
-      </ul>
+            <div class="item-body">
+              <p class="title">{{ item.goodsName }}</p>
+              <p class="count">库存数量：{{ item.stockNum }}</p>
+              <div class="item-footer">
+                <span class="price">￥{{ item.purchasePrice }}</span>
+                <i class="icon-circle-add-active"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
     </div>
-  </div>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

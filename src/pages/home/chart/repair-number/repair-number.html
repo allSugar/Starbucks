@@ -2,7 +2,7 @@
   <ion-navbar>
     <ion-title>报修次数</ion-title>
   </ion-navbar>
-  <tabs [status]="status" (goto)="tabs($event)"></tabs>
+  <tabs [status]="status" (goto)="tabs($event)" (DateChange)="HandleDateChange($event)"></tabs>
 </ion-header>
 
 <ion-content>
@@ -27,5 +27,5 @@
       </li>
     </ul>
   </div>
-  <div class="full-mask" *ngIf="status != 0" (click)="tabs(0)"></div>
+  <div class="full-mask" *ngIf="status != 0" (click)="status = 0"></div>
 </ion-content>

@@ -21,11 +21,12 @@ export abstract class BaseUI {
      */
     protected showLoading(
         loadingCtrl: LoadingController,
-        message: string = "请稍后"
+        message: string = "请稍后",
+        dismissOnPageChange: boolean = true
     ): Loading {
         let loader = loadingCtrl.create({
             content: message,
-            dismissOnPageChange: true //页面变化的时候自动关闭 loading
+            dismissOnPageChange: dismissOnPageChange //页面变化的时候自动关闭 loading
         });
         loader.present();
         return loader;

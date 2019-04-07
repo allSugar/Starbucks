@@ -80,15 +80,21 @@ export class ProblemDetailPage extends BaseUI {
   }
 
   handleSaveMessage() {
-    let params = {
-      methods: 'repair.saveStoreRepairOrderItemMessage',
-      storeRepairOrderItemId: this.pointId,
-      leaveWord: this.leaveWord
+    if (!this.detailData.length) {
+      return false;
     }
+    let params = {
+      method: 'repair.saveStoreRepairOrderItemMessage',
+      storeRepairOrderItemId: '',
+      leaveWord: this.leaveWord
+    }, id = this.detailData[0].id;
+
+    params.storeRepairOrderItemId = id
 
     this.http.get(params).subscribe(res => {
       if (!!res && res.responseCode == 180010) {
-        this.toast.info('添加留言成功！')
+        this.toast.info('添加留言成功！');
+        this.leaveWord = '';
       }
     }, error => {
       this.toast.info('添加留言失败！')

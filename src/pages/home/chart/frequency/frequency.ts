@@ -15,6 +15,13 @@ export class FrequencyPage {
 
   repairList: Object[] = [];
   repair: Object[] = [];
+
+  params: any = {
+    method: 'statistics.repairFrequencyStatistics',
+    timeBegin: '',
+    timeEnd: ''
+  }
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -22,53 +29,31 @@ export class FrequencyPage {
   ) {
     this.getData();
   }
+
   getData() {
-    var params = {
-      method: 'statistics.repairFrequencyStatistics',
-    }
-    this.http.get(params).subscribe(res => {
+    this.http.get(this.params).subscribe(res => {
       if (!!res && res.responseCode == 167110) {
         this.repairList = res.responseObj.repairStatisticsList;
-        //for (var i = 0; i < this.repairList.length; i++) {
-        //  var repairList = this.repairList[i];
-        //}
+        this.RenderChart()
       }
     });
   }
+
   status: number = 0;
   tabs(n: number) {
     this.status = n;
   }
-  changeData() {
-    this.data = this.data2;
+
+  HandleDateChange(value) {
+    this.status = 0;
+    this.params.timeBegin = value.timeBegin
+    this.params.timeEnd = value.timeEnd
+    this.getData()
   }
-  data: any = [
-    { title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '三里屯星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '后海星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '翠微百货星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '北辰星巴克', percentage: '20%', price: '24000', count: '20' }
 
-  ];
-  data1: any = [
-    { title: '钟楼星巴克钟楼星巴克钟楼星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '三里屯星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '后海星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '翠微百货星巴克', percentage: '20%', price: '24000', count: '20' },
-    { title: '北辰星巴克', percentage: '20%', price: '24000', count: '20' }
-
-  ];
-  data2: any = [
-    { title: '星期一', percentage: '20%', price: '24000', count: '20' },
-    { title: '星期二', percentage: '20%', price: '24000', count: '20' },
-    { title: '星期三', percentage: '20%', price: '24000', count: '20' },
-    { title: '星期四', percentage: '20%', price: '24000', count: '20' },
-    { title: '星期五', percentage: '20%', price: '24000', count: '20' }
-
-  ];
-  ionViewDidEnter() {
-    var  lables = [],datas = [];
-    for (var i = 0; i<this.repairList.length;i++){
+  RenderChart() {
+    var lables = [], datas = [];
+    for (var i = 0; i < this.repairList.length; i++) {
       lables.push(this.repairList[i]["storeName"]);
       datas.push(this.repairList[i]["repairNum"]);
     }

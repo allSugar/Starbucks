@@ -7,7 +7,7 @@ import { OrderPointListTmpl } from './order-point-list/order-point-list';
 import { RepairOrderTmpl } from './repair-order/repair-order';
 import { OrderExplainTmpl } from './order-explain';
 import { TimeSelectTmpl } from './time-select';
-import { TabsTmpl } from './tabs';
+import { TabsTmpl } from './tabs/tabs';
 import { TrackInfoTmpl } from './track-info/trackInfo'
 import { ReportTabTmpl } from './reprot-tab/report-tab'
 
