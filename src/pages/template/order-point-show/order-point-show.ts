@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { App, LoadingController } from 'ionic-angular';
+import { App, LoadingController, Item } from 'ionic-angular';
 
 import { BaseUI } from '@/../../src/directives/comm/baseui';
 import { ToastService } from '@/../../src/service/ToastService';
@@ -41,14 +41,22 @@ export class OrderPointShowTmpl extends BaseUI {
   }
 
   goToOtherPage(name) {
+    let storeInfoId = this.listdata.storeInfoId ? this.listdata.storeInfoId : 1;
     if (name === "OrderImgDetailPage") {
       let data = this.listdata.faultPointList
       if (data.length) {
-        this.navCtrl.push('OrderImgDetailPage', { data: data })
+        this.navCtrl.push(name, { data: data });
       }
       return false;
     }
-    // this.goto.emit(name);
+    if(name === "StoreIndexPage") {
+      
+      this.navCtrl.push(name, { storeInfoId: storeInfoId });
+    }
+    if(name === "ProblemDetailPage") {
+      let pointId = this.listdata.pointId;
+      this.navCtrl.push(name, { pointId: pointId, storeInfoId: storeInfoId });
+    }
   }
 
   deleteStoreRepairOrder() {

@@ -312,7 +312,12 @@ export class RepairListPage extends BaseUI {
 
   goToOtherPage(name, item) {
     if (name) {
-      this.navCtrl.push(name);
+      if(name === "StoreIndexPage") {
+        // 后台没有传storeInfoId 默认给1
+        this.navCtrl.push(name,{ storeInfoId: item.storeInfoId ? item.storeInfoId : 1 });
+      } else {
+        this.navCtrl.push(name);
+      }
     } else {
       let name = this.status;
       if (this.status === "orderDayPage") {
